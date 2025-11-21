@@ -1,4 +1,4 @@
-import { Building2, Bed, Bath, Car, MapPin, DollarSign, Home } from 'lucide-react'
+import { Bed, Bath, Car, MapPin, DollarSign, Home } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'

@@ -1,4 +1,4 @@
-import { Home, Building2, Users, FileText, Wrench, ClipboardCheck, DollarSign, BarChart3, Settings, Sparkles } from 'lucide-react'
+import { Home, Building2, Users, FileText, Wrench, ClipboardCheck, DollarSign, BarChart3, Settings, Sparkles, Shield, TrendingUp } from 'lucide-react'
 
 export interface NavItem {
   title: string
@@ -18,6 +18,16 @@ export const navigationItems: NavItem[] = [
     title: 'Properties',
     href: '/properties',
     icon: Building2,
+  },
+  {
+    title: 'Compliance',
+    href: '/compliance',
+    icon: Shield,
+  },
+  {
+    title: 'Investor Dashboard',
+    href: '/investor',
+    icon: TrendingUp,
   },
   {
     title: 'Tenancies',

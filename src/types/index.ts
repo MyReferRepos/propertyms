@@ -215,11 +215,12 @@ export interface ComplianceItem {
   id: string
   propertyId: string
   requirement: string
-  category: 'insulation' | 'heating' | 'ventilation' | 'drainage' | 'smoke-alarms'
+  category: 'insulation' | 'heating' | 'ventilation' | 'moisture' | 'draught'
   status: 'compliant' | 'non-compliant' | 'pending'
   lastChecked?: string
   nextCheckDue?: string
-  notes: string
+  details: string
+  remediation: string | null
   evidence?: string[]
 }
 
