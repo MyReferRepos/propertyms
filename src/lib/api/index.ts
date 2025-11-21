@@ -1,9 +1,8 @@
 /**
- * API Module Entry
- * API模块入口文件
+ * Simplified API Module for MVP Demo
  */
 
-export { apiClient, http } from './client'
+export { http } from './client'
 export { API_CONFIG, API_ENDPOINTS } from './config'
 export type {
   ApiError,

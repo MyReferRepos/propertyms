@@ -11,9 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
-import { Route as AuthenticatedModulesRouteImport } from './routes/_authenticated/modules'
-import { Route as AuthenticatedDemoRouteImport } from './routes/_authenticated/demo'
-import { Route as AuthenticatedAuditLogsRouteImport } from './routes/_authenticated/audit-logs'
+import { Route as AuthenticatedTenantsRouteImport } from './routes/_authenticated/tenants'
+import { Route as AuthenticatedPropertiesRouteImport } from './routes/_authenticated/properties'
+import { Route as AuthenticatedInvestorRouteImport } from './routes/_authenticated/investor'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedComplianceRouteImport } from './routes/_authenticated/compliance'
 import { Route as errors503RouteImport } from './routes/(errors)/503'
 import { Route as errors500RouteImport } from './routes/(errors)/500'
 import { Route as errors404RouteImport } from './routes/(errors)/404'
@@ -23,15 +25,6 @@ import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
-import { Route as AuthenticatedUsersIndexRouteImport } from './routes/_authenticated/users/index'
-import { Route as AuthenticatedMenuIndexRouteImport } from './routes/_authenticated/menu/index'
-import { Route as AuthenticatedUsersRolesRouteImport } from './routes/_authenticated/users/roles'
-import { Route as AuthenticatedUsersPermissionsRouteImport } from './routes/_authenticated/users/permissions'
-import { Route as AuthenticatedSettingsProfileRouteImport } from './routes/_authenticated/settings/profile'
-import { Route as AuthenticatedSettingsGeneralRouteImport } from './routes/_authenticated/settings/general'
-import { Route as AuthenticatedMenuItemsRouteImport } from './routes/_authenticated/menu/items'
-import { Route as AuthenticatedMenuGroupsRouteImport } from './routes/_authenticated/menu/groups'
-import { Route as AuthenticatedErrorsErrorRouteImport } from './routes/_authenticated/errors/$error'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
@@ -42,19 +35,29 @@ const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthenticatedModulesRoute = AuthenticatedModulesRouteImport.update({
-  id: '/modules',
-  path: '/modules',
+const AuthenticatedTenantsRoute = AuthenticatedTenantsRouteImport.update({
+  id: '/tenants',
+  path: '/tenants',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthenticatedDemoRoute = AuthenticatedDemoRouteImport.update({
-  id: '/demo',
-  path: '/demo',
+const AuthenticatedPropertiesRoute = AuthenticatedPropertiesRouteImport.update({
+  id: '/properties',
+  path: '/properties',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthenticatedAuditLogsRoute = AuthenticatedAuditLogsRouteImport.update({
-  id: '/audit-logs',
-  path: '/audit-logs',
+const AuthenticatedInvestorRoute = AuthenticatedInvestorRouteImport.update({
+  id: '/investor',
+  path: '/investor',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedComplianceRoute = AuthenticatedComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const errors503Route = errors503RouteImport.update({
@@ -102,55 +105,6 @@ const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedUsersIndexRoute = AuthenticatedUsersIndexRouteImport.update({
-  id: '/users/',
-  path: '/users/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedMenuIndexRoute = AuthenticatedMenuIndexRouteImport.update({
-  id: '/menu/',
-  path: '/menu/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedUsersRolesRoute = AuthenticatedUsersRolesRouteImport.update({
-  id: '/users/roles',
-  path: '/users/roles',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedUsersPermissionsRoute =
-  AuthenticatedUsersPermissionsRouteImport.update({
-    id: '/users/permissions',
-    path: '/users/permissions',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedSettingsProfileRoute =
-  AuthenticatedSettingsProfileRouteImport.update({
-    id: '/settings/profile',
-    path: '/settings/profile',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedSettingsGeneralRoute =
-  AuthenticatedSettingsGeneralRouteImport.update({
-    id: '/settings/general',
-    path: '/settings/general',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedMenuItemsRoute = AuthenticatedMenuItemsRouteImport.update({
-  id: '/menu/items',
-  path: '/menu/items',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedMenuGroupsRoute = AuthenticatedMenuGroupsRouteImport.update({
-  id: '/menu/groups',
-  path: '/menu/groups',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedErrorsErrorRoute =
-  AuthenticatedErrorsErrorRouteImport.update({
-    id: '/errors/$error',
-    path: '/errors/$error',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -162,19 +116,12 @@ export interface FileRoutesByFullPath {
   '/404': typeof errors404Route
   '/500': typeof errors500Route
   '/503': typeof errors503Route
-  '/audit-logs': typeof AuthenticatedAuditLogsRoute
-  '/demo': typeof AuthenticatedDemoRoute
-  '/modules': typeof AuthenticatedModulesRoute
+  '/compliance': typeof AuthenticatedComplianceRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/investor': typeof AuthenticatedInvestorRoute
+  '/properties': typeof AuthenticatedPropertiesRoute
+  '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
-  '/errors/$error': typeof AuthenticatedErrorsErrorRoute
-  '/menu/groups': typeof AuthenticatedMenuGroupsRoute
-  '/menu/items': typeof AuthenticatedMenuItemsRoute
-  '/settings/general': typeof AuthenticatedSettingsGeneralRoute
-  '/settings/profile': typeof AuthenticatedSettingsProfileRoute
-  '/users/permissions': typeof AuthenticatedUsersPermissionsRoute
-  '/users/roles': typeof AuthenticatedUsersRolesRoute
-  '/menu': typeof AuthenticatedMenuIndexRoute
-  '/users': typeof AuthenticatedUsersIndexRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -186,19 +133,12 @@ export interface FileRoutesByTo {
   '/404': typeof errors404Route
   '/500': typeof errors500Route
   '/503': typeof errors503Route
-  '/audit-logs': typeof AuthenticatedAuditLogsRoute
-  '/demo': typeof AuthenticatedDemoRoute
-  '/modules': typeof AuthenticatedModulesRoute
+  '/compliance': typeof AuthenticatedComplianceRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/investor': typeof AuthenticatedInvestorRoute
+  '/properties': typeof AuthenticatedPropertiesRoute
+  '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
-  '/errors/$error': typeof AuthenticatedErrorsErrorRoute
-  '/menu/groups': typeof AuthenticatedMenuGroupsRoute
-  '/menu/items': typeof AuthenticatedMenuItemsRoute
-  '/settings/general': typeof AuthenticatedSettingsGeneralRoute
-  '/settings/profile': typeof AuthenticatedSettingsProfileRoute
-  '/users/permissions': typeof AuthenticatedUsersPermissionsRoute
-  '/users/roles': typeof AuthenticatedUsersRolesRoute
-  '/menu': typeof AuthenticatedMenuIndexRoute
-  '/users': typeof AuthenticatedUsersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -212,19 +152,12 @@ export interface FileRoutesById {
   '/(errors)/404': typeof errors404Route
   '/(errors)/500': typeof errors500Route
   '/(errors)/503': typeof errors503Route
-  '/_authenticated/audit-logs': typeof AuthenticatedAuditLogsRoute
-  '/_authenticated/demo': typeof AuthenticatedDemoRoute
-  '/_authenticated/modules': typeof AuthenticatedModulesRoute
+  '/_authenticated/compliance': typeof AuthenticatedComplianceRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/investor': typeof AuthenticatedInvestorRoute
+  '/_authenticated/properties': typeof AuthenticatedPropertiesRoute
+  '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
-  '/_authenticated/errors/$error': typeof AuthenticatedErrorsErrorRoute
-  '/_authenticated/menu/groups': typeof AuthenticatedMenuGroupsRoute
-  '/_authenticated/menu/items': typeof AuthenticatedMenuItemsRoute
-  '/_authenticated/settings/general': typeof AuthenticatedSettingsGeneralRoute
-  '/_authenticated/settings/profile': typeof AuthenticatedSettingsProfileRoute
-  '/_authenticated/users/permissions': typeof AuthenticatedUsersPermissionsRoute
-  '/_authenticated/users/roles': typeof AuthenticatedUsersRolesRoute
-  '/_authenticated/menu/': typeof AuthenticatedMenuIndexRoute
-  '/_authenticated/users/': typeof AuthenticatedUsersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -238,19 +171,12 @@ export interface FileRouteTypes {
     | '/404'
     | '/500'
     | '/503'
-    | '/audit-logs'
-    | '/demo'
-    | '/modules'
+    | '/compliance'
+    | '/dashboard'
+    | '/investor'
+    | '/properties'
+    | '/tenants'
     | '/'
-    | '/errors/$error'
-    | '/menu/groups'
-    | '/menu/items'
-    | '/settings/general'
-    | '/settings/profile'
-    | '/users/permissions'
-    | '/users/roles'
-    | '/menu'
-    | '/users'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -262,19 +188,12 @@ export interface FileRouteTypes {
     | '/404'
     | '/500'
     | '/503'
-    | '/audit-logs'
-    | '/demo'
-    | '/modules'
+    | '/compliance'
+    | '/dashboard'
+    | '/investor'
+    | '/properties'
+    | '/tenants'
     | '/'
-    | '/errors/$error'
-    | '/menu/groups'
-    | '/menu/items'
-    | '/settings/general'
-    | '/settings/profile'
-    | '/users/permissions'
-    | '/users/roles'
-    | '/menu'
-    | '/users'
   id:
     | '__root__'
     | '/_authenticated'
@@ -287,19 +206,12 @@ export interface FileRouteTypes {
     | '/(errors)/404'
     | '/(errors)/500'
     | '/(errors)/503'
-    | '/_authenticated/audit-logs'
-    | '/_authenticated/demo'
-    | '/_authenticated/modules'
+    | '/_authenticated/compliance'
+    | '/_authenticated/dashboard'
+    | '/_authenticated/investor'
+    | '/_authenticated/properties'
+    | '/_authenticated/tenants'
     | '/_authenticated/'
-    | '/_authenticated/errors/$error'
-    | '/_authenticated/menu/groups'
-    | '/_authenticated/menu/items'
-    | '/_authenticated/settings/general'
-    | '/_authenticated/settings/profile'
-    | '/_authenticated/users/permissions'
-    | '/_authenticated/users/roles'
-    | '/_authenticated/menu/'
-    | '/_authenticated/users/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -331,25 +243,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/modules': {
-      id: '/_authenticated/modules'
-      path: '/modules'
-      fullPath: '/modules'
-      preLoaderRoute: typeof AuthenticatedModulesRouteImport
+    '/_authenticated/tenants': {
+      id: '/_authenticated/tenants'
+      path: '/tenants'
+      fullPath: '/tenants'
+      preLoaderRoute: typeof AuthenticatedTenantsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/demo': {
-      id: '/_authenticated/demo'
-      path: '/demo'
-      fullPath: '/demo'
-      preLoaderRoute: typeof AuthenticatedDemoRouteImport
+    '/_authenticated/properties': {
+      id: '/_authenticated/properties'
+      path: '/properties'
+      fullPath: '/properties'
+      preLoaderRoute: typeof AuthenticatedPropertiesRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/audit-logs': {
-      id: '/_authenticated/audit-logs'
-      path: '/audit-logs'
-      fullPath: '/audit-logs'
-      preLoaderRoute: typeof AuthenticatedAuditLogsRouteImport
+    '/_authenticated/investor': {
+      id: '/_authenticated/investor'
+      path: '/investor'
+      fullPath: '/investor'
+      preLoaderRoute: typeof AuthenticatedInvestorRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/compliance': {
+      id: '/_authenticated/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof AuthenticatedComplianceRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/(errors)/503': {
@@ -415,102 +341,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/users/': {
-      id: '/_authenticated/users/'
-      path: '/users'
-      fullPath: '/users'
-      preLoaderRoute: typeof AuthenticatedUsersIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/menu/': {
-      id: '/_authenticated/menu/'
-      path: '/menu'
-      fullPath: '/menu'
-      preLoaderRoute: typeof AuthenticatedMenuIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/users/roles': {
-      id: '/_authenticated/users/roles'
-      path: '/users/roles'
-      fullPath: '/users/roles'
-      preLoaderRoute: typeof AuthenticatedUsersRolesRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/users/permissions': {
-      id: '/_authenticated/users/permissions'
-      path: '/users/permissions'
-      fullPath: '/users/permissions'
-      preLoaderRoute: typeof AuthenticatedUsersPermissionsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/settings/profile': {
-      id: '/_authenticated/settings/profile'
-      path: '/settings/profile'
-      fullPath: '/settings/profile'
-      preLoaderRoute: typeof AuthenticatedSettingsProfileRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/settings/general': {
-      id: '/_authenticated/settings/general'
-      path: '/settings/general'
-      fullPath: '/settings/general'
-      preLoaderRoute: typeof AuthenticatedSettingsGeneralRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/menu/items': {
-      id: '/_authenticated/menu/items'
-      path: '/menu/items'
-      fullPath: '/menu/items'
-      preLoaderRoute: typeof AuthenticatedMenuItemsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/menu/groups': {
-      id: '/_authenticated/menu/groups'
-      path: '/menu/groups'
-      fullPath: '/menu/groups'
-      preLoaderRoute: typeof AuthenticatedMenuGroupsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/errors/$error': {
-      id: '/_authenticated/errors/$error'
-      path: '/errors/$error'
-      fullPath: '/errors/$error'
-      preLoaderRoute: typeof AuthenticatedErrorsErrorRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
   }
 }
 
 interface AuthenticatedRouteRouteChildren {
-  AuthenticatedAuditLogsRoute: typeof AuthenticatedAuditLogsRoute
-  AuthenticatedDemoRoute: typeof AuthenticatedDemoRoute
-  AuthenticatedModulesRoute: typeof AuthenticatedModulesRoute
+  AuthenticatedComplianceRoute: typeof AuthenticatedComplianceRoute
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedInvestorRoute: typeof AuthenticatedInvestorRoute
+  AuthenticatedPropertiesRoute: typeof AuthenticatedPropertiesRoute
+  AuthenticatedTenantsRoute: typeof AuthenticatedTenantsRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
-  AuthenticatedErrorsErrorRoute: typeof AuthenticatedErrorsErrorRoute
-  AuthenticatedMenuGroupsRoute: typeof AuthenticatedMenuGroupsRoute
-  AuthenticatedMenuItemsRoute: typeof AuthenticatedMenuItemsRoute
-  AuthenticatedSettingsGeneralRoute: typeof AuthenticatedSettingsGeneralRoute
-  AuthenticatedSettingsProfileRoute: typeof AuthenticatedSettingsProfileRoute
-  AuthenticatedUsersPermissionsRoute: typeof AuthenticatedUsersPermissionsRoute
-  AuthenticatedUsersRolesRoute: typeof AuthenticatedUsersRolesRoute
-  AuthenticatedMenuIndexRoute: typeof AuthenticatedMenuIndexRoute
-  AuthenticatedUsersIndexRoute: typeof AuthenticatedUsersIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
-  AuthenticatedAuditLogsRoute: AuthenticatedAuditLogsRoute,
-  AuthenticatedDemoRoute: AuthenticatedDemoRoute,
-  AuthenticatedModulesRoute: AuthenticatedModulesRoute,
+  AuthenticatedComplianceRoute: AuthenticatedComplianceRoute,
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedInvestorRoute: AuthenticatedInvestorRoute,
+  AuthenticatedPropertiesRoute: AuthenticatedPropertiesRoute,
+  AuthenticatedTenantsRoute: AuthenticatedTenantsRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
-  AuthenticatedErrorsErrorRoute: AuthenticatedErrorsErrorRoute,
-  AuthenticatedMenuGroupsRoute: AuthenticatedMenuGroupsRoute,
-  AuthenticatedMenuItemsRoute: AuthenticatedMenuItemsRoute,
-  AuthenticatedSettingsGeneralRoute: AuthenticatedSettingsGeneralRoute,
-  AuthenticatedSettingsProfileRoute: AuthenticatedSettingsProfileRoute,
-  AuthenticatedUsersPermissionsRoute: AuthenticatedUsersPermissionsRoute,
-  AuthenticatedUsersRolesRoute: AuthenticatedUsersRolesRoute,
-  AuthenticatedMenuIndexRoute: AuthenticatedMenuIndexRoute,
-  AuthenticatedUsersIndexRoute: AuthenticatedUsersIndexRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =

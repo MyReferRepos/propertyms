@@ -1,79 +1,95 @@
 /**
- * Auth Store
- * 使用Zustand管理认证状态
+ * Simplified Auth Store for MVP Demo
  */
 
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
+import type { User, LoginRequest, LoginResponse } from './types'
 
-import { authService } from './auth-service'
-import type { AuthState, LoginRequest, User } from './types'
-
-interface AuthActions {
-  login: (credentials: LoginRequest) => Promise<void>
-  logout: () => Promise<void>
-  setUser: (user: User | null) => void
-  refreshUser: () => Promise<void>
-  clearAuth: () => void
+interface AuthState {
+  user: User | null
+  accessToken: string | null
+  refreshToken: string | null
+  isAuthenticated: boolean
 }
 
-type AuthStore = AuthState & AuthActions
+interface AuthActions {
+  login: (credentials: LoginRequest) => Promise<LoginResponse>
+  logout: () => void
+  setUser: (user: User) => void
+  setTokens: (accessToken: string, refreshToken: string) => void
+}
 
-/**
- * 认证Store
- */
-export const useAuthStore = create<AuthStore>()(
+export const useAuthStore = create<AuthState & AuthActions>()(
   devtools(
     (set) => ({
-      // 状态
-      user: authService.getStoredUser(),
-      accessToken: authService.getAccessToken(),
-      refreshToken: authService.getRefreshToken(),
-      isAuthenticated: authService.isAuthenticated(),
+      // State
+      user: null,
+      accessToken: null,
+      refreshToken: null,
+      isAuthenticated: false,
 
-      // 动作
+      // Actions
       login: async (credentials: LoginRequest) => {
-        const response = await authService.login(credentials)
+        // Mock login
+        await new Promise((resolve) => setTimeout(resolve, 500))
+
+        const mockUser: User = {
+          id: '1',
+          email: credentials.email,
+          username: 'Property Manager',
+          displayName: 'Demo Property Manager',
+          status: 'active',
+          createdAt: new Date().toISOString(),
+        }
+
+        const response: LoginResponse = {
+          user: mockUser,
+          accessToken: 'mock-access-token',
+          refreshToken: 'mock-refresh-token',
+        }
+
         set({
-          user: response.user,
+          user: mockUser,
           accessToken: response.accessToken,
           refreshToken: response.refreshToken,
           isAuthenticated: true,
         })
-        // 权限已在 authService.login 中保存到 localStorage
+
+        // Also save to localStorage
+        localStorage.setItem('access_token', response.accessToken)
+        localStorage.setItem('refresh_token', response.refreshToken)
+        localStorage.setItem('user', JSON.stringify(mockUser))
+
+        return response
       },
 
-      logout: async () => {
-        await authService.logout()
+      logout: () => {
         set({
           user: null,
           accessToken: null,
           refreshToken: null,
           isAuthenticated: false,
         })
+
+        // Clear localStorage
+        localStorage.removeItem('access_token')
+        localStorage.removeItem('refresh_token')
+        localStorage.removeItem('user')
       },
 
-      setUser: (user: User | null) => {
-        set({ user, isAuthenticated: !!user })
+      setUser: (user: User) => {
+        set({ user })
       },
 
-      refreshUser: async () => {
-        const authProfile = await authService.getCurrentUser()
-        if (authProfile) {
-          set({ user: authProfile.user })
-        }
-      },
-
-      clearAuth: () => {
-        authService.clearAuth()
+      setTokens: (accessToken: string, refreshToken: string) => {
         set({
-          user: null,
-          accessToken: null,
-          refreshToken: null,
-          isAuthenticated: false,
+          accessToken,
+          refreshToken,
+          isAuthenticated: true,
         })
       },
     }),
-    { name: 'auth-store' }
-  )
+    { name: 'auth-store' },
+  ),
 )
