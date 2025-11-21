@@ -1,0 +1,62 @@
+{
+  "title": "Audit Logs",
+  "description": "View system operation audit records",
+  "list": "Audit Log List",
+  "detail": "Audit Log Detail",
+  "detailDescription": "View detailed audit log information",
+
+  "filters": {
+    "title": "Filters",
+    "username": "Username",
+    "module": "Module",
+    "action": "Action",
+    "entityType": "Entity Type",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "apply": "Apply Filters",
+    "reset": "Reset"
+  },
+
+  "columns": {
+    "time": "Time",
+    "username": "User",
+    "module": "Module",
+    "action": "Action",
+    "entityType": "Entity Type",
+    "ipAddress": "IP Address",
+    "status": "Status",
+    "operations": "Operations"
+  },
+
+  "actions": {
+    "view": "View",
+    "export": "Export",
+    "exportCsv": "Export CSV",
+    "exportExcel": "Export Excel"
+  },
+
+  "stats": {
+    "total": "Total: {count} records",
+    "showing": "Showing: {count} records",
+    "today": "Today's Records",
+    "activeUsers": "Active Users"
+  },
+
+  "pagination": {
+    "showing": "Showing {from} to {to} of {total} results",
+    "rowsPerPage": "Page Size:",
+    "page": "Page",
+    "of": "of",
+    "first": "First Page",
+    "previous": "Previous Page",
+    "next": "Next Page",
+    "last": "Last Page"
+  },
+
+  "messages": {
+    "loading": "Loading...",
+    "noData": "No data available",
+    "exportSuccess": "Export successful",
+    "exportFailed": "Export failed"
+  }
+}

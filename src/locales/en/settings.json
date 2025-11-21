@@ -1,0 +1,30 @@
+{
+  "openThemeSettings": "Open theme settings",
+  "themeSettings": "Theme Settings",
+  "adjustAppearance": "Adjust the appearance and layout to suit your preferences.",
+  "resetAllSettings": "Reset all settings to default values",
+
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "selectThemePreference": "Select theme preference",
+  "themeDescription": "Choose between system preference, light mode, or dark mode",
+
+  "sidebar": "Sidebar",
+  "sidebarInset": "Inset",
+  "sidebarFloating": "Floating",
+  "sidebarSidebar": "Sidebar",
+  "selectSidebarStyle": "Select sidebar style",
+  "sidebarDescription": "Choose between inset, floating, or standard sidebar layout",
+
+  "layout": "Layout",
+  "layoutDefault": "Default",
+  "layoutCompact": "Compact",
+  "layoutFull": "Full layout",
+  "selectLayoutStyle": "Select layout style",
+  "layoutDescription": "Choose between default expanded, compact icon-only, or full layout mode",
+
+  "selectOption": "Select {{option}}",
+  "optionPreview": "{{option}} option preview"
+}

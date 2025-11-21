@@ -1,0 +1,11 @@
+{
+  "home": "首页",
+  "systemManagement": "系统管理",
+  "userManagement": "用户管理",
+  "users": "用户",
+  "roles": "角色",
+  "permissions": "权限",
+  "settings": "设置",
+  "general": "通用",
+  "profile": "个人资料"
+}

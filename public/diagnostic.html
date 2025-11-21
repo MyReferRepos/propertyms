@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG Grid Diagnostic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .status {
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>AG Grid Module Diagnostic</h1>
+    <div id="results"></div>
+
+    <script type="module">
+        const results = document.getElementById('results');
+
+        function addResult(message, isSuccess) {
+            const div = document.createElement('div');
+            div.className = `status ${isSuccess ? 'success' : 'error'}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+        }
+
+        // Check if AG Grid modules are loaded
+        try {
+            const { ModuleRegistry, AllCommunityModule } = await import('ag-grid-community');
+            addResult('✓ AG Grid Community imports successfully', true);
+
+            // Try to register modules
+            try {
+                ModuleRegistry.registerModules([AllCommunityModule]);
+                addResult('✓ AG Grid modules registered successfully', true);
+            } catch (e) {
+                addResult('✗ Failed to register AG Grid modules:<br><pre>' + e.message + '</pre>', false);
+            }
+        } catch (e) {
+            addResult('✗ Failed to import AG Grid:<br><pre>' + e.message + '</pre>', false);
+        }
+
+        // Check main.tsx module
+        try {
+            await import('/src/main.tsx');
+            addResult('✓ Main application loaded successfully', true);
+        } catch (e) {
+            addResult('✗ Failed to load main application:<br><pre>' + e.message + '\n' + e.stack + '</pre>', false);
+        }
+
+        // Console error listener
+        window.addEventListener('error', (e) => {
+            addResult('✗ Runtime Error:<br><pre>' + e.message + '\nat ' + e.filename + ':' + e.lineno + '</pre>', false);
+        });
+
+        console.log('Diagnostic page loaded. Check results above.');
+    </script>
+</body>
+</html>

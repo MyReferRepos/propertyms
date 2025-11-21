@@ -1,0 +1,14 @@
+{
+  "title": "General Settings",
+  "description": "Manage your application preferences and regional settings",
+  "languageAndRegion": "Language & Region",
+  "interfaceLanguage": "Interface Language",
+  "selectLanguage": "Select a language",
+  "languageDescription": "This will change the language of menus, buttons, and other interface elements",
+  "currentLanguage": "Current Language",
+  "languageCode": "Language code",
+  "saveChanges": "Save Changes",
+  "unsavedChanges": "You have unsaved changes",
+  "languageChanged": "Language changed to",
+  "refreshNotice": "Some changes may require a page refresh to take full effect"
+}

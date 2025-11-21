@@ -1,0 +1,184 @@
+{
+  "permissions": [
+    {
+      "name": "查看用户",
+      "code": "users:view",
+      "module": "users",
+      "description": "查看用户列表和详情"
+    },
+    {
+      "name": "创建用户",
+      "code": "users:create",
+      "module": "users",
+      "description": "创建新用户"
+    },
+    {
+      "name": "编辑用户",
+      "code": "users:update",
+      "module": "users",
+      "description": "更新用户信息"
+    },
+    {
+      "name": "删除用户",
+      "code": "users:delete",
+      "module": "users",
+      "description": "删除用户"
+    },
+    {
+      "name": "批量删除用户",
+      "code": "users:batch-delete",
+      "module": "users",
+      "description": "一次性删除多个用户"
+    },
+    {
+      "name": "修改用户密码",
+      "code": "users:change-password",
+      "module": "users",
+      "description": "修改用户密码"
+    },
+    {
+      "name": "修改用户状态",
+      "code": "users:change-status",
+      "module": "users",
+      "description": "激活、暂停或停用用户"
+    },
+    {
+      "name": "查看角色",
+      "code": "roles:view",
+      "module": "roles",
+      "description": "查看角色列表和详情"
+    },
+    {
+      "name": "创建角色",
+      "code": "roles:create",
+      "module": "roles",
+      "description": "创建新角色"
+    },
+    {
+      "name": "编辑角色",
+      "code": "roles:update",
+      "module": "roles",
+      "description": "更新角色信息"
+    },
+    {
+      "name": "删除角色",
+      "code": "roles:delete",
+      "module": "roles",
+      "description": "删除角色"
+    },
+    {
+      "name": "批量删除角色",
+      "code": "roles:batch-delete",
+      "module": "roles",
+      "description": "一次性删除多个角色"
+    },
+    {
+      "name": "管理角色权限",
+      "code": "roles:manage-permissions",
+      "module": "roles",
+      "description": "为角色分配和管理权限"
+    },
+    {
+      "name": "查看权限",
+      "code": "permissions:view",
+      "module": "permissions",
+      "description": "查看权限列表和详情"
+    },
+    {
+      "name": "创建权限",
+      "code": "permissions:create",
+      "module": "permissions",
+      "description": "创建新权限"
+    },
+    {
+      "name": "编辑权限",
+      "code": "permissions:update",
+      "module": "permissions",
+      "description": "更新权限信息"
+    },
+    {
+      "name": "删除权限",
+      "code": "permissions:delete",
+      "module": "permissions",
+      "description": "删除权限"
+    },
+    {
+      "name": "查看菜单组",
+      "code": "menu-groups:view",
+      "module": "menu-groups",
+      "description": "查看菜单组列表和详情"
+    },
+    {
+      "name": "创建菜单组",
+      "code": "menu-groups:create",
+      "module": "menu-groups",
+      "description": "创建新菜单组"
+    },
+    {
+      "name": "编辑菜单组",
+      "code": "menu-groups:update",
+      "module": "menu-groups",
+      "description": "更新菜单组信息"
+    },
+    {
+      "name": "删除菜单组",
+      "code": "menu-groups:delete",
+      "module": "menu-groups",
+      "description": "删除菜单组"
+    },
+    {
+      "name": "批量删除菜单组",
+      "code": "menu-groups:batch-delete",
+      "module": "menu-groups",
+      "description": "一次性删除多个菜单组"
+    },
+    {
+      "name": "查看菜单项",
+      "code": "menu-items:view",
+      "module": "menu-items",
+      "description": "查看菜单项列表和详情"
+    },
+    {
+      "name": "创建菜单项",
+      "code": "menu-items:create",
+      "module": "menu-items",
+      "description": "创建新菜单项"
+    },
+    {
+      "name": "编辑菜单项",
+      "code": "menu-items:update",
+      "module": "menu-items",
+      "description": "更新菜单项信息"
+    },
+    {
+      "name": "删除菜单项",
+      "code": "menu-items:delete",
+      "module": "menu-items",
+      "description": "删除菜单项"
+    },
+    {
+      "name": "批量删除菜单项",
+      "code": "menu-items:batch-delete",
+      "module": "menu-items",
+      "description": "一次性删除多个菜单项"
+    },
+    {
+      "name": "排序菜单项",
+      "code": "menu-items:sort",
+      "module": "menu-items",
+      "description": "重新排列菜单项顺序"
+    },
+    {
+      "name": "查看设置",
+      "code": "settings:view",
+      "module": "settings",
+      "description": "查看系统设置"
+    },
+    {
+      "name": "更新设置",
+      "code": "settings:update",
+      "module": "settings",
+      "description": "更新系统设置"
+    }
+  ]
+}

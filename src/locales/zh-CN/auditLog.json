@@ -1,0 +1,62 @@
+{
+  "title": "审计日志",
+  "description": "查看系统操作审计记录",
+  "list": "审计日志列表",
+  "detail": "审计日志详情",
+  "detailDescription": "查看详细的审计日志信息",
+
+  "filters": {
+    "title": "筛选条件",
+    "username": "用户名",
+    "module": "模块",
+    "action": "操作",
+    "entityType": "实体类型",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
+    "apply": "应用筛选",
+    "reset": "重置"
+  },
+
+  "columns": {
+    "time": "时间",
+    "username": "用户",
+    "module": "模块",
+    "action": "操作",
+    "entityType": "实体类型",
+    "ipAddress": "IP地址",
+    "status": "状态",
+    "operations": "操作"
+  },
+
+  "actions": {
+    "view": "查看",
+    "export": "导出",
+    "exportCsv": "导出 CSV",
+    "exportExcel": "导出 Excel"
+  },
+
+  "stats": {
+    "total": "总计: {count} 条记录",
+    "showing": "显示: {count} 条记录",
+    "today": "今日记录",
+    "activeUsers": "活跃用户"
+  },
+
+  "pagination": {
+    "showing": "显示第 {from} 到 {to} 条，共 {total} 条结果",
+    "rowsPerPage": "每页条数:",
+    "page": "第",
+    "of": "页，共",
+    "first": "首页",
+    "previous": "上一页",
+    "next": "下一页",
+    "last": "末页"
+  },
+
+  "messages": {
+    "loading": "加载中...",
+    "noData": "暂无数据",
+    "exportSuccess": "导出成功",
+    "exportFailed": "导出失败"
+  }
+}

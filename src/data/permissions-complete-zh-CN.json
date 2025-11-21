@@ -1,0 +1,323 @@
+{
+  "permissions": [
+    {
+      "name": "用户列表页面",
+      "code": "page:users",
+      "type": "page",
+      "module": "users",
+      "description": "访问用户列表页面"
+    },
+    {
+      "name": "查看用户",
+      "code": "action:users:view",
+      "type": "action",
+      "module": "users",
+      "action": "view",
+      "parentCode": "page:users",
+      "description": "查看用户列表数据"
+    },
+    {
+      "name": "创建用户",
+      "code": "action:users:create",
+      "type": "action",
+      "module": "users",
+      "action": "create",
+      "parentCode": "page:users",
+      "description": "创建新用户"
+    },
+    {
+      "name": "编辑用户",
+      "code": "action:users:update",
+      "type": "action",
+      "module": "users",
+      "action": "update",
+      "parentCode": "page:users",
+      "description": "更新用户信息"
+    },
+    {
+      "name": "删除用户",
+      "code": "action:users:delete",
+      "type": "action",
+      "module": "users",
+      "action": "delete",
+      "parentCode": "page:users",
+      "description": "删除用户"
+    },
+    {
+      "name": "批量删除用户",
+      "code": "action:users:batch-delete",
+      "type": "action",
+      "module": "users",
+      "action": "batch-delete",
+      "parentCode": "page:users",
+      "description": "一次性删除多个用户"
+    },
+    {
+      "name": "修改用户密码",
+      "code": "action:users:change-password",
+      "type": "action",
+      "module": "users",
+      "action": "change-password",
+      "parentCode": "page:users",
+      "description": "修改用户密码"
+    },
+    {
+      "name": "修改用户状态",
+      "code": "action:users:change-status",
+      "type": "action",
+      "module": "users",
+      "action": "change-status",
+      "parentCode": "page:users",
+      "description": "激活、暂停或停用用户"
+    },
+    {
+      "name": "角色管理页面",
+      "code": "page:users-roles",
+      "type": "page",
+      "module": "users",
+      "description": "访问角色管理页面"
+    },
+    {
+      "name": "查看角色",
+      "code": "action:roles:view",
+      "type": "action",
+      "module": "users",
+      "action": "view",
+      "parentCode": "page:users-roles",
+      "description": "查看角色列表数据"
+    },
+    {
+      "name": "创建角色",
+      "code": "action:roles:create",
+      "type": "action",
+      "module": "users",
+      "action": "create",
+      "parentCode": "page:users-roles",
+      "description": "创建新角色"
+    },
+    {
+      "name": "编辑角色",
+      "code": "action:roles:update",
+      "type": "action",
+      "module": "users",
+      "action": "update",
+      "parentCode": "page:users-roles",
+      "description": "更新角色信息"
+    },
+    {
+      "name": "删除角色",
+      "code": "action:roles:delete",
+      "type": "action",
+      "module": "users",
+      "action": "delete",
+      "parentCode": "page:users-roles",
+      "description": "删除角色"
+    },
+    {
+      "name": "批量删除角色",
+      "code": "action:roles:batch-delete",
+      "type": "action",
+      "module": "users",
+      "action": "batch-delete",
+      "parentCode": "page:users-roles",
+      "description": "一次性删除多个角色"
+    },
+    {
+      "name": "管理角色权限",
+      "code": "action:roles:manage-permissions",
+      "type": "action",
+      "module": "users",
+      "action": "manage-permissions",
+      "parentCode": "page:users-roles",
+      "description": "为角色分配和管理权限"
+    },
+    {
+      "name": "权限管理页面",
+      "code": "page:users-permissions",
+      "type": "page",
+      "module": "users",
+      "description": "访问权限管理页面"
+    },
+    {
+      "name": "查看权限",
+      "code": "action:permissions:view",
+      "type": "action",
+      "module": "users",
+      "action": "view",
+      "parentCode": "page:users-permissions",
+      "description": "查看权限列表数据"
+    },
+    {
+      "name": "创建权限",
+      "code": "action:permissions:create",
+      "type": "action",
+      "module": "users",
+      "action": "create",
+      "parentCode": "page:users-permissions",
+      "description": "创建新权限"
+    },
+    {
+      "name": "编辑权限",
+      "code": "action:permissions:update",
+      "type": "action",
+      "module": "users",
+      "action": "update",
+      "parentCode": "page:users-permissions",
+      "description": "更新权限信息"
+    },
+    {
+      "name": "删除权限",
+      "code": "action:permissions:delete",
+      "type": "action",
+      "module": "users",
+      "action": "delete",
+      "parentCode": "page:users-permissions",
+      "description": "删除权限"
+    },
+    {
+      "name": "菜单管理页面",
+      "code": "page:menu",
+      "type": "page",
+      "module": "menu",
+      "description": "访问菜单管理页面"
+    },
+    {
+      "name": "菜单组管理页面",
+      "code": "page:menu-groups",
+      "type": "page",
+      "module": "menu",
+      "description": "访问菜单组管理页面"
+    },
+    {
+      "name": "查看菜单组",
+      "code": "action:menu-groups:view",
+      "type": "action",
+      "module": "menu",
+      "action": "view",
+      "parentCode": "page:menu-groups",
+      "description": "查看菜单组列表数据"
+    },
+    {
+      "name": "创建菜单组",
+      "code": "action:menu-groups:create",
+      "type": "action",
+      "module": "menu",
+      "action": "create",
+      "parentCode": "page:menu-groups",
+      "description": "创建新菜单组"
+    },
+    {
+      "name": "编辑菜单组",
+      "code": "action:menu-groups:update",
+      "type": "action",
+      "module": "menu",
+      "action": "update",
+      "parentCode": "page:menu-groups",
+      "description": "更新菜单组信息"
+    },
+    {
+      "name": "删除菜单组",
+      "code": "action:menu-groups:delete",
+      "type": "action",
+      "module": "menu",
+      "action": "delete",
+      "parentCode": "page:menu-groups",
+      "description": "删除菜单组"
+    },
+    {
+      "name": "批量删除菜单组",
+      "code": "action:menu-groups:batch-delete",
+      "type": "action",
+      "module": "menu",
+      "action": "batch-delete",
+      "parentCode": "page:menu-groups",
+      "description": "一次性删除多个菜单组"
+    },
+    {
+      "name": "菜单项管理页面",
+      "code": "page:menu-items",
+      "type": "page",
+      "module": "menu",
+      "description": "访问菜单项管理页面"
+    },
+    {
+      "name": "查看菜单项",
+      "code": "action:menu-items:view",
+      "type": "action",
+      "module": "menu",
+      "action": "view",
+      "parentCode": "page:menu-items",
+      "description": "查看菜单项列表数据"
+    },
+    {
+      "name": "创建菜单项",
+      "code": "action:menu-items:create",
+      "type": "action",
+      "module": "menu",
+      "action": "create",
+      "parentCode": "page:menu-items",
+      "description": "创建新菜单项"
+    },
+    {
+      "name": "编辑菜单项",
+      "code": "action:menu-items:update",
+      "type": "action",
+      "module": "menu",
+      "action": "update",
+      "parentCode": "page:menu-items",
+      "description": "更新菜单项信息"
+    },
+    {
+      "name": "删除菜单项",
+      "code": "action:menu-items:delete",
+      "type": "action",
+      "module": "menu",
+      "action": "delete",
+      "parentCode": "page:menu-items",
+      "description": "删除菜单项"
+    },
+    {
+      "name": "批量删除菜单项",
+      "code": "action:menu-items:batch-delete",
+      "type": "action",
+      "module": "menu",
+      "action": "batch-delete",
+      "parentCode": "page:menu-items",
+      "description": "一次性删除多个菜单项"
+    },
+    {
+      "name": "排序菜单项",
+      "code": "action:menu-items:sort",
+      "type": "action",
+      "module": "menu",
+      "action": "sort",
+      "parentCode": "page:menu-items",
+      "description": "重新排列菜单项顺序"
+    },
+    {
+      "name": "通用设置页面",
+      "code": "page:settings-general",
+      "type": "page",
+      "module": "settings",
+      "description": "访问通用设置页面"
+    },
+    {
+      "name": "查看设置",
+      "code": "action:settings:view",
+      "type": "action",
+      "module": "settings",
+      "action": "view",
+      "parentCode": "page:settings-general",
+      "description": "查看系统设置"
+    },
+    {
+      "name": "更新设置",
+      "code": "action:settings:update",
+      "type": "action",
+      "module": "settings",
+      "action": "update",
+      "parentCode": "page:settings-general",
+      "description": "更新系统设置"
+    }
+  ]
+}

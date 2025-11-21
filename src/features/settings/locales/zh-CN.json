@@ -1,0 +1,14 @@
+{
+  "title": "通用设置",
+  "description": "管理您的应用程序偏好和区域设置",
+  "languageAndRegion": "语言与地区",
+  "interfaceLanguage": "界面语言",
+  "selectLanguage": "选择语言",
+  "languageDescription": "这将改变菜单、按钮和其他界面元素的语言",
+  "currentLanguage": "当前语言",
+  "languageCode": "语言代码",
+  "saveChanges": "保存更改",
+  "unsavedChanges": "您有未保存的更改",
+  "languageChanged": "语言已更改为",
+  "refreshNotice": "某些更改可能需要刷新页面才能完全生效"
+}

@@ -1,0 +1,11 @@
+{
+  "home": "Home",
+  "systemManagement": "System Management",
+  "userManagement": "User Management",
+  "users": "Users",
+  "roles": "Roles",
+  "permissions": "Permissions",
+  "settings": "Settings",
+  "general": "General",
+  "profile": "Profile"
+}

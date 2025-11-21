@@ -1,0 +1,12 @@
+{
+  "profile": "个人资料",
+  "settings": "设置",
+  "logout": "退出登录",
+  "account": "账户",
+  "billing": "账单",
+  "team": "团队",
+  "subscription": "订阅",
+  "signOutTitle": "退出登录",
+  "signOutDescription": "确定要退出登录吗？您需要重新登录才能访问您的账户。",
+  "signOutConfirm": "退出登录"
+}

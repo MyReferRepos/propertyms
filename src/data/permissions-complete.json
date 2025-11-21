@@ -1,0 +1,323 @@
+{
+  "permissions": [
+    {
+      "name": "Users Page",
+      "code": "page:users",
+      "type": "page",
+      "module": "users",
+      "description": "Access to users list page"
+    },
+    {
+      "name": "View Users",
+      "code": "action:users:view",
+      "type": "action",
+      "module": "users",
+      "action": "view",
+      "parentCode": "page:users",
+      "description": "View user list data"
+    },
+    {
+      "name": "Create User",
+      "code": "action:users:create",
+      "type": "action",
+      "module": "users",
+      "action": "create",
+      "parentCode": "page:users",
+      "description": "Create new users"
+    },
+    {
+      "name": "Update User",
+      "code": "action:users:update",
+      "type": "action",
+      "module": "users",
+      "action": "update",
+      "parentCode": "page:users",
+      "description": "Update user information"
+    },
+    {
+      "name": "Delete User",
+      "code": "action:users:delete",
+      "type": "action",
+      "module": "users",
+      "action": "delete",
+      "parentCode": "page:users",
+      "description": "Delete users"
+    },
+    {
+      "name": "Batch Delete Users",
+      "code": "action:users:batch-delete",
+      "type": "action",
+      "module": "users",
+      "action": "batch-delete",
+      "parentCode": "page:users",
+      "description": "Delete multiple users at once"
+    },
+    {
+      "name": "Change User Password",
+      "code": "action:users:change-password",
+      "type": "action",
+      "module": "users",
+      "action": "change-password",
+      "parentCode": "page:users",
+      "description": "Change user passwords"
+    },
+    {
+      "name": "Change User Status",
+      "code": "action:users:change-status",
+      "type": "action",
+      "module": "users",
+      "action": "change-status",
+      "parentCode": "page:users",
+      "description": "Activate, suspend, or deactivate users"
+    },
+    {
+      "name": "Roles Page",
+      "code": "page:users-roles",
+      "type": "page",
+      "module": "users",
+      "description": "Access to roles management page"
+    },
+    {
+      "name": "View Roles",
+      "code": "action:roles:view",
+      "type": "action",
+      "module": "users",
+      "action": "view",
+      "parentCode": "page:users-roles",
+      "description": "View role list data"
+    },
+    {
+      "name": "Create Role",
+      "code": "action:roles:create",
+      "type": "action",
+      "module": "users",
+      "action": "create",
+      "parentCode": "page:users-roles",
+      "description": "Create new roles"
+    },
+    {
+      "name": "Update Role",
+      "code": "action:roles:update",
+      "type": "action",
+      "module": "users",
+      "action": "update",
+      "parentCode": "page:users-roles",
+      "description": "Update role information"
+    },
+    {
+      "name": "Delete Role",
+      "code": "action:roles:delete",
+      "type": "action",
+      "module": "users",
+      "action": "delete",
+      "parentCode": "page:users-roles",
+      "description": "Delete roles"
+    },
+    {
+      "name": "Batch Delete Roles",
+      "code": "action:roles:batch-delete",
+      "type": "action",
+      "module": "users",
+      "action": "batch-delete",
+      "parentCode": "page:users-roles",
+      "description": "Delete multiple roles at once"
+    },
+    {
+      "name": "Manage Role Permissions",
+      "code": "action:roles:manage-permissions",
+      "type": "action",
+      "module": "users",
+      "action": "manage-permissions",
+      "parentCode": "page:users-roles",
+      "description": "Assign and manage permissions for roles"
+    },
+    {
+      "name": "Permissions Page",
+      "code": "page:users-permissions",
+      "type": "page",
+      "module": "users",
+      "description": "Access to permissions management page"
+    },
+    {
+      "name": "View Permissions",
+      "code": "action:permissions:view",
+      "type": "action",
+      "module": "users",
+      "action": "view",
+      "parentCode": "page:users-permissions",
+      "description": "View permission list data"
+    },
+    {
+      "name": "Create Permission",
+      "code": "action:permissions:create",
+      "type": "action",
+      "module": "users",
+      "action": "create",
+      "parentCode": "page:users-permissions",
+      "description": "Create new permissions"
+    },
+    {
+      "name": "Update Permission",
+      "code": "action:permissions:update",
+      "type": "action",
+      "module": "users",
+      "action": "update",
+      "parentCode": "page:users-permissions",
+      "description": "Update permission information"
+    },
+    {
+      "name": "Delete Permission",
+      "code": "action:permissions:delete",
+      "type": "action",
+      "module": "users",
+      "action": "delete",
+      "parentCode": "page:users-permissions",
+      "description": "Delete permissions"
+    },
+    {
+      "name": "Menu Management Page",
+      "code": "page:menu",
+      "type": "page",
+      "module": "menu",
+      "description": "Access to menu management page"
+    },
+    {
+      "name": "Menu Groups Page",
+      "code": "page:menu-groups",
+      "type": "page",
+      "module": "menu",
+      "description": "Access to menu groups management page"
+    },
+    {
+      "name": "View Menu Groups",
+      "code": "action:menu-groups:view",
+      "type": "action",
+      "module": "menu",
+      "action": "view",
+      "parentCode": "page:menu-groups",
+      "description": "View menu group list data"
+    },
+    {
+      "name": "Create Menu Group",
+      "code": "action:menu-groups:create",
+      "type": "action",
+      "module": "menu",
+      "action": "create",
+      "parentCode": "page:menu-groups",
+      "description": "Create new menu groups"
+    },
+    {
+      "name": "Update Menu Group",
+      "code": "action:menu-groups:update",
+      "type": "action",
+      "module": "menu",
+      "action": "update",
+      "parentCode": "page:menu-groups",
+      "description": "Update menu group information"
+    },
+    {
+      "name": "Delete Menu Group",
+      "code": "action:menu-groups:delete",
+      "type": "action",
+      "module": "menu",
+      "action": "delete",
+      "parentCode": "page:menu-groups",
+      "description": "Delete menu groups"
+    },
+    {
+      "name": "Batch Delete Menu Groups",
+      "code": "action:menu-groups:batch-delete",
+      "type": "action",
+      "module": "menu",
+      "action": "batch-delete",
+      "parentCode": "page:menu-groups",
+      "description": "Delete multiple menu groups at once"
+    },
+    {
+      "name": "Menu Items Page",
+      "code": "page:menu-items",
+      "type": "page",
+      "module": "menu",
+      "description": "Access to menu items management page"
+    },
+    {
+      "name": "View Menu Items",
+      "code": "action:menu-items:view",
+      "type": "action",
+      "module": "menu",
+      "action": "view",
+      "parentCode": "page:menu-items",
+      "description": "View menu item list data"
+    },
+    {
+      "name": "Create Menu Item",
+      "code": "action:menu-items:create",
+      "type": "action",
+      "module": "menu",
+      "action": "create",
+      "parentCode": "page:menu-items",
+      "description": "Create new menu items"
+    },
+    {
+      "name": "Update Menu Item",
+      "code": "action:menu-items:update",
+      "type": "action",
+      "module": "menu",
+      "action": "update",
+      "parentCode": "page:menu-items",
+      "description": "Update menu item information"
+    },
+    {
+      "name": "Delete Menu Item",
+      "code": "action:menu-items:delete",
+      "type": "action",
+      "module": "menu",
+      "action": "delete",
+      "parentCode": "page:menu-items",
+      "description": "Delete menu items"
+    },
+    {
+      "name": "Batch Delete Menu Items",
+      "code": "action:menu-items:batch-delete",
+      "type": "action",
+      "module": "menu",
+      "action": "batch-delete",
+      "parentCode": "page:menu-items",
+      "description": "Delete multiple menu items at once"
+    },
+    {
+      "name": "Sort Menu Items",
+      "code": "action:menu-items:sort",
+      "type": "action",
+      "module": "menu",
+      "action": "sort",
+      "parentCode": "page:menu-items",
+      "description": "Reorder menu items"
+    },
+    {
+      "name": "General Settings Page",
+      "code": "page:settings-general",
+      "type": "page",
+      "module": "settings",
+      "description": "Access to general settings page"
+    },
+    {
+      "name": "View Settings",
+      "code": "action:settings:view",
+      "type": "action",
+      "module": "settings",
+      "action": "view",
+      "parentCode": "page:settings-general",
+      "description": "View system settings"
+    },
+    {
+      "name": "Update Settings",
+      "code": "action:settings:update",
+      "type": "action",
+      "module": "settings",
+      "action": "update",
+      "parentCode": "page:settings-general",
+      "description": "Update system settings"
+    }
+  ]
+}

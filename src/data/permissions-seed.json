@@ -1,0 +1,184 @@
+{
+  "permissions": [
+    {
+      "name": "View Users",
+      "code": "users:view",
+      "module": "users",
+      "description": "View user list and details"
+    },
+    {
+      "name": "Create User",
+      "code": "users:create",
+      "module": "users",
+      "description": "Create new users"
+    },
+    {
+      "name": "Update User",
+      "code": "users:update",
+      "module": "users",
+      "description": "Update user information"
+    },
+    {
+      "name": "Delete User",
+      "code": "users:delete",
+      "module": "users",
+      "description": "Delete users"
+    },
+    {
+      "name": "Batch Delete Users",
+      "code": "users:batch-delete",
+      "module": "users",
+      "description": "Delete multiple users at once"
+    },
+    {
+      "name": "Change User Password",
+      "code": "users:change-password",
+      "module": "users",
+      "description": "Change user passwords"
+    },
+    {
+      "name": "Change User Status",
+      "code": "users:change-status",
+      "module": "users",
+      "description": "Activate, suspend, or deactivate users"
+    },
+    {
+      "name": "View Roles",
+      "code": "roles:view",
+      "module": "roles",
+      "description": "View role list and details"
+    },
+    {
+      "name": "Create Role",
+      "code": "roles:create",
+      "module": "roles",
+      "description": "Create new roles"
+    },
+    {
+      "name": "Update Role",
+      "code": "roles:update",
+      "module": "roles",
+      "description": "Update role information"
+    },
+    {
+      "name": "Delete Role",
+      "code": "roles:delete",
+      "module": "roles",
+      "description": "Delete roles"
+    },
+    {
+      "name": "Batch Delete Roles",
+      "code": "roles:batch-delete",
+      "module": "roles",
+      "description": "Delete multiple roles at once"
+    },
+    {
+      "name": "Manage Role Permissions",
+      "code": "roles:manage-permissions",
+      "module": "roles",
+      "description": "Assign and manage permissions for roles"
+    },
+    {
+      "name": "View Permissions",
+      "code": "permissions:view",
+      "module": "permissions",
+      "description": "View permission list and details"
+    },
+    {
+      "name": "Create Permission",
+      "code": "permissions:create",
+      "module": "permissions",
+      "description": "Create new permissions"
+    },
+    {
+      "name": "Update Permission",
+      "code": "permissions:update",
+      "module": "permissions",
+      "description": "Update permission information"
+    },
+    {
+      "name": "Delete Permission",
+      "code": "permissions:delete",
+      "module": "permissions",
+      "description": "Delete permissions"
+    },
+    {
+      "name": "View Menu Groups",
+      "code": "menu-groups:view",
+      "module": "menu-groups",
+      "description": "View menu group list and details"
+    },
+    {
+      "name": "Create Menu Group",
+      "code": "menu-groups:create",
+      "module": "menu-groups",
+      "description": "Create new menu groups"
+    },
+    {
+      "name": "Update Menu Group",
+      "code": "menu-groups:update",
+      "module": "menu-groups",
+      "description": "Update menu group information"
+    },
+    {
+      "name": "Delete Menu Group",
+      "code": "menu-groups:delete",
+      "module": "menu-groups",
+      "description": "Delete menu groups"
+    },
+    {
+      "name": "Batch Delete Menu Groups",
+      "code": "menu-groups:batch-delete",
+      "module": "menu-groups",
+      "description": "Delete multiple menu groups at once"
+    },
+    {
+      "name": "View Menu Items",
+      "code": "menu-items:view",
+      "module": "menu-items",
+      "description": "View menu item list and details"
+    },
+    {
+      "name": "Create Menu Item",
+      "code": "menu-items:create",
+      "module": "menu-items",
+      "description": "Create new menu items"
+    },
+    {
+      "name": "Update Menu Item",
+      "code": "menu-items:update",
+      "module": "menu-items",
+      "description": "Update menu item information"
+    },
+    {
+      "name": "Delete Menu Item",
+      "code": "menu-items:delete",
+      "module": "menu-items",
+      "description": "Delete menu items"
+    },
+    {
+      "name": "Batch Delete Menu Items",
+      "code": "menu-items:batch-delete",
+      "module": "menu-items",
+      "description": "Delete multiple menu items at once"
+    },
+    {
+      "name": "Sort Menu Items",
+      "code": "menu-items:sort",
+      "module": "menu-items",
+      "description": "Reorder menu items"
+    },
+    {
+      "name": "View Settings",
+      "code": "settings:view",
+      "module": "settings",
+      "description": "View system settings"
+    },
+    {
+      "name": "Update Settings",
+      "code": "settings:update",
+      "module": "settings",
+      "description": "Update system settings"
+    }
+  ]
+}
