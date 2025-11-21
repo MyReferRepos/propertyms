@@ -1,0 +1,316 @@
+import { Settings, User, Bell, Shield, CreditCard, Mail, Globe } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
+import { useAuthStore } from '@/lib/auth/auth-store'
+
+export function SettingsPage() {
+  const { user } = useAuthStore()
+
+  return (
+    <div className="space-y-6">
+      {/* Page Header */}
+      <div>
+        <div className="flex items-center gap-2">
+          <Settings className="h-8 w-8 text-primary" />
+          <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+        </div>
+        <p className="text-muted-foreground mt-1">Manage your account and application preferences</p>
+      </div>
+
+      {/* Profile Settings */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <User className="h-5 w-5" />
+            <CardTitle>Profile Information</CardTitle>
+          </div>
+          <CardDescription>Update your personal information and contact details</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="name">Full Name</Label>
+              <Input id="name" defaultValue={user?.displayName || 'Demo Property Manager'} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" defaultValue={user?.email || 'admin@example.com'} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input id="phone" type="tel" placeholder="+64 21 123 4567" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="company">Company Name</Label>
+              <Input id="company" placeholder="PropertyHub NZ Ltd" />
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <Button>Save Changes</Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Notification Settings */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Bell className="h-5 w-5" />
+            <CardTitle>Notifications</CardTitle>
+          </div>
+          <CardDescription>Configure how you receive notifications and alerts</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="email-notifications">Email Notifications</Label>
+              <p className="text-sm text-muted-foreground">
+                Receive email alerts for important events
+              </p>
+            </div>
+            <Switch id="email-notifications" defaultChecked />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="lease-expiry">Lease Expiry Alerts</Label>
+              <p className="text-sm text-muted-foreground">
+                Get notified when leases are about to expire
+              </p>
+            </div>
+            <Switch id="lease-expiry" defaultChecked />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="maintenance-alerts">Maintenance Requests</Label>
+              <p className="text-sm text-muted-foreground">
+                Receive alerts for new maintenance requests
+              </p>
+            </div>
+            <Switch id="maintenance-alerts" defaultChecked />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="payment-alerts">Payment Notifications</Label>
+              <p className="text-sm text-muted-foreground">
+                Get notified about rent payments and arrears
+              </p>
+            </div>
+            <Switch id="payment-alerts" defaultChecked />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="ai-insights">AI Insights</Label>
+              <p className="text-sm text-muted-foreground">
+                Receive PropertyPilot AI recommendations
+              </p>
+            </div>
+            <Switch id="ai-insights" defaultChecked />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Security Settings */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Shield className="h-5 w-5" />
+            <CardTitle>Security</CardTitle>
+          </div>
+          <CardDescription>Manage your password and security preferences</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="current-password">Current Password</Label>
+            <Input id="current-password" type="password" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="new-password">New Password</Label>
+            <Input id="new-password" type="password" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="confirm-password">Confirm New Password</Label>
+            <Input id="confirm-password" type="password" />
+          </div>
+          <div className="flex items-center justify-between pt-2">
+            <div className="space-y-0.5">
+              <Label htmlFor="two-factor">Two-Factor Authentication</Label>
+              <p className="text-sm text-muted-foreground">
+                Add an extra layer of security to your account
+              </p>
+            </div>
+            <Switch id="two-factor" />
+          </div>
+          <div className="flex justify-end gap-2">
+            <Button variant="outline">Cancel</Button>
+            <Button>Update Password</Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Billing Settings */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <CreditCard className="h-5 w-5" />
+            <CardTitle>Billing & Subscription</CardTitle>
+          </div>
+          <CardDescription>Manage your subscription and payment methods</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between rounded-lg border p-4">
+            <div>
+              <p className="font-semibold">Professional Plan</p>
+              <p className="text-sm text-muted-foreground">Up to 50 properties • NZD $99/month</p>
+            </div>
+            <Button variant="outline">Change Plan</Button>
+          </div>
+
+          <div className="space-y-2">
+            <Label>Payment Method</Label>
+            <div className="flex items-center justify-between rounded-lg border p-4">
+              <div className="flex items-center gap-3">
+                <CreditCard className="h-5 w-5 text-muted-foreground" />
+                <div>
+                  <p className="font-medium">Visa ending in 4242</p>
+                  <p className="text-sm text-muted-foreground">Expires 12/2025</p>
+                </div>
+              </div>
+              <Button variant="outline" size="sm">
+                Update
+              </Button>
+            </div>
+          </div>
+
+          <div className="pt-2">
+            <Button variant="outline" className="w-full">
+              View Billing History
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Email Preferences */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Mail className="h-5 w-5" />
+            <CardTitle>Email Preferences</CardTitle>
+          </div>
+          <CardDescription>Choose what emails you want to receive</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="marketing-emails">Marketing Emails</Label>
+              <p className="text-sm text-muted-foreground">
+                Product updates and feature announcements
+              </p>
+            </div>
+            <Switch id="marketing-emails" defaultChecked />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="newsletter">Weekly Newsletter</Label>
+              <p className="text-sm text-muted-foreground">
+                Property management tips and industry news
+              </p>
+            </div>
+            <Switch id="newsletter" />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="reports-email">Report Summaries</Label>
+              <p className="text-sm text-muted-foreground">
+                Weekly/monthly summary of your portfolio performance
+              </p>
+            </div>
+            <Switch id="reports-email" defaultChecked />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Language & Region */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Globe className="h-5 w-5" />
+            <CardTitle>Language & Region</CardTitle>
+          </div>
+          <CardDescription>Set your language and regional preferences</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="language">Language</Label>
+              <select
+                id="language"
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+              >
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="timezone">Timezone</Label>
+              <select
+                id="timezone"
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+              >
+                <option value="Pacific/Auckland">New Zealand (NZST)</option>
+                <option value="Australia/Sydney">Australia (AEST)</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="currency">Currency</Label>
+              <select
+                id="currency"
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+              >
+                <option value="NZD">NZD ($)</option>
+                <option value="AUD">AUD (A$)</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="date-format">Date Format</Label>
+              <select
+                id="date-format"
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+              >
+                <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+              </select>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Danger Zone */}
+      <Card className="border-red-200">
+        <CardHeader>
+          <CardTitle className="text-red-600">Danger Zone</CardTitle>
+          <CardDescription>Irreversible actions for your account</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between rounded-lg border border-red-200 bg-red-50 p-4">
+            <div>
+              <p className="font-semibold text-red-900">Delete Account</p>
+              <p className="text-sm text-red-700">
+                Permanently delete your account and all associated data
+              </p>
+            </div>
+            <Button variant="destructive">Delete Account</Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
