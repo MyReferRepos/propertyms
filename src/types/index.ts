@@ -233,7 +233,7 @@ export interface MarketData {
     townhouse: number
   }
   rentalYield: number
-  vacancy: Rate: number
+  vacancyRate: number
   medianPrice: number
   priceGrowth: number // %
 }

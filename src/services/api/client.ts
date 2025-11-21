@@ -21,7 +21,7 @@ class MockAPIClient implements APIClient {
     }
   }
 
-  async get<T>(url: string, params?: Record<string, any>): Promise<APIResponse<T>> {
+  async get<T>(_url: string, _params?: Record<string, any>): Promise<APIResponse<T>> {
     // Mock implementation - will be replaced with actual API calls
     // For now, this will be handled by individual service files
     throw new Error('Mock GET not implemented. Use specific service methods.')
@@ -118,14 +118,15 @@ class RealAPIClient implements APIClient {
 
 // Factory function to create API client
 export const createAPIClient = (): APIClient => {
-  const useMock = import.meta.env.VITE_USE_MOCK_API !== 'false' // Default to mock
+  // For MVP demo, always use Mock API
+  const useMock = true
 
   if (useMock) {
     console.log('[API] Using Mock API Client')
     return new MockAPIClient()
   } else {
     console.log('[API] Using Real API Client')
-    const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5199/api'
+    const baseURL = 'http://localhost:5199/api'
     return new RealAPIClient(baseURL)
   }
 }
