@@ -56,7 +56,7 @@ class SimpleAuthService {
   }
 
   getStoredUser(): User | null {
-    const userStr = localStorage.setItem(STORAGE_KEYS.USER)
+    const userStr = localStorage.getItem(STORAGE_KEYS.USER)
     if (!userStr) return null
     try {
       return JSON.parse(userStr)
