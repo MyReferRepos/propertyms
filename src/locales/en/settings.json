@@ -4,7 +4,11 @@
     "subtitle": "Manage your account and preferences",
     "profile": {
       "title": "Profile",
-      "description": "Update your personal information"
+      "description": "Update your personal information",
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "company": "Company Name"
     },
     "notifications": {
       "title": "Notifications",
@@ -25,7 +29,10 @@
     "security": {
       "title": "Security",
       "description": "Manage your security settings",
-      "changePassword": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "changePassword": "Update Password",
       "twoFactor": "Two-Factor Authentication",
       "twoFactorDesc": "Add an extra layer of security"
     },
@@ -33,7 +40,23 @@
       "title": "Billing & Subscription",
       "description": "Manage your subscription and payment methods",
       "currentPlan": "Current Plan",
-      "changePlan": "Change Plan"
+      "changePlan": "Change Plan",
+      "paymentMethod": "Payment Method",
+      "viewBillingHistory": "View Billing History",
+      "professionalPlan": "Professional Plan",
+      "planDetails": "Up to 50 properties • NZD $99/month",
+      "cardEnding": "Visa ending in 4242",
+      "cardExpires": "Expires 12/2025"
+    },
+    "email": {
+      "title": "Email Preferences",
+      "description": "Choose what emails you want to receive",
+      "marketing": "Marketing Emails",
+      "marketingDesc": "Product updates and feature announcements",
+      "newsletter": "Weekly Newsletter",
+      "newsletterDesc": "Property management tips and industry news",
+      "reports": "Report Summaries",
+      "reportsDesc": "Weekly/monthly summary of your portfolio performance"
     },
     "preferences": {
       "title": "Preferences",
@@ -45,6 +68,7 @@
     },
     "dangerZone": {
       "title": "Danger Zone",
+      "description": "Irreversible actions for your account",
       "deleteAccount": "Delete Account",
       "deleteAccountDesc": "Permanently delete your account and all data"
     }

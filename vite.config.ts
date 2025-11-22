@@ -19,4 +19,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    // SPA路由支持：所有404请求都返回index.html
+    // 这样前端路由才能处理刷新和直接访问的情况
+    historyApiFallback: true,
+  },
 })

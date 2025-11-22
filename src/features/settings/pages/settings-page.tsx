@@ -34,19 +34,19 @@ export function SettingsPage() {
         <CardContent className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">{t('settings.profile.fullName')}</Label>
               <Input id="name" defaultValue={user?.displayName || 'Demo Property Manager'} />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('settings.profile.email')}</Label>
               <Input id="email" type="email" defaultValue={user?.email || 'admin@example.com'} />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">{t('settings.profile.phone')}</Label>
               <Input id="phone" type="tel" placeholder="+64 21 123 4567" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="company">Company Name</Label>
+              <Label htmlFor="company">{t('settings.profile.company')}</Label>
               <Input id="company" placeholder="PropertyHub NZ Ltd" />
             </div>
           </div>
@@ -129,15 +129,15 @@ export function SettingsPage() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="current-password">Current Password</Label>
+            <Label htmlFor="current-password">{t('settings.security.currentPassword')}</Label>
             <Input id="current-password" type="password" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="new-password">New Password</Label>
+            <Label htmlFor="new-password">{t('settings.security.newPassword')}</Label>
             <Input id="new-password" type="password" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="confirm-password">Confirm New Password</Label>
+            <Label htmlFor="confirm-password">{t('settings.security.confirmPassword')}</Label>
             <Input id="confirm-password" type="password" />
           </div>
           <div className="flex items-center justify-between pt-2">
@@ -168,20 +168,20 @@ export function SettingsPage() {
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between rounded-lg border p-4">
             <div>
-              <p className="font-semibold">Professional Plan</p>
-              <p className="text-sm text-muted-foreground">Up to 50 properties • NZD $99/month</p>
+              <p className="font-semibold">{t('settings.billing.professionalPlan')}</p>
+              <p className="text-sm text-muted-foreground">{t('settings.billing.planDetails')}</p>
             </div>
             <Button variant="outline">{t('settings.billing.changePlan')}</Button>
           </div>
 
           <div className="space-y-2">
-            <Label>Payment Method</Label>
+            <Label>{t('settings.billing.paymentMethod')}</Label>
             <div className="flex items-center justify-between rounded-lg border p-4">
               <div className="flex items-center gap-3">
                 <CreditCard className="h-5 w-5 text-muted-foreground" />
                 <div>
-                  <p className="font-medium">Visa ending in 4242</p>
-                  <p className="text-sm text-muted-foreground">Expires 12/2025</p>
+                  <p className="font-medium">{t('settings.billing.cardEnding')}</p>
+                  <p className="text-sm text-muted-foreground">{t('settings.billing.cardExpires')}</p>
                 </div>
               </div>
               <Button variant="outline" size="sm">
@@ -192,7 +192,7 @@ export function SettingsPage() {
 
           <div className="pt-2">
             <Button variant="outline" className="w-full">
-              View Billing History
+              {t('settings.billing.viewBillingHistory')}
             </Button>
           </div>
         </CardContent>
@@ -203,16 +203,16 @@ export function SettingsPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Mail className="h-5 w-5" />
-            <CardTitle>Email Preferences</CardTitle>
+            <CardTitle>{t('settings.email.title')}</CardTitle>
           </div>
-          <CardDescription>Choose what emails you want to receive</CardDescription>
+          <CardDescription>{t('settings.email.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="marketing-emails">Marketing Emails</Label>
+              <Label htmlFor="marketing-emails">{t('settings.email.marketing')}</Label>
               <p className="text-sm text-muted-foreground">
-                Product updates and feature announcements
+                {t('settings.email.marketingDesc')}
               </p>
             </div>
             <Switch id="marketing-emails" defaultChecked />
@@ -220,9 +220,9 @@ export function SettingsPage() {
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="newsletter">Weekly Newsletter</Label>
+              <Label htmlFor="newsletter">{t('settings.email.newsletter')}</Label>
               <p className="text-sm text-muted-foreground">
-                Property management tips and industry news
+                {t('settings.email.newsletterDesc')}
               </p>
             </div>
             <Switch id="newsletter" />
@@ -230,9 +230,9 @@ export function SettingsPage() {
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="reports-email">Report Summaries</Label>
+              <Label htmlFor="reports-email">{t('settings.email.reports')}</Label>
               <p className="text-sm text-muted-foreground">
-                Weekly/monthly summary of your portfolio performance
+                {t('settings.email.reportsDesc')}
               </p>
             </div>
             <Switch id="reports-email" defaultChecked />
@@ -299,7 +299,7 @@ export function SettingsPage() {
       <Card className="border-red-200">
         <CardHeader>
           <CardTitle className="text-red-600">{t('settings.dangerZone.title')}</CardTitle>
-          <CardDescription>Irreversible actions for your account</CardDescription>
+          <CardDescription>{t('settings.dangerZone.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between rounded-lg border border-red-200 bg-red-50 p-4">
