@@ -1,30 +1,52 @@
 {
-  "openThemeSettings": "打开主题设置",
-  "themeSettings": "主题设置",
-  "adjustAppearance": "调整外观和布局以适应您的偏好。",
-  "resetAllSettings": "将所有设置重置为默认值",
-
-  "theme": "主题",
-  "themeSystem": "跟随系统",
-  "themeLight": "浅色",
-  "themeDark": "深色",
-  "selectThemePreference": "选择主题偏好",
-  "themeDescription": "在系统偏好、浅色模式或深色模式之间选择",
-
-  "sidebar": "侧边栏",
-  "sidebarInset": "内嵌",
-  "sidebarFloating": "浮动",
-  "sidebarSidebar": "侧边栏",
-  "selectSidebarStyle": "选择侧边栏样式",
-  "sidebarDescription": "在内嵌、浮动或标准侧边栏布局之间选择",
-
-  "layout": "布局",
-  "layoutDefault": "默认",
-  "layoutCompact": "紧凑",
-  "layoutFull": "完整布局",
-  "selectLayoutStyle": "选择布局样式",
-  "layoutDescription": "在默认展开、紧凑图标或完整布局模式之间选择",
-
-  "selectOption": "选择 {{option}}",
-  "optionPreview": "{{option}} 选项预览"
+  "settings": {
+    "title": "设置",
+    "subtitle": "管理您的账户和偏好设置",
+    "profile": {
+      "title": "个人资料",
+      "description": "更新您的个人信息"
+    },
+    "notifications": {
+      "title": "通知设置",
+      "description": "管理您接收通知的方式",
+      "email": "邮件通知",
+      "emailDesc": "接收重要事件的邮件提醒",
+      "push": "推送通知",
+      "pushDesc": "在您的设备上接收推送通知",
+      "sms": "短信通知",
+      "smsDesc": "接收紧急事项的短信提醒",
+      "maintenanceAlerts": "维护警报",
+      "maintenanceAlertsDesc": "接收维护请求的通知",
+      "leaseReminders": "租约提醒",
+      "leaseRemindersDesc": "租约到期日期提醒",
+      "paymentAlerts": "付款警报",
+      "paymentAlertsDesc": "租金付款相关通知"
+    },
+    "security": {
+      "title": "安全设置",
+      "description": "管理您的安全设置",
+      "changePassword": "修改密码",
+      "twoFactor": "双因素认证",
+      "twoFactorDesc": "增加额外的安全保护层"
+    },
+    "billing": {
+      "title": "账单和订阅",
+      "description": "管理您的订阅和支付方式",
+      "currentPlan": "当前方案",
+      "changePlan": "更改方案"
+    },
+    "preferences": {
+      "title": "偏好设置",
+      "language": "语言和地区",
+      "languageDesc": "选择您的首选语言",
+      "timezone": "时区",
+      "currency": "货币",
+      "dateFormat": "日期格式"
+    },
+    "dangerZone": {
+      "title": "危险区域",
+      "deleteAccount": "删除账户",
+      "deleteAccountDesc": "永久删除您的账户和所有数据"
+    }
+  }
 }

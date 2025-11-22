@@ -5,9 +5,11 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { useAuthStore } from '@/lib/auth/auth-store'
+import { useI18n } from '@/lib/i18n'
 
 export function SettingsPage() {
   const { user } = useAuthStore()
+  const { t } = useI18n()
 
   return (
     <div className="space-y-6">
@@ -15,9 +17,9 @@ export function SettingsPage() {
       <div>
         <div className="flex items-center gap-2">
           <Settings className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t('settings.title')}</h1>
         </div>
-        <p className="text-muted-foreground mt-1">Manage your account and application preferences</p>
+        <p className="text-muted-foreground mt-1">{t('settings.subtitle')}</p>
       </div>
 
       {/* Profile Settings */}
@@ -25,9 +27,9 @@ export function SettingsPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <User className="h-5 w-5" />
-            <CardTitle>Profile Information</CardTitle>
+            <CardTitle>{t('settings.profile.title')}</CardTitle>
           </div>
-          <CardDescription>Update your personal information and contact details</CardDescription>
+          <CardDescription>{t('settings.profile.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
@@ -49,7 +51,7 @@ export function SettingsPage() {
             </div>
           </div>
           <div className="flex justify-end">
-            <Button>Save Changes</Button>
+            <Button>{t('common.save')}</Button>
           </div>
         </CardContent>
       </Card>
@@ -59,16 +61,16 @@ export function SettingsPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Bell className="h-5 w-5" />
-            <CardTitle>Notifications</CardTitle>
+            <CardTitle>{t('settings.notifications.title')}</CardTitle>
           </div>
-          <CardDescription>Configure how you receive notifications and alerts</CardDescription>
+          <CardDescription>{t('settings.notifications.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="email-notifications">Email Notifications</Label>
+              <Label htmlFor="email-notifications">{t('settings.notifications.email')}</Label>
               <p className="text-sm text-muted-foreground">
-                Receive email alerts for important events
+                {t('settings.notifications.emailDesc')}
               </p>
             </div>
             <Switch id="email-notifications" defaultChecked />
@@ -76,9 +78,9 @@ export function SettingsPage() {
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="lease-expiry">Lease Expiry Alerts</Label>
+              <Label htmlFor="lease-expiry">{t('settings.notifications.leaseReminders')}</Label>
               <p className="text-sm text-muted-foreground">
-                Get notified when leases are about to expire
+                {t('settings.notifications.leaseRemindersDesc')}
               </p>
             </div>
             <Switch id="lease-expiry" defaultChecked />
@@ -86,9 +88,9 @@ export function SettingsPage() {
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="maintenance-alerts">Maintenance Requests</Label>
+              <Label htmlFor="maintenance-alerts">{t('settings.notifications.maintenanceAlerts')}</Label>
               <p className="text-sm text-muted-foreground">
-                Receive alerts for new maintenance requests
+                {t('settings.notifications.maintenanceAlertsDesc')}
               </p>
             </div>
             <Switch id="maintenance-alerts" defaultChecked />
@@ -96,9 +98,9 @@ export function SettingsPage() {
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="payment-alerts">Payment Notifications</Label>
+              <Label htmlFor="payment-alerts">{t('settings.notifications.paymentAlerts')}</Label>
               <p className="text-sm text-muted-foreground">
-                Get notified about rent payments and arrears
+                {t('settings.notifications.paymentAlertsDesc')}
               </p>
             </div>
             <Switch id="payment-alerts" defaultChecked />
@@ -121,9 +123,9 @@ export function SettingsPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5" />
-            <CardTitle>Security</CardTitle>
+            <CardTitle>{t('settings.security.title')}</CardTitle>
           </div>
-          <CardDescription>Manage your password and security preferences</CardDescription>
+          <CardDescription>{t('settings.security.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -140,16 +142,16 @@ export function SettingsPage() {
           </div>
           <div className="flex items-center justify-between pt-2">
             <div className="space-y-0.5">
-              <Label htmlFor="two-factor">Two-Factor Authentication</Label>
+              <Label htmlFor="two-factor">{t('settings.security.twoFactor')}</Label>
               <p className="text-sm text-muted-foreground">
-                Add an extra layer of security to your account
+                {t('settings.security.twoFactorDesc')}
               </p>
             </div>
             <Switch id="two-factor" />
           </div>
           <div className="flex justify-end gap-2">
-            <Button variant="outline">Cancel</Button>
-            <Button>Update Password</Button>
+            <Button variant="outline">{t('common.cancel')}</Button>
+            <Button>{t('settings.security.changePassword')}</Button>
           </div>
         </CardContent>
       </Card>
@@ -159,9 +161,9 @@ export function SettingsPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <CreditCard className="h-5 w-5" />
-            <CardTitle>Billing & Subscription</CardTitle>
+            <CardTitle>{t('settings.billing.title')}</CardTitle>
           </div>
-          <CardDescription>Manage your subscription and payment methods</CardDescription>
+          <CardDescription>{t('settings.billing.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between rounded-lg border p-4">
@@ -169,7 +171,7 @@ export function SettingsPage() {
               <p className="font-semibold">Professional Plan</p>
               <p className="text-sm text-muted-foreground">Up to 50 properties • NZD $99/month</p>
             </div>
-            <Button variant="outline">Change Plan</Button>
+            <Button variant="outline">{t('settings.billing.changePlan')}</Button>
           </div>
 
           <div className="space-y-2">
@@ -183,7 +185,7 @@ export function SettingsPage() {
                 </div>
               </div>
               <Button variant="outline" size="sm">
-                Update
+                {t('common.update')}
               </Button>
             </div>
           </div>
@@ -243,14 +245,14 @@ export function SettingsPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Globe className="h-5 w-5" />
-            <CardTitle>Language & Region</CardTitle>
+            <CardTitle>{t('settings.preferences.language')}</CardTitle>
           </div>
-          <CardDescription>Set your language and regional preferences</CardDescription>
+          <CardDescription>{t('settings.preferences.languageDesc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="language">Language</Label>
+              <Label htmlFor="language">{t('settings.preferences.language')}</Label>
               <select
                 id="language"
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
@@ -260,7 +262,7 @@ export function SettingsPage() {
               </select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="timezone">Timezone</Label>
+              <Label htmlFor="timezone">{t('settings.preferences.timezone')}</Label>
               <select
                 id="timezone"
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
@@ -270,7 +272,7 @@ export function SettingsPage() {
               </select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="currency">Currency</Label>
+              <Label htmlFor="currency">{t('settings.preferences.currency')}</Label>
               <select
                 id="currency"
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
@@ -280,7 +282,7 @@ export function SettingsPage() {
               </select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="date-format">Date Format</Label>
+              <Label htmlFor="date-format">{t('settings.preferences.dateFormat')}</Label>
               <select
                 id="date-format"
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
@@ -296,18 +298,18 @@ export function SettingsPage() {
       {/* Danger Zone */}
       <Card className="border-red-200">
         <CardHeader>
-          <CardTitle className="text-red-600">Danger Zone</CardTitle>
+          <CardTitle className="text-red-600">{t('settings.dangerZone.title')}</CardTitle>
           <CardDescription>Irreversible actions for your account</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between rounded-lg border border-red-200 bg-red-50 p-4">
             <div>
-              <p className="font-semibold text-red-900">Delete Account</p>
+              <p className="font-semibold text-red-900">{t('settings.dangerZone.deleteAccount')}</p>
               <p className="text-sm text-red-700">
-                Permanently delete your account and all associated data
+                {t('settings.dangerZone.deleteAccountDesc')}
               </p>
             </div>
-            <Button variant="destructive">Delete Account</Button>
+            <Button variant="destructive">{t('settings.dangerZone.deleteAccount')}</Button>
           </div>
         </CardContent>
       </Card>

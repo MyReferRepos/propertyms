@@ -1,41 +1,17 @@
 {
-  "general": "通用功能",
-  "dashboard": "仪表盘",
-  "frameworkDemo": "框架演示",
-  "system": "系统管理",
-
-  "users": {
-    "list": "用户管理",
-    "roles": "角色管理",
-    "permissions": "权限管理"
-  },
-
-  "user": "用户管理",
-  "roles": "角色",
-  "permissions": "权限",
-  "permission": "权限管理",
-  "module": "模块管理",
-
-  "menu": "菜单管理",
-  "menuGroups": "菜单组",
-  "menuItems": "菜单项",
-
-  "auditLogs": "审计日志",
-
-  "settings": "设置",
-  "profile": "个人资料",
-
-  "examples": "示例",
-  "authPages": "认证页面",
-  "signIn": "登录",
-  "signUp": "注册",
-  "forgotPassword": "忘记密码",
-  "otp": "OTP验证",
-
-  "errorPages": "错误页面",
-  "unauthorized": "未授权",
-  "forbidden": "禁止访问",
-  "notFound": "页面未找到",
-  "internalServerError": "服务器内部错误",
-  "maintenanceError": "维护错误"
+  "nav": {
+    "dashboard": "仪表盘",
+    "properties": "房产管理",
+    "tenancies": "租赁管理",
+    "maintenance": "维护管理",
+    "inspections": "检查管理",
+    "financials": "财务管理",
+    "reports": "报表中心",
+    "compliance": "合规检查",
+    "investors": "投资者仪表盘",
+    "tenantScore": "租客信用评分",
+    "aiInsights": "AI 智能洞察",
+    "settings": "设置",
+    "logout": "退出登录"
+  }
 }

@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "title": "房产管理",
+    "subtitle": "管理您的房产投资组合",
+    "addProperty": "添加房产",
+    "propertyDetails": "房产详情",
+    "address": "地址",
+    "bedrooms": "卧室",
+    "bathrooms": "浴室",
+    "rentPerWeek": "周租金",
+    "currentTenant": "当前租户",
+    "status": {
+      "available": "可租",
+      "occupied": "已出租",
+      "maintenance": "维护中"
+    },
+    "filters": {
+      "all": "全部房产",
+      "available": "可租房产",
+      "occupied": "已出租",
+      "maintenance": "维护中"
+    }
+  }
+}

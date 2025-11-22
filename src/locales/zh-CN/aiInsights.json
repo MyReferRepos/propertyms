@@ -1,0 +1,31 @@
+{
+  "aiInsights": {
+    "title": "AI 智能洞察",
+    "subtitle": "PropertyPilot AI 推荐和警报",
+    "insight": "洞察",
+    "recommendation": "推荐",
+    "confidence": "置信度",
+    "relatedTo": "相关",
+    "dismiss": "忽略",
+    "takeAction": "采取行动",
+    "types": {
+      "warning": "警告",
+      "recommendation": "推荐",
+      "opportunity": "机会",
+      "task": "任务"
+    },
+    "filters": {
+      "all": "全部洞察",
+      "warnings": "警告",
+      "recommendations": "推荐",
+      "opportunities": "机会",
+      "tasks": "任务"
+    },
+    "stats": {
+      "totalInsights": "总洞察数",
+      "warnings": "警告",
+      "recommendations": "推荐",
+      "opportunities": "机会"
+    }
+  }
+}
