@@ -1,33 +1,31 @@
 {
-  "maintenance": {
-    "title": "Maintenance Requests",
-    "subtitle": "Track and manage property maintenance",
-    "requestTitle": "Request Title",
-    "category": "Category",
-    "priority": "Priority",
-    "status": "Status",
-    "reportedDate": "Reported Date",
-    "scheduledDate": "Scheduled Date",
-    "estimatedCost": "Estimated Cost",
-    "actualCost": "Actual Cost",
-    "contractor": "Contractor",
-    "categories": {
-      "plumbing": "Plumbing",
-      "electrical": "Electrical",
-      "hvac": "HVAC",
-      "general": "General"
-    },
-    "priorities": {
-      "urgent": "Urgent",
-      "high": "High",
-      "medium": "Medium",
-      "low": "Low"
-    },
-    "statuses": {
-      "pending": "Pending",
-      "inProgress": "In Progress",
-      "completed": "Completed",
-      "cancelled": "Cancelled"
-    }
+  "title": "Maintenance Requests",
+  "subtitle": "Track and manage property maintenance",
+  "requestTitle": "Request Title",
+  "category": "Category",
+  "priority": "Priority",
+  "status": "Status",
+  "reportedDate": "Reported Date",
+  "scheduledDate": "Scheduled Date",
+  "estimatedCost": "Estimated Cost",
+  "actualCost": "Actual Cost",
+  "contractor": "Contractor",
+  "categories": {
+    "plumbing": "Plumbing",
+    "electrical": "Electrical",
+    "hvac": "HVAC",
+    "general": "General"
+  },
+  "priorities": {
+    "urgent": "Urgent",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
   }
 }

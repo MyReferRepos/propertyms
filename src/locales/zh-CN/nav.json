@@ -1,17 +1,15 @@
 {
-  "nav": {
-    "dashboard": "仪表盘",
-    "properties": "房产管理",
-    "tenancies": "租赁管理",
-    "maintenance": "维护管理",
-    "inspections": "检查管理",
-    "financials": "财务管理",
-    "reports": "报表中心",
-    "compliance": "合规检查",
-    "investors": "投资者仪表盘",
-    "tenantScore": "租客信用评分",
-    "aiInsights": "AI 智能洞察",
-    "settings": "设置",
-    "logout": "退出登录"
-  }
+  "dashboard": "仪表盘",
+  "properties": "房产管理",
+  "tenancies": "租赁管理",
+  "maintenance": "维护管理",
+  "inspections": "检查管理",
+  "financials": "财务管理",
+  "reports": "报表中心",
+  "compliance": "合规检查",
+  "investors": "投资者仪表盘",
+  "tenantScore": "租客信用评分",
+  "aiInsights": "AI 智能洞察",
+  "settings": "设置",
+  "logout": "退出登录"
 }

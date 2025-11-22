@@ -1,28 +1,26 @@
 {
-  "tenancies": {
-    "title": "租赁管理",
-    "subtitle": "管理租赁协议和租期条款",
-    "tenant": "租户",
-    "property": "房产",
-    "startDate": "开始日期",
-    "endDate": "结束日期",
-    "rentAmount": "租金金额",
-    "bondAmount": "押金金额",
-    "paymentFrequency": "付款频率",
-    "autoRenewal": "自动续约",
-    "daysUntilExpiry": "天后到期",
-    "status": {
-      "active": "活跃",
-      "expiringSoon": "即将到期",
-      "expired": "已过期",
-      "ended": "已结束",
-      "terminated": "已终止"
-    },
-    "filters": {
-      "all": "全部租约",
-      "active": "活跃租约",
-      "expiringSoon": "即将到期",
-      "expired": "已过期"
-    }
+  "title": "租赁管理",
+  "subtitle": "管理租赁协议和租期条款",
+  "tenant": "租户",
+  "property": "房产",
+  "startDate": "开始日期",
+  "endDate": "结束日期",
+  "rentAmount": "租金金额",
+  "bondAmount": "押金金额",
+  "paymentFrequency": "付款频率",
+  "autoRenewal": "自动续约",
+  "daysUntilExpiry": "天后到期",
+  "status": {
+    "active": "活跃",
+    "expiringSoon": "即将到期",
+    "expired": "已过期",
+    "ended": "已结束",
+    "terminated": "已终止"
+  },
+  "filters": {
+    "all": "全部租约",
+    "active": "活跃租约",
+    "expiringSoon": "即将到期",
+    "expired": "已过期"
   }
 }

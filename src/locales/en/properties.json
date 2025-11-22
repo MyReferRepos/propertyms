@@ -1,24 +1,22 @@
 {
-  "properties": {
-    "title": "Properties",
-    "subtitle": "Manage your property portfolio",
-    "addProperty": "Add Property",
-    "propertyDetails": "Property Details",
-    "address": "Address",
-    "bedrooms": "Bedrooms",
-    "bathrooms": "Bathrooms",
-    "rentPerWeek": "Rent/Week",
-    "currentTenant": "Current Tenant",
-    "status": {
-      "available": "Available",
-      "occupied": "Occupied",
-      "maintenance": "Under Maintenance"
-    },
-    "filters": {
-      "all": "All Properties",
-      "available": "Available",
-      "occupied": "Occupied",
-      "maintenance": "Maintenance"
-    }
+  "title": "Properties",
+  "subtitle": "Manage your property portfolio",
+  "addProperty": "Add Property",
+  "propertyDetails": "Property Details",
+  "address": "Address",
+  "bedrooms": "Bedrooms",
+  "bathrooms": "Bathrooms",
+  "rentPerWeek": "Rent/Week",
+  "currentTenant": "Current Tenant",
+  "status": {
+    "available": "Available",
+    "occupied": "Occupied",
+    "maintenance": "Under Maintenance"
+  },
+  "filters": {
+    "all": "All Properties",
+    "available": "Available",
+    "occupied": "Occupied",
+    "maintenance": "Maintenance"
   }
 }

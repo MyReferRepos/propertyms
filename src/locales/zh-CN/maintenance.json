@@ -1,33 +1,31 @@
 {
-  "maintenance": {
-    "title": "维护请求",
-    "subtitle": "跟踪和管理房产维护",
-    "requestTitle": "请求标题",
-    "category": "类别",
-    "priority": "优先级",
-    "status": "状态",
-    "reportedDate": "报告日期",
-    "scheduledDate": "计划日期",
-    "estimatedCost": "预估成本",
-    "actualCost": "实际成本",
-    "contractor": "承包商",
-    "categories": {
-      "plumbing": "管道",
-      "electrical": "电气",
-      "hvac": "暖通空调",
-      "general": "一般维护"
-    },
-    "priorities": {
-      "urgent": "紧急",
-      "high": "高",
-      "medium": "中",
-      "low": "低"
-    },
-    "statuses": {
-      "pending": "待处理",
-      "inProgress": "进行中",
-      "completed": "已完成",
-      "cancelled": "已取消"
-    }
+  "title": "维护请求",
+  "subtitle": "跟踪和管理房产维护",
+  "requestTitle": "请求标题",
+  "category": "类别",
+  "priority": "优先级",
+  "status": "状态",
+  "reportedDate": "报告日期",
+  "scheduledDate": "计划日期",
+  "estimatedCost": "预估成本",
+  "actualCost": "实际成本",
+  "contractor": "承包商",
+  "categories": {
+    "plumbing": "管道",
+    "electrical": "电气",
+    "hvac": "暖通空调",
+    "general": "一般维护"
+  },
+  "priorities": {
+    "urgent": "紧急",
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  },
+  "statuses": {
+    "pending": "待处理",
+    "inProgress": "进行中",
+    "completed": "已完成",
+    "cancelled": "已取消"
   }
 }

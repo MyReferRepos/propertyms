@@ -1,28 +1,26 @@
 {
-  "tenancies": {
-    "title": "Tenancy Management",
-    "subtitle": "Manage rental agreements and lease terms",
-    "tenant": "Tenant",
-    "property": "Property",
-    "startDate": "Start Date",
-    "endDate": "End Date",
-    "rentAmount": "Rent Amount",
-    "bondAmount": "Bond Amount",
-    "paymentFrequency": "Payment Frequency",
-    "autoRenewal": "Auto Renewal",
-    "daysUntilExpiry": "days until expiry",
-    "status": {
-      "active": "Active",
-      "expiringSoon": "Expiring Soon",
-      "expired": "Expired",
-      "ended": "Ended",
-      "terminated": "Terminated"
-    },
-    "filters": {
-      "all": "All Tenancies",
-      "active": "Active",
-      "expiringSoon": "Expiring Soon",
-      "expired": "Expired"
-    }
+  "title": "Tenancy Management",
+  "subtitle": "Manage rental agreements and lease terms",
+  "tenant": "Tenant",
+  "property": "Property",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "rentAmount": "Rent Amount",
+  "bondAmount": "Bond Amount",
+  "paymentFrequency": "Payment Frequency",
+  "autoRenewal": "Auto Renewal",
+  "daysUntilExpiry": "days until expiry",
+  "status": {
+    "active": "Active",
+    "expiringSoon": "Expiring Soon",
+    "expired": "Expired",
+    "ended": "Ended",
+    "terminated": "Terminated"
+  },
+  "filters": {
+    "all": "All Tenancies",
+    "active": "Active",
+    "expiringSoon": "Expiring Soon",
+    "expired": "Expired"
   }
 }
