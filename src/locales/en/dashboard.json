@@ -1,0 +1,16 @@
+{
+  "dashboard": {
+    "title": "Dashboard Overview",
+    "welcome": "Welcome back",
+    "stats": {
+      "totalProperties": "Total Properties",
+      "activeLeases": "Active Leases",
+      "monthlyRevenue": "Monthly Revenue",
+      "maintenanceRequests": "Maintenance Requests"
+    },
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "addProperty": "Add Property",
+    "viewReports": "View Reports"
+  }
+}

@@ -1,41 +1,17 @@
 {
-  "general": "General",
-  "dashboard": "Dashboard",
-  "frameworkDemo": "Framework Demo",
-  "system": "System Management",
-
-  "users": {
-    "list": "User List",
-    "roles": "Role Management",
-    "permissions": "Permission Management"
-  },
-
-  "user": "User Management",
-  "roles": "Roles",
-  "permissions": "Permissions",
-  "permission": "Permission Management",
-  "module": "Module Management",
-
-  "menu": "Menu Management",
-  "menuGroups": "Menu Groups",
-  "menuItems": "Menu Items",
-
-  "auditLogs": "Audit Logs",
-
-  "settings": "System Settings",
-  "profile": "Profile",
-
-  "examples": "Examples",
-  "authPages": "Auth Pages",
-  "signIn": "Sign In",
-  "signUp": "Sign Up",
-  "forgotPassword": "Forgot Password",
-  "otp": "OTP",
-
-  "errorPages": "Error Pages",
-  "unauthorized": "Unauthorized",
-  "forbidden": "Forbidden",
-  "notFound": "Not Found",
-  "internalServerError": "Internal Server Error",
-  "maintenanceError": "Maintenance Error"
+  "nav": {
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "tenancies": "Tenancies",
+    "maintenance": "Maintenance",
+    "inspections": "Inspections",
+    "financials": "Financials",
+    "reports": "Reports",
+    "compliance": "Compliance Check",
+    "investors": "Investor Dashboard",
+    "tenantScore": "Tenant Credit Score",
+    "aiInsights": "AI Insights",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
 }

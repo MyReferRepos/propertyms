@@ -1,0 +1,31 @@
+{
+  "aiInsights": {
+    "title": "AI-Powered Insights",
+    "subtitle": "PropertyPilot AI recommendations and alerts",
+    "insight": "Insight",
+    "recommendation": "Recommendation",
+    "confidence": "Confidence",
+    "relatedTo": "Related to",
+    "dismiss": "Dismiss",
+    "takeAction": "Take Action",
+    "types": {
+      "warning": "Warning",
+      "recommendation": "Recommendation",
+      "opportunity": "Opportunity",
+      "task": "Task"
+    },
+    "filters": {
+      "all": "All Insights",
+      "warnings": "Warnings",
+      "recommendations": "Recommendations",
+      "opportunities": "Opportunities",
+      "tasks": "Tasks"
+    },
+    "stats": {
+      "totalInsights": "Total Insights",
+      "warnings": "Warnings",
+      "recommendations": "Recommendations",
+      "opportunities": "Opportunities"
+    }
+  }
+}
