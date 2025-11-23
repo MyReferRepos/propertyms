@@ -32,6 +32,7 @@ import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
+import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties.$propertyId'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
@@ -149,6 +150,12 @@ const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedPropertiesPropertyIdRoute =
+  AuthenticatedPropertiesPropertyIdRouteImport.update({
+    id: '/$propertyId',
+    path: '/$propertyId',
+    getParentRoute: () => AuthenticatedPropertiesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -167,12 +174,13 @@ export interface FileRoutesByFullPath {
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
-  '/properties': typeof AuthenticatedPropertiesRoute
+  '/properties': typeof AuthenticatedPropertiesRouteWithChildren
   '/reports': typeof AuthenticatedReportsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
+  '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -191,12 +199,13 @@ export interface FileRoutesByTo {
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
-  '/properties': typeof AuthenticatedPropertiesRoute
+  '/properties': typeof AuthenticatedPropertiesRouteWithChildren
   '/reports': typeof AuthenticatedReportsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
+  '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -217,12 +226,13 @@ export interface FileRoutesById {
   '/_authenticated/inspections': typeof AuthenticatedInspectionsRoute
   '/_authenticated/investor': typeof AuthenticatedInvestorRoute
   '/_authenticated/maintenance': typeof AuthenticatedMaintenanceRoute
-  '/_authenticated/properties': typeof AuthenticatedPropertiesRoute
+  '/_authenticated/properties': typeof AuthenticatedPropertiesRouteWithChildren
   '/_authenticated/reports': typeof AuthenticatedReportsRoute
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/_authenticated/tenancies': typeof AuthenticatedTenanciesRoute
   '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
+  '/_authenticated/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -249,6 +259,7 @@ export interface FileRouteTypes {
     | '/tenancies'
     | '/tenants'
     | '/'
+    | '/properties/$propertyId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -273,6 +284,7 @@ export interface FileRouteTypes {
     | '/tenancies'
     | '/tenants'
     | '/'
+    | '/properties/$propertyId'
   id:
     | '__root__'
     | '/_authenticated'
@@ -298,6 +310,7 @@ export interface FileRouteTypes {
     | '/_authenticated/tenancies'
     | '/_authenticated/tenants'
     | '/_authenticated/'
+    | '/_authenticated/properties/$propertyId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -476,8 +489,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/properties/$propertyId': {
+      id: '/_authenticated/properties/$propertyId'
+      path: '/$propertyId'
+      fullPath: '/properties/$propertyId'
+      preLoaderRoute: typeof AuthenticatedPropertiesPropertyIdRouteImport
+      parentRoute: typeof AuthenticatedPropertiesRoute
+    }
   }
 }
+
+interface AuthenticatedPropertiesRouteChildren {
+  AuthenticatedPropertiesPropertyIdRoute: typeof AuthenticatedPropertiesPropertyIdRoute
+}
+
+const AuthenticatedPropertiesRouteChildren: AuthenticatedPropertiesRouteChildren =
+  {
+    AuthenticatedPropertiesPropertyIdRoute:
+      AuthenticatedPropertiesPropertyIdRoute,
+  }
+
+const AuthenticatedPropertiesRouteWithChildren =
+  AuthenticatedPropertiesRoute._addFileChildren(
+    AuthenticatedPropertiesRouteChildren,
+  )
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAiInsightsRoute: typeof AuthenticatedAiInsightsRoute
@@ -487,7 +522,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedInspectionsRoute: typeof AuthenticatedInspectionsRoute
   AuthenticatedInvestorRoute: typeof AuthenticatedInvestorRoute
   AuthenticatedMaintenanceRoute: typeof AuthenticatedMaintenanceRoute
-  AuthenticatedPropertiesRoute: typeof AuthenticatedPropertiesRoute
+  AuthenticatedPropertiesRoute: typeof AuthenticatedPropertiesRouteWithChildren
   AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
   AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedTenanciesRoute: typeof AuthenticatedTenanciesRoute
@@ -503,7 +538,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedInspectionsRoute: AuthenticatedInspectionsRoute,
   AuthenticatedInvestorRoute: AuthenticatedInvestorRoute,
   AuthenticatedMaintenanceRoute: AuthenticatedMaintenanceRoute,
-  AuthenticatedPropertiesRoute: AuthenticatedPropertiesRoute,
+  AuthenticatedPropertiesRoute: AuthenticatedPropertiesRouteWithChildren,
   AuthenticatedReportsRoute: AuthenticatedReportsRoute,
   AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedTenanciesRoute: AuthenticatedTenanciesRoute,
