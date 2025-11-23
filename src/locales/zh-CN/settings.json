@@ -1,76 +1,74 @@
 {
-  "settings": {
-    "title": "设置",
-    "subtitle": "管理您的账户和偏好设置",
-    "profile": {
-      "title": "个人资料",
-      "description": "更新您的个人信息",
-      "fullName": "姓名",
-      "email": "邮箱",
-      "phone": "电话号码",
-      "company": "公司名称"
-    },
-    "notifications": {
-      "title": "通知设置",
-      "description": "管理您接收通知的方式",
-      "email": "邮件通知",
-      "emailDesc": "接收重要事件的邮件提醒",
-      "push": "推送通知",
-      "pushDesc": "在您的设备上接收推送通知",
-      "sms": "短信通知",
-      "smsDesc": "接收紧急事项的短信提醒",
-      "maintenanceAlerts": "维护警报",
-      "maintenanceAlertsDesc": "接收维护请求的通知",
-      "leaseReminders": "租约提醒",
-      "leaseRemindersDesc": "租约到期日期提醒",
-      "paymentAlerts": "付款警报",
-      "paymentAlertsDesc": "租金付款相关通知"
-    },
-    "security": {
-      "title": "安全设置",
-      "description": "管理您的安全设置",
-      "currentPassword": "当前密码",
-      "newPassword": "新密码",
-      "confirmPassword": "确认新密码",
-      "changePassword": "更新密码",
-      "twoFactor": "双因素认证",
-      "twoFactorDesc": "增加额外的安全保护层"
-    },
-    "billing": {
-      "title": "账单和订阅",
-      "description": "管理您的订阅和支付方式",
-      "currentPlan": "当前方案",
-      "changePlan": "更改方案",
-      "paymentMethod": "付款方式",
-      "viewBillingHistory": "查看账单历史",
-      "professionalPlan": "专业版",
-      "planDetails": "最多 50 处房产 • NZD $99/月",
-      "cardEnding": "Visa 卡尾号 4242",
-      "cardExpires": "有效期至 12/2025"
-    },
-    "email": {
-      "title": "邮件偏好设置",
-      "description": "选择您想接收的邮件类型",
-      "marketing": "营销邮件",
-      "marketingDesc": "产品更新和功能公告",
-      "newsletter": "每周新闻",
-      "newsletterDesc": "房产管理技巧和行业新闻",
-      "reports": "报表摘要",
-      "reportsDesc": "您的房产投资组合每周/每月摘要"
-    },
-    "preferences": {
-      "title": "偏好设置",
-      "language": "语言和地区",
-      "languageDesc": "选择您的首选语言",
-      "timezone": "时区",
-      "currency": "货币",
-      "dateFormat": "日期格式"
-    },
-    "dangerZone": {
-      "title": "危险区域",
-      "description": "不可逆转的账户操作",
-      "deleteAccount": "删除账户",
-      "deleteAccountDesc": "永久删除您的账户和所有数据"
-    }
+  "title": "设置",
+  "subtitle": "管理您的账户和偏好设置",
+  "profile": {
+    "title": "个人资料",
+    "description": "更新您的个人信息",
+    "fullName": "姓名",
+    "email": "邮箱",
+    "phone": "电话号码",
+    "company": "公司名称"
+  },
+  "notifications": {
+    "title": "通知设置",
+    "description": "管理您接收通知的方式",
+    "email": "邮件通知",
+    "emailDesc": "接收重要事件的邮件提醒",
+    "push": "推送通知",
+    "pushDesc": "在您的设备上接收推送通知",
+    "sms": "短信通知",
+    "smsDesc": "接收紧急事项的短信提醒",
+    "maintenanceAlerts": "维护警报",
+    "maintenanceAlertsDesc": "接收维护请求的通知",
+    "leaseReminders": "租约提醒",
+    "leaseRemindersDesc": "租约到期日期提醒",
+    "paymentAlerts": "付款警报",
+    "paymentAlertsDesc": "租金付款相关通知"
+  },
+  "security": {
+    "title": "安全设置",
+    "description": "管理您的安全设置",
+    "currentPassword": "当前密码",
+    "newPassword": "新密码",
+    "confirmPassword": "确认新密码",
+    "changePassword": "更新密码",
+    "twoFactor": "双因素认证",
+    "twoFactorDesc": "增加额外的安全保护层"
+  },
+  "billing": {
+    "title": "账单和订阅",
+    "description": "管理您的订阅和支付方式",
+    "currentPlan": "当前方案",
+    "changePlan": "更改方案",
+    "paymentMethod": "付款方式",
+    "viewBillingHistory": "查看账单历史",
+    "professionalPlan": "专业版",
+    "planDetails": "最多 50 处房产 • NZD $99/月",
+    "cardEnding": "Visa 卡尾号 4242",
+    "cardExpires": "有效期至 12/2025"
+  },
+  "email": {
+    "title": "邮件偏好设置",
+    "description": "选择您想接收的邮件类型",
+    "marketing": "营销邮件",
+    "marketingDesc": "产品更新和功能公告",
+    "newsletter": "每周新闻",
+    "newsletterDesc": "房产管理技巧和行业新闻",
+    "reports": "报表摘要",
+    "reportsDesc": "您的房产投资组合每周/每月摘要"
+  },
+  "preferences": {
+    "title": "偏好设置",
+    "language": "语言和地区",
+    "languageDesc": "选择您的首选语言",
+    "timezone": "时区",
+    "currency": "货币",
+    "dateFormat": "日期格式"
+  },
+  "dangerZone": {
+    "title": "危险区域",
+    "description": "不可逆转的账户操作",
+    "deleteAccount": "删除账户",
+    "deleteAccountDesc": "永久删除您的账户和所有数据"
   }
 }

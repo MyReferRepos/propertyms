@@ -1,17 +1,15 @@
 {
-  "nav": {
-    "dashboard": "Dashboard",
-    "properties": "Properties",
-    "tenancies": "Tenancies",
-    "maintenance": "Maintenance",
-    "inspections": "Inspections",
-    "financials": "Financials",
-    "reports": "Reports",
-    "compliance": "Compliance Check",
-    "investors": "Investor Dashboard",
-    "tenantScore": "Tenant Credit Score",
-    "aiInsights": "AI Insights",
-    "settings": "Settings",
-    "logout": "Logout"
-  }
+  "dashboard": "Dashboard",
+  "properties": "Properties",
+  "tenancies": "Tenancies",
+  "maintenance": "Maintenance",
+  "inspections": "Inspections",
+  "financials": "Financials",
+  "reports": "Reports",
+  "compliance": "Compliance Check",
+  "investors": "Investor Dashboard",
+  "tenantScore": "Tenant Credit Score",
+  "aiInsights": "AI Insights",
+  "settings": "Settings",
+  "logout": "Logout"
 }

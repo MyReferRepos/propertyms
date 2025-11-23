@@ -1,16 +1,14 @@
 {
-  "dashboard": {
-    "title": "仪表盘概览",
-    "welcome": "欢迎回来",
-    "stats": {
-      "totalProperties": "总房产数",
-      "activeLeases": "活跃租约",
-      "monthlyRevenue": "月度收入",
-      "maintenanceRequests": "维护请求"
-    },
-    "recentActivity": "最近活动",
-    "quickActions": "快捷操作",
-    "addProperty": "添加房产",
-    "viewReports": "查看报表"
-  }
+  "title": "仪表盘概览",
+  "welcome": "欢迎回来",
+  "stats": {
+    "totalProperties": "总房产数",
+    "activeLeases": "活跃租约",
+    "monthlyRevenue": "月度收入",
+    "maintenanceRequests": "维护请求"
+  },
+  "recentActivity": "最近活动",
+  "quickActions": "快捷操作",
+  "addProperty": "添加房产",
+  "viewReports": "查看报表"
 }
