@@ -1,6 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { PropertiesPage } from '@/features/properties/pages/properties-page'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_authenticated/properties')({
-  component: PropertiesPage,
+  component: () => <Outlet />,
 })

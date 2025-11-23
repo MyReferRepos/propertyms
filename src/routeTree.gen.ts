@@ -32,6 +32,7 @@ import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
+import { Route as AuthenticatedPropertiesIndexRouteImport } from './routes/_authenticated/properties.index'
 import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties.$propertyId'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
@@ -150,6 +151,12 @@ const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedPropertiesIndexRoute =
+  AuthenticatedPropertiesIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedPropertiesRoute,
+  } as any)
 const AuthenticatedPropertiesPropertyIdRoute =
   AuthenticatedPropertiesPropertyIdRouteImport.update({
     id: '/$propertyId',
@@ -181,6 +188,7 @@ export interface FileRoutesByFullPath {
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
+  '/properties/': typeof AuthenticatedPropertiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -199,13 +207,13 @@ export interface FileRoutesByTo {
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
-  '/properties': typeof AuthenticatedPropertiesRouteWithChildren
   '/reports': typeof AuthenticatedReportsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
+  '/properties': typeof AuthenticatedPropertiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -233,6 +241,7 @@ export interface FileRoutesById {
   '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
+  '/_authenticated/properties/': typeof AuthenticatedPropertiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -260,6 +269,7 @@ export interface FileRouteTypes {
     | '/tenants'
     | '/'
     | '/properties/$propertyId'
+    | '/properties/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -278,13 +288,13 @@ export interface FileRouteTypes {
     | '/inspections'
     | '/investor'
     | '/maintenance'
-    | '/properties'
     | '/reports'
     | '/settings'
     | '/tenancies'
     | '/tenants'
     | '/'
     | '/properties/$propertyId'
+    | '/properties'
   id:
     | '__root__'
     | '/_authenticated'
@@ -311,6 +321,7 @@ export interface FileRouteTypes {
     | '/_authenticated/tenants'
     | '/_authenticated/'
     | '/_authenticated/properties/$propertyId'
+    | '/_authenticated/properties/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -489,6 +500,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/properties/': {
+      id: '/_authenticated/properties/'
+      path: '/'
+      fullPath: '/properties/'
+      preLoaderRoute: typeof AuthenticatedPropertiesIndexRouteImport
+      parentRoute: typeof AuthenticatedPropertiesRoute
+    }
     '/_authenticated/properties/$propertyId': {
       id: '/_authenticated/properties/$propertyId'
       path: '/$propertyId'
@@ -501,12 +519,14 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedPropertiesRouteChildren {
   AuthenticatedPropertiesPropertyIdRoute: typeof AuthenticatedPropertiesPropertyIdRoute
+  AuthenticatedPropertiesIndexRoute: typeof AuthenticatedPropertiesIndexRoute
 }
 
 const AuthenticatedPropertiesRouteChildren: AuthenticatedPropertiesRouteChildren =
   {
     AuthenticatedPropertiesPropertyIdRoute:
       AuthenticatedPropertiesPropertyIdRoute,
+    AuthenticatedPropertiesIndexRoute: AuthenticatedPropertiesIndexRoute,
   }
 
 const AuthenticatedPropertiesRouteWithChildren =
