@@ -166,7 +166,7 @@ export function PropertiesPage() {
             <PropertyCard
               key={property.id}
               property={property}
-              onClick={() => console.log('View property:', property.id)}
+              linkTo={`/properties/${property.id}`}
             />
           ))}
         </div>
