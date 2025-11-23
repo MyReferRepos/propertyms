@@ -33,7 +33,7 @@ import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
 import { Route as AuthenticatedPropertiesIndexRouteImport } from './routes/_authenticated/properties.index'
-import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties.$propertyId'
+import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties/$propertyId'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',

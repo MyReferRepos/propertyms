@@ -1,4 +1,5 @@
 import { Bed, Bath, Car, MapPin, DollarSign, Home } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -8,6 +9,7 @@ import { cn } from '@/lib/utils'
 interface PropertyCardProps {
   property: Property
   onClick?: () => void
+  linkTo?: string
 }
 
 const statusColors = {
@@ -23,7 +25,7 @@ const typeLabels = {
   unit: 'Unit',
 }
 
-export function PropertyCard({ property, onClick }: PropertyCardProps) {
+export function PropertyCard({ property, onClick, linkTo }: PropertyCardProps) {
   return (
     <Card className="overflow-hidden transition-shadow hover:shadow-lg">
       <div className="relative h-48">
@@ -104,9 +106,15 @@ export function PropertyCard({ property, onClick }: PropertyCardProps) {
           </div>
 
           {/* Action Button */}
-          <Button className="w-full" variant="outline" onClick={onClick}>
-            View Details
-          </Button>
+          {linkTo ? (
+            <Button className="w-full" variant="outline" asChild>
+              <Link to={linkTo}>View Details</Link>
+            </Button>
+          ) : (
+            <Button className="w-full" variant="outline" onClick={onClick}>
+              View Details
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>

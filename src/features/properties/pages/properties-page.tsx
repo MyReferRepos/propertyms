@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from '@tanstack/react-router'
 import { Plus, Grid3x3, List, Search } from 'lucide-react'
 import { PropertyCard } from '../components/property-card'
 import { Button } from '@/components/ui/button'
@@ -9,7 +8,6 @@ import { propertiesAPI } from '@/services/api'
 import type { Property } from '@/types'
 
 export function PropertiesPage() {
-  const navigate = useNavigate()
   const [properties, setProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -168,7 +166,7 @@ export function PropertiesPage() {
             <PropertyCard
               key={property.id}
               property={property}
-              onClick={() => navigate({ to: '/properties/$propertyId', params: { propertyId: property.id } })}
+              linkTo={`/properties/${property.id}`}
             />
           ))}
         </div>
