@@ -303,9 +303,18 @@ export function ReportsPage() {
                         <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
                       )}
                     </div>
-                    <Button size="sm">
-                      <Download className="mr-2 h-4 w-4" />
-                      Generate
+                    <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
+                      {report.id === 'rep-rental-price' ? (
+                        <>
+                          <DollarSign className="mr-2 h-4 w-4" />
+                          Create
+                        </>
+                      ) : (
+                        <>
+                          <Download className="mr-2 h-4 w-4" />
+                          Generate
+                        </>
+                      )}
                     </Button>
                   </div>
                 </CardContent>
@@ -334,9 +343,18 @@ export function ReportsPage() {
                         <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
                       )}
                     </div>
-                    <Button size="sm">
-                      <Download className="mr-2 h-4 w-4" />
-                      Generate
+                    <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
+                      {report.id === 'rep-rental-price' ? (
+                        <>
+                          <DollarSign className="mr-2 h-4 w-4" />
+                          Create
+                        </>
+                      ) : (
+                        <>
+                          <Download className="mr-2 h-4 w-4" />
+                          Generate
+                        </>
+                      )}
                     </Button>
                   </div>
                 </CardContent>
