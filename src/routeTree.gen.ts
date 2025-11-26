@@ -32,6 +32,7 @@ import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
+import { Route as AuthenticatedReportsIndexRouteImport } from './routes/_authenticated/reports.index'
 import { Route as AuthenticatedPropertiesIndexRouteImport } from './routes/_authenticated/properties.index'
 import { Route as AuthenticatedReportsRentalPriceRouteImport } from './routes/_authenticated/reports.rental-price'
 import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties/$propertyId'
@@ -152,6 +153,12 @@ const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedReportsIndexRoute =
+  AuthenticatedReportsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedReportsRoute,
+  } as any)
 const AuthenticatedPropertiesIndexRoute =
   AuthenticatedPropertiesIndexRouteImport.update({
     id: '/',
@@ -197,6 +204,7 @@ export interface FileRoutesByFullPath {
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
   '/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
   '/properties/': typeof AuthenticatedPropertiesIndexRoute
+  '/reports/': typeof AuthenticatedReportsIndexRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -215,7 +223,6 @@ export interface FileRoutesByTo {
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
-  '/reports': typeof AuthenticatedReportsRouteWithChildren
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
@@ -223,6 +230,7 @@ export interface FileRoutesByTo {
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
   '/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
   '/properties': typeof AuthenticatedPropertiesIndexRoute
+  '/reports': typeof AuthenticatedReportsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -252,6 +260,7 @@ export interface FileRoutesById {
   '/_authenticated/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
   '/_authenticated/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
   '/_authenticated/properties/': typeof AuthenticatedPropertiesIndexRoute
+  '/_authenticated/reports/': typeof AuthenticatedReportsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -281,6 +290,7 @@ export interface FileRouteTypes {
     | '/properties/$propertyId'
     | '/reports/rental-price'
     | '/properties/'
+    | '/reports/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -299,7 +309,6 @@ export interface FileRouteTypes {
     | '/inspections'
     | '/investor'
     | '/maintenance'
-    | '/reports'
     | '/settings'
     | '/tenancies'
     | '/tenants'
@@ -307,6 +316,7 @@ export interface FileRouteTypes {
     | '/properties/$propertyId'
     | '/reports/rental-price'
     | '/properties'
+    | '/reports'
   id:
     | '__root__'
     | '/_authenticated'
@@ -335,6 +345,7 @@ export interface FileRouteTypes {
     | '/_authenticated/properties/$propertyId'
     | '/_authenticated/reports/rental-price'
     | '/_authenticated/properties/'
+    | '/_authenticated/reports/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -513,6 +524,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/reports/': {
+      id: '/_authenticated/reports/'
+      path: '/'
+      fullPath: '/reports/'
+      preLoaderRoute: typeof AuthenticatedReportsIndexRouteImport
+      parentRoute: typeof AuthenticatedReportsRoute
+    }
     '/_authenticated/properties/': {
       id: '/_authenticated/properties/'
       path: '/'
@@ -556,10 +574,12 @@ const AuthenticatedPropertiesRouteWithChildren =
 
 interface AuthenticatedReportsRouteChildren {
   AuthenticatedReportsRentalPriceRoute: typeof AuthenticatedReportsRentalPriceRoute
+  AuthenticatedReportsIndexRoute: typeof AuthenticatedReportsIndexRoute
 }
 
 const AuthenticatedReportsRouteChildren: AuthenticatedReportsRouteChildren = {
   AuthenticatedReportsRentalPriceRoute: AuthenticatedReportsRentalPriceRoute,
+  AuthenticatedReportsIndexRoute: AuthenticatedReportsIndexRoute,
 }
 
 const AuthenticatedReportsRouteWithChildren =
