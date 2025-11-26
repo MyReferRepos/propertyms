@@ -16,14 +16,13 @@ export function PropertiesPage() {
 
   useEffect(() => {
     loadProperties()
-  }, [statusFilter])
+  }, [])
 
   const loadProperties = async () => {
     try {
       setLoading(true)
-      const response = await propertiesAPI.getAll({
-        status: statusFilter === 'all' ? undefined : statusFilter,
-      })
+      // Always load all properties for accurate statistics
+      const response = await propertiesAPI.getAll({})
 
       if (response.success) {
         setProperties(response.data)
@@ -35,14 +34,24 @@ export function PropertiesPage() {
     }
   }
 
-  // Filter by search term
+  // Filter by search term and status
   const filteredProperties = properties.filter((property) => {
-    const searchLower = searchTerm.toLowerCase()
-    return (
-      property.address.toLowerCase().includes(searchLower) ||
-      property.suburb.toLowerCase().includes(searchLower) ||
-      property.city.toLowerCase().includes(searchLower)
-    )
+    // Status filter
+    if (statusFilter !== 'all' && property.status !== statusFilter) {
+      return false
+    }
+
+    // Search filter
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase()
+      return (
+        property.address.toLowerCase().includes(searchLower) ||
+        property.suburb.toLowerCase().includes(searchLower) ||
+        property.city.toLowerCase().includes(searchLower)
+      )
+    }
+
+    return true
   })
 
   const stats = {
