@@ -2,6 +2,7 @@ import { Search, Bell, Command } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
+import { ThemeSwitch } from '@/components/theme-switch'
 
 export function AppHeader() {
   return (
@@ -22,6 +23,7 @@ export function AppHeader() {
 
       {/* Actions */}
       <div className="flex items-center gap-2">
+        <ThemeSwitch />
         <Button variant="ghost" size="icon" className="relative">
           <Bell className="h-5 w-5" />
           <Badge
