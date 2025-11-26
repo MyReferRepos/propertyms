@@ -1,0 +1,73 @@
+{
+  "title": "Rental Price Reports",
+  "subtitle": "Generate rental market analysis reports for landlords and tenants",
+  "landlord": {
+    "title": "Landlord Report",
+    "description": "Market analysis and pricing recommendations for property owners",
+    "generateButton": "Generate Landlord Report",
+    "selectProperty": "Select Property",
+    "currentRent": "Current Rent (Weekly)",
+    "enterRent": "Enter current weekly rent"
+  },
+  "tenant": {
+    "title": "Tenant Report",
+    "description": "Rental market insights and budgeting guide for tenants",
+    "generateButton": "Generate Tenant Report",
+    "searchArea": "Search Area"
+  },
+  "form": {
+    "suburb": "Suburb",
+    "city": "City",
+    "propertyType": "Property Type",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "selectSuburb": "Select suburb",
+    "selectCity": "Select city",
+    "selectPropertyType": "Select property type",
+    "selectBedrooms": "Select bedrooms",
+    "selectBathrooms": "Select bathrooms"
+  },
+  "propertyTypes": {
+    "house": "House",
+    "apartment": "Apartment",
+    "townhouse": "Townhouse",
+    "unit": "Unit"
+  },
+  "report": {
+    "generatedOn": "Generated on",
+    "marketOverview": "Market Overview",
+    "averageRent": "Average Rent",
+    "medianRent": "Median Rent",
+    "rentRange": "Rent Range",
+    "totalListings": "Total Listings",
+    "marketTrend": "Market Trend",
+    "demandLevel": "Demand Level",
+    "avgDaysToLease": "Avg. Days to Lease",
+    "perWeek": "per week",
+    "recommendations": "Recommendations",
+    "comparableProperties": "Comparable Properties",
+    "property": "Property",
+    "rent": "Rent",
+    "distance": "Distance",
+    "km": "km",
+    "downloadPDF": "Download PDF",
+    "printReport": "Print Report",
+    "shareReport": "Share Report",
+    "backToForm": "Back to Form"
+  },
+  "trends": {
+    "increasing": "Increasing",
+    "stable": "Stable",
+    "decreasing": "Decreasing"
+  },
+  "demand": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "messages": {
+    "reportGenerated": "Report generated successfully",
+    "generatingReport": "Generating report...",
+    "errorGenerating": "Failed to generate report. Please try again."
+  }
+}

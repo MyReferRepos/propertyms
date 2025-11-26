@@ -257,6 +257,48 @@ export interface DashboardStats {
   expiringLeases: number
 }
 
+// Rental Market Analysis
+export interface RentalMarketData {
+  suburb: string
+  city: string
+  propertyType: PropertyType
+  averageRent: number // weekly
+  medianRent: number // weekly
+  minRent: number // weekly
+  maxRent: number // weekly
+  totalListings: number
+  rentTrend: 'increasing' | 'stable' | 'decreasing'
+  rentChangePercent: number // percentage change from previous period
+  demandLevel: 'low' | 'medium' | 'high'
+  averageDaysToLease: number
+}
+
+export interface RentalPriceReport {
+  id: string
+  generatedDate: string
+  reportType: 'landlord' | 'tenant'
+  property?: {
+    address: string
+    type: PropertyType
+    bedrooms: number
+    bathrooms: number
+  }
+  area: {
+    suburb: string
+    city: string
+  }
+  marketData: RentalMarketData
+  recommendations: string[]
+  comparableProperties: {
+    address: string
+    type: PropertyType
+    bedrooms: number
+    bathrooms: number
+    weeklyRent: number
+    distance: number // km
+  }[]
+}
+
 // API Response wrapper
 export interface APIResponse<T> {
   success: boolean

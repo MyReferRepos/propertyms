@@ -1,7 +1,8 @@
-import { BarChart3, Download, FileText, TrendingUp } from 'lucide-react'
+import { BarChart3, Download, FileText, TrendingUp, DollarSign } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useNavigate } from '@tanstack/react-router'
 
 interface Report {
   id: string
@@ -13,6 +14,13 @@ interface Report {
 }
 
 const availableReports: Report[] = [
+  {
+    id: 'rep-rental-price',
+    name: 'Rental Price Analysis',
+    description: 'Market analysis and pricing recommendations for landlords and tenants',
+    category: 'performance',
+    frequency: 'on-demand',
+  },
   {
     id: 'rep-001',
     name: 'Rental Income Summary',
@@ -95,12 +103,23 @@ const frequencyLabels = {
 }
 
 export function ReportsPage() {
+  const navigate = useNavigate()
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-NZ', {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
     })
+  }
+
+  const handleGenerateReport = (reportId: string) => {
+    if (reportId === 'rep-rental-price') {
+      navigate({ to: '/reports/rental-price' })
+    } else {
+      // Handle other report types
+      console.log('Generate report:', reportId)
+    }
   }
 
   const groupedReports = {
@@ -194,9 +213,18 @@ export function ReportsPage() {
                       <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
                     )}
                   </div>
-                  <Button size="sm">
-                    <Download className="mr-2 h-4 w-4" />
-                    Generate
+                  <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
+                    {report.id === 'rep-rental-price' ? (
+                      <>
+                        <DollarSign className="mr-2 h-4 w-4" />
+                        Create
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Generate
+                      </>
+                    )}
                   </Button>
                 </div>
               </CardContent>
@@ -233,9 +261,18 @@ export function ReportsPage() {
                       <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
                     )}
                   </div>
-                  <Button size="sm">
-                    <Download className="mr-2 h-4 w-4" />
-                    Generate
+                  <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
+                    {report.id === 'rep-rental-price' ? (
+                      <>
+                        <DollarSign className="mr-2 h-4 w-4" />
+                        Create
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Generate
+                      </>
+                    )}
                   </Button>
                 </div>
               </CardContent>
@@ -266,9 +303,18 @@ export function ReportsPage() {
                         <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
                       )}
                     </div>
-                    <Button size="sm">
-                      <Download className="mr-2 h-4 w-4" />
-                      Generate
+                    <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
+                      {report.id === 'rep-rental-price' ? (
+                        <>
+                          <DollarSign className="mr-2 h-4 w-4" />
+                          Create
+                        </>
+                      ) : (
+                        <>
+                          <Download className="mr-2 h-4 w-4" />
+                          Generate
+                        </>
+                      )}
                     </Button>
                   </div>
                 </CardContent>
@@ -297,9 +343,18 @@ export function ReportsPage() {
                         <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
                       )}
                     </div>
-                    <Button size="sm">
-                      <Download className="mr-2 h-4 w-4" />
-                      Generate
+                    <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
+                      {report.id === 'rep-rental-price' ? (
+                        <>
+                          <DollarSign className="mr-2 h-4 w-4" />
+                          Create
+                        </>
+                      ) : (
+                        <>
+                          <Download className="mr-2 h-4 w-4" />
+                          Generate
+                        </>
+                      )}
                     </Button>
                   </div>
                 </CardContent>

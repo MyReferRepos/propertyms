@@ -1,0 +1,73 @@
+{
+  "title": "租金价格报告",
+  "subtitle": "为房东和房客生成租赁市场分析报告",
+  "landlord": {
+    "title": "房东报告",
+    "description": "为业主提供市场分析和定价建议",
+    "generateButton": "生成房东报告",
+    "selectProperty": "选择物业",
+    "currentRent": "当前租金（每周）",
+    "enterRent": "输入当前每周租金"
+  },
+  "tenant": {
+    "title": "房客报告",
+    "description": "为租户提供租赁市场洞察和预算指南",
+    "generateButton": "生成房客报告",
+    "searchArea": "搜索区域"
+  },
+  "form": {
+    "suburb": "区域",
+    "city": "城市",
+    "propertyType": "物业类型",
+    "bedrooms": "卧室数",
+    "bathrooms": "浴室数",
+    "selectSuburb": "选择区域",
+    "selectCity": "选择城市",
+    "selectPropertyType": "选择物业类型",
+    "selectBedrooms": "选择卧室数",
+    "selectBathrooms": "选择浴室数"
+  },
+  "propertyTypes": {
+    "house": "独立屋",
+    "apartment": "公寓",
+    "townhouse": "联排别墅",
+    "unit": "单元房"
+  },
+  "report": {
+    "generatedOn": "生成时间",
+    "marketOverview": "市场概览",
+    "averageRent": "平均租金",
+    "medianRent": "中位数租金",
+    "rentRange": "租金范围",
+    "totalListings": "总挂牌数",
+    "marketTrend": "市场趋势",
+    "demandLevel": "需求程度",
+    "avgDaysToLease": "平均出租天数",
+    "perWeek": "每周",
+    "recommendations": "建议",
+    "comparableProperties": "可比较物业",
+    "property": "物业",
+    "rent": "租金",
+    "distance": "距离",
+    "km": "公里",
+    "downloadPDF": "下载PDF",
+    "printReport": "打印报告",
+    "shareReport": "分享报告",
+    "backToForm": "返回表单"
+  },
+  "trends": {
+    "increasing": "上涨中",
+    "stable": "稳定",
+    "decreasing": "下降中"
+  },
+  "demand": {
+    "low": "低",
+    "medium": "中",
+    "high": "高"
+  },
+  "messages": {
+    "reportGenerated": "报告生成成功",
+    "generatingReport": "正在生成报告...",
+    "errorGenerating": "生成报告失败，请重试。"
+  }
+}

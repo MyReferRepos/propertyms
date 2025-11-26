@@ -6,6 +6,7 @@ export * from './tenancies'
 export * from './dashboard'
 export * from './compliance'
 export * from './investment'
+export * from './rental-reports'
 
 // Export all APIs in a single object for convenience
 import { propertiesAPI } from './properties'
@@ -13,6 +14,7 @@ import { tenanciesAPI, rentPaymentsAPI } from './tenancies'
 import { dashboardAPI } from './dashboard'
 import { complianceAPI } from './compliance'
 import { investmentAPI } from './investment'
+import { rentalReportsAPI } from './rental-reports'
 
 export const api = {
   properties: propertiesAPI,
@@ -21,4 +23,5 @@ export const api = {
   dashboard: dashboardAPI,
   compliance: complianceAPI,
   investment: investmentAPI,
+  rentalReports: rentalReportsAPI,
 }
