@@ -33,6 +33,7 @@ import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
 import { Route as AuthenticatedPropertiesIndexRouteImport } from './routes/_authenticated/properties.index'
+import { Route as AuthenticatedReportsRentalPriceRouteImport } from './routes/_authenticated/reports.rental-price'
 import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties/$propertyId'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
@@ -157,6 +158,12 @@ const AuthenticatedPropertiesIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedPropertiesRoute,
   } as any)
+const AuthenticatedReportsRentalPriceRoute =
+  AuthenticatedReportsRentalPriceRouteImport.update({
+    id: '/rental-price',
+    path: '/rental-price',
+    getParentRoute: () => AuthenticatedReportsRoute,
+  } as any)
 const AuthenticatedPropertiesPropertyIdRoute =
   AuthenticatedPropertiesPropertyIdRouteImport.update({
     id: '/$propertyId',
@@ -182,12 +189,13 @@ export interface FileRoutesByFullPath {
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
   '/properties': typeof AuthenticatedPropertiesRouteWithChildren
-  '/reports': typeof AuthenticatedReportsRoute
+  '/reports': typeof AuthenticatedReportsRouteWithChildren
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
+  '/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
   '/properties/': typeof AuthenticatedPropertiesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -207,12 +215,13 @@ export interface FileRoutesByTo {
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
-  '/reports': typeof AuthenticatedReportsRoute
+  '/reports': typeof AuthenticatedReportsRouteWithChildren
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
+  '/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
   '/properties': typeof AuthenticatedPropertiesIndexRoute
 }
 export interface FileRoutesById {
@@ -235,12 +244,13 @@ export interface FileRoutesById {
   '/_authenticated/investor': typeof AuthenticatedInvestorRoute
   '/_authenticated/maintenance': typeof AuthenticatedMaintenanceRoute
   '/_authenticated/properties': typeof AuthenticatedPropertiesRouteWithChildren
-  '/_authenticated/reports': typeof AuthenticatedReportsRoute
+  '/_authenticated/reports': typeof AuthenticatedReportsRouteWithChildren
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/_authenticated/tenancies': typeof AuthenticatedTenanciesRoute
   '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
+  '/_authenticated/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
   '/_authenticated/properties/': typeof AuthenticatedPropertiesIndexRoute
 }
 export interface FileRouteTypes {
@@ -269,6 +279,7 @@ export interface FileRouteTypes {
     | '/tenants'
     | '/'
     | '/properties/$propertyId'
+    | '/reports/rental-price'
     | '/properties/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -294,6 +305,7 @@ export interface FileRouteTypes {
     | '/tenants'
     | '/'
     | '/properties/$propertyId'
+    | '/reports/rental-price'
     | '/properties'
   id:
     | '__root__'
@@ -321,6 +333,7 @@ export interface FileRouteTypes {
     | '/_authenticated/tenants'
     | '/_authenticated/'
     | '/_authenticated/properties/$propertyId'
+    | '/_authenticated/reports/rental-price'
     | '/_authenticated/properties/'
   fileRoutesById: FileRoutesById
 }
@@ -507,6 +520,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPropertiesIndexRouteImport
       parentRoute: typeof AuthenticatedPropertiesRoute
     }
+    '/_authenticated/reports/rental-price': {
+      id: '/_authenticated/reports/rental-price'
+      path: '/rental-price'
+      fullPath: '/reports/rental-price'
+      preLoaderRoute: typeof AuthenticatedReportsRentalPriceRouteImport
+      parentRoute: typeof AuthenticatedReportsRoute
+    }
     '/_authenticated/properties/$propertyId': {
       id: '/_authenticated/properties/$propertyId'
       path: '/$propertyId'
@@ -534,6 +554,17 @@ const AuthenticatedPropertiesRouteWithChildren =
     AuthenticatedPropertiesRouteChildren,
   )
 
+interface AuthenticatedReportsRouteChildren {
+  AuthenticatedReportsRentalPriceRoute: typeof AuthenticatedReportsRentalPriceRoute
+}
+
+const AuthenticatedReportsRouteChildren: AuthenticatedReportsRouteChildren = {
+  AuthenticatedReportsRentalPriceRoute: AuthenticatedReportsRentalPriceRoute,
+}
+
+const AuthenticatedReportsRouteWithChildren =
+  AuthenticatedReportsRoute._addFileChildren(AuthenticatedReportsRouteChildren)
+
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAiInsightsRoute: typeof AuthenticatedAiInsightsRoute
   AuthenticatedComplianceRoute: typeof AuthenticatedComplianceRoute
@@ -543,7 +574,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedInvestorRoute: typeof AuthenticatedInvestorRoute
   AuthenticatedMaintenanceRoute: typeof AuthenticatedMaintenanceRoute
   AuthenticatedPropertiesRoute: typeof AuthenticatedPropertiesRouteWithChildren
-  AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
+  AuthenticatedReportsRoute: typeof AuthenticatedReportsRouteWithChildren
   AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedTenanciesRoute: typeof AuthenticatedTenanciesRoute
   AuthenticatedTenantsRoute: typeof AuthenticatedTenantsRoute
@@ -559,7 +590,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedInvestorRoute: AuthenticatedInvestorRoute,
   AuthenticatedMaintenanceRoute: AuthenticatedMaintenanceRoute,
   AuthenticatedPropertiesRoute: AuthenticatedPropertiesRouteWithChildren,
-  AuthenticatedReportsRoute: AuthenticatedReportsRoute,
+  AuthenticatedReportsRoute: AuthenticatedReportsRouteWithChildren,
   AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedTenanciesRoute: AuthenticatedTenanciesRoute,
   AuthenticatedTenantsRoute: AuthenticatedTenantsRoute,
