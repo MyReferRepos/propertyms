@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { FileText, Building2, Users } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { LandlordReportForm } from '../components/landlord-report-form'
 import { TenantReportForm } from '../components/tenant-report-form'

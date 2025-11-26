@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { useToast } from '@/hooks/use-toast'
+import { toast } from 'sonner'
 import { rentalReportsAPI } from '@/services/api'
 import { propertiesAPI } from '@/services/api'
 import type { Property, PropertyType, RentalPriceReport } from '@/types'
@@ -22,7 +22,6 @@ interface LandlordReportFormProps {
 
 export function LandlordReportForm({ onReportGenerated }: LandlordReportFormProps) {
   const { t } = useI18n()
-  const { toast } = useToast()
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState<Property[]>([])
   const [selectedPropertyId, setSelectedPropertyId] = useState<string>('')
@@ -97,11 +96,7 @@ export function LandlordReportForm({ onReportGenerated }: LandlordReportFormProp
       !formData.bedrooms ||
       !formData.bathrooms
     ) {
-      toast({
-        title: t('common.error'),
-        description: 'Please fill in all required fields',
-        variant: 'destructive',
-      })
+      toast.error('Please fill in all required fields')
       return
     }
 
@@ -120,19 +115,12 @@ export function LandlordReportForm({ onReportGenerated }: LandlordReportFormProp
       })
 
       if (response.success) {
-        toast({
-          title: t('common.success'),
-          description: t('rentalReports.messages.reportGenerated'),
-        })
+        toast.success(t('rentalReports.messages.reportGenerated'))
         onReportGenerated(response.data)
       }
     } catch (error) {
       console.error('Failed to generate report:', error)
-      toast({
-        title: t('common.error'),
-        description: t('rentalReports.messages.errorGenerating'),
-        variant: 'destructive',
-      })
+      toast.error(t('rentalReports.messages.errorGenerating'))
     } finally {
       setLoading(false)
     }
