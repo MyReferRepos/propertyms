@@ -40,5 +40,11 @@
   "today": "今天",
   "thisWeek": "本周",
   "thisMonth": "本月",
-  "thisYear": "今年"
+  "thisYear": "今年",
+  "theme": {
+    "light": "亮色",
+    "dark": "暗色",
+    "system": "跟随系统",
+    "toggleTheme": "切换主题"
+  }
 }
