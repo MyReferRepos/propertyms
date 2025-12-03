@@ -1,6 +1,6 @@
 /**
  * Comprehensive Property Detail Component
- * Based on Property Information screenshots - displays all detailed property information
+ * Optimized for property managers - clear, concise, high space utilization
  */
 
 import { useState } from 'react'
@@ -8,7 +8,6 @@ import type { Property } from '@/types'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import {
   Home,
@@ -39,16 +38,15 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
   const [floorPlanOpen, setFloorPlanOpen] = useState(false)
 
   return (
-    <div className="space-y-6">
-      {/* Floor Plan Section - Display prominently if available */}
+    <div className="space-y-4">
+      {/* Floor Plan - Top Priority if available */}
       {property.hasFloorPlan && property.floorPlanUrl && (
         <Card className="bg-blue-50/30 border-blue-200">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-blue-900">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-lg flex items-center gap-2 text-blue-900">
               <Home className="h-5 w-5" />
               Floor Plan
             </CardTitle>
-            <CardDescription>Click to view full floor plan</CardDescription>
           </CardHeader>
           <CardContent>
             <div
@@ -86,608 +84,439 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
         </DialogContent>
       </Dialog>
 
-      {/* Two Column Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Basic Information Section */}
-        <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
+      {/* Core Information - Compact Display */}
+      <Card>
+        <CardHeader className="pb-3">
+          <div className="flex items-start justify-between">
             <div>
-              <CardTitle className="text-2xl">{property.address}</CardTitle>
-              <CardDescription className="flex items-center gap-2 mt-2">
-                <MapPin className="h-4 w-4" />
-                <span>
-                  {property.suburb}, {property.city} {property.postcode}, {property.country}
-                </span>
+              <CardTitle className="text-xl">{property.address}</CardTitle>
+              <CardDescription className="flex items-center gap-2 mt-1">
+                <MapPin className="h-3.5 w-3.5" />
+                {property.suburb}, {property.city} {property.postcode}
               </CardDescription>
             </div>
-            <Button variant="outline">Show map</Button>
+            <Button variant="outline" size="sm">Show map</Button>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {/* Area */}
-          {property.area && (
-            <div>
-              <p className="text-sm font-medium text-muted-foreground">Area</p>
-              <p className="capitalize">{property.area}</p>
-            </div>
-          )}
-
-          {/* Dwelling Type */}
-          {property.dwellingType && (
-            <div>
-              <p className="text-sm font-medium text-muted-foreground">Dwelling Type *</p>
-              <p className="capitalize">{property.dwellingType.replace(/-/g, ' / ')}</p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
-      {/* Room Information */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Home className="h-5 w-5" />
-            Room Information
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="flex items-center gap-2">
-              <Bed className="h-4 w-4 text-muted-foreground" />
-              <div>
-                <p className="text-sm font-medium">Bedroom</p>
-                <p className="text-lg">{property.bedrooms}</p>
-              </div>
-            </div>
-
-            {property.livingAreas !== undefined && (
-              <div>
-                <p className="text-sm font-medium">Living area</p>
-                <p className="text-lg">{property.livingAreas}</p>
-              </div>
-            )}
-
-            <div className="flex items-center gap-2">
-              <Bath className="h-4 w-4 text-muted-foreground" />
-              <div>
-                <p className="text-sm font-medium">Bathroom</p>
-                <p className="text-lg">{property.bathrooms}</p>
-              </div>
-            </div>
-
-            {property.separateToilets !== undefined && (
-              <div>
-                <p className="text-sm font-medium">Separate toilet</p>
-                <p className="text-lg">{property.separateToilets}</p>
-              </div>
-            )}
-
-            {property.hasFloorPlan !== undefined && (
-              <div>
-                <p className="text-sm font-medium">Floor Plan</p>
-                <p className="text-lg">{property.hasFloorPlan ? 'Yes' : 'No'}</p>
-                {property.hasFloorPlan && property.floorPlanUrl && (
-                  <Button
-                    variant="link"
-                    size="sm"
-                    className="p-0 h-auto text-blue-600"
-                    onClick={() => setFloorPlanOpen(true)}
-                  >
-                    View Plan
-                  </Button>
-                )}
-              </div>
-            )}
-          </div>
-
-          <Separator className="my-4" />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {property.studyRooms !== undefined && (
-              <div>
-                <p className="text-sm font-medium">Study room</p>
-                <p className="text-lg">{property.studyRooms}</p>
-              </div>
-            )}
-
-            {property.familyLounges !== undefined && (
-              <div>
-                <p className="text-sm font-medium">Family Lounge</p>
-                <p className="text-lg">{property.familyLounges}</p>
-              </div>
-            )}
-
-            {property.laundryRooms !== undefined && (
-              <div>
-                <p className="text-sm font-medium">Laundry room</p>
-                <p className="text-lg">{property.laundryRooms}</p>
-              </div>
-            )}
-
-            {property.sheds !== undefined && (
-              <div>
-                <p className="text-sm font-medium">No of shed</p>
-                <p className="text-lg">{property.sheds}</p>
-              </div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Parking & Special Info */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Car className="h-5 w-5" />
-            Parking Information
-          </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div>
-            <p className="text-sm font-medium text-muted-foreground">Car space</p>
-            <p>{property.parkingDescription || `${property.parkingSpaces} parking spaces`}</p>
+          {/* Area and Type in one line */}
+          <div className="grid grid-cols-2 gap-4 text-sm">
+            {property.area && (
+              <div>
+                <span className="text-muted-foreground">Area:</span>{' '}
+                <span className="font-medium capitalize">{property.area}</span>
+              </div>
+            )}
+            {property.dwellingType && (
+              <div>
+                <span className="text-muted-foreground">Type:</span>{' '}
+                <span className="font-medium capitalize">{property.dwellingType.replace(/-/g, ' / ')}</span>
+              </div>
+            )}
           </div>
 
-          {property.specialInfo && (
-            <div>
-              <p className="text-sm font-medium text-muted-foreground">Special info</p>
-              <p>{property.specialInfo}</p>
+          {/* Room Configuration - Compact Grid */}
+          <div className="pt-2 border-t">
+            <p className="text-sm font-semibold mb-2">Room Configuration</p>
+            <div className="grid grid-cols-4 gap-3 text-sm">
+              <div className="flex items-center gap-1.5">
+                <Bed className="h-4 w-4 text-muted-foreground" />
+                <span><strong>{property.bedrooms}</strong> Bed</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Bath className="h-4 w-4 text-muted-foreground" />
+                <span><strong>{property.bathrooms}</strong> Bath</span>
+              </div>
+              {property.separateToilets !== undefined && property.separateToilets > 0 && (
+                <div className="text-sm">
+                  <strong>{property.separateToilets}</strong> Toilet
+                </div>
+              )}
+              {property.livingAreas !== undefined && property.livingAreas > 0 && (
+                <div className="text-sm">
+                  <strong>{property.livingAreas}</strong> Living
+                </div>
+              )}
+              {property.studyRooms !== undefined && property.studyRooms > 0 && (
+                <div className="text-sm">
+                  <strong>{property.studyRooms}</strong> Study
+                </div>
+              )}
+              {property.laundryRooms !== undefined && property.laundryRooms > 0 && (
+                <div className="text-sm">
+                  <strong>{property.laundryRooms}</strong> Laundry
+                </div>
+              )}
+              {property.sheds !== undefined && property.sheds > 0 && (
+                <div className="text-sm">
+                  <strong>{property.sheds}</strong> Shed
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </CardContent>
       </Card>
 
-      {/* Amenities */}
-      {property.amenities && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Amenities & Features</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {property.amenities.swimmingPool !== undefined && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Swimming pool:</span>
-                  <span>{property.amenities.swimmingPool ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.amenities.spa !== undefined && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">SPA:</span>
-                  <span>{property.amenities.spa ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.amenities.clothesline !== undefined && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Clothesline:</span>
-                  <span>{property.amenities.clothesline ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.amenities.offStreetParking !== undefined && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Off-street Parking:</span>
-                  <span>{property.amenities.offStreetParking ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.amenities.lawn !== undefined && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Lawn*:</span>
-                  <span>{property.amenities.lawn ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.amenities.garden && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Garden*:</span>
-                  <span>
-                    {property.amenities.garden.hasGarden
-                      ? property.amenities.garden.fencingType || 'Yes'
-                      : 'No'}
-                  </span>
-                </div>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Utilities */}
-      {property.utilities && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Zap className="h-5 w-5" />
-              Utilities & Services
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {/* Gas */}
-            {property.utilities.gas && (
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Gas*</p>
-                <p>
-                  {property.utilities.gas.available ? 'Yes' : 'No'}
-                  {property.utilities.gas.available && property.utilities.gas.type && (
-                    <span className="text-muted-foreground"> - {property.utilities.gas.type}</span>
-                  )}
-                  {property.utilities.gas.icpNumber && (
-                    <span className="text-muted-foreground"> (ICP: {property.utilities.gas.icpNumber})</span>
-                  )}
-                </p>
-              </div>
-            )}
-
-            {/* Electricity */}
-            {property.utilities.electricity && (
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Electricity* ICP and location</p>
-                <p>
-                  {property.utilities.electricity.icpNumber || 'Not specified'}
-                  {property.utilities.electricity.location && (
-                    <span className="text-muted-foreground"> - {property.utilities.electricity.location}</span>
-                  )}
-                </p>
-              </div>
-            )}
-
-            {/* Water */}
-            {property.utilities.water && (
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Water* Meter no and location</p>
-                <p>
-                  {property.utilities.water.meterNumber || 'Not specified'}
-                  {property.utilities.water.location && (
-                    <span className="text-muted-foreground"> - {property.utilities.water.location}</span>
-                  )}
-                </p>
-              </div>
-            )}
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {property.utilities.septicTank !== undefined && (
-                <div className="flex items-center gap-2">
-                  <Droplet className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Septic Tank:</span>
-                  <span>{property.utilities.septicTank ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.utilities.waterFilterSystem !== undefined && (
-                <div className="flex items-center gap-2">
-                  <Droplet className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Water filter system:</span>
-                  <span>{property.utilities.waterFilterSystem ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.utilities.internet && (
-                <div className="flex items-center gap-2">
-                  <Wifi className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Internet*:</span>
-                  <span>{property.utilities.internet.type || 'Available'}</span>
-                </div>
-              )}
-
-              {property.utilities.hrvSystem !== undefined && (
-                <div className="flex items-center gap-2">
-                  <Wind className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">HRV system:</span>
-                  <span>{property.utilities.hrvSystem ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-
-              {property.smokeAlarmCompliance && (
-                <div className="flex items-center gap-2">
-                  <AlertTriangle className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Smoke alarm* complied:</span>
-                  <span className="capitalize">{property.smokeAlarmCompliance.replace('-', ' ')}</span>
-                </div>
-              )}
-
-              {property.utilities.fireplace !== undefined && (
-                <div className="flex items-center gap-2">
-                  <Flame className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Fireplace:</span>
-                  <span>{property.utilities.fireplace ? 'Yes' : 'No'}</span>
-                </div>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Chattels */}
-      {property.chattels && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Chattel List</CardTitle>
-            <CardDescription>Fixtures and furnishings included with the property</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {property.chattels.mainList.length > 0 && (
-              <div>
-                <p className="text-sm font-medium text-muted-foreground mb-2">Main Chattels</p>
-                <p className="text-sm">
-                  {property.chattels.mainList.map((item, idx) => (
-                    <span key={idx}>
-                      {item.item}
-                      {item.quantity > 1 && ` *${item.quantity}`}
-                      {idx < property.chattels!.mainList.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            )}
-
-            {property.chattels.additionalList && property.chattels.additionalList.length > 0 && (
-              <div>
-                <p className="text-sm font-medium text-muted-foreground mb-2">
-                  Additional Chattel list (Not affect tenants enjoy when staying at the place):
-                </p>
-                <p className="text-sm">
-                  {property.chattels.additionalList.map((item, idx) => (
-                    <span key={idx}>
-                      {item.item}
-                      {item.quantity > 1 && ` *${item.quantity}`}
-                      {idx < property.chattels!.additionalList!.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Insurance */}
-      {property.insurance && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Shield className="h-5 w-5" />
-              Insurance
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div>
-              <p className="text-sm font-medium text-muted-foreground">Insurance</p>
-              <p>{property.insurance.hasInsurance ? 'Yes' : 'No'}</p>
-            </div>
-
-            {property.insurance.hasInsurance && (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {property.insurance.insurer && (
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground">Insurer</p>
-                      <p>{property.insurance.insurer}</p>
-                    </div>
-                  )}
-
-                  {property.insurance.policyNumber && (
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground">Policy</p>
-                      <p>{property.insurance.policyNumber}</p>
-                    </div>
-                  )}
-
-                  {property.insurance.excessFee !== undefined && (
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground">Excess Fee</p>
-                      <p>${property.insurance.excessFee}</p>
-                    </div>
-                  )}
-                </div>
-
+      {/* Two Column Layout for Detailed Information */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Left Column */}
+        <div className="space-y-4">
+          {/* Parking */}
+          {(property.parkingSpaces || property.parkingDescription) && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Car className="h-4 w-4" />
+                  Parking
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Expire on specific date?</p>
-                  <p>
-                    {property.insurance.isMonthlyAutoRenewal
-                      ? 'No: Monthly payment with automatic renewal.'
-                      : `Yes on ${new Date(property.insurance.expiryDate!).toLocaleDateString('en-NZ', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}`}
-                  </p>
+                  <span className="text-muted-foreground">Spaces:</span>{' '}
+                  <strong>{property.parkingSpaces || 0}</strong>
                 </div>
-              </>
-            )}
-          </CardContent>
-        </Card>
-      )}
+                {property.parkingDescription && (
+                  <p className="text-muted-foreground">{property.parkingDescription}</p>
+                )}
+                {property.specialInfo && (
+                  <p className="text-xs bg-amber-50 p-2 rounded border border-amber-200">{property.specialInfo}</p>
+                )}
+              </CardContent>
+            </Card>
+          )}
 
-      {/* Healthy Homes Compliance */}
-      {property.healthyHomesCompliance && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              {property.healthyHomesCompliance.isCompliant ? (
-                <CheckCircle2 className="h-5 w-5 text-green-600" />
-              ) : (
-                <XCircle className="h-5 w-5 text-orange-600" />
-              )}
-              Healthy home compliance
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {property.healthyHomesCompliance.isCompliant ? (
-              <>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  <span>
-                    Yes on{' '}
-                    {new Date(property.healthyHomesCompliance.complianceDate!).toLocaleDateString('en-NZ', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </span>
+          {/* Amenities - Compact Table */}
+          {property.amenities && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Home className="h-4 w-4" />
+                  Amenities
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
+                  {property.amenities.swimmingPool !== undefined && (
+                    <div className="flex items-center gap-1.5">
+                      {property.amenities.swimmingPool ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <XCircle className="h-3.5 w-3.5 text-gray-300" />
+                      )}
+                      <span>Pool</span>
+                    </div>
+                  )}
+                  {property.amenities.spa !== undefined && (
+                    <div className="flex items-center gap-1.5">
+                      {property.amenities.spa ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <XCircle className="h-3.5 w-3.5 text-gray-300" />
+                      )}
+                      <span>SPA</span>
+                    </div>
+                  )}
+                  {property.amenities.clothesline !== undefined && (
+                    <div className="flex items-center gap-1.5">
+                      {property.amenities.clothesline ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <XCircle className="h-3.5 w-3.5 text-gray-300" />
+                      )}
+                      <span>Clothesline</span>
+                    </div>
+                  )}
+                  {property.amenities.offStreetParking !== undefined && (
+                    <div className="flex items-center gap-1.5">
+                      {property.amenities.offStreetParking ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <XCircle className="h-3.5 w-3.5 text-gray-300" />
+                      )}
+                      <span>Off-street Parking</span>
+                    </div>
+                  )}
+                  {property.amenities.lawn !== undefined && (
+                    <div className="flex items-center gap-1.5">
+                      {property.amenities.lawn ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <XCircle className="h-3.5 w-3.5 text-gray-300" />
+                      )}
+                      <span>Lawn</span>
+                    </div>
+                  )}
+                  {property.amenities.garden?.hasGarden && (
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                      <span>Garden{property.amenities.garden.fencingType && ` (${property.amenities.garden.fencingType})`}</span>
+                    </div>
+                  )}
                 </div>
-                {property.healthyHomesCompliance.certificateUrl && (
-                  <div className="flex items-center justify-between p-3 rounded-lg border">
-                    <div className="flex items-center gap-2">
-                      <FileText className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm font-medium">Compliance certificate attachment</p>
-                        <p className="text-xs text-muted-foreground">
-                          updated on{' '}
-                          {new Date(property.healthyHomesCompliance.certificateUpdatedDate!).toLocaleDateString(
-                            'en-NZ'
-                          )}
-                        </p>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Utilities - Compact List */}
+          {property.utilities && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Zap className="h-4 w-4" />
+                  Utilities
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-1.5 text-sm">
+                  {property.utilities.gas?.available && (
+                    <div className="flex items-start gap-2">
+                      <Flame className="h-3.5 w-3.5 text-muted-foreground mt-0.5" />
+                      <div className="flex-1">
+                        <strong>Gas:</strong> {property.utilities.gas.type}
+                        {property.utilities.gas.icpNumber && <span className="text-muted-foreground text-xs block">ICP: {property.utilities.gas.icpNumber}</span>}
                       </div>
                     </div>
-                    <Button variant="ghost" size="sm">
-                      View
-                    </Button>
-                  </div>
-                )}
-              </>
-            ) : (
-              <>
-                <div className="flex items-center gap-2">
-                  <XCircle className="h-4 w-4 text-orange-600" />
-                  <span>
-                    No, Will need to comply before{' '}
-                    {property.healthyHomesCompliance.needsComplianceBy &&
-                      new Date(property.healthyHomesCompliance.needsComplianceBy).toLocaleDateString('en-NZ', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                  </span>
-                </div>
-                {property.healthyHomesCompliance.reportUrl && (
-                  <div className="flex items-center justify-between p-3 rounded-lg border">
-                    <div className="flex items-center gap-2">
-                      <FileText className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm font-medium">Healthy home report attachment</p>
-                        <p className="text-xs text-muted-foreground">
-                          updated on{' '}
-                          {new Date(property.healthyHomesCompliance.reportUpdatedDate!).toLocaleDateString('en-NZ')}
-                        </p>
+                  )}
+                  {property.utilities.electricity && (
+                    <div className="flex items-start gap-2">
+                      <Zap className="h-3.5 w-3.5 text-muted-foreground mt-0.5" />
+                      <div className="flex-1">
+                        <strong>Electricity</strong>
+                        {property.utilities.electricity.icpNumber && <span className="text-muted-foreground text-xs block">ICP: {property.utilities.electricity.icpNumber}</span>}
+                        {property.utilities.electricity.location && <span className="text-muted-foreground text-xs block">{property.utilities.electricity.location}</span>}
                       </div>
                     </div>
-                    <Button variant="ghost" size="sm">
-                      View
-                    </Button>
+                  )}
+                  {property.utilities.water && (
+                    <div className="flex items-start gap-2">
+                      <Droplet className="h-3.5 w-3.5 text-muted-foreground mt-0.5" />
+                      <div className="flex-1">
+                        <strong>Water</strong>
+                        {property.utilities.water.meterNumber && <span className="text-muted-foreground text-xs block">Meter: {property.utilities.water.meterNumber}</span>}
+                        {property.utilities.water.location && <span className="text-muted-foreground text-xs block">{property.utilities.water.location}</span>}
+                      </div>
+                    </div>
+                  )}
+                  {property.utilities.internet && (
+                    <div className="flex items-start gap-2">
+                      <Wifi className="h-3.5 w-3.5 text-muted-foreground mt-0.5" />
+                      <div className="flex-1">
+                        <strong>Internet:</strong> {property.utilities.internet.type}
+                      </div>
+                    </div>
+                  )}
+                  {property.utilities.hrvSystem && (
+                    <div className="flex items-center gap-2">
+                      <Wind className="h-3.5 w-3.5 text-muted-foreground" />
+                      <span>HRV System</span>
+                    </div>
+                  )}
+                  {property.utilities.fireplace && (
+                    <div className="flex items-center gap-2">
+                      <Flame className="h-3.5 w-3.5 text-muted-foreground" />
+                      <span>Fireplace</span>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Chattels - Compact Lists */}
+          {property.chattels && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base">Chattels</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {property.chattels.mainList && property.chattels.mainList.length > 0 && (
+                  <div>
+                    <p className="text-xs font-semibold text-muted-foreground mb-1.5">Main Chattels</p>
+                    <div className="text-xs text-muted-foreground leading-relaxed">
+                      {property.chattels.mainList.map((item, idx) => (
+                        <span key={idx}>
+                          {item.item} ×{item.quantity}
+                          {idx < property.chattels!.mainList!.length - 1 && ', '}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
-              </>
-            )}
-          </CardContent>
-        </Card>
-      )}
+                {property.chattels.additionalList && property.chattels.additionalList.length > 0 && (
+                  <div>
+                    <p className="text-xs font-semibold text-muted-foreground mb-1.5">Additional (Not affecting tenants)</p>
+                    <div className="text-xs text-muted-foreground leading-relaxed">
+                      {property.chattels.additionalList.map((item, idx) => (
+                        <span key={idx}>
+                          {item.item} ×{item.quantity}
+                          {idx < property.chattels!.additionalList!.length - 1 && ', '}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
+        </div>
 
-      {/* Keys Information */}
-      {property.keys && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Key className="h-5 w-5" />
-              Key info
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm">
-              {property.keys.mainEntranceDoor && `Main Entrance Door *${property.keys.mainEntranceDoor}, `}
-              {property.keys.backDoor && `Back door *${property.keys.backDoor}, `}
-              {property.keys.slidingDoor && `Sliding door *${property.keys.slidingDoor}, `}
-              {property.keys.garageRemote && `Garage remote: ${property.keys.garageRemote}`}
-              {property.keys.keysPhotoUrl && ' (attachments of photo for keys)'}
-            </p>
-            {property.keys.keysPhotoUrl && (
-              <Button variant="outline" size="sm" className="mt-3">
-                <FileText className="h-4 w-4 mr-2" />
-                View Keys Photo
-              </Button>
-            )}
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Hazards & Risks */}
-      {property.hazards && property.hazards.hasHazards && (
-        <Card className="border-orange-200">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-orange-700">
-              <AlertTriangle className="h-5 w-5" />
-              Hazards or risk
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="flex items-start gap-2">
-              <span className="text-sm font-medium">Yes</span>
-            </div>
-            {property.hazards.details && property.hazards.details.length > 0 && (
-              <div className="space-y-2">
-                <p className="text-sm font-medium text-muted-foreground">Please give more information if Yes:</p>
-                {property.hazards.details.map((hazard, idx) => (
-                  <div key={idx} className="text-sm">
-                    {hazard.type}
-                    {hazard.isPhysicalDanger && (
-                      <Badge variant="destructive" className="ml-2">
-                        physical danger
-                      </Badge>
+        {/* Right Column */}
+        <div className="space-y-4">
+          {/* Compliance & Safety - Combined Card */}
+          <Card className={property.hazards?.hasHazards ? 'border-orange-300' : ''}>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <Shield className="h-4 w-4" />
+                Compliance & Safety
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {/* Healthy Homes */}
+              {property.healthyHomesCompliance && (
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    {property.healthyHomesCompliance.isCompliant ? (
+                      <CheckCircle2 className="h-4 w-4 text-green-600" />
+                    ) : (
+                      <XCircle className="h-4 w-4 text-orange-600" />
                     )}
-                    {hazard.description && <p className="text-muted-foreground mt-1">{hazard.description}</p>}
+                    <span className="font-semibold text-sm">Healthy Homes Compliant</span>
                   </div>
-                ))}
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      )}
+                  {property.healthyHomesCompliance.complianceDate && (
+                    <p className="text-xs text-muted-foreground ml-6">
+                      Since {new Date(property.healthyHomesCompliance.complianceDate).toLocaleDateString('en-NZ')}
+                    </p>
+                  )}
+                  {property.healthyHomesCompliance.certificateUrl && (
+                    <Button variant="link" size="sm" className="h-auto p-0 ml-6 text-xs">
+                      View Certificate
+                    </Button>
+                  )}
+                </div>
+              )}
 
-      {/* AI Rental Appraisal */}
+              {/* Insurance */}
+              {property.insurance?.hasInsurance && (
+                <div className="space-y-1 pt-2 border-t">
+                  <p className="font-semibold text-sm">Insurance</p>
+                  <div className="text-xs space-y-0.5 ml-2">
+                    {property.insurance.insurer && (
+                      <div><span className="text-muted-foreground">Provider:</span> {property.insurance.insurer}</div>
+                    )}
+                    {property.insurance.policyNumber && (
+                      <div><span className="text-muted-foreground">Policy:</span> {property.insurance.policyNumber}</div>
+                    )}
+                    {property.insurance.excessFee !== undefined && (
+                      <div><span className="text-muted-foreground">Excess:</span> ${property.insurance.excessFee}</div>
+                    )}
+                    {property.insurance.expiryDate && (
+                      <div><span className="text-muted-foreground">Expires:</span> {new Date(property.insurance.expiryDate).toLocaleDateString('en-NZ')}</div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Hazards - Prominent Display */}
+              {property.hazards?.hasHazards && property.hazards.details && property.hazards.details.length > 0 && (
+                <div className="pt-2 border-t">
+                  <div className="flex items-center gap-2 mb-2">
+                    <AlertTriangle className="h-4 w-4 text-orange-600" />
+                    <span className="font-semibold text-sm text-orange-900">Hazards Identified</span>
+                  </div>
+                  <div className="space-y-2">
+                    {property.hazards.details.map((hazard, idx) => (
+                      <div key={idx} className="text-xs bg-orange-50 p-2 rounded border border-orange-200">
+                        <div className="font-medium text-orange-900 flex items-center gap-1.5">
+                          {hazard.type}
+                          {hazard.isPhysicalDanger && (
+                            <Badge variant="destructive" className="text-xs h-4 px-1">
+                              Physical Danger
+                            </Badge>
+                          )}
+                        </div>
+                        {hazard.description && (
+                          <p className="text-muted-foreground mt-1">{hazard.description}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Keys */}
+          {property.keys && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Key className="h-4 w-4" />
+                  Keys
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  {property.keys.mainEntranceDoor !== undefined && property.keys.mainEntranceDoor > 0 && (
+                    <div>Main Door: <strong>{property.keys.mainEntranceDoor}</strong></div>
+                  )}
+                  {property.keys.backDoor !== undefined && property.keys.backDoor > 0 && (
+                    <div>Back Door: <strong>{property.keys.backDoor}</strong></div>
+                  )}
+                  {property.keys.slidingDoor !== undefined && property.keys.slidingDoor > 0 && (
+                    <div>Sliding Door: <strong>{property.keys.slidingDoor}</strong></div>
+                  )}
+                  {property.keys.garageRemote !== undefined && property.keys.garageRemote > 0 && (
+                    <div>Garage Remote: <strong>{property.keys.garageRemote}</strong></div>
+                  )}
+                </div>
+                {property.keys.keysPhotoUrl && (
+                  <Button variant="outline" size="sm" className="w-full mt-3 h-8 text-xs">
+                    <FileText className="h-3 w-3 mr-1.5" />
+                    View Keys Photo
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          )}
+        </div>
+      </div>
+
+      {/* AI Rental Appraisal - Full Width at Bottom */}
       {property.rentalAppraisal && (
-        <Card className="border-blue-200 bg-blue-50/50">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-blue-600" />
-              Rental Appraisal (AI tech)
+        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base flex items-center gap-2 text-blue-900">
+              <TrendingUp className="h-4 w-4" />
+              AI Rental Appraisal
             </CardTitle>
-            <CardDescription>Generate a report for checking and editing</CardDescription>
+            <CardDescription className="text-xs">
+              {property.rentalAppraisal.lastGeneratedDate && (
+                <>Last generated: {new Date(property.rentalAppraisal.lastGeneratedDate).toLocaleDateString('en-NZ')}</>
+              )}
+            </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3">
-            {property.rentalAppraisal.lastGeneratedDate && (
+          <CardContent className="flex items-center justify-between">
+            {property.rentalAppraisal.suggestedRent !== undefined && (
               <div>
-                <p className="text-sm text-muted-foreground">
-                  Last generated:{' '}
-                  {new Date(property.rentalAppraisal.lastGeneratedDate).toLocaleDateString('en-NZ')}
-                </p>
-              </div>
-            )}
-            {property.rentalAppraisal.suggestedRent && (
-              <div>
-                <p className="text-sm font-medium">Suggested Weekly Rent</p>
-                <p className="text-2xl font-bold text-blue-600">${property.rentalAppraisal.suggestedRent}</p>
+                <p className="text-sm text-muted-foreground mb-1">Suggested Weekly Rent</p>
+                <p className="text-3xl font-bold text-blue-600">${property.rentalAppraisal.suggestedRent}</p>
               </div>
             )}
             <div className="flex gap-2">
               {property.rentalAppraisal.reportUrl && (
-                <Button variant="outline">
-                  <FileText className="h-4 w-4 mr-2" />
+                <Button variant="outline" size="sm">
+                  <FileText className="h-3.5 w-3.5 mr-1.5" />
                   View Report
                 </Button>
               )}
-              <Button variant="default">
-                <TrendingUp className="h-4 w-4 mr-2" />
-                Generate New Appraisal
+              <Button variant="default" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                <TrendingUp className="h-3.5 w-3.5 mr-1.5" />
+                Generate New
               </Button>
             </div>
           </CardContent>
         </Card>
       )}
-      </div>
-      {/* End Two Column Grid */}
     </div>
   )
 }
