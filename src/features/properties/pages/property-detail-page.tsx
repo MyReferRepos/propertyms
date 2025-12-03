@@ -246,10 +246,6 @@ export function PropertyDetailPage() {
 
         <div className="flex gap-2">
           <Button variant="outline">
-            <Camera className="h-4 w-4 mr-2" />
-            Photos
-          </Button>
-          <Button variant="outline">
             <FileText className="h-4 w-4 mr-2" />
             Reports
           </Button>

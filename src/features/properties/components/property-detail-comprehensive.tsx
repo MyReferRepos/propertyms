@@ -53,52 +53,56 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
   return (
     <div className="space-y-4">
       {/* Floor Plan Dialog */}
-      <Dialog open={floorPlanOpen} onOpenChange={setFloorPlanOpen}>
-        <DialogContent className="max-w-6xl w-full">
-          <DialogHeader>
-            <DialogTitle>Floor Plan - {property.address}</DialogTitle>
-          </DialogHeader>
-          <div className="w-full">
-            <img
-              src={property.floorPlanUrl}
-              alt="Floor Plan Full View"
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-        </DialogContent>
-      </Dialog>
-
-      {/* Photo Gallery Dialog */}
-      <Dialog open={photoGalleryOpen} onOpenChange={setPhotoGalleryOpen}>
-        <DialogContent className="max-w-5xl w-full">
-          <DialogHeader>
-            <DialogTitle>Property Photos ({currentPhotoIndex + 1} / {allPhotos.length})</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4">
-            <div className="relative aspect-video w-full bg-black rounded-lg overflow-hidden">
+      {property.floorPlanUrl && (
+        <Dialog open={floorPlanOpen} onOpenChange={setFloorPlanOpen}>
+          <DialogContent className="max-w-6xl w-full">
+            <DialogHeader>
+              <DialogTitle>Floor Plan - {property.address}</DialogTitle>
+            </DialogHeader>
+            <div className="w-full">
               <img
-                src={allPhotos[currentPhotoIndex]}
-                alt={`Property photo ${currentPhotoIndex + 1}`}
-                className="w-full h-full object-contain"
+                src={property.floorPlanUrl}
+                alt="Floor Plan Full View"
+                className="w-full h-auto rounded-lg"
               />
             </div>
-            {/* Thumbnails */}
-            <div className="grid grid-cols-6 gap-2">
-              {allPhotos.map((photo, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setCurrentPhotoIndex(idx)}
-                  className={`aspect-video rounded overflow-hidden cursor-pointer border-2 transition-all ${
-                    idx === currentPhotoIndex ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-200 hover:border-gray-400'
-                  }`}
-                >
-                  <img src={photo} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
+          </DialogContent>
+        </Dialog>
+      )}
+
+      {/* Photo Gallery Dialog */}
+      {allPhotos.length > 0 && (
+        <Dialog open={photoGalleryOpen} onOpenChange={setPhotoGalleryOpen}>
+          <DialogContent className="max-w-5xl w-full">
+            <DialogHeader>
+              <DialogTitle>Property Photos ({currentPhotoIndex + 1} / {allPhotos.length})</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div className="relative aspect-video w-full bg-black rounded-lg overflow-hidden">
+                <img
+                  src={allPhotos[currentPhotoIndex]}
+                  alt={`Property photo ${currentPhotoIndex + 1}`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              {/* Thumbnails */}
+              <div className="grid grid-cols-6 gap-2">
+                {allPhotos.map((photo, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setCurrentPhotoIndex(idx)}
+                    className={`aspect-video rounded overflow-hidden cursor-pointer border-2 transition-all ${
+                      idx === currentPhotoIndex ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-200 hover:border-gray-400'
+                    }`}
+                  >
+                    <img src={photo} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+          </DialogContent>
+        </Dialog>
+      )}
 
       {/* Core Information - Compact Display with Visual Assets */}
       <Card>
