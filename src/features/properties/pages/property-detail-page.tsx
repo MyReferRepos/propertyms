@@ -14,7 +14,6 @@ import {
   Shield,
   Lightbulb,
   ChevronLeft,
-  Camera,
   CheckCircle2,
   Home,
 } from 'lucide-react'
@@ -329,36 +328,7 @@ export function PropertyDetailPage() {
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-4">
           {/* Comprehensive Property Information */}
-          {property.imageUrl && (
-            <div className="relative aspect-video w-full max-w-md rounded-lg overflow-hidden mb-6">
-              <img src={property.imageUrl} alt={property.address} className="w-full h-full object-cover" />
-            </div>
-          )}
-
           <PropertyDetailComprehensive property={property} />
-
-          {/* Additional sections if extended mock data exists */}
-          {mockExtendedData && mockExtendedData.images && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Photo Gallery</CardTitle>
-                <CardDescription>Recent property photos</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-2">
-                  {mockExtendedData.images.map((img, idx) => (
-                    <div key={idx} className="aspect-video rounded-lg overflow-hidden bg-muted">
-                      <img src={img} alt={`Property photo ${idx + 1}`} className="w-full h-full object-cover" />
-                    </div>
-                  ))}
-                </div>
-                <Button variant="outline" className="w-full mt-4">
-                  <Camera className="h-4 w-4 mr-2" />
-                  View All Photos
-                </Button>
-              </CardContent>
-            </Card>
-          )}
         </TabsContent>
 
         {/* Financials Tab */}
