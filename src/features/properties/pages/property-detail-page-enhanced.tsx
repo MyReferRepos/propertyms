@@ -10,7 +10,6 @@ import {
   ChevronLeft,
   Camera,
   Edit,
-  FileText,
   CloudUpload,
   AlertCircle,
 } from 'lucide-react'

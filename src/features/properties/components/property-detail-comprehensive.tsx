@@ -14,8 +14,6 @@ import {
   Bed,
   Bath,
   Car,
-  Maximize,
-  Building2,
   Droplet,
   Zap,
   Wifi,
@@ -27,8 +25,6 @@ import {
   CheckCircle2,
   XCircle,
   FileText,
-  Calendar,
-  DollarSign,
   TrendingUp,
 } from 'lucide-react'
 
