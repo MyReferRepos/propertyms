@@ -1,6 +1,8 @@
 // Core Types for PropertyMS
 
 export type PropertyType = 'house' | 'apartment' | 'townhouse' | 'unit'
+export type DwellingType = 'house-townhouse' | 'apartment' | 'boarding-house-room' | 'room' | 'bedsit-flat'
+export type AreaLocation = 'north' | 'south' | 'east' | 'west' | 'central'
 export type PropertyStatus = 'occupied' | 'vacant' | 'maintenance'
 export type TenancyStatus = 'active' | 'expiring-soon' | 'expired' | 'terminated'
 export type MaintenanceStatus = 'pending' | 'in-progress' | 'completed' | 'cancelled'
@@ -14,12 +16,30 @@ export interface Property {
   suburb: string
   city: string
   postcode: string
+  country: string
+  area?: AreaLocation
   type: PropertyType
+  dwellingType?: DwellingType
+
+  // Room Information
   bedrooms: number
   bathrooms: number
+  separateToilets?: number
+  livingAreas?: number
+  studyRooms?: number
+  familyLounges?: number
+  laundryRooms?: number
+  sheds?: number
+
+  // Parking & Space
   parkingSpaces: number
+  parkingDescription?: string // e.g., "Single freestanding garage with automatic door"
+  specialInfo?: string // e.g., "Garage converted to storage room"
   floorArea: number // sqm
   landArea?: number // sqm
+  hasFloorPlan?: boolean
+  floorPlanUrl?: string
+
   yearBuilt?: number
   status: PropertyStatus
   currentRent?: number // weekly
@@ -29,13 +49,112 @@ export interface Property {
   ownerId: string
   managerId: string
   features: string[]
+
+  // Amenities
+  amenities?: {
+    swimmingPool?: boolean
+    spa?: boolean
+    clothesline?: boolean
+    offStreetParking?: boolean
+    lawn?: boolean
+    garden?: {
+      hasGarden: boolean
+      fencingType?: string // e.g., "Fully fenced", "Partially fenced", "Not fenced"
+    }
+  }
+
+  // Utilities
+  utilities?: {
+    gas?: {
+      available: boolean
+      type?: string // e.g., "Nature gas from main pipe", "LPG Bottle"
+      icpNumber?: string
+    }
+    electricity?: {
+      icpNumber?: string
+      location?: string
+    }
+    water?: {
+      meterNumber?: string
+      location?: string
+    }
+    septicTank?: boolean
+    waterFilterSystem?: boolean
+    internet?: {
+      type?: string // e.g., "Fibre", "Wifi", "DDSL"
+    }
+    hrvSystem?: boolean
+    fireplace?: boolean
+  }
+
+  // Chattels (Personal Property/Furnishings)
+  chattels?: {
+    mainList: Array<{
+      item: string
+      quantity: number
+    }>
+    additionalList?: Array<{
+      item: string
+      quantity: number
+      note?: string // e.g., "Not affect tenants enjoy when staying at the place"
+    }>
+  }
+
+  // Insurance
+  insurance?: {
+    hasInsurance: boolean
+    insurer?: string
+    policyNumber?: string
+    excessFee?: number
+    expiryDate?: string
+    isMonthlyAutoRenewal?: boolean
+  }
+
   // Compliance
   hasInsulation: boolean
   hasHeating: boolean
   hasSmokeAlarms: boolean
+  smokeAlarmCompliance?: 'yes' | 'no' | 'not-checked'
   lastInspectionDate?: string
   nextInspectionDue?: string
   complianceScore: number // 0-100
+
+  // Healthy Homes Compliance
+  healthyHomesCompliance?: {
+    isCompliant: boolean
+    complianceDate?: string
+    certificateUrl?: string
+    certificateUpdatedDate?: string
+    needsComplianceBy?: string
+    reportUrl?: string
+    reportUpdatedDate?: string
+  }
+
+  // Keys Information
+  keys?: {
+    mainEntranceDoor?: number
+    backDoor?: number
+    slidingDoor?: number
+    garageRemote?: number
+    keysPhotoUrl?: string
+  }
+
+  // Hazards & Risks
+  hazards?: {
+    hasHazards: boolean
+    details?: Array<{
+      type: string // e.g., "Dogs", "Asbestos", "Meth", "Dangerous Building Notice"
+      description: string
+      isPhysicalDanger?: boolean
+    }>
+  }
+
+  // AI Features
+  rentalAppraisal?: {
+    lastGeneratedDate?: string
+    reportUrl?: string
+    suggestedRent?: number
+  }
 }
 
 // Owner

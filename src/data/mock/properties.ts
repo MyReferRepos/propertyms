@@ -3,10 +3,180 @@ import type { Property } from '@/types'
 export const mockProperties: Property[] = [
   {
     id: 'prop-001',
+    address: '99 Bruce McLaren Rd',
+    suburb: 'Henderson',
+    city: 'Auckland',
+    postcode: '0612',
+    country: 'New Zealand',
+    area: 'west',
+    type: 'house',
+    dwellingType: 'house-townhouse',
+
+    // Room Information (from screenshot)
+    bedrooms: 3,
+    bathrooms: 2,
+    separateToilets: 1,
+    livingAreas: 1,
+    studyRooms: 1,
+    familyLounges: 0,
+    laundryRooms: 1,
+    sheds: 1,
+
+    // Parking & Space
+    parkingSpaces: 3, // Single freestanding + Double internal
+    parkingDescription: 'Single freestanding garage with automatic door. Double internal garage. Triple garage space.',
+    specialInfo: 'Garage converted to storage room.',
+    floorArea: 150,
+    landArea: 500,
+    hasFloorPlan: true,
+    floorPlanUrl: '/documents/floorplan-prop-001.pdf',
+
+    yearBuilt: 2015,
+    status: 'occupied',
+    currentRent: 750,
+    estimatedValue: 1200000,
+    imageUrl: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800',
+    images: [
+      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
+    ],
+    ownerId: 'owner-001',
+    managerId: 'mgr-001',
+    features: ['Modern Kitchen', 'Heat Pump', 'Double Glazing', 'Deck', 'Fully Fenced'],
+
+    // Amenities
+    amenities: {
+      swimmingPool: false,
+      spa: false,
+      clothesline: true,
+      offStreetParking: true,
+      lawn: true,
+      garden: {
+        hasGarden: true,
+        fencingType: 'Fully fenced',
+      },
+    },
+
+    // Utilities
+    utilities: {
+      gas: {
+        available: true,
+        type: 'Nature gas from main pipe',
+        icpNumber: 'ICP-123456789',
+      },
+      electricity: {
+        icpNumber: 'ICP-987654321',
+        location: 'External meter box on north wall',
+      },
+      water: {
+        meterNumber: 'WATER-556677',
+        location: 'Front boundary, left side',
+      },
+      septicTank: false,
+      waterFilterSystem: false,
+      internet: {
+        type: 'Fibre installed',
+      },
+      hrvSystem: false,
+      fireplace: true,
+    },
+
+    // Chattels
+    chattels: {
+      mainList: [
+        { item: 'Rangehood', quantity: 1 },
+        { item: 'Extractor Fan', quantity: 2 },
+        { item: 'Heat Pump', quantity: 1 },
+        { item: 'Dishwasher', quantity: 1 },
+        { item: 'Waste Disposal unit', quantity: 1 },
+        { item: 'TV antenna', quantity: 1 },
+        { item: 'Stove', quantity: 1 },
+        { item: 'Cook top', quantity: 1 },
+        { item: 'Under bench Oven', quantity: 1 },
+      ],
+      additionalList: [
+        { item: 'Double bed', quantity: 1, note: 'Not affect tenants enjoy when staying at the place' },
+        { item: 'Side table', quantity: 2, note: 'Not affect tenants enjoy when staying at the place' },
+        { item: 'Dining table', quantity: 1, note: 'Not affect tenants enjoy when staying at the place' },
+      ],
+    },
+
+    // Insurance
+    insurance: {
+      hasInsurance: true,
+      insurer: 'AA Insurance',
+      policyNumber: 'POL-2024-556677',
+      excessFee: 500,
+      expiryDate: '2025-05-23',
+      isMonthlyAutoRenewal: false,
+    },
+
+    // Compliance
+    hasInsulation: true,
+    hasHeating: true,
+    hasSmokeAlarms: true,
+    smokeAlarmCompliance: 'yes',
+    lastInspectionDate: '2024-09-15',
+    nextInspectionDue: '2024-12-15',
+    complianceScore: 100,
+
+    // Healthy Homes Compliance
+    healthyHomesCompliance: {
+      isCompliant: true,
+      complianceDate: '2024-05-23',
+      certificateUrl: '/documents/healthy-homes-cert-prop-001.pdf',
+      certificateUpdatedDate: '2024-05-25',
+      needsComplianceBy: undefined,
+      reportUrl: '/documents/healthy-homes-report-prop-001.pdf',
+      reportUpdatedDate: '2024-05-25',
+    },
+
+    // Keys Information
+    keys: {
+      mainEntranceDoor: 2,
+      backDoor: 1,
+      slidingDoor: 2,
+      garageRemote: 2,
+      keysPhotoUrl: '/documents/keys-prop-001.jpg',
+    },
+
+    // Hazards & Risks
+    hazards: {
+      hasHazards: true,
+      details: [
+        {
+          type: 'Dogs',
+          description: 'Previous tenants had dogs. Property has been professionally cleaned.',
+          isPhysicalDanger: false,
+        },
+        {
+          type: 'Asbestos',
+          description: 'Asbestos tested present in garage roof. Encapsulated and safe, no removal required.',
+          isPhysicalDanger: false,
+        },
+        {
+          type: 'Physical Danger',
+          description: 'Steep driveway - caution in wet weather.',
+          isPhysicalDanger: true,
+        },
+      ],
+    },
+
+    // AI Features
+    rentalAppraisal: {
+      lastGeneratedDate: '2024-11-01',
+      reportUrl: '/documents/rental-appraisal-prop-001.pdf',
+      suggestedRent: 780,
+    },
+  },
+  {
+    id: 'prop-002',
     address: '15 Queen Street',
     suburb: 'Auckland Central',
     city: 'Auckland',
     postcode: '1010',
+    country: 'New Zealand',
     type: 'apartment',
     bedrooms: 2,
     bathrooms: 1,
@@ -33,11 +203,12 @@ export const mockProperties: Property[] = [
     complianceScore: 100,
   },
   {
-    id: 'prop-002',
+    id: 'prop-003',
     address: '42 Karori Road',
     suburb: 'Karori',
     city: 'Wellington',
     postcode: '6012',
+    country: 'New Zealand',
     type: 'house',
     bedrooms: 3,
     bathrooms: 2,
@@ -64,11 +235,12 @@ export const mockProperties: Property[] = [
     complianceScore: 95,
   },
   {
-    id: 'prop-003',
+    id: 'prop-004',
     address: '88 Riccarton Avenue',
     suburb: 'Riccarton',
     city: 'Christchurch',
     postcode: '8011',
+    country: 'New Zealand',
     type: 'townhouse',
     bedrooms: 3,
     bathrooms: 2,
@@ -91,11 +263,12 @@ export const mockProperties: Property[] = [
     complianceScore: 100,
   },
   {
-    id: 'prop-004',
+    id: 'prop-005',
     address: '156 Dominion Road',
     suburb: 'Mount Eden',
     city: 'Auckland',
     postcode: '1024',
+    country: 'New Zealand',
     type: 'house',
     bedrooms: 4,
     bathrooms: 2,
@@ -121,11 +294,12 @@ export const mockProperties: Property[] = [
     complianceScore: 90,
   },
   {
-    id: 'prop-005',
+    id: 'prop-006',
     address: '23 The Terrace',
     suburb: 'Wellington Central',
     city: 'Wellington',
     postcode: '6011',
+    country: 'New Zealand',
     type: 'apartment',
     bedrooms: 1,
     bathrooms: 1,
@@ -150,11 +324,12 @@ export const mockProperties: Property[] = [
     complianceScore: 100,
   },
   {
-    id: 'prop-006',
+    id: 'prop-007',
     address: '67 Ponsonby Road',
     suburb: 'Ponsonby',
     city: 'Auckland',
     postcode: '1011',
+    country: 'New Zealand',
     type: 'apartment',
     bedrooms: 2,
     bathrooms: 2,
@@ -179,11 +354,12 @@ export const mockProperties: Property[] = [
     complianceScore: 100,
   },
   {
-    id: 'prop-007',
+    id: 'prop-008',
     address: '91 Manchester Street',
     suburb: 'Christchurch Central',
     city: 'Christchurch',
     postcode: '8011',
+    country: 'New Zealand',
     type: 'apartment',
     bedrooms: 1,
     bathrooms: 1,
@@ -208,11 +384,12 @@ export const mockProperties: Property[] = [
     complianceScore: 100,
   },
   {
-    id: 'prop-008',
+    id: 'prop-009',
     address: '34 Takapuna Beach Road',
     suburb: 'Takapuna',
     city: 'Auckland',
     postcode: '0622',
+    country: 'New Zealand',
     type: 'house',
     bedrooms: 5,
     bathrooms: 3,
