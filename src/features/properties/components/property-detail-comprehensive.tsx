@@ -98,12 +98,12 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
         </Dialog>
       )}
 
-      {/* Core Information - Compact Display with Visual Assets */}
+      {/* Core Information - Clearly Divided Sections */}
       <Card>
-        <CardHeader className="pb-3">
+        <CardHeader className="pb-4">
           <div className="flex items-start justify-between">
             <div>
-              <CardTitle className="text-xl">{property.address}</CardTitle>
+              <CardTitle className="text-xl font-bold">{property.address}</CardTitle>
               <CardDescription className="flex items-center gap-2 mt-1">
                 <MapPin className="h-3.5 w-3.5" />
                 {property.suburb}, {property.city} {property.postcode}
@@ -112,74 +112,83 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
             <Button variant="outline" size="sm">Show map</Button>
           </div>
         </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {/* Left: Basic Info & Room Configuration */}
-            <div className="space-y-3">
-              {/* Area and Type */}
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                {property.area && (
-                  <div>
-                    <span className="text-muted-foreground">Area:</span>{' '}
-                    <span className="font-medium capitalize">{property.area}</span>
-                  </div>
-                )}
-                {property.dwellingType && (
-                  <div>
-                    <span className="text-muted-foreground">Type:</span>{' '}
-                    <span className="font-medium capitalize">{property.dwellingType.replace(/-/g, ' / ')}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Room Configuration */}
-              <div className="pt-2 border-t">
-                <p className="text-xs font-semibold text-muted-foreground mb-2">Room Configuration</p>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  <div className="flex items-center gap-1.5">
-                    <Bed className="h-3.5 w-3.5 text-muted-foreground" />
-                    <span><strong>{property.bedrooms}</strong> Bed</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Bath className="h-3.5 w-3.5 text-muted-foreground" />
-                    <span><strong>{property.bathrooms}</strong> Bath</span>
-                  </div>
-                  {property.separateToilets !== undefined && property.separateToilets > 0 && (
-                    <div className="text-sm">
-                      <strong>{property.separateToilets}</strong> Toilet
-                    </div>
-                  )}
-                  {property.livingAreas !== undefined && property.livingAreas > 0 && (
-                    <div className="text-sm">
-                      <strong>{property.livingAreas}</strong> Living
-                    </div>
-                  )}
-                  {property.studyRooms !== undefined && property.studyRooms > 0 && (
-                    <div className="text-sm">
-                      <strong>{property.studyRooms}</strong> Study
-                    </div>
-                  )}
-                  {property.laundryRooms !== undefined && property.laundryRooms > 0 && (
-                    <div className="text-sm">
-                      <strong>{property.laundryRooms}</strong> Laundry
-                    </div>
-                  )}
-                  {property.sheds !== undefined && property.sheds > 0 && (
-                    <div className="text-sm">
-                      <strong>{property.sheds}</strong> Shed
-                    </div>
-                  )}
+        <CardContent className="space-y-4">
+          {/* Property Details Section */}
+          <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-800">
+            <div className="flex items-center gap-2 mb-3">
+              <Home className="h-4 w-4 text-slate-600 dark:text-slate-400" />
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Property Details</h3>
+            </div>
+            <div className="grid grid-cols-2 gap-4 text-sm mb-3">
+              {property.area && (
+                <div>
+                  <span className="text-muted-foreground">Area:</span>{' '}
+                  <span className="font-medium capitalize">{property.area}</span>
                 </div>
+              )}
+              {property.dwellingType && (
+                <div>
+                  <span className="text-muted-foreground">Type:</span>{' '}
+                  <span className="font-medium capitalize">{property.dwellingType.replace(/-/g, ' / ')}</span>
+                </div>
+              )}
+            </div>
+            {/* Room Configuration */}
+            <div className="pt-3 border-t border-slate-200 dark:border-slate-700">
+              <div className="flex items-center gap-2 mb-2">
+                <Bed className="h-3.5 w-3.5 text-slate-600 dark:text-slate-400" />
+                <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">Room Configuration</p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+                <div className="flex items-center gap-1.5">
+                  <Bed className="h-3.5 w-3.5 text-muted-foreground" />
+                  <span><strong>{property.bedrooms}</strong> Bed</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Bath className="h-3.5 w-3.5 text-muted-foreground" />
+                  <span><strong>{property.bathrooms}</strong> Bath</span>
+                </div>
+                {property.separateToilets !== undefined && property.separateToilets > 0 && (
+                  <div className="text-sm">
+                    <strong>{property.separateToilets}</strong> Toilet
+                  </div>
+                )}
+                {property.livingAreas !== undefined && property.livingAreas > 0 && (
+                  <div className="text-sm">
+                    <strong>{property.livingAreas}</strong> Living
+                  </div>
+                )}
+                {property.studyRooms !== undefined && property.studyRooms > 0 && (
+                  <div className="text-sm">
+                    <strong>{property.studyRooms}</strong> Study
+                  </div>
+                )}
+                {property.laundryRooms !== undefined && property.laundryRooms > 0 && (
+                  <div className="text-sm">
+                    <strong>{property.laundryRooms}</strong> Laundry
+                  </div>
+                )}
+                {property.sheds !== undefined && property.sheds > 0 && (
+                  <div className="text-sm">
+                    <strong>{property.sheds}</strong> Shed
+                  </div>
+                )}
               </div>
             </div>
+          </div>
 
-            {/* Middle: Floor Plan (if available) */}
+          {/* Visual Assets Section - Floor Plan & Photos */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* Floor Plan */}
             {property.hasFloorPlan && property.floorPlanUrl && (
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground mb-2">Floor Plan</p>
+              <div className="bg-blue-50 dark:bg-blue-950 rounded-lg p-4 border-2 border-blue-200 dark:border-blue-800">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileText className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-sm font-semibold text-blue-900 dark:text-blue-100">Floor Plan</h3>
+                </div>
                 <div
                   onClick={() => setFloorPlanOpen(true)}
-                  className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group border-2 border-blue-200 hover:border-blue-400 transition-all bg-blue-50"
+                  className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group bg-white dark:bg-slate-900 border border-blue-300 dark:border-blue-700 hover:border-blue-500 transition-all"
                 >
                   <img
                     src={property.floorPlanUrl}
@@ -187,29 +196,32 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Maximize2 className="h-4 w-4 text-blue-600" />
+                    <div className="bg-white/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                      <Maximize2 className="h-5 w-5 text-blue-600" />
                     </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
-                    <p className="text-xs text-white">Click to enlarge</p>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+                    <p className="text-xs text-white font-medium">Click to view full screen</p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Right: Photos */}
+            {/* Photos */}
             {allPhotos.length > 0 && (
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground mb-2">
-                  Photos ({allPhotos.length})
-                </p>
+              <div className="bg-amber-50 dark:bg-amber-950 rounded-lg p-4 border-2 border-amber-200 dark:border-amber-800">
+                <div className="flex items-center gap-2 mb-3">
+                  <Home className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                  <h3 className="text-sm font-semibold text-amber-900 dark:text-amber-100">
+                    Property Photos ({allPhotos.length})
+                  </h3>
+                </div>
                 <div className="grid grid-cols-2 gap-2">
                   {allPhotos.slice(0, 4).map((photo, idx) => (
                     <div
                       key={idx}
                       onClick={() => openPhotoGallery(idx)}
-                      className="relative aspect-[4/3] rounded overflow-hidden cursor-pointer group border border-gray-200 hover:border-gray-400 transition-all"
+                      className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group border border-amber-300 dark:border-amber-700 hover:border-amber-500 transition-all bg-white dark:bg-slate-900"
                     >
                       <img
                         src={photo}
@@ -217,7 +229,7 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                       {idx === 3 && allPhotos.length > 4 && (
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
                           <span className="text-white font-semibold text-sm">+{allPhotos.length - 4} more</span>
                         </div>
                       )}
@@ -229,9 +241,9 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                     variant="link"
                     size="sm"
                     onClick={() => openPhotoGallery(0)}
-                    className="w-full h-auto p-0 mt-2 text-xs"
+                    className="w-full h-auto p-0 mt-3 text-xs text-amber-700 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-300"
                   >
-                    View all {allPhotos.length} photos
+                    View all {allPhotos.length} photos →
                   </Button>
                 )}
               </div>
