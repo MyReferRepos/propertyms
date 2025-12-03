@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { ImageViewer } from '@/components/ui/image-viewer'
 import {
   Home,
   MapPin,
@@ -52,55 +53,15 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
 
   return (
     <div className="space-y-4">
-      {/* Floor Plan Dialog - Full Screen with Zoom */}
+      {/* Floor Plan Viewer - Full Screen */}
       {property.floorPlanUrl && (
-        <Dialog open={floorPlanOpen} onOpenChange={setFloorPlanOpen}>
-          <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 flex flex-col">
-            <DialogHeader className="px-6 py-4 border-b">
-              <div className="flex items-center justify-between">
-                <DialogTitle>Floor Plan - {property.address}</DialogTitle>
-                <div className="flex gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => {
-                      const img = document.querySelector('#floor-plan-image') as HTMLImageElement
-                      if (img) {
-                        if (document.fullscreenElement) {
-                          document.exitFullscreen()
-                        } else {
-                          img.requestFullscreen()
-                        }
-                      }
-                    }}
-                  >
-                    <Maximize2 className="h-4 w-4 mr-2" />
-                    Full Screen
-                  </Button>
-                </div>
-              </div>
-            </DialogHeader>
-            <div className="flex-1 overflow-auto bg-gray-100 flex items-center justify-center p-4">
-              <img
-                id="floor-plan-image"
-                src={property.floorPlanUrl}
-                alt="Floor Plan Full View"
-                className="max-w-full max-h-full object-contain cursor-zoom-in"
-                style={{ minHeight: '500px' }}
-                onClick={(e) => {
-                  const img = e.target as HTMLImageElement
-                  if (img.style.transform === 'scale(2)') {
-                    img.style.transform = 'scale(1)'
-                    img.style.cursor = 'zoom-in'
-                  } else {
-                    img.style.transform = 'scale(2)'
-                    img.style.cursor = 'zoom-out'
-                  }
-                }}
-              />
-            </div>
-          </DialogContent>
-        </Dialog>
+        <ImageViewer
+          open={floorPlanOpen}
+          onOpenChange={setFloorPlanOpen}
+          src={property.floorPlanUrl}
+          alt="Floor Plan"
+          title={`Floor Plan - ${property.address}`}
+        />
       )}
 
       {/* Photo Gallery Dialog */}
