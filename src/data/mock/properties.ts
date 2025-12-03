@@ -29,7 +29,7 @@ export const mockProperties: Property[] = [
     floorArea: 150,
     landArea: 500,
     hasFloorPlan: true,
-    floorPlanUrl: '/documents/floorplan-prop-001.pdf',
+    floorPlanUrl: 'https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=1200',
 
     yearBuilt: 2015,
     status: 'occupied',

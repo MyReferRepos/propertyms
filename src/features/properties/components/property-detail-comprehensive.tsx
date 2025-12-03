@@ -3,11 +3,13 @@
  * Based on Property Information screenshots - displays all detailed property information
  */
 
+import { useState } from 'react'
 import type { Property } from '@/types'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import {
   Home,
   MapPin,
@@ -26,6 +28,7 @@ import {
   XCircle,
   FileText,
   TrendingUp,
+  Maximize2,
 } from 'lucide-react'
 
 interface PropertyDetailComprehensiveProps {
@@ -33,10 +36,60 @@ interface PropertyDetailComprehensiveProps {
 }
 
 export function PropertyDetailComprehensive({ property }: PropertyDetailComprehensiveProps) {
+  const [floorPlanOpen, setFloorPlanOpen] = useState(false)
+
   return (
     <div className="space-y-6">
-      {/* Basic Information Section */}
-      <Card>
+      {/* Floor Plan Section - Display prominently if available */}
+      {property.hasFloorPlan && property.floorPlanUrl && (
+        <Card className="bg-blue-50/30 border-blue-200">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-blue-900">
+              <Home className="h-5 w-5" />
+              Floor Plan
+            </CardTitle>
+            <CardDescription>Click to view full floor plan</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div
+              className="relative aspect-video rounded-lg overflow-hidden cursor-pointer group border-2 border-blue-200 hover:border-blue-400 transition-all"
+              onClick={() => setFloorPlanOpen(true)}
+            >
+              <img
+                src={property.floorPlanUrl}
+                alt="Floor Plan"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                <div className="bg-white/90 rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Maximize2 className="h-6 w-6 text-blue-600" />
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Floor Plan Dialog */}
+      <Dialog open={floorPlanOpen} onOpenChange={setFloorPlanOpen}>
+        <DialogContent className="max-w-6xl w-full">
+          <DialogHeader>
+            <DialogTitle>Floor Plan - {property.address}</DialogTitle>
+          </DialogHeader>
+          <div className="w-full">
+            <img
+              src={property.floorPlanUrl}
+              alt="Floor Plan Full View"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Two Column Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Basic Information Section */}
+        <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
@@ -115,7 +168,12 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                 <p className="text-sm font-medium">Floor Plan</p>
                 <p className="text-lg">{property.hasFloorPlan ? 'Yes' : 'No'}</p>
                 {property.hasFloorPlan && property.floorPlanUrl && (
-                  <Button variant="link" size="sm" className="p-0 h-auto">
+                  <Button
+                    variant="link"
+                    size="sm"
+                    className="p-0 h-auto text-blue-600"
+                    onClick={() => setFloorPlanOpen(true)}
+                  >
                     View Plan
                   </Button>
                 )}
@@ -628,6 +686,8 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
           </CardContent>
         </Card>
       )}
+      </div>
+      {/* End Two Column Grid */}
     </div>
   )
 }
