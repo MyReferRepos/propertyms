@@ -29,6 +29,8 @@ import {
   FileText,
   TrendingUp,
   Maximize2,
+  ImagePlus,
+  FilePlus,
 } from 'lucide-react'
 
 interface PropertyDetailComprehensiveProps {
@@ -120,18 +122,24 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
               <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Property Details</h3>
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm mb-3">
-              {property.area && (
-                <div>
-                  <span className="text-muted-foreground">Area:</span>{' '}
+              <div>
+                <span className="text-muted-foreground">Area:</span>{' '}
+                {property.area ? (
                   <span className="font-medium capitalize">{property.area}</span>
-                </div>
-              )}
-              {property.dwellingType && (
-                <div>
-                  <span className="text-muted-foreground">Type:</span>{' '}
+                ) : (
+                  <span className="text-muted-foreground italic">Not specified</span>
+                )}
+              </div>
+              <div>
+                <span className="text-muted-foreground">Type:</span>{' '}
+                {property.dwellingType ? (
                   <span className="font-medium capitalize">{property.dwellingType.replace(/-/g, ' / ')}</span>
-                </div>
-              )}
+                ) : property.type ? (
+                  <span className="font-medium capitalize">{property.type}</span>
+                ) : (
+                  <span className="text-muted-foreground italic">Not specified</span>
+                )}
+              </div>
             </div>
             {/* Room Configuration */}
             <div className="pt-3 border-t border-slate-200 dark:border-slate-700">
@@ -180,12 +188,12 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
           {/* Visual Assets Section - Floor Plan & Photos */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* Floor Plan */}
-            {property.hasFloorPlan && property.floorPlanUrl && (
-              <div className="bg-blue-50 dark:bg-blue-950 rounded-lg p-4 border-2 border-blue-200 dark:border-blue-800">
-                <div className="flex items-center gap-2 mb-3">
-                  <FileText className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                  <h3 className="text-sm font-semibold text-blue-900 dark:text-blue-100">Floor Plan</h3>
-                </div>
+            <div className="bg-blue-50 dark:bg-blue-950 rounded-lg p-4 border-2 border-blue-200 dark:border-blue-800">
+              <div className="flex items-center gap-2 mb-3">
+                <FileText className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <h3 className="text-sm font-semibold text-blue-900 dark:text-blue-100">Floor Plan</h3>
+              </div>
+              {property.hasFloorPlan && property.floorPlanUrl ? (
                 <div
                   onClick={() => setFloorPlanOpen(true)}
                   className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group bg-white dark:bg-slate-900 border border-blue-300 dark:border-blue-700 hover:border-blue-500 transition-all"
@@ -204,50 +212,72 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                     <p className="text-xs text-white font-medium">Click to view full screen</p>
                   </div>
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="aspect-[4/3] rounded-lg border-2 border-dashed border-blue-300 dark:border-blue-700 bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-6 text-center">
+                  <FilePlus className="h-10 w-10 text-blue-400 dark:text-blue-600 mb-3" />
+                  <p className="text-sm font-medium text-blue-900 dark:text-blue-100 mb-1">No floor plan available</p>
+                  <p className="text-xs text-blue-700 dark:text-blue-300 mb-3">Upload a floor plan to help showcase the property layout</p>
+                  <Button variant="outline" size="sm" className="border-blue-300 text-blue-700 hover:bg-blue-100 dark:border-blue-700 dark:text-blue-300 dark:hover:bg-blue-900">
+                    <FilePlus className="h-3.5 w-3.5 mr-1.5" />
+                    Upload Floor Plan
+                  </Button>
+                </div>
+              )}
+            </div>
 
             {/* Photos */}
-            {allPhotos.length > 0 && (
-              <div className="bg-amber-50 dark:bg-amber-950 rounded-lg p-4 border-2 border-amber-200 dark:border-amber-800">
-                <div className="flex items-center gap-2 mb-3">
-                  <Home className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-                  <h3 className="text-sm font-semibold text-amber-900 dark:text-amber-100">
-                    Property Photos ({allPhotos.length})
-                  </h3>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {allPhotos.slice(0, 4).map((photo, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => openPhotoGallery(idx)}
-                      className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group border border-amber-300 dark:border-amber-700 hover:border-amber-500 transition-all bg-white dark:bg-slate-900"
-                    >
-                      <img
-                        src={photo}
-                        alt={`Property ${idx + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      {idx === 3 && allPhotos.length > 4 && (
-                        <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
-                          <span className="text-white font-semibold text-sm">+{allPhotos.length - 4} more</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-                {allPhotos.length > 4 && (
-                  <Button
-                    variant="link"
-                    size="sm"
-                    onClick={() => openPhotoGallery(0)}
-                    className="w-full h-auto p-0 mt-3 text-xs text-amber-700 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-300"
-                  >
-                    View all {allPhotos.length} photos →
-                  </Button>
-                )}
+            <div className="bg-amber-50 dark:bg-amber-950 rounded-lg p-4 border-2 border-amber-200 dark:border-amber-800">
+              <div className="flex items-center gap-2 mb-3">
+                <Home className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                <h3 className="text-sm font-semibold text-amber-900 dark:text-amber-100">
+                  Property Photos {allPhotos.length > 0 && `(${allPhotos.length})`}
+                </h3>
               </div>
-            )}
+              {allPhotos.length > 0 ? (
+                <>
+                  <div className="grid grid-cols-2 gap-2">
+                    {allPhotos.slice(0, 4).map((photo, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => openPhotoGallery(idx)}
+                        className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group border border-amber-300 dark:border-amber-700 hover:border-amber-500 transition-all bg-white dark:bg-slate-900"
+                      >
+                        <img
+                          src={photo}
+                          alt={`Property ${idx + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        {idx === 3 && allPhotos.length > 4 && (
+                          <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
+                            <span className="text-white font-semibold text-sm">+{allPhotos.length - 4} more</span>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  {allPhotos.length > 4 && (
+                    <Button
+                      variant="link"
+                      size="sm"
+                      onClick={() => openPhotoGallery(0)}
+                      className="w-full h-auto p-0 mt-3 text-xs text-amber-700 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-300"
+                    >
+                      View all {allPhotos.length} photos →
+                    </Button>
+                  )}
+                </>
+              ) : (
+                <div className="aspect-[4/3] rounded-lg border-2 border-dashed border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-6 text-center">
+                  <ImagePlus className="h-10 w-10 text-amber-400 dark:text-amber-600 mb-3" />
+                  <p className="text-sm font-medium text-amber-900 dark:text-amber-100 mb-1">No photos available</p>
+                  <p className="text-xs text-amber-700 dark:text-amber-300 mb-3">Add photos to showcase the property</p>
+                  <Button variant="outline" size="sm" className="border-amber-300 text-amber-700 hover:bg-amber-100 dark:border-amber-700 dark:text-amber-300 dark:hover:bg-amber-900">
+                    <ImagePlus className="h-3.5 w-3.5 mr-1.5" />
+                    Add Photos
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -257,39 +287,43 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
         {/* Left Column */}
         <div className="space-y-4">
           {/* Parking */}
-          {(property.parkingSpaces || property.parkingDescription) && (
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <Car className="h-4 w-4" />
-                  Parking
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <div>
-                  <span className="text-muted-foreground">Spaces:</span>{' '}
-                  <strong>{property.parkingSpaces || 0}</strong>
-                </div>
-                {property.parkingDescription && (
-                  <p className="text-muted-foreground">{property.parkingDescription}</p>
-                )}
-                {property.specialInfo && (
-                  <p className="text-xs bg-amber-50 p-2 rounded border border-amber-200">{property.specialInfo}</p>
-                )}
-              </CardContent>
-            </Card>
-          )}
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <Car className="h-4 w-4" />
+                Parking
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-sm">
+              {(property.parkingSpaces || property.parkingDescription) ? (
+                <>
+                  <div>
+                    <span className="text-muted-foreground">Spaces:</span>{' '}
+                    <strong>{property.parkingSpaces || 0}</strong>
+                  </div>
+                  {property.parkingDescription && (
+                    <p className="text-muted-foreground">{property.parkingDescription}</p>
+                  )}
+                  {property.specialInfo && (
+                    <p className="text-xs bg-amber-50 p-2 rounded border border-amber-200">{property.specialInfo}</p>
+                  )}
+                </>
+              ) : (
+                <p className="text-muted-foreground italic text-xs">No parking information available</p>
+              )}
+            </CardContent>
+          </Card>
 
           {/* Amenities - Compact Table */}
-          {property.amenities && (
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <Home className="h-4 w-4" />
-                  Amenities
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <Home className="h-4 w-4" />
+                Amenities
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {property.amenities ? (
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
                   {property.amenities.swimmingPool !== undefined && (
                     <div className="flex items-center gap-1.5">
@@ -348,20 +382,22 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                     </div>
                   )}
                 </div>
-              </CardContent>
-            </Card>
-          )}
+              ) : (
+                <p className="text-muted-foreground italic text-xs">No amenities information available</p>
+              )}
+            </CardContent>
+          </Card>
 
           {/* Utilities - Compact List */}
-          {property.utilities && (
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <Zap className="h-4 w-4" />
-                  Utilities
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <Zap className="h-4 w-4" />
+                Utilities
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {property.utilities ? (
                 <div className="space-y-1.5 text-sm">
                   {property.utilities.gas?.available && (
                     <div className="flex items-start gap-2">
@@ -413,9 +449,11 @@ export function PropertyDetailComprehensive({ property }: PropertyDetailComprehe
                     </div>
                   )}
                 </div>
-              </CardContent>
-            </Card>
-          )}
+              ) : (
+                <p className="text-muted-foreground italic text-xs">No utilities information available</p>
+              )}
+            </CardContent>
+          </Card>
 
           {/* Chattels - Compact Lists */}
           {property.chattels && (
