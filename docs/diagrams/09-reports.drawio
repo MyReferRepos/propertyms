@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-12-14T00:00:00.000Z" agent="Claude" version="21.0.0">
+  <diagram id="reports-module" name="Reports Module">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="2" value="Reports Module" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="550" y="20" width="300" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Main Container -->
+        <mxCell id="3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="1320" height="780" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Reporting &amp; Analytics" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="200" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Financial Reports -->
+        <mxCell id="5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="400" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Financial Reports" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="• Profit &amp; Loss Statement&#xa;• Cash Flow Report&#xa;• Balance Sheet&#xa;• Revenue Analysis&#xa;• Expense Breakdown&#xa;• Year-over-Year Comparison" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="360" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- Property Reports -->
+        <mxCell id="8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="480" y="140" width="400" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Property Reports" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="480" y="150" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="• Portfolio Overview&#xa;• Vacancy Report&#xa;• Occupancy Rate&#xa;• Property Performance&#xa;• Maintenance Summary&#xa;• Compliance Status" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="500" y="190" width="360" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- Rental Reports -->
+        <mxCell id="11" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="900" y="140" width="440" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Rental Reports" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="900" y="150" width="440" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="• Rent Roll Report&#xa;• Rental Price Analysis&#xa;• Market Comparison&#xa;• Rent Collection Summary&#xa;• Arrears Report&#xa;• Rent Increase Tracking" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="920" y="190" width="400" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- Tenant Reports -->
+        <mxCell id="14" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="400" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Tenant Reports" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="370" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="• Tenant Directory&#xa;• Lease Expiration Report&#xa;• Payment History&#xa;• Tenant Turnover&#xa;• Reference Status" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="80" y="410" width="360" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Owner Reports -->
+        <mxCell id="17" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="480" y="360" width="400" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Owner Reports" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="480" y="370" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="• Owner Statements&#xa;• Portfolio Summary&#xa;• Tax Year Reports&#xa;• Investment Returns&#xa;• Fee Summary" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="500" y="410" width="360" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Compliance Reports -->
+        <mxCell id="20" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="900" y="360" width="440" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="Compliance Reports" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="900" y="370" width="440" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="• Certificate Expiry Report&#xa;• Safety Compliance Status&#xa;• Inspection Schedule&#xa;• License Tracking&#xa;• Regulatory Checklist" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="920" y="410" width="400" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Report Features -->
+        <mxCell id="23" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="60" y="560" width="600" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="Report Features" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="570" width="600" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="25" value="Date Range" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="80" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="Filters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="200" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="Export PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="320" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="Export Excel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="440" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="Schedule" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="560" y="610" width="80" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Dashboard Preview -->
+        <mxCell id="30" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="680" y="560" width="660" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" value="Dashboard Widgets" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="680" y="570" width="660" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="32" value="Revenue&#xa;Chart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="700" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="Occupancy&#xa;Rate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="820" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="34" value="Arrears&#xa;Trend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="940" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="Expiring&#xa;Leases" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="1060" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="36" value="Compliance&#xa;Status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="1180" y="610" width="100" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- API Section -->
+        <mxCell id="37" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="60" y="720" width="1280" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="38" value="API Endpoints" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="730" width="1280" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="39" value="GET /api/reports/financial" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="80" y="770" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="40" value="GET /api/reports/property" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="260" y="770" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="41" value="GET /api/reports/rental" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="440" y="770" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="42" value="GET /api/reports/tenant" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="620" y="770" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="43" value="GET /api/reports/owner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="800" y="770" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="44" value="GET /api/reports/compliance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="980" y="770" width="170" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="45" value="GET /api/reports/export/:id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="1170" y="770" width="160" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="46" value="GET /api/dashboard/widgets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="80" y="810" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="47" value="POST /api/reports/schedule" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="280" y="810" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="48" value="GET /api/reports/rental-price" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="480" y="810" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="49" value="GET /api/reports/rent-roll" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="680" y="810" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="50" value="GET /api/reports/arrears" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="860" y="810" width="160" height="30" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

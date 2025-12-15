@@ -13,16 +13,21 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
 import { Route as AuthenticatedTenantsRouteImport } from './routes/_authenticated/tenants'
 import { Route as AuthenticatedTenanciesRouteImport } from './routes/_authenticated/tenancies'
+import { Route as AuthenticatedSuppliersRouteImport } from './routes/_authenticated/suppliers'
 import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
 import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
 import { Route as AuthenticatedPropertiesRouteImport } from './routes/_authenticated/properties'
+import { Route as AuthenticatedOwnersRouteImport } from './routes/_authenticated/owners'
+import { Route as AuthenticatedMarketingRouteImport } from './routes/_authenticated/marketing'
 import { Route as AuthenticatedMaintenanceRouteImport } from './routes/_authenticated/maintenance'
+import { Route as AuthenticatedLeasingProcessRouteImport } from './routes/_authenticated/leasing-process'
 import { Route as AuthenticatedInvestorRouteImport } from './routes/_authenticated/investor'
 import { Route as AuthenticatedInspectionsRouteImport } from './routes/_authenticated/inspections'
 import { Route as AuthenticatedFinancialsRouteImport } from './routes/_authenticated/financials'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedComplianceRouteImport } from './routes/_authenticated/compliance'
 import { Route as AuthenticatedAiInsightsRouteImport } from './routes/_authenticated/ai-insights'
+import { Route as AuthenticatedAccountingRouteImport } from './routes/_authenticated/accounting'
 import { Route as errors503RouteImport } from './routes/(errors)/503'
 import { Route as errors500RouteImport } from './routes/(errors)/500'
 import { Route as errors404RouteImport } from './routes/(errors)/404'
@@ -32,10 +37,22 @@ import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
+import { Route as AuthenticatedSuppliersIndexRouteImport } from './routes/_authenticated/suppliers/index'
 import { Route as AuthenticatedReportsIndexRouteImport } from './routes/_authenticated/reports.index'
 import { Route as AuthenticatedPropertiesIndexRouteImport } from './routes/_authenticated/properties.index'
+import { Route as AuthenticatedLeasingProcessIndexRouteImport } from './routes/_authenticated/leasing-process/index'
+import { Route as AuthenticatedSuppliersReviewsRouteImport } from './routes/_authenticated/suppliers/reviews'
+import { Route as AuthenticatedSuppliersQuotesRouteImport } from './routes/_authenticated/suppliers/quotes'
+import { Route as AuthenticatedSuppliersAssignmentsRouteImport } from './routes/_authenticated/suppliers/assignments'
 import { Route as AuthenticatedReportsRentalPriceRouteImport } from './routes/_authenticated/reports.rental-price'
 import { Route as AuthenticatedPropertiesPropertyIdRouteImport } from './routes/_authenticated/properties/$propertyId'
+import { Route as AuthenticatedMarketingOldOwnersRouteImport } from './routes/_authenticated/marketing/old-owners'
+import { Route as AuthenticatedMarketingLeadsRouteImport } from './routes/_authenticated/marketing/leads'
+import { Route as AuthenticatedLeasingProcessViewingRouteImport } from './routes/_authenticated/leasing-process/viewing'
+import { Route as AuthenticatedLeasingProcessListingRouteImport } from './routes/_authenticated/leasing-process/listing'
+import { Route as AuthenticatedLeasingProcessApplicationsRouteImport } from './routes/_authenticated/leasing-process/applications'
+import { Route as AuthenticatedLeasingProcessAgreementsRouteImport } from './routes/_authenticated/leasing-process/agreements'
+import { Route as AuthenticatedAccountingAuditRouteImport } from './routes/_authenticated/accounting/audit'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
@@ -56,6 +73,11 @@ const AuthenticatedTenanciesRoute = AuthenticatedTenanciesRouteImport.update({
   path: '/tenancies',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedSuppliersRoute = AuthenticatedSuppliersRouteImport.update({
+  id: '/suppliers',
+  path: '/suppliers',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -71,10 +93,26 @@ const AuthenticatedPropertiesRoute = AuthenticatedPropertiesRouteImport.update({
   path: '/properties',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedOwnersRoute = AuthenticatedOwnersRouteImport.update({
+  id: '/owners',
+  path: '/owners',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedMarketingRoute = AuthenticatedMarketingRouteImport.update({
+  id: '/marketing',
+  path: '/marketing',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedMaintenanceRoute =
   AuthenticatedMaintenanceRouteImport.update({
     id: '/maintenance',
     path: '/maintenance',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedLeasingProcessRoute =
+  AuthenticatedLeasingProcessRouteImport.update({
+    id: '/leasing-process',
+    path: '/leasing-process',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedInvestorRoute = AuthenticatedInvestorRouteImport.update({
@@ -106,6 +144,11 @@ const AuthenticatedComplianceRoute = AuthenticatedComplianceRouteImport.update({
 const AuthenticatedAiInsightsRoute = AuthenticatedAiInsightsRouteImport.update({
   id: '/ai-insights',
   path: '/ai-insights',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAccountingRoute = AuthenticatedAccountingRouteImport.update({
+  id: '/accounting',
+  path: '/accounting',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const errors503Route = errors503RouteImport.update({
@@ -153,6 +196,12 @@ const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedSuppliersIndexRoute =
+  AuthenticatedSuppliersIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedSuppliersRoute,
+  } as any)
 const AuthenticatedReportsIndexRoute =
   AuthenticatedReportsIndexRouteImport.update({
     id: '/',
@@ -164,6 +213,30 @@ const AuthenticatedPropertiesIndexRoute =
     id: '/',
     path: '/',
     getParentRoute: () => AuthenticatedPropertiesRoute,
+  } as any)
+const AuthenticatedLeasingProcessIndexRoute =
+  AuthenticatedLeasingProcessIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedLeasingProcessRoute,
+  } as any)
+const AuthenticatedSuppliersReviewsRoute =
+  AuthenticatedSuppliersReviewsRouteImport.update({
+    id: '/reviews',
+    path: '/reviews',
+    getParentRoute: () => AuthenticatedSuppliersRoute,
+  } as any)
+const AuthenticatedSuppliersQuotesRoute =
+  AuthenticatedSuppliersQuotesRouteImport.update({
+    id: '/quotes',
+    path: '/quotes',
+    getParentRoute: () => AuthenticatedSuppliersRoute,
+  } as any)
+const AuthenticatedSuppliersAssignmentsRoute =
+  AuthenticatedSuppliersAssignmentsRouteImport.update({
+    id: '/assignments',
+    path: '/assignments',
+    getParentRoute: () => AuthenticatedSuppliersRoute,
   } as any)
 const AuthenticatedReportsRentalPriceRoute =
   AuthenticatedReportsRentalPriceRouteImport.update({
@@ -177,6 +250,48 @@ const AuthenticatedPropertiesPropertyIdRoute =
     path: '/$propertyId',
     getParentRoute: () => AuthenticatedPropertiesRoute,
   } as any)
+const AuthenticatedMarketingOldOwnersRoute =
+  AuthenticatedMarketingOldOwnersRouteImport.update({
+    id: '/old-owners',
+    path: '/old-owners',
+    getParentRoute: () => AuthenticatedMarketingRoute,
+  } as any)
+const AuthenticatedMarketingLeadsRoute =
+  AuthenticatedMarketingLeadsRouteImport.update({
+    id: '/leads',
+    path: '/leads',
+    getParentRoute: () => AuthenticatedMarketingRoute,
+  } as any)
+const AuthenticatedLeasingProcessViewingRoute =
+  AuthenticatedLeasingProcessViewingRouteImport.update({
+    id: '/viewing',
+    path: '/viewing',
+    getParentRoute: () => AuthenticatedLeasingProcessRoute,
+  } as any)
+const AuthenticatedLeasingProcessListingRoute =
+  AuthenticatedLeasingProcessListingRouteImport.update({
+    id: '/listing',
+    path: '/listing',
+    getParentRoute: () => AuthenticatedLeasingProcessRoute,
+  } as any)
+const AuthenticatedLeasingProcessApplicationsRoute =
+  AuthenticatedLeasingProcessApplicationsRouteImport.update({
+    id: '/applications',
+    path: '/applications',
+    getParentRoute: () => AuthenticatedLeasingProcessRoute,
+  } as any)
+const AuthenticatedLeasingProcessAgreementsRoute =
+  AuthenticatedLeasingProcessAgreementsRouteImport.update({
+    id: '/agreements',
+    path: '/agreements',
+    getParentRoute: () => AuthenticatedLeasingProcessRoute,
+  } as any)
+const AuthenticatedAccountingAuditRoute =
+  AuthenticatedAccountingAuditRouteImport.update({
+    id: '/audit',
+    path: '/audit',
+    getParentRoute: () => AuthenticatedAccountingRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -188,23 +303,40 @@ export interface FileRoutesByFullPath {
   '/404': typeof errors404Route
   '/500': typeof errors500Route
   '/503': typeof errors503Route
+  '/accounting': typeof AuthenticatedAccountingRouteWithChildren
   '/ai-insights': typeof AuthenticatedAiInsightsRoute
   '/compliance': typeof AuthenticatedComplianceRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/financials': typeof AuthenticatedFinancialsRoute
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
+  '/leasing-process': typeof AuthenticatedLeasingProcessRouteWithChildren
   '/maintenance': typeof AuthenticatedMaintenanceRoute
+  '/marketing': typeof AuthenticatedMarketingRouteWithChildren
+  '/owners': typeof AuthenticatedOwnersRoute
   '/properties': typeof AuthenticatedPropertiesRouteWithChildren
   '/reports': typeof AuthenticatedReportsRouteWithChildren
   '/settings': typeof AuthenticatedSettingsRoute
+  '/suppliers': typeof AuthenticatedSuppliersRouteWithChildren
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
+  '/accounting/audit': typeof AuthenticatedAccountingAuditRoute
+  '/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
+  '/leasing-process/applications': typeof AuthenticatedLeasingProcessApplicationsRoute
+  '/leasing-process/listing': typeof AuthenticatedLeasingProcessListingRoute
+  '/leasing-process/viewing': typeof AuthenticatedLeasingProcessViewingRoute
+  '/marketing/leads': typeof AuthenticatedMarketingLeadsRoute
+  '/marketing/old-owners': typeof AuthenticatedMarketingOldOwnersRoute
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
   '/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
+  '/suppliers/assignments': typeof AuthenticatedSuppliersAssignmentsRoute
+  '/suppliers/quotes': typeof AuthenticatedSuppliersQuotesRoute
+  '/suppliers/reviews': typeof AuthenticatedSuppliersReviewsRoute
+  '/leasing-process/': typeof AuthenticatedLeasingProcessIndexRoute
   '/properties/': typeof AuthenticatedPropertiesIndexRoute
   '/reports/': typeof AuthenticatedReportsIndexRoute
+  '/suppliers/': typeof AuthenticatedSuppliersIndexRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -216,6 +348,7 @@ export interface FileRoutesByTo {
   '/404': typeof errors404Route
   '/500': typeof errors500Route
   '/503': typeof errors503Route
+  '/accounting': typeof AuthenticatedAccountingRouteWithChildren
   '/ai-insights': typeof AuthenticatedAiInsightsRoute
   '/compliance': typeof AuthenticatedComplianceRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
@@ -223,14 +356,28 @@ export interface FileRoutesByTo {
   '/inspections': typeof AuthenticatedInspectionsRoute
   '/investor': typeof AuthenticatedInvestorRoute
   '/maintenance': typeof AuthenticatedMaintenanceRoute
+  '/marketing': typeof AuthenticatedMarketingRouteWithChildren
+  '/owners': typeof AuthenticatedOwnersRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
   '/': typeof AuthenticatedIndexRoute
+  '/accounting/audit': typeof AuthenticatedAccountingAuditRoute
+  '/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
+  '/leasing-process/applications': typeof AuthenticatedLeasingProcessApplicationsRoute
+  '/leasing-process/listing': typeof AuthenticatedLeasingProcessListingRoute
+  '/leasing-process/viewing': typeof AuthenticatedLeasingProcessViewingRoute
+  '/marketing/leads': typeof AuthenticatedMarketingLeadsRoute
+  '/marketing/old-owners': typeof AuthenticatedMarketingOldOwnersRoute
   '/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
   '/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
+  '/suppliers/assignments': typeof AuthenticatedSuppliersAssignmentsRoute
+  '/suppliers/quotes': typeof AuthenticatedSuppliersQuotesRoute
+  '/suppliers/reviews': typeof AuthenticatedSuppliersReviewsRoute
+  '/leasing-process': typeof AuthenticatedLeasingProcessIndexRoute
   '/properties': typeof AuthenticatedPropertiesIndexRoute
   '/reports': typeof AuthenticatedReportsIndexRoute
+  '/suppliers': typeof AuthenticatedSuppliersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -244,23 +391,40 @@ export interface FileRoutesById {
   '/(errors)/404': typeof errors404Route
   '/(errors)/500': typeof errors500Route
   '/(errors)/503': typeof errors503Route
+  '/_authenticated/accounting': typeof AuthenticatedAccountingRouteWithChildren
   '/_authenticated/ai-insights': typeof AuthenticatedAiInsightsRoute
   '/_authenticated/compliance': typeof AuthenticatedComplianceRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/financials': typeof AuthenticatedFinancialsRoute
   '/_authenticated/inspections': typeof AuthenticatedInspectionsRoute
   '/_authenticated/investor': typeof AuthenticatedInvestorRoute
+  '/_authenticated/leasing-process': typeof AuthenticatedLeasingProcessRouteWithChildren
   '/_authenticated/maintenance': typeof AuthenticatedMaintenanceRoute
+  '/_authenticated/marketing': typeof AuthenticatedMarketingRouteWithChildren
+  '/_authenticated/owners': typeof AuthenticatedOwnersRoute
   '/_authenticated/properties': typeof AuthenticatedPropertiesRouteWithChildren
   '/_authenticated/reports': typeof AuthenticatedReportsRouteWithChildren
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
+  '/_authenticated/suppliers': typeof AuthenticatedSuppliersRouteWithChildren
   '/_authenticated/tenancies': typeof AuthenticatedTenanciesRoute
   '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
+  '/_authenticated/accounting/audit': typeof AuthenticatedAccountingAuditRoute
+  '/_authenticated/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
+  '/_authenticated/leasing-process/applications': typeof AuthenticatedLeasingProcessApplicationsRoute
+  '/_authenticated/leasing-process/listing': typeof AuthenticatedLeasingProcessListingRoute
+  '/_authenticated/leasing-process/viewing': typeof AuthenticatedLeasingProcessViewingRoute
+  '/_authenticated/marketing/leads': typeof AuthenticatedMarketingLeadsRoute
+  '/_authenticated/marketing/old-owners': typeof AuthenticatedMarketingOldOwnersRoute
   '/_authenticated/properties/$propertyId': typeof AuthenticatedPropertiesPropertyIdRoute
   '/_authenticated/reports/rental-price': typeof AuthenticatedReportsRentalPriceRoute
+  '/_authenticated/suppliers/assignments': typeof AuthenticatedSuppliersAssignmentsRoute
+  '/_authenticated/suppliers/quotes': typeof AuthenticatedSuppliersQuotesRoute
+  '/_authenticated/suppliers/reviews': typeof AuthenticatedSuppliersReviewsRoute
+  '/_authenticated/leasing-process/': typeof AuthenticatedLeasingProcessIndexRoute
   '/_authenticated/properties/': typeof AuthenticatedPropertiesIndexRoute
   '/_authenticated/reports/': typeof AuthenticatedReportsIndexRoute
+  '/_authenticated/suppliers/': typeof AuthenticatedSuppliersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -274,23 +438,40 @@ export interface FileRouteTypes {
     | '/404'
     | '/500'
     | '/503'
+    | '/accounting'
     | '/ai-insights'
     | '/compliance'
     | '/dashboard'
     | '/financials'
     | '/inspections'
     | '/investor'
+    | '/leasing-process'
     | '/maintenance'
+    | '/marketing'
+    | '/owners'
     | '/properties'
     | '/reports'
     | '/settings'
+    | '/suppliers'
     | '/tenancies'
     | '/tenants'
     | '/'
+    | '/accounting/audit'
+    | '/leasing-process/agreements'
+    | '/leasing-process/applications'
+    | '/leasing-process/listing'
+    | '/leasing-process/viewing'
+    | '/marketing/leads'
+    | '/marketing/old-owners'
     | '/properties/$propertyId'
     | '/reports/rental-price'
+    | '/suppliers/assignments'
+    | '/suppliers/quotes'
+    | '/suppliers/reviews'
+    | '/leasing-process/'
     | '/properties/'
     | '/reports/'
+    | '/suppliers/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -302,6 +483,7 @@ export interface FileRouteTypes {
     | '/404'
     | '/500'
     | '/503'
+    | '/accounting'
     | '/ai-insights'
     | '/compliance'
     | '/dashboard'
@@ -309,14 +491,28 @@ export interface FileRouteTypes {
     | '/inspections'
     | '/investor'
     | '/maintenance'
+    | '/marketing'
+    | '/owners'
     | '/settings'
     | '/tenancies'
     | '/tenants'
     | '/'
+    | '/accounting/audit'
+    | '/leasing-process/agreements'
+    | '/leasing-process/applications'
+    | '/leasing-process/listing'
+    | '/leasing-process/viewing'
+    | '/marketing/leads'
+    | '/marketing/old-owners'
     | '/properties/$propertyId'
     | '/reports/rental-price'
+    | '/suppliers/assignments'
+    | '/suppliers/quotes'
+    | '/suppliers/reviews'
+    | '/leasing-process'
     | '/properties'
     | '/reports'
+    | '/suppliers'
   id:
     | '__root__'
     | '/_authenticated'
@@ -329,23 +525,40 @@ export interface FileRouteTypes {
     | '/(errors)/404'
     | '/(errors)/500'
     | '/(errors)/503'
+    | '/_authenticated/accounting'
     | '/_authenticated/ai-insights'
     | '/_authenticated/compliance'
     | '/_authenticated/dashboard'
     | '/_authenticated/financials'
     | '/_authenticated/inspections'
     | '/_authenticated/investor'
+    | '/_authenticated/leasing-process'
     | '/_authenticated/maintenance'
+    | '/_authenticated/marketing'
+    | '/_authenticated/owners'
     | '/_authenticated/properties'
     | '/_authenticated/reports'
     | '/_authenticated/settings'
+    | '/_authenticated/suppliers'
     | '/_authenticated/tenancies'
     | '/_authenticated/tenants'
     | '/_authenticated/'
+    | '/_authenticated/accounting/audit'
+    | '/_authenticated/leasing-process/agreements'
+    | '/_authenticated/leasing-process/applications'
+    | '/_authenticated/leasing-process/listing'
+    | '/_authenticated/leasing-process/viewing'
+    | '/_authenticated/marketing/leads'
+    | '/_authenticated/marketing/old-owners'
     | '/_authenticated/properties/$propertyId'
     | '/_authenticated/reports/rental-price'
+    | '/_authenticated/suppliers/assignments'
+    | '/_authenticated/suppliers/quotes'
+    | '/_authenticated/suppliers/reviews'
+    | '/_authenticated/leasing-process/'
     | '/_authenticated/properties/'
     | '/_authenticated/reports/'
+    | '/_authenticated/suppliers/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -391,6 +604,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedTenanciesRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/suppliers': {
+      id: '/_authenticated/suppliers'
+      path: '/suppliers'
+      fullPath: '/suppliers'
+      preLoaderRoute: typeof AuthenticatedSuppliersRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/settings': {
       id: '/_authenticated/settings'
       path: '/settings'
@@ -412,11 +632,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPropertiesRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/owners': {
+      id: '/_authenticated/owners'
+      path: '/owners'
+      fullPath: '/owners'
+      preLoaderRoute: typeof AuthenticatedOwnersRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/marketing': {
+      id: '/_authenticated/marketing'
+      path: '/marketing'
+      fullPath: '/marketing'
+      preLoaderRoute: typeof AuthenticatedMarketingRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/maintenance': {
       id: '/_authenticated/maintenance'
       path: '/maintenance'
       fullPath: '/maintenance'
       preLoaderRoute: typeof AuthenticatedMaintenanceRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/leasing-process': {
+      id: '/_authenticated/leasing-process'
+      path: '/leasing-process'
+      fullPath: '/leasing-process'
+      preLoaderRoute: typeof AuthenticatedLeasingProcessRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/investor': {
@@ -459,6 +700,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-insights'
       fullPath: '/ai-insights'
       preLoaderRoute: typeof AuthenticatedAiInsightsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/accounting': {
+      id: '/_authenticated/accounting'
+      path: '/accounting'
+      fullPath: '/accounting'
+      preLoaderRoute: typeof AuthenticatedAccountingRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/(errors)/503': {
@@ -524,6 +772,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/suppliers/': {
+      id: '/_authenticated/suppliers/'
+      path: '/'
+      fullPath: '/suppliers/'
+      preLoaderRoute: typeof AuthenticatedSuppliersIndexRouteImport
+      parentRoute: typeof AuthenticatedSuppliersRoute
+    }
     '/_authenticated/reports/': {
       id: '/_authenticated/reports/'
       path: '/'
@@ -537,6 +792,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/properties/'
       preLoaderRoute: typeof AuthenticatedPropertiesIndexRouteImport
       parentRoute: typeof AuthenticatedPropertiesRoute
+    }
+    '/_authenticated/leasing-process/': {
+      id: '/_authenticated/leasing-process/'
+      path: '/'
+      fullPath: '/leasing-process/'
+      preLoaderRoute: typeof AuthenticatedLeasingProcessIndexRouteImport
+      parentRoute: typeof AuthenticatedLeasingProcessRoute
+    }
+    '/_authenticated/suppliers/reviews': {
+      id: '/_authenticated/suppliers/reviews'
+      path: '/reviews'
+      fullPath: '/suppliers/reviews'
+      preLoaderRoute: typeof AuthenticatedSuppliersReviewsRouteImport
+      parentRoute: typeof AuthenticatedSuppliersRoute
+    }
+    '/_authenticated/suppliers/quotes': {
+      id: '/_authenticated/suppliers/quotes'
+      path: '/quotes'
+      fullPath: '/suppliers/quotes'
+      preLoaderRoute: typeof AuthenticatedSuppliersQuotesRouteImport
+      parentRoute: typeof AuthenticatedSuppliersRoute
+    }
+    '/_authenticated/suppliers/assignments': {
+      id: '/_authenticated/suppliers/assignments'
+      path: '/assignments'
+      fullPath: '/suppliers/assignments'
+      preLoaderRoute: typeof AuthenticatedSuppliersAssignmentsRouteImport
+      parentRoute: typeof AuthenticatedSuppliersRoute
     }
     '/_authenticated/reports/rental-price': {
       id: '/_authenticated/reports/rental-price'
@@ -552,8 +835,114 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPropertiesPropertyIdRouteImport
       parentRoute: typeof AuthenticatedPropertiesRoute
     }
+    '/_authenticated/marketing/old-owners': {
+      id: '/_authenticated/marketing/old-owners'
+      path: '/old-owners'
+      fullPath: '/marketing/old-owners'
+      preLoaderRoute: typeof AuthenticatedMarketingOldOwnersRouteImport
+      parentRoute: typeof AuthenticatedMarketingRoute
+    }
+    '/_authenticated/marketing/leads': {
+      id: '/_authenticated/marketing/leads'
+      path: '/leads'
+      fullPath: '/marketing/leads'
+      preLoaderRoute: typeof AuthenticatedMarketingLeadsRouteImport
+      parentRoute: typeof AuthenticatedMarketingRoute
+    }
+    '/_authenticated/leasing-process/viewing': {
+      id: '/_authenticated/leasing-process/viewing'
+      path: '/viewing'
+      fullPath: '/leasing-process/viewing'
+      preLoaderRoute: typeof AuthenticatedLeasingProcessViewingRouteImport
+      parentRoute: typeof AuthenticatedLeasingProcessRoute
+    }
+    '/_authenticated/leasing-process/listing': {
+      id: '/_authenticated/leasing-process/listing'
+      path: '/listing'
+      fullPath: '/leasing-process/listing'
+      preLoaderRoute: typeof AuthenticatedLeasingProcessListingRouteImport
+      parentRoute: typeof AuthenticatedLeasingProcessRoute
+    }
+    '/_authenticated/leasing-process/applications': {
+      id: '/_authenticated/leasing-process/applications'
+      path: '/applications'
+      fullPath: '/leasing-process/applications'
+      preLoaderRoute: typeof AuthenticatedLeasingProcessApplicationsRouteImport
+      parentRoute: typeof AuthenticatedLeasingProcessRoute
+    }
+    '/_authenticated/leasing-process/agreements': {
+      id: '/_authenticated/leasing-process/agreements'
+      path: '/agreements'
+      fullPath: '/leasing-process/agreements'
+      preLoaderRoute: typeof AuthenticatedLeasingProcessAgreementsRouteImport
+      parentRoute: typeof AuthenticatedLeasingProcessRoute
+    }
+    '/_authenticated/accounting/audit': {
+      id: '/_authenticated/accounting/audit'
+      path: '/audit'
+      fullPath: '/accounting/audit'
+      preLoaderRoute: typeof AuthenticatedAccountingAuditRouteImport
+      parentRoute: typeof AuthenticatedAccountingRoute
+    }
   }
 }
+
+interface AuthenticatedAccountingRouteChildren {
+  AuthenticatedAccountingAuditRoute: typeof AuthenticatedAccountingAuditRoute
+}
+
+const AuthenticatedAccountingRouteChildren: AuthenticatedAccountingRouteChildren =
+  {
+    AuthenticatedAccountingAuditRoute: AuthenticatedAccountingAuditRoute,
+  }
+
+const AuthenticatedAccountingRouteWithChildren =
+  AuthenticatedAccountingRoute._addFileChildren(
+    AuthenticatedAccountingRouteChildren,
+  )
+
+interface AuthenticatedLeasingProcessRouteChildren {
+  AuthenticatedLeasingProcessAgreementsRoute: typeof AuthenticatedLeasingProcessAgreementsRoute
+  AuthenticatedLeasingProcessApplicationsRoute: typeof AuthenticatedLeasingProcessApplicationsRoute
+  AuthenticatedLeasingProcessListingRoute: typeof AuthenticatedLeasingProcessListingRoute
+  AuthenticatedLeasingProcessViewingRoute: typeof AuthenticatedLeasingProcessViewingRoute
+  AuthenticatedLeasingProcessIndexRoute: typeof AuthenticatedLeasingProcessIndexRoute
+}
+
+const AuthenticatedLeasingProcessRouteChildren: AuthenticatedLeasingProcessRouteChildren =
+  {
+    AuthenticatedLeasingProcessAgreementsRoute:
+      AuthenticatedLeasingProcessAgreementsRoute,
+    AuthenticatedLeasingProcessApplicationsRoute:
+      AuthenticatedLeasingProcessApplicationsRoute,
+    AuthenticatedLeasingProcessListingRoute:
+      AuthenticatedLeasingProcessListingRoute,
+    AuthenticatedLeasingProcessViewingRoute:
+      AuthenticatedLeasingProcessViewingRoute,
+    AuthenticatedLeasingProcessIndexRoute:
+      AuthenticatedLeasingProcessIndexRoute,
+  }
+
+const AuthenticatedLeasingProcessRouteWithChildren =
+  AuthenticatedLeasingProcessRoute._addFileChildren(
+    AuthenticatedLeasingProcessRouteChildren,
+  )
+
+interface AuthenticatedMarketingRouteChildren {
+  AuthenticatedMarketingLeadsRoute: typeof AuthenticatedMarketingLeadsRoute
+  AuthenticatedMarketingOldOwnersRoute: typeof AuthenticatedMarketingOldOwnersRoute
+}
+
+const AuthenticatedMarketingRouteChildren: AuthenticatedMarketingRouteChildren =
+  {
+    AuthenticatedMarketingLeadsRoute: AuthenticatedMarketingLeadsRoute,
+    AuthenticatedMarketingOldOwnersRoute: AuthenticatedMarketingOldOwnersRoute,
+  }
+
+const AuthenticatedMarketingRouteWithChildren =
+  AuthenticatedMarketingRoute._addFileChildren(
+    AuthenticatedMarketingRouteChildren,
+  )
 
 interface AuthenticatedPropertiesRouteChildren {
   AuthenticatedPropertiesPropertyIdRoute: typeof AuthenticatedPropertiesPropertyIdRoute
@@ -585,33 +974,65 @@ const AuthenticatedReportsRouteChildren: AuthenticatedReportsRouteChildren = {
 const AuthenticatedReportsRouteWithChildren =
   AuthenticatedReportsRoute._addFileChildren(AuthenticatedReportsRouteChildren)
 
+interface AuthenticatedSuppliersRouteChildren {
+  AuthenticatedSuppliersAssignmentsRoute: typeof AuthenticatedSuppliersAssignmentsRoute
+  AuthenticatedSuppliersQuotesRoute: typeof AuthenticatedSuppliersQuotesRoute
+  AuthenticatedSuppliersReviewsRoute: typeof AuthenticatedSuppliersReviewsRoute
+  AuthenticatedSuppliersIndexRoute: typeof AuthenticatedSuppliersIndexRoute
+}
+
+const AuthenticatedSuppliersRouteChildren: AuthenticatedSuppliersRouteChildren =
+  {
+    AuthenticatedSuppliersAssignmentsRoute:
+      AuthenticatedSuppliersAssignmentsRoute,
+    AuthenticatedSuppliersQuotesRoute: AuthenticatedSuppliersQuotesRoute,
+    AuthenticatedSuppliersReviewsRoute: AuthenticatedSuppliersReviewsRoute,
+    AuthenticatedSuppliersIndexRoute: AuthenticatedSuppliersIndexRoute,
+  }
+
+const AuthenticatedSuppliersRouteWithChildren =
+  AuthenticatedSuppliersRoute._addFileChildren(
+    AuthenticatedSuppliersRouteChildren,
+  )
+
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAccountingRoute: typeof AuthenticatedAccountingRouteWithChildren
   AuthenticatedAiInsightsRoute: typeof AuthenticatedAiInsightsRoute
   AuthenticatedComplianceRoute: typeof AuthenticatedComplianceRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
   AuthenticatedFinancialsRoute: typeof AuthenticatedFinancialsRoute
   AuthenticatedInspectionsRoute: typeof AuthenticatedInspectionsRoute
   AuthenticatedInvestorRoute: typeof AuthenticatedInvestorRoute
+  AuthenticatedLeasingProcessRoute: typeof AuthenticatedLeasingProcessRouteWithChildren
   AuthenticatedMaintenanceRoute: typeof AuthenticatedMaintenanceRoute
+  AuthenticatedMarketingRoute: typeof AuthenticatedMarketingRouteWithChildren
+  AuthenticatedOwnersRoute: typeof AuthenticatedOwnersRoute
   AuthenticatedPropertiesRoute: typeof AuthenticatedPropertiesRouteWithChildren
   AuthenticatedReportsRoute: typeof AuthenticatedReportsRouteWithChildren
   AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
+  AuthenticatedSuppliersRoute: typeof AuthenticatedSuppliersRouteWithChildren
   AuthenticatedTenanciesRoute: typeof AuthenticatedTenanciesRoute
   AuthenticatedTenantsRoute: typeof AuthenticatedTenantsRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAccountingRoute: AuthenticatedAccountingRouteWithChildren,
   AuthenticatedAiInsightsRoute: AuthenticatedAiInsightsRoute,
   AuthenticatedComplianceRoute: AuthenticatedComplianceRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
   AuthenticatedFinancialsRoute: AuthenticatedFinancialsRoute,
   AuthenticatedInspectionsRoute: AuthenticatedInspectionsRoute,
   AuthenticatedInvestorRoute: AuthenticatedInvestorRoute,
+  AuthenticatedLeasingProcessRoute:
+    AuthenticatedLeasingProcessRouteWithChildren,
   AuthenticatedMaintenanceRoute: AuthenticatedMaintenanceRoute,
+  AuthenticatedMarketingRoute: AuthenticatedMarketingRouteWithChildren,
+  AuthenticatedOwnersRoute: AuthenticatedOwnersRoute,
   AuthenticatedPropertiesRoute: AuthenticatedPropertiesRouteWithChildren,
   AuthenticatedReportsRoute: AuthenticatedReportsRouteWithChildren,
   AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
+  AuthenticatedSuppliersRoute: AuthenticatedSuppliersRouteWithChildren,
   AuthenticatedTenanciesRoute: AuthenticatedTenanciesRoute,
   AuthenticatedTenantsRoute: AuthenticatedTenantsRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,

@@ -1,33 +1,115 @@
+import { useState } from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
+import { ChevronDown, Building2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { navigationItems } from '@/lib/navigation'
+import { navigationItems, type NavItem } from '@/lib/navigation'
 import { Badge } from '@/components/ui/badge'
-import { Building2 } from 'lucide-react'
 import { LanguageSwitcher } from '@/components/i18n/language-switcher'
 import { useI18n } from '@/lib/i18n'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
 
 export function AppSidebar() {
   const location = useLocation()
   const { t } = useI18n()
+  const [openMenus, setOpenMenus] = useState<string[]>([])
 
-  // Map navigation item titles to translation keys
-  const getTranslatedTitle = (title: string) => {
-    const keyMap: Record<string, string> = {
-      'Dashboard': 'nav.dashboard',
-      'Properties': 'nav.properties',
-      'Compliance': 'nav.compliance',
-      'Investor Dashboard': 'nav.investors',
-      'Tenancies': 'nav.tenancies',
-      'Tenants': 'Tenants',
-      'Maintenance': 'nav.maintenance',
-      'Inspections': 'nav.inspections',
-      'Financials': 'nav.financials',
-      'Reports': 'nav.reports',
-      'AI Insights': 'nav.aiInsights',
-      'Settings': 'nav.settings',
+  const toggleMenu = (href: string) => {
+    setOpenMenus((prev) =>
+      prev.includes(href)
+        ? prev.filter((h) => h !== href)
+        : [...prev, href]
+    )
+  }
+
+  const getTranslatedTitle = (item: NavItem) => {
+    if (item.titleKey) {
+      const translated = t(item.titleKey)
+      // If translation returns the key itself, fallback to title
+      return translated === item.titleKey ? item.title : translated
     }
-    const key = keyMap[title]
-    return key ? t(key) : title
+    return item.title
+  }
+
+  const isItemActive = (item: NavItem): boolean => {
+    if (location.pathname === item.href) return true
+    if (item.children) {
+      return item.children.some((child) => location.pathname === child.href)
+    }
+    return location.pathname.startsWith(item.href + '/')
+  }
+
+  const renderNavItem = (item: NavItem, isChild = false) => {
+    const isActive = isItemActive(item)
+    const Icon = item.icon
+    const hasChildren = item.children && item.children.length > 0
+    const isOpen = openMenus.includes(item.href)
+
+    if (hasChildren) {
+      return (
+        <Collapsible
+          key={item.href}
+          open={isOpen || isActive}
+          onOpenChange={() => toggleMenu(item.href)}
+        >
+          <CollapsibleTrigger asChild>
+            <button
+              className={cn(
+                'flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                isActive
+                  ? 'bg-accent text-accent-foreground'
+                  : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground',
+              )}
+            >
+              <Icon className="h-4 w-4" />
+              <span className="flex-1 text-left">{getTranslatedTitle(item)}</span>
+              <ChevronDown
+                className={cn(
+                  'h-4 w-4 transition-transform',
+                  (isOpen || isActive) && 'rotate-180'
+                )}
+              />
+            </button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="pl-4 pt-1">
+            <div className="space-y-1 border-l border-border pl-3">
+              {item.children?.map((child) => renderNavItem(child, true))}
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+      )
+    }
+
+    return (
+      <Link
+        key={item.href}
+        to={item.href}
+        disabled={item.disabled}
+        className={cn(
+          'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+          isActive
+            ? isChild
+              ? 'bg-primary/10 text-primary'
+              : 'bg-primary text-primary-foreground'
+            : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground',
+          item.disabled && 'pointer-events-none opacity-50',
+        )}
+      >
+        <Icon className="h-4 w-4" />
+        <span className="flex-1">{getTranslatedTitle(item)}</span>
+        {item.badge && (
+          <Badge
+            variant={isActive ? 'secondary' : 'default'}
+            className="h-5 min-w-5 px-1 text-xs"
+          >
+            {item.badge}
+          </Badge>
+        )}
+      </Link>
+    )
   }
 
   return (
@@ -44,37 +126,8 @@ export function AppSidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 p-4">
-        {navigationItems.map((item) => {
-          const isActive = location.pathname === item.href || location.pathname.startsWith(item.href + '/')
-          const Icon = item.icon
-
-          return (
-            <Link
-              key={item.href}
-              to={item.href}
-              disabled={item.disabled}
-              className={cn(
-                'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-                isActive
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground',
-                item.disabled && 'pointer-events-none opacity-50',
-              )}
-            >
-              <Icon className="h-4 w-4" />
-              <span className="flex-1">{getTranslatedTitle(item.title)}</span>
-              {item.badge && (
-                <Badge
-                  variant={isActive ? 'secondary' : 'default'}
-                  className="h-5 min-w-5 px-1 text-xs"
-                >
-                  {item.badge}
-                </Badge>
-              )}
-            </Link>
-          )
-        })}
+      <nav className="flex-1 space-y-1 overflow-y-auto p-4">
+        {navigationItems.map((item) => renderNavItem(item))}
       </nav>
 
       {/* Footer */}

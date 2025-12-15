@@ -1,0 +1,192 @@
+<mxfile host="app.diagrams.net" modified="2025-12-14T00:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram id="2" name="PropertyMS Main Architecture">
+    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="10" value="PropertyMS 业务架构 v3.0" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="400" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 1 -->
+        <mxCell id="20" value="Dashboard&#xa;仪表盘" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="21" value="Settings&#xa;设置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="22" value="Accounting&#xa;财务会计" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="100" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="23" value="Marketing&#xa;营销" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Accounting sub -->
+        <mxCell id="30" value="Audit&#xa;审计" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="180" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="22" target="30">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Marketing sub -->
+        <mxCell id="40" value="Potential Leads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="180" width="65" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="41" value="Old Owners" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="715" y="180" width="65" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="23" target="40">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="23" target="41">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+                <!-- Owners / Tenants -->
+        <mxCell id="50" value="Owners&#xa;业主" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="260" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="51" value="Tenants&#xa;租客" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Suppliers -->
+        <mxCell id="60" value="Suppliers&#xa;供应商" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="260" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="61" value="Quote Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="340" width="140" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="62" value="Work Assignment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="380" width="140" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="63" value="Work Complete" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="420" width="140" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="64" value="Work Review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="460" width="140" height="36" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="65" edge="1" parent="1" source="60" target="61" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="66" edge="1" parent="1" source="60" target="62" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="67" edge="1" parent="1" source="60" target="63" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="68" edge="1" parent="1" source="60" target="64" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+
+        <!-- Properties Core -->
+        <mxCell id="70" value="Properties&#xa;房产" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="260" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Properties Sub Modules -->
+        <mxCell id="71" value="Listing Properties" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="350" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="72" value="Keys Management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="388" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="73" value="Maintenance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="426" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="74" value="Tenancies&#xa;(Move In / Current / Move Out)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="464" width="180" height="44" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="75" value="Documents&#xa;Lease / Application / Bond" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="512" width="180" height="44" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="76" value="Bond&#xa;Lodge &amp; Release" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="560" width="180" height="44" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="77" value="Rent &amp; Bills" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="608" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="78" value="Communications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="646" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="79" value="Inspections" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="684" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges to Properties -->
+        <mxCell id="90" edge="1" parent="1" source="70" target="71" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="91" edge="1" parent="1" source="70" target="72" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="92" edge="1" parent="1" source="70" target="73" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="93" edge="1" parent="1" source="70" target="74" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="94" edge="1" parent="1" source="70" target="75" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="95" edge="1" parent="1" source="70" target="76" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="96" edge="1" parent="1" source="70" target="77" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="97" edge="1" parent="1" source="70" target="78" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="98" edge="1" parent="1" source="70" target="79" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+                <!-- Properties Extra -->
+        <mxCell id="100" value="Compliances&#xa;Healthy Home / Smoke Alarm / Pool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="350" width="220" height="44" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="101" value="Insurance Claim&#xa;Quote" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="398" width="220" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="102" value="Complicated Maintenance&#xa;Quote" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="436" width="220" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="103" value="Debt Collection&#xa;External Company" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="474" width="220" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="104" edge="1" parent="1" source="70" target="100" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="105" edge="1" parent="1" source="70" target="101" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="106" edge="1" parent="1" source="70" target="102" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="107" edge="1" parent="1" source="70" target="103" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+
+        <!-- Leasing Process -->
+        <mxCell id="110" value="Leasing Process&#xa;出租流程" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="520" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="111" value="Viewing Tracker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="590" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="112" value="Application &amp; Credit Checks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="628" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="113" value="Agreement &amp; Bond Form" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="666" width="180" height="34" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="114" edge="1" parent="1" source="110" target="111" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="115" edge="1" parent="1" source="110" target="112" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+        <mxCell id="116" edge="1" parent="1" source="110" target="113" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+
+        <!-- Reports -->
+        <mxCell id="120" value="Reports&#xa;报表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="520" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="121" value="IRD Related Reports&#xa;Yearly Financial" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="590" width="180" height="44" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="122" edge="1" parent="1" source="120" target="121" style="edgeStyle=orthogonalEdgeStyle;html=1;"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
