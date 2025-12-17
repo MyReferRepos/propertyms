@@ -1,0 +1,32 @@
+{
+  "title": "房产管理",
+  "subtitle": "管理您的房产组合",
+  "addProperty": "添加房产",
+  "viewAll": "查看所有房产",
+  "searchPlaceholder": "搜索房产...",
+  "loading": "加载房产中...",
+  "noProperties": "未找到房产",
+  "tryAdjust": "尝试调整您的搜索",
+  "getStarted": "添加您的第一个房产以开始使用",
+  "filters": {
+    "all": "所有房产",
+    "active": "已出租",
+    "vacant": "空置",
+    "maintenance": "维护中"
+  },
+  "stats": {
+    "total": "房产总数",
+    "active": "已出租",
+    "vacant": "空置",
+    "maintenance": "维护中"
+  },
+  "details": {
+    "address": "地址",
+    "type": "房产类型",
+    "bedrooms": "卧室",
+    "bathrooms": "浴室",
+    "parking": "停车位",
+    "rent": "周租金",
+    "status": "状态"
+  }
+}

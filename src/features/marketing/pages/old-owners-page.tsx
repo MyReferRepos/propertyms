@@ -53,13 +53,13 @@ export function OldOwnersPage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'not_started':
-        return <Badge variant="outline">Not Started</Badge>
+        return <Badge variant="outline">{t('marketing.oldOwners.reengagementStatus.notStarted')}</Badge>
       case 'in_progress':
-        return <Badge className="bg-blue-100 text-blue-800">In Progress</Badge>
+        return <Badge className="bg-blue-100 text-blue-800">{t('marketing.oldOwners.reengagementStatus.inProgress')}</Badge>
       case 'won_back':
-        return <Badge className="bg-green-100 text-green-800">Won Back</Badge>
+        return <Badge className="bg-green-100 text-green-800">{t('marketing.oldOwners.reengagementStatus.wonBack')}</Badge>
       case 'not_interested':
-        return <Badge className="bg-gray-100 text-gray-800">Not Interested</Badge>
+        return <Badge className="bg-gray-100 text-gray-800">{t('marketing.oldOwners.reengagementStatus.notInterested')}</Badge>
       default:
         return <Badge>{status}</Badge>
     }
@@ -69,14 +69,14 @@ export function OldOwnersPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.marketing.oldOwners')}</h1>
+          <h1 className="text-2xl font-bold">{t('marketing.oldOwners.title')}</h1>
           <p className="text-muted-foreground">
-            Re-engage with previous property owners
+            {t('marketing.oldOwners.subtitle')}
           </p>
         </div>
         <Button>
           <RefreshCw className="mr-2 h-4 w-4" />
-          Start Campaign
+          {t('marketing.oldOwners.startCampaign')}
         </Button>
       </div>
 
@@ -84,7 +84,7 @@ export function OldOwnersPage() {
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Old Owners</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('marketing.oldOwners.stats.totalOldOwners')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">156</div>
@@ -92,7 +92,7 @@ export function OldOwnersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Won Back</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('marketing.oldOwners.stats.wonBack')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">23</div>
@@ -100,7 +100,7 @@ export function OldOwnersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">In Progress</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('marketing.oldOwners.stats.inProgress')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">45</div>
@@ -108,7 +108,7 @@ export function OldOwnersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Win-back Rate</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('marketing.oldOwners.stats.winBackRate')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-purple-600">14.7%</div>
@@ -119,7 +119,7 @@ export function OldOwnersPage() {
       {/* Old Owners List */}
       <Card>
         <CardHeader>
-          <CardTitle>Old Owner List</CardTitle>
+          <CardTitle>{t('marketing.oldOwners.oldOwnerList')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -141,11 +141,11 @@ export function OldOwnersPage() {
                     </span>
                     <span className="flex items-center gap-1">
                       <Building2 className="h-3 w-3" />
-                      {owner.previousProperties} properties
+                      {owner.previousProperties} {t('marketing.oldOwners.previousProperties')}
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Left: {owner.leftDate} | Reason: {owner.reason}
+                    {t('marketing.oldOwners.left')}: {owner.leftDate} | {t('marketing.oldOwners.reason')}: {owner.reason}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">

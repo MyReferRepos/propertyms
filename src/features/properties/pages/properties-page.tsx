@@ -6,8 +6,10 @@ import { Input } from '@/components/ui/input'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { propertiesAPI } from '@/services/api'
 import type { Property } from '@/types'
+import { useI18n } from '@/lib/i18n'
 
 export function PropertiesPage() {
+  const { t } = useI18n()
   const [properties, setProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -66,7 +68,7 @@ export function PropertiesPage() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent mx-auto"></div>
-          <p className="mt-4 text-sm text-muted-foreground">Loading properties...</p>
+          <p className="mt-4 text-sm text-muted-foreground">{t('properties.loading')}</p>
         </div>
       </div>
     )
@@ -76,8 +78,8 @@ export function PropertiesPage() {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Properties</h1>
-        <p className="text-muted-foreground">Manage your property portfolio</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('properties.title')}</h1>
+        <p className="text-muted-foreground">{t('properties.subtitle')}</p>
       </div>
 
       {/* Stats */}
@@ -87,7 +89,7 @@ export function PropertiesPage() {
           onClick={() => setStatusFilter('all')}
         >
           <div className="text-2xl font-bold">{stats.total}</div>
-          <div className="text-sm text-muted-foreground">Total Properties</div>
+          <div className="text-sm text-muted-foreground">{t('properties.stats.total')}</div>
         </button>
 
         <button
@@ -95,7 +97,7 @@ export function PropertiesPage() {
           onClick={() => setStatusFilter('occupied')}
         >
           <div className="text-2xl font-bold text-green-600">{stats.occupied}</div>
-          <div className="text-sm text-muted-foreground">Occupied</div>
+          <div className="text-sm text-muted-foreground">{t('properties.stats.active')}</div>
         </button>
 
         <button
@@ -103,7 +105,7 @@ export function PropertiesPage() {
           onClick={() => setStatusFilter('vacant')}
         >
           <div className="text-2xl font-bold text-amber-600">{stats.vacant}</div>
-          <div className="text-sm text-muted-foreground">Vacant</div>
+          <div className="text-sm text-muted-foreground">{t('properties.stats.vacant')}</div>
         </button>
 
         <button
@@ -111,7 +113,7 @@ export function PropertiesPage() {
           onClick={() => setStatusFilter('maintenance')}
         >
           <div className="text-2xl font-bold text-red-600">{stats.maintenance}</div>
-          <div className="text-sm text-muted-foreground">Maintenance</div>
+          <div className="text-sm text-muted-foreground">{t('properties.stats.maintenance')}</div>
         </button>
       </div>
 
@@ -120,7 +122,7 @@ export function PropertiesPage() {
         <div className="relative flex-1 max-w-md">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="Search by address or location..."
+            placeholder={t('properties.searchPlaceholder')}
             className="pl-10"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -141,7 +143,7 @@ export function PropertiesPage() {
 
           <Button>
             <Plus className="mr-2 h-4 w-4" />
-            Add Property
+            {t('properties.addProperty')}
           </Button>
         </div>
       </div>
@@ -152,14 +154,14 @@ export function PropertiesPage() {
           <div className="rounded-full bg-muted p-6">
             <Search className="h-12 w-12 text-muted-foreground" />
           </div>
-          <h3 className="mt-4 text-lg font-semibold">No properties found</h3>
+          <h3 className="mt-4 text-lg font-semibold">{t('properties.noProperties')}</h3>
           <p className="text-sm text-muted-foreground">
-            {searchTerm ? 'Try adjusting your search' : 'Get started by adding your first property'}
+            {searchTerm ? t('properties.tryAdjust') : t('properties.getStarted')}
           </p>
           {!searchTerm && (
             <Button className="mt-4">
               <Plus className="mr-2 h-4 w-4" />
-              Add Property
+              {t('properties.addProperty')}
             </Button>
           )}
         </div>

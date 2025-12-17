@@ -1,0 +1,28 @@
+{
+  "title": "Financials",
+  "subtitle": "Track income, expenses, and financial performance",
+  "addTransaction": "Add Transaction",
+  "viewDetails": "View Details",
+  "summary": {
+    "totalIncome": "Total Income",
+    "totalExpenses": "Total Expenses",
+    "netIncome": "Net Income",
+    "profitMargin": "Profit Margin"
+  },
+  "periods": {
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "thisYear": "This Year",
+    "thisPeriod": "This period"
+  },
+  "filters": {
+    "all": "All",
+    "income": "Income",
+    "expense": "Expenses"
+  },
+  "transactions": {
+    "title": "Recent Transactions",
+    "subtitle": "Latest financial activity across your portfolio"
+  },
+  "transactionCount": "{count} transactions"
+}

@@ -105,9 +105,9 @@ export function ReviewsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.suppliers.reviews')}</h1>
+          <h1 className="text-2xl font-bold">{t('suppliers.reviews.title')}</h1>
           <p className="text-muted-foreground">
-            Review completed work and rate suppliers
+            {t('suppliers.reviews.subtitle')}
           </p>
         </div>
       </div>
@@ -117,19 +117,19 @@ export function ReviewsPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{mockReviews.length}</div>
-            <p className="text-xs text-muted-foreground">Total Completed Jobs</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.reviews.stats.totalCompletedJobs')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-green-600">{reviewedCount}</div>
-            <p className="text-xs text-muted-foreground">Reviewed</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.reviews.stats.reviewed')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-yellow-600">{pendingCount}</div>
-            <p className="text-xs text-muted-foreground">Pending Review</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.reviews.stats.pendingReview')}</p>
           </CardContent>
         </Card>
         <Card>
@@ -138,7 +138,7 @@ export function ReviewsPage() {
               <span className="text-2xl font-bold">{averageRating.toFixed(1)}</span>
               <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
             </div>
-            <p className="text-xs text-muted-foreground">Average Rating</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.reviews.stats.averageRating')}</p>
           </CardContent>
         </Card>
       </div>
@@ -149,7 +149,7 @@ export function ReviewsPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-yellow-600">
               <MessageSquare className="h-5 w-5" />
-              Pending Reviews ({pendingCount})
+              {t('suppliers.reviews.pendingReviews')} ({pendingCount})
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -177,13 +177,13 @@ export function ReviewsPage() {
                         </span>
                         <span className="flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
-                          Completed: {review.completedDate}
+                          {t('suppliers.reviews.completedDate')}: {review.completedDate}
                         </span>
                       </div>
                     </div>
                     <Button>
                       <Star className="mr-1 h-4 w-4" />
-                      Write Review
+                      {t('suppliers.reviews.writeReview')}
                     </Button>
                   </div>
                 ))}
@@ -197,7 +197,7 @@ export function ReviewsPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <ThumbsUp className="h-5 w-5" />
-            Completed Reviews
+            {t('suppliers.reviews.completedReviews')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -224,7 +224,7 @@ export function ReviewsPage() {
                       <div className="flex items-center gap-2">
                         {review.quality && (
                           <Badge className={getQualityColor(review.quality)}>
-                            Quality: {review.quality}
+                            {t('suppliers.reviews.quality')}: {t(`suppliers.reviews.qualityLevel.${review.quality.toLowerCase()}`)}
                           </Badge>
                         )}
                         {review.timeliness && (
@@ -235,7 +235,7 @@ export function ReviewsPage() {
                                 : 'bg-red-100 text-red-800'
                             }
                           >
-                            {review.timeliness}
+                            {t(`suppliers.reviews.timeliness.${review.timeliness === 'On Time' ? 'onTime' : 'delayed'}`)}
                           </Badge>
                         )}
                       </div>

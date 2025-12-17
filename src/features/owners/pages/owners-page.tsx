@@ -50,14 +50,14 @@ export function OwnersPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.owners')}</h1>
+          <h1 className="text-2xl font-bold">{t('owners.title')}</h1>
           <p className="text-muted-foreground">
-            Manage property owners and their portfolios
+            {t('owners.subtitle')}
           </p>
         </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Add Owner
+          {t('owners.addOwner')}
         </Button>
       </div>
 
@@ -65,7 +65,7 @@ export function OwnersPage() {
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Owners</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('owners.stats.totalOwners')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">248</div>
@@ -73,7 +73,7 @@ export function OwnersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Active Owners</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('owners.stats.activeOwners')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">235</div>
@@ -81,7 +81,7 @@ export function OwnersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Properties</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('owners.stats.totalProperties')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">412</div>
@@ -89,7 +89,7 @@ export function OwnersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Monthly Revenue</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('owners.stats.monthlyRevenue')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-purple-600">$156,800</div>
@@ -100,7 +100,7 @@ export function OwnersPage() {
       {/* Owners List */}
       <Card>
         <CardHeader>
-          <CardTitle>Owner List</CardTitle>
+          <CardTitle>{t('owners.ownerList')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -122,12 +122,12 @@ export function OwnersPage() {
                     </span>
                     <span className="flex items-center gap-1">
                       <Building2 className="h-3 w-3" />
-                      {owner.properties} properties
+                      {owner.properties} {t('owners.properties')}
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="font-medium">{owner.monthlyIncome}/mo</span>
+                  <span className="font-medium">{owner.monthlyIncome}/{t('owners.perMonth')}</span>
                   <Badge
                     className={
                       owner.status === 'active'
@@ -135,7 +135,7 @@ export function OwnersPage() {
                         : 'bg-gray-100 text-gray-800'
                     }
                   >
-                    {owner.status}
+                    {t(`owners.status.${owner.status}`)}
                   </Badge>
                   <Button variant="ghost" size="icon">
                     <MoreHorizontal className="h-4 w-4" />

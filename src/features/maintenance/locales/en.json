@@ -1,0 +1,40 @@
+{
+  "title": "Maintenance",
+  "subtitle": "Track and manage property maintenance requests",
+  "newRequest": "New Request",
+  "viewDetails": "View Details",
+  "noRequests": "No maintenance requests",
+  "noRequestsFilter": "No {filter} requests",
+  "filters": {
+    "all": "Total Requests",
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "completed": "Completed"
+  },
+  "priority": {
+    "urgent": "URGENT",
+    "high": "HIGH",
+    "medium": "MEDIUM",
+    "low": "LOW"
+  },
+  "status": {
+    "pending": "PENDING",
+    "inProgress": "IN PROGRESS",
+    "completed": "COMPLETED",
+    "cancelled": "CANCELLED"
+  },
+  "details": {
+    "category": "Category",
+    "scheduledDate": "Scheduled Date",
+    "contractorId": "Contractor ID",
+    "estimatedCost": "Estimated Cost",
+    "actualCost": "Actual Cost",
+    "completedOn": "Completed on {date}"
+  },
+  "categories": {
+    "plumbing": "plumbing",
+    "electrical": "electrical",
+    "hvac": "hvac",
+    "general": "general"
+  }
+}

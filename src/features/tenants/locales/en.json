@@ -1,0 +1,36 @@
+{
+  "title": "Tenant Credit Scoring",
+  "subtitle": "View tenant credit scores and payment history",
+  "searchTenant": "Search Tenant",
+  "searchPlaceholder": "Enter tenant name or email...",
+  "viewProfile": "View Profile",
+  "backToList": "Back to Tenants List",
+  "allTenants": "All Tenants",
+  "clickToView": "Click on a tenant to view their detailed credit report",
+  "creditScore": {
+    "title": "Credit Score",
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor",
+    "label": "Credit Score"
+  },
+  "rating": {
+    "label": "Rating"
+  },
+  "onTime": {
+    "label": "On-Time"
+  },
+  "stats": {
+    "totalTenants": "Total Tenants",
+    "excellentRating": "Excellent Rating",
+    "averageScore": "Average Score",
+    "avgOnTimePercent": "Avg. On-Time %"
+  },
+  "factors": {
+    "paymentHistory": "Payment History",
+    "rentalHistory": "Rental History",
+    "income": "Income Verification",
+    "references": "References"
+  }
+}

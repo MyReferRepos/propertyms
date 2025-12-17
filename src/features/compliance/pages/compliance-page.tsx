@@ -10,8 +10,10 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { propertiesAPI } from '@/services/api'
 import type { Property } from '@/types'
+import { useI18n } from '@/lib/i18n'
 
 export function CompliancePage() {
+  const { t } = useI18n()
   const [properties, setProperties] = useState<Property[]>([])
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null)
   const [loading, setLoading] = useState(true)
@@ -44,7 +46,7 @@ export function CompliancePage() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent mx-auto"></div>
-          <p className="mt-4 text-sm text-muted-foreground">Loading...</p>
+          <p className="mt-4 text-sm text-muted-foreground">{t('common.loading')}</p>
         </div>
       </div>
     )
@@ -55,9 +57,9 @@ export function CompliancePage() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <Building2 className="mx-auto h-12 w-12 text-muted-foreground" />
-          <h3 className="mt-4 text-lg font-semibold">No properties found</h3>
+          <h3 className="mt-4 text-lg font-semibold">{t('compliance.noProperties')}</h3>
           <p className="text-sm text-muted-foreground">
-            Add properties to check their compliance status
+            {t('compliance.addProperties')}
           </p>
         </div>
       </div>
@@ -69,9 +71,9 @@ export function CompliancePage() {
       {/* Page Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Compliance Checker</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t('compliance.title')}</h1>
           <p className="text-muted-foreground">
-            Check properties against NZ Healthy Homes Standards
+            {t('compliance.subtitle')}
           </p>
         </div>
 
@@ -84,7 +86,7 @@ export function CompliancePage() {
                 {selectedProperty ? (
                   <span className="truncate">{selectedProperty.address}</span>
                 ) : (
-                  'Select a property'
+                  t('compliance.selectProperty')
                 )}
               </span>
               <ChevronDown className="h-4 w-4 opacity-50" />

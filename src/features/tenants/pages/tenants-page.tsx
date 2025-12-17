@@ -7,8 +7,10 @@ import { TenantCreditDisplay } from '../components/tenant-credit-display'
 import { mockTenantCreditData, getCreditScoreColor, getCreditScoreBadgeColor } from '@/data/mock/tenant-credit'
 import type { TenantCreditScore } from '@/data/mock/tenant-credit'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/lib/i18n'
 
 export function TenantsPage() {
+  const { t } = useI18n()
   const [selectedTenant, setSelectedTenant] = useState<TenantCreditScore | null>(null)
 
   const tenants = Object.values(mockTenantCreditData)
@@ -18,7 +20,7 @@ export function TenantsPage() {
       <div className="space-y-6">
         {/* Back Button */}
         <Button variant="ghost" onClick={() => setSelectedTenant(null)}>
-          ← Back to Tenants List
+          ← {t('tenants.backToList')}
         </Button>
 
         {/* Tenant Credit Display */}
@@ -31,18 +33,18 @@ export function TenantsPage() {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Tenant Credit Scoring</h1>
+        <h1 className="text-3xl font-bold tracking-tight">{t('tenants.title')}</h1>
         <p className="text-muted-foreground">
-          View tenant credit scores and payment history
+          {t('tenants.subtitle')}
         </p>
       </div>
 
       {/* Tenants List */}
       <Card>
         <CardHeader>
-          <CardTitle>All Tenants</CardTitle>
+          <CardTitle>{t('tenants.allTenants')}</CardTitle>
           <CardDescription>
-            Click on a tenant to view their detailed credit report
+            {t('tenants.clickToView')}
           </CardDescription>
         </CardHeader>
 
@@ -71,21 +73,21 @@ export function TenantsPage() {
 
                   <div className="flex items-center gap-6">
                     <div className="text-right">
-                      <p className="text-sm text-muted-foreground">Credit Score</p>
+                      <p className="text-sm text-muted-foreground">{t('tenants.creditScore.label')}</p>
                       <p className={cn('text-2xl font-bold', scoreColor)}>
                         {tenant.creditScore}
                       </p>
                     </div>
 
                     <div className="text-right min-w-[100px]">
-                      <p className="text-sm text-muted-foreground">Rating</p>
+                      <p className="text-sm text-muted-foreground">{t('tenants.rating.label')}</p>
                       <Badge variant="default" className={cn('mt-1', badgeColor)}>
                         {tenant.rating.toUpperCase()}
                       </Badge>
                     </div>
 
                     <div className="text-right">
-                      <p className="text-sm text-muted-foreground">On-Time</p>
+                      <p className="text-sm text-muted-foreground">{t('tenants.onTime.label')}</p>
                       <p className="font-semibold">
                         {tenant.paymentHistory.onTimePercentage.toFixed(1)}%
                       </p>
@@ -104,7 +106,7 @@ export function TenantsPage() {
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Tenants</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('tenants.stats.totalTenants')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{tenants.length}</div>
@@ -113,7 +115,7 @@ export function TenantsPage() {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Excellent Rating</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('tenants.stats.excellentRating')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -124,7 +126,7 @@ export function TenantsPage() {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Average Score</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('tenants.stats.averageScore')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -135,7 +137,7 @@ export function TenantsPage() {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Avg. On-Time %</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('tenants.stats.avgOnTimePercent')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">

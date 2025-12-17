@@ -1,0 +1,32 @@
+{
+  "title": "Properties",
+  "subtitle": "Manage your property portfolio",
+  "addProperty": "Add Property",
+  "viewAll": "View All Properties",
+  "searchPlaceholder": "Search properties...",
+  "loading": "Loading properties...",
+  "noProperties": "No properties found",
+  "tryAdjust": "Try adjusting your search",
+  "getStarted": "Get started by adding your first property",
+  "filters": {
+    "all": "All Properties",
+    "active": "Active",
+    "vacant": "Vacant",
+    "maintenance": "Maintenance"
+  },
+  "stats": {
+    "total": "Total Properties",
+    "active": "Active",
+    "vacant": "Vacant",
+    "maintenance": "Under Maintenance"
+  },
+  "details": {
+    "address": "Address",
+    "type": "Property Type",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "parking": "Parking",
+    "rent": "Weekly Rent",
+    "status": "Status"
+  }
+}

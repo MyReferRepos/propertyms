@@ -1,0 +1,43 @@
+{
+  "title": "Accounting",
+  "subtitle": "Financial overview and accounting management",
+  "stats": {
+    "totalIncome": "Total Income",
+    "totalExpense": "Total Expense",
+    "netProfit": "Net Profit",
+    "outstanding": "Outstanding",
+    "thisMonth": "This Month",
+    "bankBalance": "Bank Balance",
+    "fromLastMonth": "from last month"
+  },
+  "recentTransactions": "Recent Transactions",
+  "pendingInvoices": "Pending Invoices",
+  "transactionListPlaceholder": "Transaction list will be displayed here...",
+  "invoiceListPlaceholder": "Invoice list will be displayed here...",
+  "audit": {
+    "title": "Audit Logs",
+    "subtitle": "Audit logs and compliance reports",
+    "stats": {
+      "totalLogs": "Total Logs",
+      "lastDays": "Last 30 days",
+      "createActions": "Create Actions",
+      "ofTotal": "of total",
+      "updateActions": "Update Actions",
+      "complianceScore": "Compliance Score",
+      "excellent": "Excellent"
+    },
+    "recentAuditLogs": "Recent Audit Logs",
+    "action": {
+      "propertyCreated": "Property Created",
+      "tenancyUpdated": "Tenancy Updated",
+      "paymentRecorded": "Payment Recorded",
+      "documentDeleted": "Document Deleted"
+    },
+    "type": {
+      "create": "Create",
+      "update": "Update",
+      "delete": "Delete"
+    },
+    "by": "by"
+  }
+}

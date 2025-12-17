@@ -1,0 +1,104 @@
+{
+  "title": "租赁流程",
+  "subtitle": "管理从房源发布到签约的完整租赁流程",
+  "leasingWorkflow": "租赁流程",
+  "activeItems": "个活跃项目",
+  "clickToManage": "点击管理",
+  "listing": {
+    "title": "房源发布",
+    "subtitle": "管理可出租的房产列表",
+    "addListing": "添加房源",
+    "stats": {
+      "activeListings": "活跃房源",
+      "pendingReview": "待审核",
+      "totalInquiries": "总咨询数",
+      "avgTimeToLet": "平均出租时间"
+    },
+    "type": {
+      "apartment": "公寓",
+      "house": "住宅",
+      "unit": "单元房"
+    },
+    "bed": "卧",
+    "bath": "卫",
+    "week": "周",
+    "listedDaysAgo": "发布于 {days} 天前",
+    "status": {
+      "active": "活跃",
+      "pending": "待处理",
+      "inactive": "非活跃"
+    }
+  },
+  "viewing": {
+    "title": "看房跟踪",
+    "subtitle": "安排和跟踪房产看房",
+    "scheduleViewing": "安排看房",
+    "stats": {
+      "todayViewings": "今日看房",
+      "upcoming": "即将到来",
+      "showRate": "到访率",
+      "thisMonth": "本月"
+    },
+    "todaySchedule": "今日安排",
+    "allViewings": "所有看房",
+    "noViewingsToday": "今天没有安排看房",
+    "status": {
+      "scheduled": "已安排",
+      "confirmed": "已确认",
+      "completed": "已完成",
+      "noShow": "未到场",
+      "cancelled": "已取消"
+    }
+  },
+  "applications": {
+    "title": "租赁申请",
+    "subtitle": "审核和处理租客申请",
+    "exportApplications": "导出申请",
+    "stats": {
+      "totalApplications": "总申请数",
+      "underReview": "审核中",
+      "approved": "已批准",
+      "pendingDocuments": "待补充文件"
+    },
+    "applicationsTitle": "申请列表",
+    "submitted": "提交时间",
+    "credit": "信用",
+    "references": "推荐人",
+    "viewDetails": "查看详情",
+    "approve": "批准",
+    "reject": "拒绝",
+    "creditCheck": {
+      "passed": "通过",
+      "failed": "未通过",
+      "pending": "待处理"
+    },
+    "status": {
+      "approved": "已批准",
+      "underReview": "审核中",
+      "pendingDocuments": "待补充文件",
+      "rejected": "已拒绝"
+    }
+  },
+  "agreements": {
+    "title": "租赁协议",
+    "subtitle": "管理租赁协议和合同",
+    "createAgreement": "创建协议",
+    "stats": {
+      "totalAgreements": "总协议数",
+      "signed": "已签署",
+      "awaitingSignature": "待签署",
+      "drafts": "草稿"
+    },
+    "tenancyAgreements": "租赁协议",
+    "download": "下载",
+    "resend": "重新发送",
+    "sendForSignature": "发送签署",
+    "signedDate": "签署时间",
+    "status": {
+      "signed": "已签署",
+      "awaitingSignature": "待签署",
+      "draft": "草稿",
+      "expired": "已过期"
+    }
+  }
+}

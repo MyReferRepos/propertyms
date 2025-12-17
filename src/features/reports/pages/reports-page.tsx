@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { useNavigate } from '@tanstack/react-router'
+import { useI18n } from '@/lib/i18n'
 
 interface Report {
   id: string
@@ -103,6 +104,7 @@ const frequencyLabels = {
 }
 
 export function ReportsPage() {
+  const { t } = useI18n()
   const navigate = useNavigate()
 
   const formatDate = (dateString: string) => {
@@ -135,10 +137,10 @@ export function ReportsPage() {
       <div>
         <div className="flex items-center gap-2">
           <BarChart3 className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold tracking-tight">Reports</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t('reports.title')}</h1>
         </div>
         <p className="text-muted-foreground mt-1">
-          Generate and download comprehensive reports for your portfolio
+          {t('reports.subtitle')}
         </p>
       </div>
 
@@ -149,7 +151,7 @@ export function ReportsPage() {
             <div className="text-center">
               <FileText className="h-8 w-8 mx-auto text-muted-foreground mb-2" />
               <p className="text-2xl font-bold">{availableReports.length}</p>
-              <p className="text-sm text-muted-foreground">Available Reports</p>
+              <p className="text-sm text-muted-foreground">{t('reports.stats.available')}</p>
             </div>
           </CardContent>
         </Card>
@@ -159,7 +161,7 @@ export function ReportsPage() {
             <div className="text-center">
               <TrendingUp className="h-8 w-8 mx-auto text-green-600 mb-2" />
               <p className="text-2xl font-bold text-green-600">4</p>
-              <p className="text-sm text-muted-foreground">Financial Reports</p>
+              <p className="text-sm text-muted-foreground">{t('reports.stats.financial')}</p>
             </div>
           </CardContent>
         </Card>
@@ -169,7 +171,7 @@ export function ReportsPage() {
             <div className="text-center">
               <BarChart3 className="h-8 w-8 mx-auto text-blue-600 mb-2" />
               <p className="text-2xl font-bold text-blue-600">2</p>
-              <p className="text-sm text-muted-foreground">Operational Reports</p>
+              <p className="text-sm text-muted-foreground">{t('reports.stats.operational')}</p>
             </div>
           </CardContent>
         </Card>
@@ -179,7 +181,7 @@ export function ReportsPage() {
             <div className="text-center">
               <Download className="h-8 w-8 mx-auto text-purple-600 mb-2" />
               <p className="text-2xl font-bold text-purple-600">12</p>
-              <p className="text-sm text-muted-foreground">Downloads This Month</p>
+              <p className="text-sm text-muted-foreground">{t('reports.stats.downloads')}</p>
             </div>
           </CardContent>
         </Card>
@@ -189,7 +191,7 @@ export function ReportsPage() {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold flex items-center gap-2">
           <span className="h-1 w-1 rounded-full bg-green-600"></span>
-          Financial Reports
+          {t('reports.financialReports')}
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
           {groupedReports.financial.map((report) => (
@@ -208,21 +210,21 @@ export function ReportsPage() {
               <CardContent>
                 <div className="flex items-center justify-between">
                   <div className="text-sm">
-                    <p className="text-muted-foreground">Frequency: {frequencyLabels[report.frequency]}</p>
+                    <p className="text-muted-foreground">{t('reports.frequency')}: {frequencyLabels[report.frequency]}</p>
                     {report.lastGenerated && (
-                      <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
+                      <p className="text-muted-foreground">{t('reports.last')}: {formatDate(report.lastGenerated)}</p>
                     )}
                   </div>
                   <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
                     {report.id === 'rep-rental-price' ? (
                       <>
                         <DollarSign className="mr-2 h-4 w-4" />
-                        Create
+                        {t('reports.create')}
                       </>
                     ) : (
                       <>
                         <Download className="mr-2 h-4 w-4" />
-                        Generate
+                        {t('reports.generate')}
                       </>
                     )}
                   </Button>
@@ -237,7 +239,7 @@ export function ReportsPage() {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold flex items-center gap-2">
           <span className="h-1 w-1 rounded-full bg-blue-600"></span>
-          Operational Reports
+          {t('reports.operationalReports')}
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
           {groupedReports.operational.map((report) => (
@@ -256,21 +258,21 @@ export function ReportsPage() {
               <CardContent>
                 <div className="flex items-center justify-between">
                   <div className="text-sm">
-                    <p className="text-muted-foreground">Frequency: {frequencyLabels[report.frequency]}</p>
+                    <p className="text-muted-foreground">{t('reports.frequency')}: {frequencyLabels[report.frequency]}</p>
                     {report.lastGenerated && (
-                      <p className="text-muted-foreground">Last: {formatDate(report.lastGenerated)}</p>
+                      <p className="text-muted-foreground">{t('reports.last')}: {formatDate(report.lastGenerated)}</p>
                     )}
                   </div>
                   <Button size="sm" onClick={() => handleGenerateReport(report.id)}>
                     {report.id === 'rep-rental-price' ? (
                       <>
                         <DollarSign className="mr-2 h-4 w-4" />
-                        Create
+                        {t('reports.create')}
                       </>
                     ) : (
                       <>
                         <Download className="mr-2 h-4 w-4" />
-                        Generate
+                        {t('reports.generate')}
                       </>
                     )}
                   </Button>
@@ -286,7 +288,7 @@ export function ReportsPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold flex items-center gap-2">
             <span className="h-1 w-1 rounded-full bg-purple-600"></span>
-            Compliance Reports
+            {t('reports.complianceReports')}
           </h2>
           <div className="space-y-4">
             {groupedReports.compliance.map((report) => (
@@ -326,7 +328,7 @@ export function ReportsPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold flex items-center gap-2">
             <span className="h-1 w-1 rounded-full bg-orange-600"></span>
-            Performance Reports
+            {t('reports.performanceReports')}
           </h2>
           <div className="space-y-4">
             {groupedReports.performance.map((report) => (

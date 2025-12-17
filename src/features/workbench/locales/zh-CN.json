@@ -1,0 +1,150 @@
+{
+  "title": "工作台",
+  "subtitle": "管理您的任务、提醒和消息",
+
+  "todayFocus": {
+    "title": "今日聚焦",
+    "overdue": "已逾期",
+    "dueToday": "今日到期",
+    "thisWeek": "本周",
+    "items": "项",
+    "viewAll": "查看全部",
+    "noItems": "太棒了！今天没有紧急事项。"
+  },
+
+  "actionItems": {
+    "title": "行动项",
+    "all": "全部",
+    "tasks": "任务",
+    "reminders": "提醒",
+    "overdue": "已逾期",
+    "today": "今天",
+    "week": "本周",
+    "later": "稍后",
+    "noItems": "没有找到行动项",
+    "createTask": "创建任务",
+    "setReminder": "设置提醒"
+  },
+
+  "task": {
+    "title": "任务",
+    "status": {
+      "pending": "待处理",
+      "in_progress": "进行中",
+      "completed": "已完成",
+      "cancelled": "已取消"
+    },
+    "category": {
+      "maintenance": "维护",
+      "leasing": "租赁",
+      "compliance": "合规",
+      "financial": "财务",
+      "inspection": "检查",
+      "general": "常规"
+    },
+    "actions": {
+      "start": "开始",
+      "complete": "完成",
+      "cancel": "取消",
+      "snooze": "推迟",
+      "delete": "删除"
+    },
+    "subtasks": "子任务",
+    "assignee": "负责人"
+  },
+
+  "reminder": {
+    "title": "提醒",
+    "status": {
+      "active": "活动",
+      "snoozed": "已推迟",
+      "dismissed": "已关闭"
+    },
+    "source": {
+      "manual": "手动",
+      "system": "系统",
+      "workflow": "工作流"
+    },
+    "recurrence": {
+      "once": "单次",
+      "daily": "每天",
+      "weekly": "每周",
+      "monthly": "每月",
+      "yearly": "每年",
+      "custom": "自定义"
+    },
+    "actions": {
+      "convertToTask": "转为任务",
+      "snooze": "推迟",
+      "dismiss": "关闭",
+      "edit": "编辑"
+    },
+    "snoozedUntil": "推迟至"
+  },
+
+  "messages": {
+    "title": "消息",
+    "all": "全部",
+    "unread": "未读",
+    "requiresAction": "待处理",
+    "archived": "已归档",
+    "noMessages": "没有找到消息",
+    "markAsRead": "标为已读",
+    "archive": "归档",
+    "reply": "回复",
+    "convertToTask": "转为任务",
+    "setReminder": "设置提醒",
+    "type": {
+      "tenant": "租客",
+      "owner": "业主",
+      "supplier": "供应商",
+      "system": "系统",
+      "team": "团队"
+    }
+  },
+
+  "priority": {
+    "low": "低",
+    "medium": "中",
+    "high": "高",
+    "urgent": "紧急"
+  },
+
+  "common": {
+    "dueAt": "到期",
+    "createdAt": "创建于",
+    "updatedAt": "更新于",
+    "related": "关联",
+    "today": "今天",
+    "tomorrow": "明天",
+    "overdue": "逾期",
+    "new": "新建",
+    "filter": "筛选",
+    "search": "搜索",
+    "refresh": "刷新"
+  },
+
+  "snooze": {
+    "title": "推迟",
+    "1hour": "1小时",
+    "3hours": "3小时",
+    "tomorrow": "明天",
+    "nextWeek": "下周",
+    "custom": "自定义..."
+  },
+
+  "create": {
+    "newTask": "新建任务",
+    "newReminder": "新建提醒",
+    "taskTitle": "任务标题",
+    "reminderTitle": "提醒标题",
+    "description": "描述",
+    "dueDate": "到期日期",
+    "priority": "优先级",
+    "category": "分类",
+    "recurrence": "循环",
+    "relatedEntity": "关联对象",
+    "save": "保存",
+    "cancel": "取消"
+  }
+}

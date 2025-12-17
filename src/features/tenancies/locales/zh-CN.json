@@ -1,0 +1,39 @@
+{
+  "title": "租赁管理",
+  "subtitle": "管理租赁协议和租期",
+  "newTenancy": "新建租约",
+  "viewDetails": "查看详情",
+  "loading": "加载租约中...",
+  "noTenancies": "未找到租约",
+  "createFirst": "创建您的第一个租约以开始使用",
+  "filters": {
+    "all": "全部租约",
+    "active": "生效中",
+    "expiringSoon": "即将到期",
+    "expired": "已过期"
+  },
+  "status": {
+    "active": "生效中",
+    "expiringSoon": "即将到期",
+    "expired": "已过期",
+    "ended": "已结束",
+    "terminated": "已终止"
+  },
+  "details": {
+    "propertyId": "房产",
+    "tenancyId": "租约ID",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
+    "weeklyRent": "周租金",
+    "bondAmount": "押金",
+    "paymentFrequency": "支付频率",
+    "autoRenew": "自动续约",
+    "noticePeriod": "通知期限"
+  },
+  "daysLeft": "还剩 {count} 天",
+  "weeksRent": "{count} 周",
+  "perAnnum": "每年",
+  "yes": "是",
+  "no": "否",
+  "days": "天"
+}

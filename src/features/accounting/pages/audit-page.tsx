@@ -44,11 +44,11 @@ export function AuditPage() {
   const getTypeBadge = (type: string) => {
     switch (type) {
       case 'create':
-        return <Badge className="bg-green-100 text-green-800">Create</Badge>
+        return <Badge className="bg-green-100 text-green-800">{t('accounting.audit.type.create')}</Badge>
       case 'update':
-        return <Badge className="bg-blue-100 text-blue-800">Update</Badge>
+        return <Badge className="bg-blue-100 text-blue-800">{t('accounting.audit.type.update')}</Badge>
       case 'delete':
-        return <Badge className="bg-red-100 text-red-800">Delete</Badge>
+        return <Badge className="bg-red-100 text-red-800">{t('accounting.audit.type.delete')}</Badge>
       default:
         return <Badge>{type}</Badge>
     }
@@ -57,9 +57,9 @@ export function AuditPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{t('nav.accounting.audit')}</h1>
+        <h1 className="text-2xl font-bold">{t('accounting.audit.title')}</h1>
         <p className="text-muted-foreground">
-          Audit logs and compliance reports
+          {t('accounting.audit.subtitle')}
         </p>
       </div>
 
@@ -67,45 +67,45 @@ export function AuditPage() {
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Total Logs</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('accounting.audit.stats.totalLogs')}</CardTitle>
             <History className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">12,458</div>
-            <p className="text-xs text-muted-foreground">Last 30 days</p>
+            <p className="text-xs text-muted-foreground">{t('accounting.audit.stats.lastDays')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Create Actions</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('accounting.audit.stats.createActions')}</CardTitle>
             <FileText className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">4,521</div>
-            <p className="text-xs text-muted-foreground">36.3% of total</p>
+            <p className="text-xs text-muted-foreground">36.3% {t('accounting.audit.stats.ofTotal')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Update Actions</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('accounting.audit.stats.updateActions')}</CardTitle>
             <ClipboardList className="h-4 w-4 text-blue-600" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">6,892</div>
-            <p className="text-xs text-muted-foreground">55.3% of total</p>
+            <p className="text-xs text-muted-foreground">55.3% {t('accounting.audit.stats.ofTotal')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Compliance Score</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('accounting.audit.stats.complianceScore')}</CardTitle>
             <Shield className="h-4 w-4 text-purple-600" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-purple-600">98.5%</div>
-            <p className="text-xs text-muted-foreground">Excellent</p>
+            <p className="text-xs text-muted-foreground">{t('accounting.audit.stats.excellent')}</p>
           </CardContent>
         </Card>
       </div>
@@ -113,7 +113,7 @@ export function AuditPage() {
       {/* Audit Logs Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Recent Audit Logs</CardTitle>
+          <CardTitle>{t('accounting.audit.recentAuditLogs')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

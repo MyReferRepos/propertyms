@@ -76,14 +76,14 @@ export function ViewingPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.leasing.viewing')}</h1>
+          <h1 className="text-2xl font-bold">{t('leasingProcess.viewing.title')}</h1>
           <p className="text-muted-foreground">
-            Schedule and track property viewings
+            {t('leasingProcess.viewing.subtitle')}
           </p>
         </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Schedule Viewing
+          {t('leasingProcess.viewing.scheduleViewing')}
         </Button>
       </div>
 
@@ -92,25 +92,25 @@ export function ViewingPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{todayViewings.length}</div>
-            <p className="text-xs text-muted-foreground">Today&apos;s Viewings</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.viewing.stats.todayViewings')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{upcomingViewings.length}</div>
-            <p className="text-xs text-muted-foreground">Upcoming</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.viewing.stats.upcoming')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">85%</div>
-            <p className="text-xs text-muted-foreground">Show Rate</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.viewing.stats.showRate')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">28</div>
-            <p className="text-xs text-muted-foreground">This Month</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.viewing.stats.thisMonth')}</p>
           </CardContent>
         </Card>
       </div>
@@ -120,7 +120,7 @@ export function ViewingPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Calendar className="h-5 w-5" />
-            Today&apos;s Schedule
+            {t('leasingProcess.viewing.todaySchedule')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -148,7 +148,7 @@ export function ViewingPage() {
                     </div>
                   </div>
                   <Badge className={getStatusColor(viewing.status)}>
-                    {viewing.status}
+                    {t(`leasingProcess.viewing.status.${viewing.status === 'No Show' ? 'noShow' : viewing.status.toLowerCase()}`)}
                   </Badge>
                 </div>
               ))}
@@ -156,7 +156,7 @@ export function ViewingPage() {
           ) : (
             <div className="flex flex-col items-center justify-center py-8 text-muted-foreground">
               <Eye className="h-12 w-12 mb-2" />
-              <p>No viewings scheduled for today</p>
+              <p>{t('leasingProcess.viewing.noViewingsToday')}</p>
             </div>
           )}
         </CardContent>
@@ -165,7 +165,7 @@ export function ViewingPage() {
       {/* All Viewings */}
       <Card>
         <CardHeader>
-          <CardTitle>All Viewings</CardTitle>
+          <CardTitle>{t('leasingProcess.viewing.allViewings')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -195,7 +195,7 @@ export function ViewingPage() {
                   </div>
                 </div>
                 <Badge className={getStatusColor(viewing.status)}>
-                  {viewing.status}
+                  {t(`leasingProcess.viewing.status.${viewing.status === 'No Show' ? 'noShow' : viewing.status.toLowerCase()}`)}
                 </Badge>
               </div>
             ))}

@@ -1,0 +1,30 @@
+{
+  "title": "AI 智能洞察",
+  "subtitle": "PropertyPilot AI 智能推荐",
+  "selectProperty": "选择房产",
+  "allProperties": "所有房产",
+  "loading": "正在加载 AI 洞察...",
+  "insights": {
+    "marketTrends": "市场趋势",
+    "recommendations": "推荐建议",
+    "predictions": "预测分析",
+    "riskAnalysis": "风险分析"
+  },
+  "actions": {
+    "refresh": "刷新洞察",
+    "export": "导出报告",
+    "dismiss": "忽略"
+  },
+  "stats": {
+    "all": "全部洞察",
+    "warnings": "警告",
+    "suggestions": "建议",
+    "opportunities": "机会",
+    "tasks": "任务"
+  },
+  "empty": {
+    "title": "暂无洞察",
+    "allMessage": "PropertyPilot 正在分析您的投资组合...",
+    "filterMessage": "暂无{type}洞察"
+  }
+}

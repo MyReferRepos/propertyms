@@ -1,0 +1,28 @@
+{
+  "title": "财务管理",
+  "subtitle": "跟踪收入、支出和财务表现",
+  "addTransaction": "添加交易",
+  "viewDetails": "查看详情",
+  "summary": {
+    "totalIncome": "总收入",
+    "totalExpenses": "总支出",
+    "netIncome": "净收入",
+    "profitMargin": "利润率"
+  },
+  "periods": {
+    "thisMonth": "本月",
+    "lastMonth": "上月",
+    "thisYear": "本年",
+    "thisPeriod": "本期"
+  },
+  "filters": {
+    "all": "全部",
+    "income": "收入",
+    "expense": "支出"
+  },
+  "transactions": {
+    "title": "最近交易",
+    "subtitle": "您投资组合的最新财务活动"
+  },
+  "transactionCount": "{count} 笔交易"
+}

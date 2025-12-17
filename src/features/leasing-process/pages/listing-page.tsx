@@ -67,14 +67,14 @@ export function ListingPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.leasing.listing')}</h1>
+          <h1 className="text-2xl font-bold">{t('leasingProcess.listing.title')}</h1>
           <p className="text-muted-foreground">
-            Manage property listings available for rent
+            {t('leasingProcess.listing.subtitle')}
           </p>
         </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Add Listing
+          {t('leasingProcess.listing.addListing')}
         </Button>
       </div>
 
@@ -83,25 +83,25 @@ export function ListingPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">12</div>
-            <p className="text-xs text-muted-foreground">Active Listings</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.listing.stats.activeListings')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">3</div>
-            <p className="text-xs text-muted-foreground">Pending Review</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.listing.stats.pendingReview')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">28</div>
-            <p className="text-xs text-muted-foreground">Total Inquiries</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.listing.stats.totalInquiries')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">8 days</div>
-            <p className="text-xs text-muted-foreground">Avg. Time to Let</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.listing.stats.avgTimeToLet')}</p>
           </CardContent>
         </Card>
       </div>
@@ -117,7 +117,7 @@ export function ListingPage() {
                   <CardTitle className="text-lg">{listing.type}</CardTitle>
                 </div>
                 <Badge className={getStatusColor(listing.status)}>
-                  {listing.status}
+                  {t(`leasingProcess.listing.status.${listing.status.toLowerCase()}`)}
                 </Badge>
               </div>
             </CardHeader>
@@ -130,19 +130,19 @@ export function ListingPage() {
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Bed className="h-4 w-4" />
-                    {listing.bedrooms} bed
+                    {listing.bedrooms} {t('leasingProcess.listing.bed')}
                   </span>
                   <span className="flex items-center gap-1">
                     <Bath className="h-4 w-4" />
-                    {listing.bathrooms} bath
+                    {listing.bathrooms} {t('leasingProcess.listing.bath')}
                   </span>
                   <span className="flex items-center gap-1 font-semibold text-foreground">
                     <DollarSign className="h-4 w-4" />
-                    {listing.rent}/week
+                    {listing.rent}/{t('leasingProcess.listing.week')}
                   </span>
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Listed {listing.daysListed} days ago
+                  {t('leasingProcess.listing.listedDaysAgo', { days: listing.daysListed })}
                 </div>
               </div>
             </CardContent>

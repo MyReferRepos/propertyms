@@ -1,0 +1,99 @@
+{
+  "title": "Suppliers",
+  "subtitle": "Manage suppliers and track work assignments",
+  "addSupplier": "Add Supplier",
+  "stats": {
+    "totalSuppliers": "Total Suppliers",
+    "activeSuppliers": "Active Suppliers",
+    "pendingQuotes": "Pending Quotes",
+    "activeJobs": "Active Jobs"
+  },
+  "supplierDirectory": "Supplier Directory",
+  "contact": "Contact",
+  "jobs": "jobs",
+  "status": {
+    "active": "active",
+    "inactive": "inactive"
+  },
+  "categories": {
+    "plumber": "Plumber",
+    "electrician": "Electrician",
+    "cleaner": "Cleaner",
+    "gardener": "Gardener"
+  },
+  "quotes": {
+    "title": "Quotes",
+    "subtitle": "Manage quote requests from suppliers",
+    "requestQuote": "Request Quote",
+    "stats": {
+      "totalQuotes": "Total Quotes",
+      "pendingReview": "Pending Review",
+      "approved": "Approved",
+      "totalValue": "Total Value"
+    },
+    "quoteRequests": "Quote Requests",
+    "requested": "Requested",
+    "validUntil": "Valid until",
+    "quoteAmount": "Quote Amount",
+    "approve": "Approve",
+    "reject": "Reject",
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "completed": "Completed",
+      "rejected": "Rejected"
+    }
+  },
+  "assignments": {
+    "title": "Assignments",
+    "subtitle": "Track work assignments to suppliers",
+    "exportReport": "Export Report",
+    "stats": {
+      "totalAssignments": "Total Assignments",
+      "scheduled": "Scheduled",
+      "inProgress": "In Progress",
+      "completed": "Completed"
+    },
+    "workAssignments": "Work Assignments",
+    "scheduledDate": "Scheduled",
+    "viewDetails": "View Details",
+    "markComplete": "Mark Complete",
+    "status": {
+      "scheduled": "Scheduled",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "reviews": {
+    "title": "Reviews",
+    "subtitle": "Review completed work and rate suppliers",
+    "stats": {
+      "totalCompletedJobs": "Total Completed Jobs",
+      "reviewed": "Reviewed",
+      "pendingReview": "Pending Review",
+      "averageRating": "Average Rating"
+    },
+    "pendingReviews": "Pending Reviews",
+    "completedReviews": "Completed Reviews",
+    "writeReview": "Write Review",
+    "completedDate": "Completed",
+    "quality": "Quality",
+    "timeliness": {
+      "onTime": "On Time",
+      "delayed": "Delayed"
+    },
+    "qualityLevel": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "average": "Average",
+      "poor": "Poor"
+    },
+    "communication": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "average": "Average",
+      "poor": "Poor"
+    }
+  }
+}

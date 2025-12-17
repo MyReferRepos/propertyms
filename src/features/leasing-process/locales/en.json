@@ -1,0 +1,104 @@
+{
+  "title": "Leasing Process",
+  "subtitle": "Manage the complete leasing workflow from listing to agreement",
+  "leasingWorkflow": "Leasing Workflow",
+  "activeItems": "active items",
+  "clickToManage": "Click to manage",
+  "listing": {
+    "title": "Listing Properties",
+    "subtitle": "Manage property listings available for rent",
+    "addListing": "Add Listing",
+    "stats": {
+      "activeListings": "Active Listings",
+      "pendingReview": "Pending Review",
+      "totalInquiries": "Total Inquiries",
+      "avgTimeToLet": "Avg. Time to Let"
+    },
+    "type": {
+      "apartment": "Apartment",
+      "house": "House",
+      "unit": "Unit"
+    },
+    "bed": "bed",
+    "bath": "bath",
+    "week": "week",
+    "listedDaysAgo": "Listed {days} days ago",
+    "status": {
+      "active": "Active",
+      "pending": "Pending",
+      "inactive": "Inactive"
+    }
+  },
+  "viewing": {
+    "title": "Viewing Tracker",
+    "subtitle": "Schedule and track property viewings",
+    "scheduleViewing": "Schedule Viewing",
+    "stats": {
+      "todayViewings": "Today's Viewings",
+      "upcoming": "Upcoming",
+      "showRate": "Show Rate",
+      "thisMonth": "This Month"
+    },
+    "todaySchedule": "Today's Schedule",
+    "allViewings": "All Viewings",
+    "noViewingsToday": "No viewings scheduled for today",
+    "status": {
+      "scheduled": "Scheduled",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "noShow": "No Show",
+      "cancelled": "Cancelled"
+    }
+  },
+  "applications": {
+    "title": "Applications",
+    "subtitle": "Review and process tenant applications",
+    "exportApplications": "Export Applications",
+    "stats": {
+      "totalApplications": "Total Applications",
+      "underReview": "Under Review",
+      "approved": "Approved",
+      "pendingDocuments": "Pending Documents"
+    },
+    "applicationsTitle": "Applications",
+    "submitted": "Submitted",
+    "credit": "Credit",
+    "references": "References",
+    "viewDetails": "View Details",
+    "approve": "Approve",
+    "reject": "Reject",
+    "creditCheck": {
+      "passed": "Passed",
+      "failed": "Failed",
+      "pending": "Pending"
+    },
+    "status": {
+      "approved": "Approved",
+      "underReview": "Under Review",
+      "pendingDocuments": "Pending Documents",
+      "rejected": "Rejected"
+    }
+  },
+  "agreements": {
+    "title": "Agreements",
+    "subtitle": "Manage tenancy agreements and contracts",
+    "createAgreement": "Create Agreement",
+    "stats": {
+      "totalAgreements": "Total Agreements",
+      "signed": "Signed",
+      "awaitingSignature": "Awaiting Signature",
+      "drafts": "Drafts"
+    },
+    "tenancyAgreements": "Tenancy Agreements",
+    "download": "Download",
+    "resend": "Resend",
+    "sendForSignature": "Send for Signature",
+    "signedDate": "Signed",
+    "status": {
+      "signed": "Signed",
+      "awaitingSignature": "Awaiting Signature",
+      "draft": "Draft",
+      "expired": "Expired"
+    }
+  }
+}

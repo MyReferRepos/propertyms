@@ -78,9 +78,9 @@ export function AccountingPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{t('nav.accounting')}</h1>
+        <h1 className="text-2xl font-bold">{t('accounting.title')}</h1>
         <p className="text-muted-foreground">
-          Financial overview and accounting management
+          {t('accounting.subtitle')}
         </p>
       </div>
 
@@ -92,7 +92,7 @@ export function AccountingPage() {
             <Card key={stat.title}>
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
-                  {stat.title}
+                  {t(`accounting.stats.${stat.title.toLowerCase().replace(' ', '')}`)}
                 </CardTitle>
                 <div className={`rounded-full p-2 ${stat.bgColor}`}>
                   <Icon className={`h-4 w-4 ${stat.color}`} />
@@ -103,7 +103,7 @@ export function AccountingPage() {
                 <p
                   className={`text-xs ${stat.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}
                 >
-                  {stat.change} from last month
+                  {stat.change} {t('accounting.stats.fromLastMonth')}
                 </p>
               </CardContent>
             </Card>
@@ -115,22 +115,22 @@ export function AccountingPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Recent Transactions</CardTitle>
+            <CardTitle>{t('accounting.recentTransactions')}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              Transaction list will be displayed here...
+              {t('accounting.transactionListPlaceholder')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Pending Invoices</CardTitle>
+            <CardTitle>{t('accounting.pendingInvoices')}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              Invoice list will be displayed here...
+              {t('accounting.invoiceListPlaceholder')}
             </p>
           </CardContent>
         </Card>

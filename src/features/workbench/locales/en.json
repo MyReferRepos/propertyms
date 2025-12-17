@@ -1,0 +1,150 @@
+{
+  "title": "Workbench",
+  "subtitle": "Manage your tasks, reminders, and messages",
+
+  "todayFocus": {
+    "title": "Today's Focus",
+    "overdue": "Overdue",
+    "dueToday": "Due Today",
+    "thisWeek": "This Week",
+    "items": "items",
+    "viewAll": "View All",
+    "noItems": "All caught up! No urgent items today."
+  },
+
+  "actionItems": {
+    "title": "Action Items",
+    "all": "All",
+    "tasks": "Tasks",
+    "reminders": "Reminders",
+    "overdue": "Overdue",
+    "today": "Today",
+    "week": "This Week",
+    "later": "Later",
+    "noItems": "No action items found",
+    "createTask": "Create Task",
+    "setReminder": "Set Reminder"
+  },
+
+  "task": {
+    "title": "Task",
+    "status": {
+      "pending": "Pending",
+      "in_progress": "In Progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "category": {
+      "maintenance": "Maintenance",
+      "leasing": "Leasing",
+      "compliance": "Compliance",
+      "financial": "Financial",
+      "inspection": "Inspection",
+      "general": "General"
+    },
+    "actions": {
+      "start": "Start",
+      "complete": "Complete",
+      "cancel": "Cancel",
+      "snooze": "Snooze",
+      "delete": "Delete"
+    },
+    "subtasks": "Subtasks",
+    "assignee": "Assignee"
+  },
+
+  "reminder": {
+    "title": "Reminder",
+    "status": {
+      "active": "Active",
+      "snoozed": "Snoozed",
+      "dismissed": "Dismissed"
+    },
+    "source": {
+      "manual": "Manual",
+      "system": "System",
+      "workflow": "Workflow"
+    },
+    "recurrence": {
+      "once": "One-time",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "custom": "Custom"
+    },
+    "actions": {
+      "convertToTask": "Convert to Task",
+      "snooze": "Snooze",
+      "dismiss": "Dismiss",
+      "edit": "Edit"
+    },
+    "snoozedUntil": "Snoozed until"
+  },
+
+  "messages": {
+    "title": "Messages",
+    "all": "All",
+    "unread": "Unread",
+    "requiresAction": "Needs Action",
+    "archived": "Archived",
+    "noMessages": "No messages found",
+    "markAsRead": "Mark as Read",
+    "archive": "Archive",
+    "reply": "Reply",
+    "convertToTask": "Convert to Task",
+    "setReminder": "Set Reminder",
+    "type": {
+      "tenant": "Tenant",
+      "owner": "Owner",
+      "supplier": "Supplier",
+      "system": "System",
+      "team": "Team"
+    }
+  },
+
+  "priority": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "urgent": "Urgent"
+  },
+
+  "common": {
+    "dueAt": "Due",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "related": "Related",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "overdue": "Overdue",
+    "new": "New",
+    "filter": "Filter",
+    "search": "Search",
+    "refresh": "Refresh"
+  },
+
+  "snooze": {
+    "title": "Snooze",
+    "1hour": "1 hour",
+    "3hours": "3 hours",
+    "tomorrow": "Tomorrow",
+    "nextWeek": "Next week",
+    "custom": "Custom..."
+  },
+
+  "create": {
+    "newTask": "New Task",
+    "newReminder": "New Reminder",
+    "taskTitle": "Task Title",
+    "reminderTitle": "Reminder Title",
+    "description": "Description",
+    "dueDate": "Due Date",
+    "priority": "Priority",
+    "category": "Category",
+    "recurrence": "Recurrence",
+    "relatedEntity": "Related To",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

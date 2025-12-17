@@ -44,11 +44,21 @@ interface TranslationModule {
 }
 
 /**
+ * 将连字符命名转换为驼峰命名
+ * 例如: 'leasing-process' -> 'leasingProcess'
+ *       'ai-insights' -> 'aiInsights'
+ */
+function toCamelCase(str: string): string {
+  return str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
+}
+
+/**
  * 解析翻译文件路径，提取模块信息
  *
  * 示例路径：
  * - /src/locales/en/common.json -> { locale: 'en', moduleName: 'common', isGlobal: true }
  * - /src/features/users/locales/zh-CN.json -> { locale: 'zh-CN', moduleName: 'users', isGlobal: false }
+ * - /src/features/leasing-process/locales/en.json -> { locale: 'en', moduleName: 'leasingProcess', isGlobal: false }
  */
 function parseTranslationPath(path: string): Omit<TranslationModule, 'content'> | null {
   // 全局翻译: /src/locales/{locale}/{module}.json
@@ -65,10 +75,12 @@ function parseTranslationPath(path: string): Omit<TranslationModule, 'content'> 
   // 功能模块翻译: /src/features/{module}/locales/{locale}.json
   const featureMatch = path.match(/\/features\/([^/]+)\/locales\/([^/]+)\.json$/)
   if (featureMatch) {
+    const directoryName = featureMatch[1]
+    const moduleName = toCamelCase(directoryName) // 转换为驼峰命名
     return {
       path,
       locale: featureMatch[2] as Language,
-      moduleName: featureMatch[1],
+      moduleName,
       isGlobal: false,
     }
   }

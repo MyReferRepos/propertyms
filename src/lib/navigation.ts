@@ -5,6 +5,7 @@ import {
   ClipboardList,
   FileText,
   Home,
+  LayoutDashboard,
   Megaphone,
   Settings,
   Truck,
@@ -28,6 +29,12 @@ export const navigationItems: NavItem[] = [
     titleKey: 'nav.dashboard',
     href: '/dashboard',
     icon: Home,
+  },
+  {
+    title: 'Workbench',
+    titleKey: 'nav.workbench',
+    href: '/workbench',
+    icon: LayoutDashboard,
   },
   {
     title: 'Settings',

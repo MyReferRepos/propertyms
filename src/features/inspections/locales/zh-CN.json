@@ -1,0 +1,38 @@
+{
+  "title": "检查管理",
+  "subtitle": "安排和管理房产检查",
+  "scheduleInspection": "安排检查",
+  "viewReport": "查看报告",
+  "noInspections": "未找到检查记录",
+  "filters": {
+    "all": "全部检查",
+    "scheduled": "已安排",
+    "completed": "已完成",
+    "cancelled": "已取消"
+  },
+  "typeLabels": {
+    "routine": "常规检查",
+    "move-in": "入住检查",
+    "move-out": "退租检查",
+    "final": "最终检查",
+    "special": "特殊检查"
+  },
+  "status": {
+    "scheduled": "已安排",
+    "completed": "已完成",
+    "cancelled": "已取消"
+  },
+  "rating": {
+    "excellent": "优秀",
+    "good": "良好",
+    "fair": "一般",
+    "poor": "较差"
+  },
+  "details": {
+    "property": "房产",
+    "scheduledDate": "安排日期",
+    "completedDate": "完成日期",
+    "inspector": "检查员",
+    "findings": "检查发现"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "title": "报表中心",
+  "subtitle": "生成和查看房产管理报表",
+  "availableReports": "可用报表",
+  "financialReports": "财务报表",
+  "operationalReports": "运营报表",
+  "complianceReports": "合规报表",
+  "performanceReports": "绩效报表",
+  "downloadsThisMonth": "本月下载量",
+  "generate": "生成",
+  "create": "创建",
+  "frequency": "频率",
+  "last": "最后生成",
+  "stats": {
+    "available": "可用报表",
+    "financial": "财务报表",
+    "operational": "运营报表",
+    "downloads": "本月下载量"
+  },
+  "categoryLabels": {
+    "financial": "财务",
+    "operational": "运营",
+    "compliance": "合规",
+    "performance": "绩效"
+  },
+  "rentalPrice": {
+    "title": "租金价格分析",
+    "subtitle": "生成全面的租赁市场分析报告",
+    "generate": "生成报告",
+    "generateAnother": "生成其他报告",
+    "analyzing": "正在分析租赁市场数据...",
+    "tabs": {
+      "landlord": "房东报告",
+      "tenant": "租客报告"
+    },
+    "landlordForm": {
+      "title": "生成房东报告",
+      "address": "房产地址",
+      "addressPlaceholder": "输入完整房产地址",
+      "bedrooms": "卧室数量",
+      "bathrooms": "浴室数量",
+      "parking": "停车位",
+      "propertyType": "房产类型",
+      "propertyTypes": {
+        "house": "独立屋",
+        "apartment": "公寓",
+        "townhouse": "联排别墅",
+        "unit": "单元房"
+      }
+    },
+    "tenantForm": {
+      "title": "生成租客报告",
+      "suburb": "区域",
+      "suburbPlaceholder": "例如：Kelburn, Wellington",
+      "bedrooms": "卧室数量",
+      "maxRent": "最高周租金",
+      "propertyType": "房产类型"
+    }
+  },
+  "types": {
+    "rental": "租金分析",
+    "financial": "财务报告",
+    "occupancy": "入住率报告"
+  }
+}

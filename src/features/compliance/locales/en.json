@@ -1,0 +1,20 @@
+{
+  "title": "Compliance Checker",
+  "subtitle": "Check properties against NZ Healthy Homes Standards",
+  "selectProperty": "Select a property",
+  "noProperties": "No properties found",
+  "addProperties": "Add properties to check their compliance status",
+  "overallScore": "Overall Compliance Score",
+  "requirements": {
+    "insulation": "Insulation",
+    "heating": "Heating",
+    "ventilation": "Ventilation",
+    "moisture": "Moisture & Drainage",
+    "draught": "Draught Stopping"
+  },
+  "status": {
+    "compliant": "Compliant",
+    "nonCompliant": "Non-Compliant",
+    "partial": "Partially Compliant"
+  }
+}

@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button'
 import { tenanciesAPI } from '@/services/api'
 import type { Tenancy } from '@/types'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/lib/i18n'
 
 export function TenanciesPage() {
+  const { t } = useI18n()
   const [tenancies, setTenancies] = useState<Tenancy[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState<'all' | Tenancy['status']>('all')
@@ -85,7 +87,7 @@ export function TenanciesPage() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent mx-auto"></div>
-          <p className="mt-4 text-sm text-muted-foreground">Loading tenancies...</p>
+          <p className="mt-4 text-sm text-muted-foreground">{t('tenancies.loading')}</p>
         </div>
       </div>
     )
@@ -96,12 +98,12 @@ export function TenanciesPage() {
       {/* Page Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Tenancies</h1>
-          <p className="text-muted-foreground">Manage rental agreements and lease terms</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('tenancies.title')}</h1>
+          <p className="text-muted-foreground">{t('tenancies.subtitle')}</p>
         </div>
         <Button>
           <FileText className="mr-2 h-4 w-4" />
-          New Tenancy
+          {t('tenancies.newTenancy')}
         </Button>
       </div>
 
@@ -115,7 +117,7 @@ export function TenanciesPage() {
           onClick={() => setFilter('all')}
         >
           <div className="text-2xl font-bold">{stats.total}</div>
-          <div className="text-sm text-muted-foreground">Total Tenancies</div>
+          <div className="text-sm text-muted-foreground">{t('tenancies.filters.all')}</div>
         </button>
 
         <button
@@ -126,7 +128,7 @@ export function TenanciesPage() {
           onClick={() => setFilter('active')}
         >
           <div className="text-2xl font-bold text-green-600">{stats.active}</div>
-          <div className="text-sm text-muted-foreground">Active</div>
+          <div className="text-sm text-muted-foreground">{t('tenancies.filters.active')}</div>
         </button>
 
         <button
@@ -137,7 +139,7 @@ export function TenanciesPage() {
           onClick={() => setFilter('expiring-soon')}
         >
           <div className="text-2xl font-bold text-amber-600">{stats.expiringSoon}</div>
-          <div className="text-sm text-muted-foreground">Expiring Soon</div>
+          <div className="text-sm text-muted-foreground">{t('tenancies.filters.expiringSoon')}</div>
         </button>
 
         <button
@@ -148,7 +150,7 @@ export function TenanciesPage() {
           onClick={() => setFilter('expired')}
         >
           <div className="text-2xl font-bold text-red-600">{stats.expired}</div>
-          <div className="text-sm text-muted-foreground">Expired</div>
+          <div className="text-sm text-muted-foreground">{t('tenancies.filters.expired')}</div>
         </button>
       </div>
 
@@ -173,7 +175,7 @@ export function TenanciesPage() {
                     <CardDescription>Tenancy ID: {tenancy.id}</CardDescription>
                   </div>
                   <Button variant="outline" size="sm">
-                    View Details
+                    {t('tenancies.viewDetails')}
                   </Button>
                 </div>
               </CardHeader>
@@ -183,7 +185,7 @@ export function TenanciesPage() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
-                      <span>Start Date</span>
+                      <span>{t('tenancies.details.startDate')}</span>
                     </div>
                     <p className="font-semibold">{formatDate(tenancy.startDate)}</p>
                   </div>
@@ -191,49 +193,49 @@ export function TenanciesPage() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
-                      <span>End Date</span>
+                      <span>{t('tenancies.details.endDate')}</span>
                     </div>
                     <p className="font-semibold">{formatDate(tenancy.endDate)}</p>
                     {tenancy.status === 'expiring-soon' && daysUntilExpiry > 0 && (
-                      <p className="text-xs text-amber-600">{daysUntilExpiry} days left</p>
+                      <p className="text-xs text-amber-600">{t('tenancies.daysLeft', { count: daysUntilExpiry })}</p>
                     )}
                   </div>
 
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <DollarSign className="h-4 w-4" />
-                      <span>Weekly Rent</span>
+                      <span>{t('tenancies.details.weeklyRent')}</span>
                     </div>
                     <p className="font-semibold">{formatCurrency(tenancy.weeklyRent)}</p>
                     <p className="text-xs text-muted-foreground">
-                      {formatCurrency(tenancy.weeklyRent * 52)} p.a.
+                      {formatCurrency(tenancy.weeklyRent * 52)} {t('tenancies.perAnnum')}
                     </p>
                   </div>
 
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <DollarSign className="h-4 w-4" />
-                      <span>Bond Amount</span>
+                      <span>{t('tenancies.details.bondAmount')}</span>
                     </div>
                     <p className="font-semibold">{formatCurrency(tenancy.bondAmount)}</p>
                     <p className="text-xs text-muted-foreground">
-                      {tenancy.bondAmount / tenancy.weeklyRent} weeks
+                      {t('tenancies.weeksRent', { count: tenancy.bondAmount / tenancy.weeklyRent })}
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-4 flex items-center gap-4 border-t pt-4">
                   <div className="text-sm">
-                    <span className="text-muted-foreground">Payment Frequency: </span>
+                    <span className="text-muted-foreground">{t('tenancies.details.paymentFrequency')}: </span>
                     <span className="font-medium capitalize">{tenancy.paymentFrequency}</span>
                   </div>
                   <div className="text-sm">
-                    <span className="text-muted-foreground">Auto Renew: </span>
-                    <span className="font-medium">{tenancy.autoRenew ? 'Yes' : 'No'}</span>
+                    <span className="text-muted-foreground">{t('tenancies.details.autoRenew')}: </span>
+                    <span className="font-medium">{tenancy.autoRenew ? t('tenancies.yes') : t('tenancies.no')}</span>
                   </div>
                   <div className="text-sm">
-                    <span className="text-muted-foreground">Notice Period: </span>
-                    <span className="font-medium">{tenancy.renewalNotice} days</span>
+                    <span className="text-muted-foreground">{t('tenancies.details.noticePerio')}: </span>
+                    <span className="font-medium">{tenancy.renewalNotice} {t('tenancies.days')}</span>
                   </div>
                 </div>
               </CardContent>
@@ -245,10 +247,10 @@ export function TenanciesPage() {
           <Card>
             <CardContent className="flex flex-col items-center justify-center py-12">
               <FileText className="h-12 w-12 text-muted-foreground" />
-              <h3 className="mt-4 text-lg font-semibold">No tenancies found</h3>
+              <h3 className="mt-4 text-lg font-semibold">{t('tenancies.noTenancies')}</h3>
               <p className="text-sm text-muted-foreground">
                 {filter === 'all'
-                  ? 'Create your first tenancy to get started'
+                  ? t('tenancies.createFirst')
                   : `No ${filter.replace('-', ' ')} tenancies`}
               </p>
             </CardContent>

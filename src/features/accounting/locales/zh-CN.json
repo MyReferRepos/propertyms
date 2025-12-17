@@ -1,0 +1,43 @@
+{
+  "title": "财务会计",
+  "subtitle": "财务概览和会计管理",
+  "stats": {
+    "totalIncome": "总收入",
+    "totalExpense": "总支出",
+    "netProfit": "净利润",
+    "outstanding": "待收款",
+    "thisMonth": "本月收入",
+    "bankBalance": "银行余额",
+    "fromLastMonth": "较上月"
+  },
+  "recentTransactions": "最近交易",
+  "pendingInvoices": "待处理发票",
+  "transactionListPlaceholder": "交易列表将显示在这里...",
+  "invoiceListPlaceholder": "发票列表将显示在这里...",
+  "audit": {
+    "title": "审计日志",
+    "subtitle": "审计日志和合规报告",
+    "stats": {
+      "totalLogs": "总日志数",
+      "lastDays": "最近30天",
+      "createActions": "创建操作",
+      "ofTotal": "占总数",
+      "updateActions": "更新操作",
+      "complianceScore": "合规评分",
+      "excellent": "优秀"
+    },
+    "recentAuditLogs": "最近审计日志",
+    "action": {
+      "propertyCreated": "创建房产",
+      "tenancyUpdated": "更新租约",
+      "paymentRecorded": "记录付款",
+      "documentDeleted": "删除文档"
+    },
+    "type": {
+      "create": "创建",
+      "update": "更新",
+      "delete": "删除"
+    },
+    "by": "由"
+  }
+}

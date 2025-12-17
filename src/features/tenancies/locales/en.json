@@ -1,0 +1,39 @@
+{
+  "title": "Tenancies",
+  "subtitle": "Manage rental agreements and lease terms",
+  "newTenancy": "New Tenancy",
+  "viewDetails": "View Details",
+  "loading": "Loading tenancies...",
+  "noTenancies": "No tenancies found",
+  "createFirst": "Create your first tenancy to get started",
+  "filters": {
+    "all": "Total Tenancies",
+    "active": "Active",
+    "expiringSoon": "Expiring Soon",
+    "expired": "Expired"
+  },
+  "status": {
+    "active": "ACTIVE",
+    "expiringSoon": "EXPIRING SOON",
+    "expired": "EXPIRED",
+    "ended": "ENDED",
+    "terminated": "TERMINATED"
+  },
+  "details": {
+    "propertyId": "Property",
+    "tenancyId": "Tenancy ID",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "weeklyRent": "Weekly Rent",
+    "bondAmount": "Bond Amount",
+    "paymentFrequency": "Payment Frequency",
+    "autoRenew": "Auto Renew",
+    "noticePerio": "Notice Period"
+  },
+  "daysLeft": "{count} days left",
+  "weeksRent": "{count} weeks",
+  "perAnnum": "p.a.",
+  "yes": "Yes",
+  "no": "No",
+  "days": "days"
+}

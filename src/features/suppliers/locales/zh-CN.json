@@ -1,0 +1,99 @@
+{
+  "title": "供应商",
+  "subtitle": "管理供应商并跟踪工作分配",
+  "addSupplier": "添加供应商",
+  "stats": {
+    "totalSuppliers": "总供应商",
+    "activeSuppliers": "活跃供应商",
+    "pendingQuotes": "待处理报价",
+    "activeJobs": "进行中工作"
+  },
+  "supplierDirectory": "供应商目录",
+  "contact": "联系人",
+  "jobs": "项工作",
+  "status": {
+    "active": "活跃",
+    "inactive": "非活跃"
+  },
+  "categories": {
+    "plumber": "水管工",
+    "electrician": "电工",
+    "cleaner": "清洁工",
+    "gardener": "园丁"
+  },
+  "quotes": {
+    "title": "报价",
+    "subtitle": "管理供应商报价请求",
+    "requestQuote": "请求报价",
+    "stats": {
+      "totalQuotes": "总报价",
+      "pendingReview": "待审核",
+      "approved": "已批准",
+      "totalValue": "总价值"
+    },
+    "quoteRequests": "报价请求",
+    "requested": "请求时间",
+    "validUntil": "有效期至",
+    "quoteAmount": "报价金额",
+    "approve": "批准",
+    "reject": "拒绝",
+    "status": {
+      "pending": "待处理",
+      "approved": "已批准",
+      "completed": "已完成",
+      "rejected": "已拒绝"
+    }
+  },
+  "assignments": {
+    "title": "工作分配",
+    "subtitle": "跟踪分配给供应商的工作",
+    "exportReport": "导出报告",
+    "stats": {
+      "totalAssignments": "总分配",
+      "scheduled": "已安排",
+      "inProgress": "进行中",
+      "completed": "已完成"
+    },
+    "workAssignments": "工作分配",
+    "scheduledDate": "已安排",
+    "viewDetails": "查看详情",
+    "markComplete": "标记完成",
+    "status": {
+      "scheduled": "已安排",
+      "inProgress": "进行中",
+      "completed": "已完成",
+      "cancelled": "已取消"
+    }
+  },
+  "reviews": {
+    "title": "评价",
+    "subtitle": "审查已完成的工作并对供应商评分",
+    "stats": {
+      "totalCompletedJobs": "总完成工作",
+      "reviewed": "已评价",
+      "pendingReview": "待评价",
+      "averageRating": "平均评分"
+    },
+    "pendingReviews": "待评价",
+    "completedReviews": "已完成评价",
+    "writeReview": "撰写评价",
+    "completedDate": "完成时间",
+    "quality": "质量",
+    "timeliness": {
+      "onTime": "准时",
+      "delayed": "延迟"
+    },
+    "qualityLevel": {
+      "excellent": "优秀",
+      "good": "良好",
+      "average": "一般",
+      "poor": "较差"
+    },
+    "communication": {
+      "excellent": "优秀",
+      "good": "良好",
+      "average": "一般",
+      "poor": "较差"
+    }
+  }
+}

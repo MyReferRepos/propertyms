@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { MaintenanceRequest } from '@/types'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/lib/i18n'
 
 // Mock data for maintenance requests
 const mockMaintenanceRequests: MaintenanceRequest[] = [
@@ -69,6 +70,7 @@ const mockMaintenanceRequests: MaintenanceRequest[] = [
 ]
 
 export function MaintenancePage() {
+  const { t } = useI18n()
   const [requests] = useState<MaintenanceRequest[]>(mockMaintenanceRequests)
   const [filter, setFilter] = useState<'all' | MaintenanceRequest['status']>('all')
 
@@ -125,12 +127,12 @@ export function MaintenancePage() {
       {/* Page Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Maintenance</h1>
-          <p className="text-muted-foreground">Track and manage property maintenance requests</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('maintenance.title')}</h1>
+          <p className="text-muted-foreground">{t('maintenance.subtitle')}</p>
         </div>
         <Button>
           <Wrench className="mr-2 h-4 w-4" />
-          New Request
+          {t('maintenance.newRequest')}
         </Button>
       </div>
 
@@ -144,7 +146,7 @@ export function MaintenancePage() {
           onClick={() => setFilter('all')}
         >
           <div className="text-2xl font-bold">{stats.total}</div>
-          <div className="text-sm text-muted-foreground">Total Requests</div>
+          <div className="text-sm text-muted-foreground">{t('maintenance.filters.all')}</div>
         </button>
 
         <button
@@ -155,7 +157,7 @@ export function MaintenancePage() {
           onClick={() => setFilter('pending')}
         >
           <div className="text-2xl font-bold text-amber-600">{stats.pending}</div>
-          <div className="text-sm text-muted-foreground">Pending</div>
+          <div className="text-sm text-muted-foreground">{t('maintenance.filters.pending')}</div>
         </button>
 
         <button
@@ -166,7 +168,7 @@ export function MaintenancePage() {
           onClick={() => setFilter('in-progress')}
         >
           <div className="text-2xl font-bold text-blue-600">{stats.inProgress}</div>
-          <div className="text-sm text-muted-foreground">In Progress</div>
+          <div className="text-sm text-muted-foreground">{t('maintenance.filters.inProgress')}</div>
         </button>
 
         <button
@@ -177,7 +179,7 @@ export function MaintenancePage() {
           onClick={() => setFilter('completed')}
         >
           <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
-          <div className="text-sm text-muted-foreground">Completed</div>
+          <div className="text-sm text-muted-foreground">{t('maintenance.filters.completed')}</div>
         </button>
       </div>
 
@@ -206,7 +208,7 @@ export function MaintenancePage() {
                     </CardDescription>
                   </div>
                   <Button variant="outline" size="sm">
-                    View Details
+                    {t('maintenance.viewDetails')}
                   </Button>
                 </div>
               </CardHeader>
@@ -216,27 +218,27 @@ export function MaintenancePage() {
 
                 <div className="grid gap-4 md:grid-cols-4">
                   <div className="space-y-1">
-                    <p className="text-sm text-muted-foreground">Category</p>
+                    <p className="text-sm text-muted-foreground">{t('maintenance.details.category')}</p>
                     <p className="font-medium capitalize">{request.category}</p>
                   </div>
 
                   {request.scheduledDate && (
                     <div className="space-y-1">
-                      <p className="text-sm text-muted-foreground">Scheduled Date</p>
+                      <p className="text-sm text-muted-foreground">{t('maintenance.details.scheduledDate')}</p>
                       <p className="font-medium">{formatDate(request.scheduledDate)}</p>
                     </div>
                   )}
 
                   {request.contractorId && (
                     <div className="space-y-1">
-                      <p className="text-sm text-muted-foreground">Contractor ID</p>
+                      <p className="text-sm text-muted-foreground">{t('maintenance.details.contractorId')}</p>
                       <p className="font-medium">{request.contractorId}</p>
                     </div>
                   )}
 
                   <div className="space-y-1">
                     <p className="text-sm text-muted-foreground">
-                      {request.status === 'completed' ? 'Actual Cost' : 'Estimated Cost'}
+                      {request.status === 'completed' ? t('maintenance.details.actualCost') : t('maintenance.details.estimatedCost')}
                     </p>
                     <p className="font-medium flex items-center gap-1">
                       <DollarSign className="h-4 w-4" />
@@ -249,7 +251,7 @@ export function MaintenancePage() {
                   <div className="mt-4 pt-4 border-t">
                     <p className="text-sm text-green-600">
                       <CheckCircle2 className="inline h-4 w-4 mr-1" />
-                      Completed on {formatDate(request.completedDate)}
+                      {t('maintenance.details.completedOn', { date: formatDate(request.completedDate) })}
                     </p>
                   </div>
                 )}
@@ -262,11 +264,11 @@ export function MaintenancePage() {
           <Card>
             <CardContent className="flex flex-col items-center justify-center py-12">
               <Wrench className="h-12 w-12 text-muted-foreground" />
-              <h3 className="mt-4 text-lg font-semibold">No maintenance requests</h3>
+              <h3 className="mt-4 text-lg font-semibold">{t('maintenance.noRequests')}</h3>
               <p className="text-sm text-muted-foreground">
                 {filter === 'all'
-                  ? 'No maintenance requests to show'
-                  : `No ${filter.replace('-', ' ')} requests`}
+                  ? t('maintenance.noRequests')
+                  : t('maintenance.noRequestsFilter', { filter: filter.replace('-', ' ') })}
               </p>
             </CardContent>
           </Card>

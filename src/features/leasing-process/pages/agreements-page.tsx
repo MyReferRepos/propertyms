@@ -76,14 +76,14 @@ export function AgreementsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.leasing.agreements')}</h1>
+          <h1 className="text-2xl font-bold">{t('leasingProcess.agreements.title')}</h1>
           <p className="text-muted-foreground">
-            Manage tenancy agreements and contracts
+            {t('leasingProcess.agreements.subtitle')}
           </p>
         </div>
         <Button>
           <FileText className="mr-2 h-4 w-4" />
-          Create Agreement
+          {t('leasingProcess.agreements.createAgreement')}
         </Button>
       </div>
 
@@ -92,25 +92,25 @@ export function AgreementsPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{stats.total}</div>
-            <p className="text-xs text-muted-foreground">Total Agreements</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.agreements.stats.totalAgreements')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-green-600">{stats.signed}</div>
-            <p className="text-xs text-muted-foreground">Signed</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.agreements.stats.signed')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-yellow-600">{stats.awaiting}</div>
-            <p className="text-xs text-muted-foreground">Awaiting Signature</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.agreements.stats.awaitingSignature')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-gray-600">{stats.draft}</div>
-            <p className="text-xs text-muted-foreground">Drafts</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.agreements.stats.drafts')}</p>
           </CardContent>
         </Card>
       </div>
@@ -120,7 +120,7 @@ export function AgreementsPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
-            Tenancy Agreements
+            {t('leasingProcess.agreements.tenancyAgreements')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -135,7 +135,7 @@ export function AgreementsPage() {
                     <User className="h-5 w-5 text-muted-foreground" />
                     <span className="font-semibold">{agreement.tenant}</span>
                     <Badge className={getStatusColor(agreement.status)}>
-                      {agreement.status}
+                      {t(`leasingProcess.agreements.status.${agreement.status === 'Awaiting Signature' ? 'awaitingSignature' : agreement.status.toLowerCase()}`)}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -153,7 +153,7 @@ export function AgreementsPage() {
                     {agreement.signedDate && (
                       <span className="flex items-center gap-1 text-green-600">
                         <CheckCircle className="h-4 w-4" />
-                        Signed: {agreement.signedDate}
+                        {t('leasingProcess.agreements.signedDate')}: {agreement.signedDate}
                       </span>
                     )}
                   </div>
@@ -161,18 +161,18 @@ export function AgreementsPage() {
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm">
                     <Download className="mr-1 h-4 w-4" />
-                    Download
+                    {t('leasingProcess.agreements.download')}
                   </Button>
                   {agreement.status === 'Awaiting Signature' && (
                     <Button variant="outline" size="sm">
                       <Send className="mr-1 h-4 w-4" />
-                      Resend
+                      {t('leasingProcess.agreements.resend')}
                     </Button>
                   )}
                   {agreement.status === 'Draft' && (
                     <Button size="sm">
                       <Send className="mr-1 h-4 w-4" />
-                      Send for Signature
+                      {t('leasingProcess.agreements.sendForSignature')}
                     </Button>
                   )}
                 </div>

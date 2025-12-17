@@ -53,11 +53,11 @@ export function LeadsPage() {
   const getInterestBadge = (level: string) => {
     switch (level) {
       case 'hot':
-        return <Badge className="bg-red-100 text-red-800">Hot</Badge>
+        return <Badge className="bg-red-100 text-red-800">{t('marketing.leads.interestLevel.hot')}</Badge>
       case 'warm':
-        return <Badge className="bg-orange-100 text-orange-800">Warm</Badge>
+        return <Badge className="bg-orange-100 text-orange-800">{t('marketing.leads.interestLevel.warm')}</Badge>
       case 'cold':
-        return <Badge className="bg-blue-100 text-blue-800">Cold</Badge>
+        return <Badge className="bg-blue-100 text-blue-800">{t('marketing.leads.interestLevel.cold')}</Badge>
       default:
         return <Badge>{level}</Badge>
     }
@@ -66,13 +66,13 @@ export function LeadsPage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'new':
-        return <Badge className="bg-green-100 text-green-800">New</Badge>
+        return <Badge className="bg-green-100 text-green-800">{t('marketing.leads.status.new')}</Badge>
       case 'contacted':
-        return <Badge className="bg-blue-100 text-blue-800">Contacted</Badge>
+        return <Badge className="bg-blue-100 text-blue-800">{t('marketing.leads.status.contacted')}</Badge>
       case 'converted':
-        return <Badge className="bg-purple-100 text-purple-800">Converted</Badge>
+        return <Badge className="bg-purple-100 text-purple-800">{t('marketing.leads.status.converted')}</Badge>
       case 'lost':
-        return <Badge className="bg-gray-100 text-gray-800">Lost</Badge>
+        return <Badge className="bg-gray-100 text-gray-800">{t('marketing.leads.status.lost')}</Badge>
       default:
         return <Badge>{status}</Badge>
     }
@@ -82,21 +82,21 @@ export function LeadsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.marketing.leads')}</h1>
+          <h1 className="text-2xl font-bold">{t('marketing.leads.title')}</h1>
           <p className="text-muted-foreground">
-            Manage potential property owner leads
+            {t('marketing.leads.subtitle')}
           </p>
         </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Add Lead
+          {t('marketing.leads.addLead')}
         </Button>
       </div>
 
       {/* Leads List */}
       <Card>
         <CardHeader>
-          <CardTitle>Lead List</CardTitle>
+          <CardTitle>{t('marketing.leads.leadList')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -118,8 +118,8 @@ export function LeadsPage() {
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Source: {lead.source}
-                    {lead.lastContact && ` | Last contact: ${lead.lastContact}`}
+                    {t('marketing.leads.source')}: {lead.source}
+                    {lead.lastContact && ` | ${t('marketing.leads.lastContact')}: ${lead.lastContact}`}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">

@@ -1,0 +1,56 @@
+{
+  "title": "营销管理",
+  "subtitle": "营销线索和老业主管理",
+  "stats": {
+    "totalLeads": "总线索数",
+    "hotLeads": "热门线索",
+    "conversionRate": "转化率",
+    "oldOwners": "老业主",
+    "thisMonth": "本月",
+    "thisMonthChange": "本月"
+  },
+  "potentialLeads": "潜在线索",
+  "potentialLeadsDesc": "管理和跟踪来自营销活动的潜在房产业主。",
+  "oldOwnersTitle": "老业主",
+  "oldOwnersDesc": "与以前的房产业主重新建立联系，跟踪回归活动。",
+  "leads": {
+    "title": "潜在线索",
+    "subtitle": "管理潜在房产业主线索",
+    "addLead": "添加线索",
+    "leadList": "线索列表",
+    "source": "来源",
+    "lastContact": "最后联系",
+    "interestLevel": {
+      "hot": "热门",
+      "warm": "温和",
+      "cold": "冷淡"
+    },
+    "status": {
+      "new": "新线索",
+      "contacted": "已联系",
+      "converted": "已转化",
+      "lost": "已流失"
+    }
+  },
+  "oldOwners": {
+    "title": "老业主",
+    "subtitle": "与以前的房产业主重新建立联系",
+    "startCampaign": "开始活动",
+    "stats": {
+      "totalOldOwners": "总老业主数",
+      "wonBack": "已回归",
+      "inProgress": "进行中",
+      "winBackRate": "回归率"
+    },
+    "oldOwnerList": "老业主列表",
+    "left": "离开时间",
+    "reason": "原因",
+    "previousProperties": "处房产",
+    "reengagementStatus": {
+      "notStarted": "未开始",
+      "inProgress": "进行中",
+      "wonBack": "已回归",
+      "notInterested": "不感兴趣"
+    }
+  }
+}

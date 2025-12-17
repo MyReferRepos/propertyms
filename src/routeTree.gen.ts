@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
+import { Route as AuthenticatedWorkbenchRouteImport } from './routes/_authenticated/workbench'
 import { Route as AuthenticatedTenantsRouteImport } from './routes/_authenticated/tenants'
 import { Route as AuthenticatedTenanciesRouteImport } from './routes/_authenticated/tenancies'
 import { Route as AuthenticatedSuppliersRouteImport } from './routes/_authenticated/suppliers'
@@ -61,6 +62,11 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
 const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedWorkbenchRoute = AuthenticatedWorkbenchRouteImport.update({
+  id: '/workbench',
+  path: '/workbench',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedTenantsRoute = AuthenticatedTenantsRouteImport.update({
@@ -320,6 +326,7 @@ export interface FileRoutesByFullPath {
   '/suppliers': typeof AuthenticatedSuppliersRouteWithChildren
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
+  '/workbench': typeof AuthenticatedWorkbenchRoute
   '/': typeof AuthenticatedIndexRoute
   '/accounting/audit': typeof AuthenticatedAccountingAuditRoute
   '/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
@@ -361,6 +368,7 @@ export interface FileRoutesByTo {
   '/settings': typeof AuthenticatedSettingsRoute
   '/tenancies': typeof AuthenticatedTenanciesRoute
   '/tenants': typeof AuthenticatedTenantsRoute
+  '/workbench': typeof AuthenticatedWorkbenchRoute
   '/': typeof AuthenticatedIndexRoute
   '/accounting/audit': typeof AuthenticatedAccountingAuditRoute
   '/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
@@ -408,6 +416,7 @@ export interface FileRoutesById {
   '/_authenticated/suppliers': typeof AuthenticatedSuppliersRouteWithChildren
   '/_authenticated/tenancies': typeof AuthenticatedTenanciesRoute
   '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
+  '/_authenticated/workbench': typeof AuthenticatedWorkbenchRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/accounting/audit': typeof AuthenticatedAccountingAuditRoute
   '/_authenticated/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
@@ -455,6 +464,7 @@ export interface FileRouteTypes {
     | '/suppliers'
     | '/tenancies'
     | '/tenants'
+    | '/workbench'
     | '/'
     | '/accounting/audit'
     | '/leasing-process/agreements'
@@ -496,6 +506,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/tenancies'
     | '/tenants'
+    | '/workbench'
     | '/'
     | '/accounting/audit'
     | '/leasing-process/agreements'
@@ -542,6 +553,7 @@ export interface FileRouteTypes {
     | '/_authenticated/suppliers'
     | '/_authenticated/tenancies'
     | '/_authenticated/tenants'
+    | '/_authenticated/workbench'
     | '/_authenticated/'
     | '/_authenticated/accounting/audit'
     | '/_authenticated/leasing-process/agreements'
@@ -588,6 +600,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof AuthenticatedIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/workbench': {
+      id: '/_authenticated/workbench'
+      path: '/workbench'
+      fullPath: '/workbench'
+      preLoaderRoute: typeof AuthenticatedWorkbenchRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/tenants': {
@@ -1013,6 +1032,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedSuppliersRoute: typeof AuthenticatedSuppliersRouteWithChildren
   AuthenticatedTenanciesRoute: typeof AuthenticatedTenanciesRoute
   AuthenticatedTenantsRoute: typeof AuthenticatedTenantsRoute
+  AuthenticatedWorkbenchRoute: typeof AuthenticatedWorkbenchRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
 }
 
@@ -1035,6 +1055,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedSuppliersRoute: AuthenticatedSuppliersRouteWithChildren,
   AuthenticatedTenanciesRoute: AuthenticatedTenanciesRoute,
   AuthenticatedTenantsRoute: AuthenticatedTenantsRoute,
+  AuthenticatedWorkbenchRoute: AuthenticatedWorkbenchRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
 }
 

@@ -1,0 +1,56 @@
+{
+  "title": "Marketing",
+  "subtitle": "Marketing leads and old owner management",
+  "stats": {
+    "totalLeads": "Total Leads",
+    "hotLeads": "Hot Leads",
+    "conversionRate": "Conversion Rate",
+    "oldOwners": "Old Owners",
+    "thisMonth": "This Month",
+    "thisMonthChange": "this month"
+  },
+  "potentialLeads": "Potential Leads",
+  "potentialLeadsDesc": "Manage and track potential property owners from marketing campaigns.",
+  "oldOwnersTitle": "Old Owners",
+  "oldOwnersDesc": "Re-engage with previous property owners and track win-back campaigns.",
+  "leads": {
+    "title": "Potential Leads",
+    "subtitle": "Manage potential property owner leads",
+    "addLead": "Add Lead",
+    "leadList": "Lead List",
+    "source": "Source",
+    "lastContact": "Last contact",
+    "interestLevel": {
+      "hot": "Hot",
+      "warm": "Warm",
+      "cold": "Cold"
+    },
+    "status": {
+      "new": "New",
+      "contacted": "Contacted",
+      "converted": "Converted",
+      "lost": "Lost"
+    }
+  },
+  "oldOwners": {
+    "title": "Old Owners",
+    "subtitle": "Re-engage with previous property owners",
+    "startCampaign": "Start Campaign",
+    "stats": {
+      "totalOldOwners": "Total Old Owners",
+      "wonBack": "Won Back",
+      "inProgress": "In Progress",
+      "winBackRate": "Win-back Rate"
+    },
+    "oldOwnerList": "Old Owner List",
+    "left": "Left",
+    "reason": "Reason",
+    "previousProperties": "properties",
+    "reengagementStatus": {
+      "notStarted": "Not Started",
+      "inProgress": "In Progress",
+      "wonBack": "Won Back",
+      "notInterested": "Not Interested"
+    }
+  }
+}

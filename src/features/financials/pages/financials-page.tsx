@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/lib/i18n'
 
 interface Transaction {
   id: string
@@ -70,6 +71,7 @@ const mockTransactions: Transaction[] = [
 ]
 
 export function FinancialsPage() {
+  const { t } = useI18n()
   const [transactions] = useState<Transaction[]>(mockTransactions)
   const [filter, setFilter] = useState<'all' | 'income' | 'expense'>('all')
 
@@ -108,12 +110,12 @@ export function FinancialsPage() {
       {/* Page Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Financials</h1>
-          <p className="text-muted-foreground">Track income, expenses, and financial performance</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('financials.title')}</h1>
+          <p className="text-muted-foreground">{t('financials.subtitle')}</p>
         </div>
         <Button>
           <DollarSign className="mr-2 h-4 w-4" />
-          Add Transaction
+          {t('financials.addTransaction')}
         </Button>
       </div>
 
@@ -121,40 +123,40 @@ export function FinancialsPage() {
       <div className="grid gap-4 md:grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Income</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('financials.summary.totalIncome')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">{formatCurrency(totalIncome)}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              {transactions.filter((t) => t.type === 'income').length} transactions
+              {t('financials.transactionCount', { count: transactions.filter((t) => t.type === 'income').length })}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Expenses</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('financials.summary.totalExpenses')}</CardTitle>
             <TrendingDown className="h-4 w-4 text-red-600" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">{formatCurrency(totalExpenses)}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              {transactions.filter((t) => t.type === 'expense').length} transactions
+              {t('financials.transactionCount', { count: transactions.filter((t) => t.type === 'expense').length })}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Net Income</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('financials.summary.netIncome')}</CardTitle>
             <DollarSign className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className={cn('text-2xl font-bold', netIncome >= 0 ? 'text-green-600' : 'text-red-600')}>
               {formatCurrency(netIncome)}
             </div>
-            <p className="text-xs text-muted-foreground mt-1">This period</p>
+            <p className="text-xs text-muted-foreground mt-1">{t('financials.periods.thisPeriod')}</p>
           </CardContent>
         </Card>
       </div>
@@ -166,29 +168,29 @@ export function FinancialsPage() {
           size="sm"
           onClick={() => setFilter('all')}
         >
-          All
+          {t('financials.filters.all')}
         </Button>
         <Button
           variant={filter === 'income' ? 'default' : 'outline'}
           size="sm"
           onClick={() => setFilter('income')}
         >
-          Income
+          {t('financials.filters.income')}
         </Button>
         <Button
           variant={filter === 'expense' ? 'default' : 'outline'}
           size="sm"
           onClick={() => setFilter('expense')}
         >
-          Expenses
+          {t('financials.filters.expense')}
         </Button>
       </div>
 
       {/* Transactions List */}
       <Card>
         <CardHeader>
-          <CardTitle>Recent Transactions</CardTitle>
-          <CardDescription>Latest financial activity across your portfolio</CardDescription>
+          <CardTitle>{t('financials.transactions.title')}</CardTitle>
+          <CardDescription>{t('financials.transactions.subtitle')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

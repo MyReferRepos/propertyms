@@ -5,8 +5,10 @@ import { AIInsightCard } from '../components/ai-insight-card'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { dashboardAPI } from '@/services/api'
 import type { DashboardStats, AIInsight } from '@/types'
+import { useI18n } from '@/lib/i18n'
 
 export function DashboardPage() {
+  const { t } = useI18n()
   const [stats, setStats] = useState<DashboardStats | null>(null)
   const [insights, setInsights] = useState<AIInsight[]>([])
   const [loading, setLoading] = useState(true)
@@ -45,7 +47,7 @@ export function DashboardPage() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-          <p className="mt-4 text-sm text-muted-foreground">Loading dashboard...</p>
+          <p className="mt-4 text-sm text-muted-foreground">{t('common.loading')}</p>
         </div>
       </div>
     )
@@ -59,8 +61,8 @@ export function DashboardPage() {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-muted-foreground">Welcome back! Here's what's happening with your properties.</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('dashboard.welcome')}</h1>
+        <p className="text-muted-foreground">{t('dashboard.description')}</p>
       </div>
 
       {/* Stats Grid */}
@@ -136,8 +138,8 @@ export function DashboardPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-semibold">AI Insights</h2>
-            <p className="text-sm text-muted-foreground">Smart recommendations to help you manage better</p>
+            <h2 className="text-xl font-semibold">{t('aiInsights.title')}</h2>
+            <p className="text-sm text-muted-foreground">{t('aiInsights.subtitle')}</p>
           </div>
         </div>
 

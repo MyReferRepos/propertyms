@@ -80,13 +80,13 @@ export function AssignmentsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.suppliers.assignments')}</h1>
+          <h1 className="text-2xl font-bold">{t('suppliers.assignments.title')}</h1>
           <p className="text-muted-foreground">
-            Track work assignments to suppliers
+            {t('suppliers.assignments.subtitle')}
           </p>
         </div>
         <Button variant="outline">
-          Export Report
+          {t('suppliers.assignments.exportReport')}
         </Button>
       </div>
 
@@ -95,25 +95,25 @@ export function AssignmentsPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{stats.total}</div>
-            <p className="text-xs text-muted-foreground">Total Assignments</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.assignments.stats.totalAssignments')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-blue-600">{stats.scheduled}</div>
-            <p className="text-xs text-muted-foreground">Scheduled</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.assignments.stats.scheduled')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-yellow-600">{stats.inProgress}</div>
-            <p className="text-xs text-muted-foreground">In Progress</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.assignments.stats.inProgress')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
-            <p className="text-xs text-muted-foreground">Completed</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.assignments.stats.completed')}</p>
           </CardContent>
         </Card>
       </div>
@@ -123,7 +123,7 @@ export function AssignmentsPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <ClipboardList className="h-5 w-5" />
-            Work Assignments
+            {t('suppliers.assignments.workAssignments')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -139,7 +139,7 @@ export function AssignmentsPage() {
                       {assignment.workOrder}
                     </span>
                     <Badge className={getStatusColor(assignment.status)}>
-                      {assignment.status}
+                      {t(`suppliers.assignments.status.${assignment.status === 'In Progress' ? 'inProgress' : assignment.status.toLowerCase()}`)}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-2">
@@ -158,18 +158,18 @@ export function AssignmentsPage() {
                     </span>
                     <span className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      Scheduled: {assignment.scheduledDate}
+                      {t('suppliers.assignments.scheduledDate')}: {assignment.scheduledDate}
                     </span>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm">
-                    View Details
+                    {t('suppliers.assignments.viewDetails')}
                   </Button>
                   {assignment.status === 'In Progress' && (
                     <Button size="sm">
                       <Clock className="mr-1 h-4 w-4" />
-                      Mark Complete
+                      {t('suppliers.assignments.markComplete')}
                     </Button>
                   )}
                 </div>

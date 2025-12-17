@@ -1,0 +1,20 @@
+{
+  "title": "合规检查",
+  "subtitle": "根据新西兰健康住房标准检查房产",
+  "selectProperty": "选择房产",
+  "noProperties": "未找到房产",
+  "addProperties": "添加房产以检查其合规状态",
+  "overallScore": "总体合规分数",
+  "requirements": {
+    "insulation": "保温",
+    "heating": "供暖",
+    "ventilation": "通风",
+    "moisture": "防潮与排水",
+    "draught": "防风"
+  },
+  "status": {
+    "compliant": "符合要求",
+    "nonCompliant": "不符合要求",
+    "partial": "部分符合"
+  }
+}

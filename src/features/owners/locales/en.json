@@ -1,0 +1,18 @@
+{
+  "title": "Owners",
+  "subtitle": "Manage property owners and their portfolios",
+  "addOwner": "Add Owner",
+  "stats": {
+    "totalOwners": "Total Owners",
+    "activeOwners": "Active Owners",
+    "totalProperties": "Total Properties",
+    "monthlyRevenue": "Monthly Revenue"
+  },
+  "ownerList": "Owner List",
+  "properties": "properties",
+  "perMonth": "mo",
+  "status": {
+    "active": "active",
+    "inactive": "inactive"
+  }
+}

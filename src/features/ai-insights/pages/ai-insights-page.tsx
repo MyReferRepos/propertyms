@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button'
 import { dashboardAPI } from '@/services/api'
 import type { AIInsight } from '@/types'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/lib/i18n'
 
 export function AIInsightsPage() {
+  const { t } = useI18n()
   const [insights, setInsights] = useState<AIInsight[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState<'all' | AIInsight['type']>('all')
@@ -75,7 +77,7 @@ export function AIInsightsPage() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent mx-auto"></div>
-          <p className="mt-4 text-sm text-muted-foreground">Loading AI insights...</p>
+          <p className="mt-4 text-sm text-muted-foreground">{t('aiInsights.loading')}</p>
         </div>
       </div>
     )
@@ -87,10 +89,10 @@ export function AIInsightsPage() {
       <div>
         <div className="flex items-center gap-2">
           <Sparkles className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold tracking-tight">AI Insights</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t('aiInsights.title')}</h1>
         </div>
         <p className="text-muted-foreground mt-1">
-          Smart recommendations powered by PropertyPilot AI
+          {t('aiInsights.subtitle')}
         </p>
       </div>
 
@@ -104,7 +106,7 @@ export function AIInsightsPage() {
           onClick={() => setFilter('all')}
         >
           <div className="text-2xl font-bold">{stats.total}</div>
-          <div className="text-sm text-muted-foreground">All Insights</div>
+          <div className="text-sm text-muted-foreground">{t('aiInsights.stats.all')}</div>
         </button>
 
         <button
@@ -115,7 +117,7 @@ export function AIInsightsPage() {
           onClick={() => setFilter('warning')}
         >
           <div className="text-2xl font-bold text-amber-600">{stats.warnings}</div>
-          <div className="text-sm text-muted-foreground">Warnings</div>
+          <div className="text-sm text-muted-foreground">{t('aiInsights.stats.warnings')}</div>
         </button>
 
         <button
@@ -126,7 +128,7 @@ export function AIInsightsPage() {
           onClick={() => setFilter('recommendation')}
         >
           <div className="text-2xl font-bold text-blue-600">{stats.recommendations}</div>
-          <div className="text-sm text-muted-foreground">Suggestions</div>
+          <div className="text-sm text-muted-foreground">{t('aiInsights.stats.suggestions')}</div>
         </button>
 
         <button
@@ -137,7 +139,7 @@ export function AIInsightsPage() {
           onClick={() => setFilter('opportunity')}
         >
           <div className="text-2xl font-bold text-green-600">{stats.opportunities}</div>
-          <div className="text-sm text-muted-foreground">Opportunities</div>
+          <div className="text-sm text-muted-foreground">{t('aiInsights.stats.opportunities')}</div>
         </button>
 
         <button
@@ -148,7 +150,7 @@ export function AIInsightsPage() {
           onClick={() => setFilter('task')}
         >
           <div className="text-2xl font-bold text-purple-600">{stats.tasks}</div>
-          <div className="text-sm text-muted-foreground">Tasks</div>
+          <div className="text-sm text-muted-foreground">{t('aiInsights.stats.tasks')}</div>
         </button>
       </div>
 
@@ -185,7 +187,7 @@ export function AIInsightsPage() {
                     <CardDescription className="mt-1">{insight.description}</CardDescription>
                   </div>
                   <Button variant="ghost" size="sm" onClick={() => handleDismiss(insight.id)}>
-                    Dismiss
+                    {t('aiInsights.actions.dismiss')}
                   </Button>
                 </div>
               </CardHeader>
@@ -221,11 +223,11 @@ export function AIInsightsPage() {
           <Card>
             <CardContent className="flex flex-col items-center justify-center py-12">
               <Sparkles className="h-12 w-12 text-muted-foreground" />
-              <h3 className="mt-4 text-lg font-semibold">No insights found</h3>
+              <h3 className="mt-4 text-lg font-semibold">{t('aiInsights.empty.title')}</h3>
               <p className="text-sm text-muted-foreground">
                 {filter === 'all'
-                  ? 'PropertyPilot is analyzing your portfolio...'
-                  : `No ${filter} insights at the moment`}
+                  ? t('aiInsights.empty.allMessage')
+                  : t('aiInsights.empty.filterMessage', { type: filter })}
               </p>
             </CardContent>
           </Card>

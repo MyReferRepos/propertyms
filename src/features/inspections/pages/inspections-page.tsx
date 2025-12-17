@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/lib/i18n'
 
 interface Inspection {
   id: string
@@ -57,6 +58,7 @@ const mockInspections: Inspection[] = [
 ]
 
 export function InspectionsPage() {
+  const { t } = useI18n()
   const [inspections] = useState<Inspection[]>(mockInspections)
   const [filter, setFilter] = useState<'all' | Inspection['status']>('all')
 
@@ -68,14 +70,6 @@ export function InspectionsPage() {
     total: inspections.length,
     scheduled: inspections.filter((i) => i.status === 'scheduled').length,
     completed: inspections.filter((i) => i.status === 'completed').length,
-  }
-
-  const typeLabels = {
-    routine: 'Routine Inspection',
-    'move-in': 'Move-In Inspection',
-    'move-out': 'Move-Out Inspection',
-    final: 'Final Inspection',
-    special: 'Special Inspection',
   }
 
   const statusColors = {
@@ -110,12 +104,12 @@ export function InspectionsPage() {
       {/* Page Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Inspections</h1>
-          <p className="text-muted-foreground">Schedule and manage property inspections</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('inspections.title')}</h1>
+          <p className="text-muted-foreground">{t('inspections.subtitle')}</p>
         </div>
         <Button>
           <ClipboardCheck className="mr-2 h-4 w-4" />
-          Schedule Inspection
+          {t('inspections.scheduleInspection')}
         </Button>
       </div>
 
@@ -129,7 +123,7 @@ export function InspectionsPage() {
           onClick={() => setFilter('all')}
         >
           <div className="text-2xl font-bold">{stats.total}</div>
-          <div className="text-sm text-muted-foreground">Total Inspections</div>
+          <div className="text-sm text-muted-foreground">{t('inspections.filters.all')}</div>
         </button>
 
         <button
@@ -140,7 +134,7 @@ export function InspectionsPage() {
           onClick={() => setFilter('scheduled')}
         >
           <div className="text-2xl font-bold text-blue-600">{stats.scheduled}</div>
-          <div className="text-sm text-muted-foreground">Scheduled</div>
+          <div className="text-sm text-muted-foreground">{t('inspections.filters.scheduled')}</div>
         </button>
 
         <button
@@ -151,7 +145,7 @@ export function InspectionsPage() {
           onClick={() => setFilter('completed')}
         >
           <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
-          <div className="text-sm text-muted-foreground">Completed</div>
+          <div className="text-sm text-muted-foreground">{t('inspections.filters.completed')}</div>
         </button>
       </div>
 
@@ -166,21 +160,21 @@ export function InspectionsPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg">{typeLabels[inspection.type]}</CardTitle>
+                      <CardTitle className="text-lg">{t(`inspections.typeLabels.${inspection.type}`)}</CardTitle>
                       <Badge className={cn(statusColors[inspection.status])}>
                         <StatusIcon className="mr-1 h-3 w-3" />
-                        {inspection.status.toUpperCase()}
+                        {t(`inspections.status.${inspection.status}`)}
                       </Badge>
                       {inspection.status === 'completed' && (
                         <Badge className={cn(ratingColors[inspection.rating])}>
-                          {inspection.rating.toUpperCase()}
+                          {t(`inspections.rating.${inspection.rating}`)}
                         </Badge>
                       )}
                     </div>
-                    <CardDescription>Property: {inspection.propertyId}</CardDescription>
+                    <CardDescription>{t('inspections.details.property')}: {inspection.propertyId}</CardDescription>
                   </div>
                   <Button variant="outline" size="sm">
-                    View Report
+                    {t('inspections.viewReport')}
                   </Button>
                 </div>
               </CardHeader>
@@ -190,19 +184,19 @@ export function InspectionsPage() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
-                      <span>Scheduled Date</span>
+                      <span>{t('inspections.details.scheduledDate')}</span>
                     </div>
                     <p className="font-semibold">{formatDate(inspection.scheduledDate)}</p>
                   </div>
 
                   <div className="space-y-1">
-                    <p className="text-sm text-muted-foreground">Inspector</p>
+                    <p className="text-sm text-muted-foreground">{t('inspections.details.inspector')}</p>
                     <p className="font-semibold">{inspection.inspector}</p>
                   </div>
 
                   {inspection.completedDate && (
                     <div className="space-y-1">
-                      <p className="text-sm text-muted-foreground">Completed Date</p>
+                      <p className="text-sm text-muted-foreground">{t('inspections.details.completedDate')}</p>
                       <p className="font-semibold">{formatDate(inspection.completedDate)}</p>
                     </div>
                   )}
@@ -210,7 +204,7 @@ export function InspectionsPage() {
 
                 {inspection.findings.length > 0 && (
                   <div className="space-y-2 border-t pt-4">
-                    <p className="text-sm font-medium">Findings:</p>
+                    <p className="text-sm font-medium">{t('inspections.details.findings')}:</p>
                     <ul className="space-y-1">
                       {inspection.findings.map((finding, index) => (
                         <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">

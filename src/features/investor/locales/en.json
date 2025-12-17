@@ -1,0 +1,65 @@
+{
+  "title": "Investment Dashboard",
+  "subtitle": "Track your property portfolio performance and ROI",
+  "loading": "Loading investment data...",
+  "noData": {
+    "title": "No investment data available",
+    "message": "Start adding properties to track your investments"
+  },
+  "metrics": {
+    "portfolioValue": "Portfolio Value",
+    "capitalGain": "capital gain",
+    "averageROI": "Average ROI",
+    "returnOnInvestment": "Return on investment",
+    "monthlyNetIncome": "Monthly Net Income",
+    "income": "income",
+    "expenses": "expenses",
+    "rentalYield": "Rental Yield",
+    "averageAcrossPortfolio": "Average across portfolio"
+  },
+  "returns": {
+    "title": "Total Returns",
+    "subtitle": "Breakdown of your investment performance",
+    "totalInvested": "Total Invested",
+    "currentValue": "Current Value",
+    "capitalGain": "Capital Gain",
+    "netCashFlow": "Net Cash Flow",
+    "totalGain": "Total Gain"
+  },
+  "cashFlow": {
+    "title": "Cash Flow Summary",
+    "subtitle": "Monthly income and expenses",
+    "monthlyRentalIncome": "Monthly Rental Income",
+    "monthlyExpenses": "Monthly Expenses",
+    "monthlyNetIncome": "Monthly Net Income",
+    "annualized": "Annualized",
+    "annualNetIncome": "Annual Net Income"
+  },
+  "properties": {
+    "title": "Property Performance",
+    "subtitle": "Individual property investment metrics",
+    "propertyId": "Property ID",
+    "purchased": "Purchased",
+    "currentValue": "Current Value",
+    "roi": "ROI",
+    "rentalYield": "Rental Yield",
+    "monthlyNet": "Monthly Net"
+  },
+  "overview": {
+    "totalValue": "Total Portfolio Value",
+    "totalIncome": "Total Income",
+    "totalExpenses": "Total Expenses",
+    "roi": "ROI",
+    "occupancyRate": "Occupancy Rate"
+  },
+  "performance": {
+    "title": "Performance Metrics",
+    "yieldRate": "Yield Rate",
+    "capitalGrowth": "Capital Growth",
+    "netReturn": "Net Return"
+  },
+  "actions": {
+    "viewDetails": "View Details",
+    "exportReport": "Export Report"
+  }
+}

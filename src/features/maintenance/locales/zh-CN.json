@@ -1,0 +1,40 @@
+{
+  "title": "维护管理",
+  "subtitle": "跟踪和管理房产维护请求",
+  "newRequest": "新建请求",
+  "viewDetails": "查看详情",
+  "noRequests": "暂无维护请求",
+  "noRequestsFilter": "暂无{filter}请求",
+  "filters": {
+    "all": "全部请求",
+    "pending": "待处理",
+    "inProgress": "进行中",
+    "completed": "已完成"
+  },
+  "priority": {
+    "urgent": "紧急",
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  },
+  "status": {
+    "pending": "待处理",
+    "inProgress": "进行中",
+    "completed": "已完成",
+    "cancelled": "已取消"
+  },
+  "details": {
+    "category": "类别",
+    "scheduledDate": "计划日期",
+    "contractorId": "承包商ID",
+    "estimatedCost": "预估成本",
+    "actualCost": "实际成本",
+    "completedOn": "完成于 {date}"
+  },
+  "categories": {
+    "plumbing": "水管",
+    "electrical": "电气",
+    "hvac": "暖通空调",
+    "general": "常规"
+  }
+}

@@ -76,14 +76,14 @@ export function QuotesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.suppliers.quotes')}</h1>
+          <h1 className="text-2xl font-bold">{t('suppliers.quotes.title')}</h1>
           <p className="text-muted-foreground">
-            Manage quote requests from suppliers
+            {t('suppliers.quotes.subtitle')}
           </p>
         </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Request Quote
+          {t('suppliers.quotes.requestQuote')}
         </Button>
       </div>
 
@@ -92,25 +92,25 @@ export function QuotesPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{stats.total}</div>
-            <p className="text-xs text-muted-foreground">Total Quotes</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.quotes.stats.totalQuotes')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
-            <p className="text-xs text-muted-foreground">Pending Review</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.quotes.stats.pendingReview')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-green-600">{stats.approved}</div>
-            <p className="text-xs text-muted-foreground">Approved</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.quotes.stats.approved')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">${stats.totalValue.toLocaleString()}</div>
-            <p className="text-xs text-muted-foreground">Total Value</p>
+            <p className="text-xs text-muted-foreground">{t('suppliers.quotes.stats.totalValue')}</p>
           </CardContent>
         </Card>
       </div>
@@ -120,7 +120,7 @@ export function QuotesPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
-            Quote Requests
+            {t('suppliers.quotes.quoteRequests')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -135,7 +135,7 @@ export function QuotesPage() {
                     <Truck className="h-5 w-5 text-muted-foreground" />
                     <span className="font-semibold">{quote.supplier}</span>
                     <Badge className={getStatusColor(quote.status)}>
-                      {quote.status}
+                      {t(`suppliers.quotes.status.${quote.status.toLowerCase()}`)}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -146,9 +146,9 @@ export function QuotesPage() {
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      Requested: {quote.requestDate}
+                      {t('suppliers.quotes.requested')}: {quote.requestDate}
                     </span>
-                    <span>Valid until: {quote.validUntil}</span>
+                    <span>{t('suppliers.quotes.validUntil')}: {quote.validUntil}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -157,15 +157,15 @@ export function QuotesPage() {
                       <DollarSign className="h-4 w-4" />
                       {quote.amount.toLocaleString()}
                     </div>
-                    <p className="text-xs text-muted-foreground">Quote Amount</p>
+                    <p className="text-xs text-muted-foreground">{t('suppliers.quotes.quoteAmount')}</p>
                   </div>
                   {quote.status === 'Pending' && (
                     <div className="flex gap-2">
                       <Button variant="outline" size="sm" className="text-green-600">
-                        Approve
+                        {t('suppliers.quotes.approve')}
                       </Button>
                       <Button variant="outline" size="sm" className="text-red-600">
-                        Reject
+                        {t('suppliers.quotes.reject')}
                       </Button>
                     </div>
                   )}

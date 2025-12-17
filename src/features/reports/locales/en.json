@@ -1,0 +1,65 @@
+{
+  "title": "Reports",
+  "subtitle": "Generate and download comprehensive reports for your portfolio",
+  "availableReports": "Available Reports",
+  "financialReports": "Financial Reports",
+  "operationalReports": "Operational Reports",
+  "complianceReports": "Compliance Reports",
+  "performanceReports": "Performance Reports",
+  "downloadsThisMonth": "Downloads This Month",
+  "generate": "Generate",
+  "create": "Create",
+  "frequency": "Frequency",
+  "last": "Last",
+  "stats": {
+    "available": "Available Reports",
+    "financial": "Financial Reports",
+    "operational": "Operational Reports",
+    "downloads": "Downloads This Month"
+  },
+  "categoryLabels": {
+    "financial": "FINANCIAL",
+    "operational": "OPERATIONAL",
+    "compliance": "COMPLIANCE",
+    "performance": "PERFORMANCE"
+  },
+  "rentalPrice": {
+    "title": "Rental Price Analysis",
+    "subtitle": "Generate comprehensive rental market analysis reports",
+    "generate": "Generate Report",
+    "generateAnother": "Generate Another Report",
+    "analyzing": "Analyzing rental market data...",
+    "tabs": {
+      "landlord": "Landlord Report",
+      "tenant": "Tenant Report"
+    },
+    "landlordForm": {
+      "title": "Generate Landlord Report",
+      "address": "Property Address",
+      "addressPlaceholder": "Enter full property address",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "parking": "Parking Spaces",
+      "propertyType": "Property Type",
+      "propertyTypes": {
+        "house": "House",
+        "apartment": "Apartment",
+        "townhouse": "Townhouse",
+        "unit": "Unit"
+      }
+    },
+    "tenantForm": {
+      "title": "Generate Tenant Report",
+      "suburb": "Suburb",
+      "suburbPlaceholder": "e.g., Kelburn, Wellington",
+      "bedrooms": "Bedrooms",
+      "maxRent": "Maximum Weekly Rent",
+      "propertyType": "Property Type"
+    }
+  },
+  "types": {
+    "rental": "Rental Analysis",
+    "financial": "Financial Report",
+    "occupancy": "Occupancy Report"
+  }
+}

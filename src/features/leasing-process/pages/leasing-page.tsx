@@ -7,8 +7,7 @@ export function LeasingPage() {
 
   const stages = [
     {
-      title: 'Listing Properties',
-      titleKey: 'nav.leasing.listing',
+      titleKey: 'leasingProcess.listing.title',
       icon: Building2,
       count: 12,
       color: 'text-green-600',
@@ -16,8 +15,7 @@ export function LeasingPage() {
       href: '/leasing-process/listing',
     },
     {
-      title: 'Viewing Tracker',
-      titleKey: 'nav.leasing.viewing',
+      titleKey: 'leasingProcess.viewing.title',
       icon: Eye,
       count: 28,
       color: 'text-blue-600',
@@ -25,8 +23,7 @@ export function LeasingPage() {
       href: '/leasing-process/viewing',
     },
     {
-      title: 'Applications',
-      titleKey: 'nav.leasing.applications',
+      titleKey: 'leasingProcess.applications.title',
       icon: FileText,
       count: 15,
       color: 'text-orange-600',
@@ -34,8 +31,7 @@ export function LeasingPage() {
       href: '/leasing-process/applications',
     },
     {
-      title: 'Agreements',
-      titleKey: 'nav.leasing.agreements',
+      titleKey: 'leasingProcess.agreements.title',
       icon: CheckCircle,
       count: 8,
       color: 'text-purple-600',
@@ -47,30 +43,30 @@ export function LeasingPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{t('nav.leasingProcess')}</h1>
+        <h1 className="text-2xl font-bold">{t('leasingProcess.title')}</h1>
         <p className="text-muted-foreground">
-          Manage the complete leasing workflow from listing to agreement
+          {t('leasingProcess.subtitle')}
         </p>
       </div>
 
       {/* Workflow Visualization */}
       <Card>
         <CardHeader>
-          <CardTitle>Leasing Workflow</CardTitle>
+          <CardTitle>{t('leasingProcess.leasingWorkflow')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-between">
             {stages.map((stage, index) => {
               const Icon = stage.icon
               return (
-                <div key={stage.title} className="flex items-center">
+                <div key={stage.titleKey} className="flex items-center">
                   <div className="flex flex-col items-center">
                     <div
                       className={`flex h-16 w-16 items-center justify-center rounded-full ${stage.bgColor}`}
                     >
                       <Icon className={`h-8 w-8 ${stage.color}`} />
                     </div>
-                    <p className="mt-2 text-sm font-medium">{stage.title}</p>
+                    <p className="mt-2 text-sm font-medium">{t(stage.titleKey)}</p>
                     <p className={`text-lg font-bold ${stage.color}`}>
                       {stage.count}
                     </p>
@@ -91,7 +87,7 @@ export function LeasingPage() {
           const Icon = stage.icon
           return (
             <Card
-              key={stage.title}
+              key={stage.titleKey}
               className="cursor-pointer hover:bg-accent/50 transition-colors"
             >
               <CardHeader className="flex flex-row items-center gap-4">
@@ -99,15 +95,15 @@ export function LeasingPage() {
                   <Icon className={`h-6 w-6 ${stage.color}`} />
                 </div>
                 <div>
-                  <CardTitle>{stage.title}</CardTitle>
+                  <CardTitle>{t(stage.titleKey)}</CardTitle>
                   <p className="text-sm text-muted-foreground">
-                    {stage.count} active items
+                    {stage.count} {t('leasingProcess.activeItems')}
                   </p>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Click to manage {stage.title.toLowerCase()}
+                  {t('leasingProcess.clickToManage')}
                 </p>
               </CardContent>
             </Card>

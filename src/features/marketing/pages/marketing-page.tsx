@@ -51,9 +51,9 @@ export function MarketingPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{t('nav.marketing')}</h1>
+        <h1 className="text-2xl font-bold">{t('marketing.title')}</h1>
         <p className="text-muted-foreground">
-          Marketing leads and old owner management
+          {t('marketing.subtitle')}
         </p>
       </div>
 
@@ -73,7 +73,7 @@ export function MarketingPage() {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">{stat.value}</div>
-                <p className="text-xs text-green-600">{stat.change} this month</p>
+                <p className="text-xs text-green-600">{stat.change} {t('marketing.stats.thisMonthChange')}</p>
               </CardContent>
             </Card>
           )
@@ -86,12 +86,12 @@ export function MarketingPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Users className="h-5 w-5" />
-              Potential Leads
+              {t('marketing.potentialLeads')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              Manage and track potential property owners from marketing campaigns.
+              {t('marketing.potentialLeadsDesc')}
             </p>
           </CardContent>
         </Card>
@@ -100,12 +100,12 @@ export function MarketingPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <UserCircle className="h-5 w-5" />
-              Old Owners
+              {t('marketing.oldOwnersTitle')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              Re-engage with previous property owners and track win-back campaigns.
+              {t('marketing.oldOwnersDesc')}
             </p>
           </CardContent>
         </Card>

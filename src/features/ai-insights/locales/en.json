@@ -1,0 +1,30 @@
+{
+  "title": "AI Insights",
+  "subtitle": "Smart recommendations powered by PropertyPilot AI",
+  "selectProperty": "Select Property",
+  "allProperties": "All Properties",
+  "loading": "Loading AI insights...",
+  "insights": {
+    "marketTrends": "Market Trends",
+    "recommendations": "Recommendations",
+    "predictions": "Predictions",
+    "riskAnalysis": "Risk Analysis"
+  },
+  "actions": {
+    "refresh": "Refresh Insights",
+    "export": "Export Report",
+    "dismiss": "Dismiss"
+  },
+  "stats": {
+    "all": "All Insights",
+    "warnings": "Warnings",
+    "suggestions": "Suggestions",
+    "opportunities": "Opportunities",
+    "tasks": "Tasks"
+  },
+  "empty": {
+    "title": "No insights found",
+    "allMessage": "PropertyPilot is analyzing your portfolio...",
+    "filterMessage": "No {type} insights at the moment"
+  }
+}

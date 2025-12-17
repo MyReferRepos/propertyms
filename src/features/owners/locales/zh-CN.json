@@ -1,0 +1,18 @@
+{
+  "title": "业主",
+  "subtitle": "管理房产业主及其投资组合",
+  "addOwner": "添加业主",
+  "stats": {
+    "totalOwners": "总业主数",
+    "activeOwners": "活跃业主",
+    "totalProperties": "总房产数",
+    "monthlyRevenue": "月收入"
+  },
+  "ownerList": "业主列表",
+  "properties": "处房产",
+  "perMonth": "月",
+  "status": {
+    "active": "活跃",
+    "inactive": "非活跃"
+  }
+}

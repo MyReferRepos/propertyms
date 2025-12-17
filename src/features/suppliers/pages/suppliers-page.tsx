@@ -73,14 +73,14 @@ export function SuppliersPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.suppliers')}</h1>
+          <h1 className="text-2xl font-bold">{t('suppliers.title')}</h1>
           <p className="text-muted-foreground">
-            Manage suppliers and track work assignments
+            {t('suppliers.subtitle')}
           </p>
         </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Add Supplier
+          {t('suppliers.addSupplier')}
         </Button>
       </div>
 
@@ -88,7 +88,7 @@ export function SuppliersPage() {
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Suppliers</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('suppliers.stats.totalSuppliers')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">86</div>
@@ -96,7 +96,7 @@ export function SuppliersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Active Suppliers</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('suppliers.stats.activeSuppliers')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">78</div>
@@ -104,7 +104,7 @@ export function SuppliersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Pending Quotes</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('suppliers.stats.pendingQuotes')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-orange-600">12</div>
@@ -112,7 +112,7 @@ export function SuppliersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Active Jobs</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('suppliers.stats.activeJobs')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">24</div>
@@ -123,7 +123,7 @@ export function SuppliersPage() {
       {/* Suppliers List */}
       <Card>
         <CardHeader>
-          <CardTitle>Supplier Directory</CardTitle>
+          <CardTitle>{t('suppliers.supplierDirectory')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -140,7 +140,7 @@ export function SuppliersPage() {
                     </Badge>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Contact: {supplier.contact}
+                    {t('suppliers.contact')}: {supplier.contact}
                   </p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
@@ -160,7 +160,7 @@ export function SuppliersPage() {
                       <span className="font-medium">{supplier.rating}</span>
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      {supplier.jobs} jobs
+                      {supplier.jobs} {t('suppliers.jobs')}
                     </p>
                   </div>
                   <Badge
@@ -170,7 +170,7 @@ export function SuppliersPage() {
                         : 'bg-gray-100 text-gray-800'
                     }
                   >
-                    {supplier.status}
+                    {t(`suppliers.status.${supplier.status}`)}
                   </Badge>
                   <Button variant="ghost" size="icon">
                     <MoreHorizontal className="h-4 w-4" />

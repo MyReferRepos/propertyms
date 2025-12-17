@@ -1,0 +1,38 @@
+{
+  "title": "Inspections",
+  "subtitle": "Schedule and manage property inspections",
+  "scheduleInspection": "Schedule Inspection",
+  "viewReport": "View Report",
+  "noInspections": "No inspections found",
+  "filters": {
+    "all": "Total Inspections",
+    "scheduled": "Scheduled",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "typeLabels": {
+    "routine": "Routine Inspection",
+    "move-in": "Move-In Inspection",
+    "move-out": "Move-Out Inspection",
+    "final": "Final Inspection",
+    "special": "Special Inspection"
+  },
+  "status": {
+    "scheduled": "SCHEDULED",
+    "completed": "COMPLETED",
+    "cancelled": "CANCELLED"
+  },
+  "rating": {
+    "excellent": "EXCELLENT",
+    "good": "GOOD",
+    "fair": "FAIR",
+    "poor": "POOR"
+  },
+  "details": {
+    "property": "Property",
+    "scheduledDate": "Scheduled Date",
+    "completedDate": "Completed Date",
+    "inspector": "Inspector",
+    "findings": "Findings"
+  }
+}

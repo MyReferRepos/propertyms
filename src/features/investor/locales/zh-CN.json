@@ -1,0 +1,65 @@
+{
+  "title": "投资者仪表盘",
+  "subtitle": "跟踪您的房产投资组合表现和投资回报率",
+  "loading": "正在加载投资数据...",
+  "noData": {
+    "title": "暂无投资数据",
+    "message": "开始添加房产以跟踪您的投资"
+  },
+  "metrics": {
+    "portfolioValue": "投资组合价值",
+    "capitalGain": "资本增值",
+    "averageROI": "平均投资回报率",
+    "returnOnInvestment": "投资回报",
+    "monthlyNetIncome": "月净收入",
+    "income": "收入",
+    "expenses": "支出",
+    "rentalYield": "租金收益率",
+    "averageAcrossPortfolio": "投资组合平均值"
+  },
+  "returns": {
+    "title": "总回报",
+    "subtitle": "您的投资绩效明细",
+    "totalInvested": "总投资",
+    "currentValue": "当前价值",
+    "capitalGain": "资本增值",
+    "netCashFlow": "净现金流",
+    "totalGain": "总收益"
+  },
+  "cashFlow": {
+    "title": "现金流摘要",
+    "subtitle": "月收入和支出",
+    "monthlyRentalIncome": "月租金收入",
+    "monthlyExpenses": "月支出",
+    "monthlyNetIncome": "月净收入",
+    "annualized": "年化",
+    "annualNetIncome": "年净收入"
+  },
+  "properties": {
+    "title": "房产表现",
+    "subtitle": "单个房产投资指标",
+    "propertyId": "房产编号",
+    "purchased": "购买时间",
+    "currentValue": "当前价值",
+    "roi": "投资回报率",
+    "rentalYield": "租金收益率",
+    "monthlyNet": "月净收入"
+  },
+  "overview": {
+    "totalValue": "投资组合总值",
+    "totalIncome": "总收入",
+    "totalExpenses": "总支出",
+    "roi": "投资回报率",
+    "occupancyRate": "入住率"
+  },
+  "performance": {
+    "title": "绩效指标",
+    "yieldRate": "收益率",
+    "capitalGrowth": "资本增长",
+    "netReturn": "净回报"
+  },
+  "actions": {
+    "viewDetails": "查看详情",
+    "exportReport": "导出报告"
+  }
+}

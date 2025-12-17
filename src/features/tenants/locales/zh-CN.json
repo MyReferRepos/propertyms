@@ -1,0 +1,36 @@
+{
+  "title": "租客信用评分",
+  "subtitle": "查看租客信用评分和支付历史",
+  "searchTenant": "搜索租客",
+  "searchPlaceholder": "输入租客姓名或邮箱...",
+  "viewProfile": "查看档案",
+  "backToList": "返回租客列表",
+  "allTenants": "所有租客",
+  "clickToView": "点击租客查看详细信用报告",
+  "creditScore": {
+    "title": "信用评分",
+    "excellent": "优秀",
+    "good": "良好",
+    "fair": "一般",
+    "poor": "较差",
+    "label": "信用评分"
+  },
+  "rating": {
+    "label": "评级"
+  },
+  "onTime": {
+    "label": "准时率"
+  },
+  "stats": {
+    "totalTenants": "租客总数",
+    "excellentRating": "优秀评级",
+    "averageScore": "平均评分",
+    "avgOnTimePercent": "平均准时率"
+  },
+  "factors": {
+    "paymentHistory": "支付历史",
+    "rentalHistory": "租赁历史",
+    "income": "收入验证",
+    "references": "推荐人"
+  }
+}

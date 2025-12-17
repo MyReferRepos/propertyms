@@ -94,13 +94,13 @@ export function ApplicationsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t('nav.leasing.applications')}</h1>
+          <h1 className="text-2xl font-bold">{t('leasingProcess.applications.title')}</h1>
           <p className="text-muted-foreground">
-            Review and process tenant applications
+            {t('leasingProcess.applications.subtitle')}
           </p>
         </div>
         <Button variant="outline">
-          Export Applications
+          {t('leasingProcess.applications.exportApplications')}
         </Button>
       </div>
 
@@ -109,25 +109,25 @@ export function ApplicationsPage() {
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">{stats.total}</div>
-            <p className="text-xs text-muted-foreground">Total Applications</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.applications.stats.totalApplications')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-blue-600">{stats.underReview}</div>
-            <p className="text-xs text-muted-foreground">Under Review</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.applications.stats.underReview')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-green-600">{stats.approved}</div>
-            <p className="text-xs text-muted-foreground">Approved</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.applications.stats.approved')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
-            <p className="text-xs text-muted-foreground">Pending Documents</p>
+            <p className="text-xs text-muted-foreground">{t('leasingProcess.applications.stats.pendingDocuments')}</p>
           </CardContent>
         </Card>
       </div>
@@ -137,7 +137,7 @@ export function ApplicationsPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
-            Applications
+            {t('leasingProcess.applications.applicationsTitle')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -152,7 +152,7 @@ export function ApplicationsPage() {
                     <User className="h-5 w-5 text-muted-foreground" />
                     <span className="font-semibold">{application.applicant}</span>
                     <Badge className={getStatusColor(application.status)}>
-                      {application.status}
+                      {t(`leasingProcess.applications.status.${application.status === 'Under Review' ? 'underReview' : application.status === 'Pending Documents' ? 'pendingDocuments' : application.status.toLowerCase()}`)}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -164,28 +164,28 @@ export function ApplicationsPage() {
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      Submitted: {application.submittedDate}
+                      {t('leasingProcess.applications.submitted')}: {application.submittedDate}
                     </span>
                     <span className="flex items-center gap-1">
                       {getCreditIcon(application.creditCheck)}
-                      Credit: {application.creditCheck}
+                      {t('leasingProcess.applications.credit')}: {t(`leasingProcess.applications.creditCheck.${application.creditCheck.toLowerCase()}`)}
                     </span>
                     <span>
-                      References: {application.references}
+                      {t('leasingProcess.applications.references')}: {application.references}
                     </span>
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm">
-                    View Details
+                    {t('leasingProcess.applications.viewDetails')}
                   </Button>
                   {application.status === 'Under Review' && (
                     <>
                       <Button variant="outline" size="sm" className="text-green-600 hover:text-green-700">
-                        Approve
+                        {t('leasingProcess.applications.approve')}
                       </Button>
                       <Button variant="outline" size="sm" className="text-red-600 hover:text-red-700">
-                        Reject
+                        {t('leasingProcess.applications.reject')}
                       </Button>
                     </>
                   )}
