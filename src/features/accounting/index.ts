@@ -1,2 +1,6 @@
 export { AccountingPage } from './pages/accounting-page'
-export { AuditPage } from './pages/audit-page'
+export { AuditOverviewPage } from './pages/audit-overview-page'
+export { AuditLogsPage } from './pages/audit-logs-page'
+export { ComplianceReportsPage } from './pages/compliance-reports-page'
+export { ChangeTrackingPage } from './pages/change-tracking-page'
+export { FinancialAuditPage } from './pages/financial-audit-page'

@@ -15,8 +15,11 @@
   "transactionListPlaceholder": "交易列表将显示在这里...",
   "invoiceListPlaceholder": "发票列表将显示在这里...",
   "audit": {
-    "title": "审计日志",
+    "title": "审计概览",
     "subtitle": "审计日志和合规报告",
+    "quickLinks": "快速链接",
+    "recentActivity": "最近活动",
+    "by": "由",
     "stats": {
       "totalLogs": "总日志数",
       "lastDays": "最近30天",
@@ -27,17 +30,132 @@
       "excellent": "优秀"
     },
     "recentAuditLogs": "最近审计日志",
-    "action": {
-      "propertyCreated": "创建房产",
-      "tenancyUpdated": "更新租约",
-      "paymentRecorded": "记录付款",
-      "documentDeleted": "删除文档"
-    },
     "type": {
       "create": "创建",
       "update": "更新",
-      "delete": "删除"
+      "delete": "删除",
+      "view": "查看",
+      "export": "导出"
     },
-    "by": "由"
+    "entityType": {
+      "property": "房产",
+      "tenancy": "租约",
+      "tenant": "租客",
+      "payment": "付款",
+      "document": "文档",
+      "user": "用户"
+    },
+    "logs": {
+      "title": "审计日志",
+      "subtitle": "系统活动完整审计追踪",
+      "columns": {
+        "timestamp": "时间",
+        "user": "用户",
+        "action": "操作",
+        "entityType": "实体类型",
+        "entity": "实体",
+        "ipAddress": "IP地址"
+      },
+      "filters": {
+        "title": "筛选条件",
+        "search": "按实体或用户搜索...",
+        "action": "操作类型",
+        "entityType": "实体类型"
+      },
+      "detail": {
+        "title": "审计日志详情",
+        "userAgent": "用户代理",
+        "changes": "变更内容",
+        "field": "字段",
+        "oldValue": "旧值",
+        "newValue": "新值"
+      }
+    },
+    "reports": {
+      "title": "合规报告",
+      "subtitle": "法规合规报告和检查",
+      "report": "报告",
+      "generatedAt": "生成时间",
+      "generatedBy": "生成者",
+      "lastChecked": "最后检查",
+      "exportPdf": "导出PDF",
+      "stats": {
+        "total": "总报告数",
+        "passed": "已通过",
+        "warnings": "有警告",
+        "avgScore": "平均分数"
+      },
+      "filters": {
+        "type": "报告类型"
+      },
+      "status": {
+        "passed": "通过",
+        "warning": "警告",
+        "failed": "失败"
+      },
+      "type": {
+        "monthly": "月度",
+        "quarterly": "季度",
+        "annual": "年度"
+      }
+    },
+    "changes": {
+      "title": "变更追踪",
+      "subtitle": "追踪系统中所有数据变更",
+      "reason": "原因",
+      "stats": {
+        "total": "总变更数",
+        "fieldUpdates": "字段更新",
+        "statusChanges": "状态变更",
+        "ownershipTransfers": "所有权转移"
+      },
+      "filters": {
+        "title": "筛选条件",
+        "search": "按实体或用户搜索...",
+        "entityType": "实体类型"
+      },
+      "changeType": {
+        "field_update": "字段更新",
+        "status_change": "状态变更",
+        "ownership_transfer": "所有权转移"
+      }
+    },
+    "financial": {
+      "title": "财务审计",
+      "subtitle": "财务交易验证和审计追踪",
+      "columns": {
+        "date": "日期",
+        "transactionId": "交易编号",
+        "type": "类型",
+        "category": "分类",
+        "amount": "金额",
+        "property": "房产",
+        "status": "状态",
+        "verifiedBy": "审核人"
+      },
+      "filters": {
+        "title": "筛选条件",
+        "status": "状态",
+        "type": "类型"
+      },
+      "status": {
+        "verified": "已验证",
+        "pending": "待审核",
+        "flagged": "已标记"
+      },
+      "type": {
+        "income": "收入",
+        "expense": "支出"
+      },
+      "stats": {
+        "totalIncome": "总收入",
+        "totalExpense": "总支出",
+        "netAmount": "净额",
+        "flagged": "已标记项",
+        "verified": "已验证",
+        "pending": "待审核",
+        "requiresAttention": "需要关注"
+      }
+    }
   }
 }

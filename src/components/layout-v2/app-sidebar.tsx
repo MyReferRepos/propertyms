@@ -34,16 +34,26 @@ export function AppSidebar() {
     return item.title
   }
 
-  const isItemActive = (item: NavItem): boolean => {
+  const isItemActive = (item: NavItem, isChild = false): boolean => {
+    // Exact match
     if (location.pathname === item.href) return true
+
+    // For parent items with children, check if any child is active
     if (item.children) {
-      return item.children.some((child) => location.pathname === child.href)
+      return item.children.some((child) => isItemActive(child, true))
     }
-    return location.pathname.startsWith(item.href + '/')
+
+    // For child items, only exact match (already checked above)
+    // For top-level items without children, also check prefix match
+    if (!isChild) {
+      return location.pathname.startsWith(item.href + '/')
+    }
+
+    return false
   }
 
   const renderNavItem = (item: NavItem, isChild = false) => {
-    const isActive = isItemActive(item)
+    const isActive = isItemActive(item, isChild)
     const Icon = item.icon
     const hasChildren = item.children && item.children.length > 0
     const isOpen = openMenus.includes(item.href)

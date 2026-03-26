@@ -42,6 +42,7 @@ import { Route as AuthenticatedSuppliersIndexRouteImport } from './routes/_authe
 import { Route as AuthenticatedReportsIndexRouteImport } from './routes/_authenticated/reports.index'
 import { Route as AuthenticatedPropertiesIndexRouteImport } from './routes/_authenticated/properties.index'
 import { Route as AuthenticatedLeasingProcessIndexRouteImport } from './routes/_authenticated/leasing-process/index'
+import { Route as AuthenticatedAccountingIndexRouteImport } from './routes/_authenticated/accounting/index'
 import { Route as AuthenticatedSuppliersReviewsRouteImport } from './routes/_authenticated/suppliers/reviews'
 import { Route as AuthenticatedSuppliersQuotesRouteImport } from './routes/_authenticated/suppliers/quotes'
 import { Route as AuthenticatedSuppliersAssignmentsRouteImport } from './routes/_authenticated/suppliers/assignments'
@@ -53,7 +54,11 @@ import { Route as AuthenticatedLeasingProcessViewingRouteImport } from './routes
 import { Route as AuthenticatedLeasingProcessListingRouteImport } from './routes/_authenticated/leasing-process/listing'
 import { Route as AuthenticatedLeasingProcessApplicationsRouteImport } from './routes/_authenticated/leasing-process/applications'
 import { Route as AuthenticatedLeasingProcessAgreementsRouteImport } from './routes/_authenticated/leasing-process/agreements'
-import { Route as AuthenticatedAccountingAuditRouteImport } from './routes/_authenticated/accounting/audit'
+import { Route as AuthenticatedAccountingAuditIndexRouteImport } from './routes/_authenticated/accounting/audit/index'
+import { Route as AuthenticatedAccountingAuditReportsRouteImport } from './routes/_authenticated/accounting/audit/reports'
+import { Route as AuthenticatedAccountingAuditLogsRouteImport } from './routes/_authenticated/accounting/audit/logs'
+import { Route as AuthenticatedAccountingAuditFinancialRouteImport } from './routes/_authenticated/accounting/audit/financial'
+import { Route as AuthenticatedAccountingAuditChangesRouteImport } from './routes/_authenticated/accounting/audit/changes'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
@@ -226,6 +231,12 @@ const AuthenticatedLeasingProcessIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedLeasingProcessRoute,
   } as any)
+const AuthenticatedAccountingIndexRoute =
+  AuthenticatedAccountingIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedAccountingRoute,
+  } as any)
 const AuthenticatedSuppliersReviewsRoute =
   AuthenticatedSuppliersReviewsRouteImport.update({
     id: '/reviews',
@@ -292,10 +303,34 @@ const AuthenticatedLeasingProcessAgreementsRoute =
     path: '/agreements',
     getParentRoute: () => AuthenticatedLeasingProcessRoute,
   } as any)
-const AuthenticatedAccountingAuditRoute =
-  AuthenticatedAccountingAuditRouteImport.update({
-    id: '/audit',
-    path: '/audit',
+const AuthenticatedAccountingAuditIndexRoute =
+  AuthenticatedAccountingAuditIndexRouteImport.update({
+    id: '/audit/',
+    path: '/audit/',
+    getParentRoute: () => AuthenticatedAccountingRoute,
+  } as any)
+const AuthenticatedAccountingAuditReportsRoute =
+  AuthenticatedAccountingAuditReportsRouteImport.update({
+    id: '/audit/reports',
+    path: '/audit/reports',
+    getParentRoute: () => AuthenticatedAccountingRoute,
+  } as any)
+const AuthenticatedAccountingAuditLogsRoute =
+  AuthenticatedAccountingAuditLogsRouteImport.update({
+    id: '/audit/logs',
+    path: '/audit/logs',
+    getParentRoute: () => AuthenticatedAccountingRoute,
+  } as any)
+const AuthenticatedAccountingAuditFinancialRoute =
+  AuthenticatedAccountingAuditFinancialRouteImport.update({
+    id: '/audit/financial',
+    path: '/audit/financial',
+    getParentRoute: () => AuthenticatedAccountingRoute,
+  } as any)
+const AuthenticatedAccountingAuditChangesRoute =
+  AuthenticatedAccountingAuditChangesRouteImport.update({
+    id: '/audit/changes',
+    path: '/audit/changes',
     getParentRoute: () => AuthenticatedAccountingRoute,
   } as any)
 
@@ -328,7 +363,6 @@ export interface FileRoutesByFullPath {
   '/tenants': typeof AuthenticatedTenantsRoute
   '/workbench': typeof AuthenticatedWorkbenchRoute
   '/': typeof AuthenticatedIndexRoute
-  '/accounting/audit': typeof AuthenticatedAccountingAuditRoute
   '/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
   '/leasing-process/applications': typeof AuthenticatedLeasingProcessApplicationsRoute
   '/leasing-process/listing': typeof AuthenticatedLeasingProcessListingRoute
@@ -340,10 +374,16 @@ export interface FileRoutesByFullPath {
   '/suppliers/assignments': typeof AuthenticatedSuppliersAssignmentsRoute
   '/suppliers/quotes': typeof AuthenticatedSuppliersQuotesRoute
   '/suppliers/reviews': typeof AuthenticatedSuppliersReviewsRoute
+  '/accounting/': typeof AuthenticatedAccountingIndexRoute
   '/leasing-process/': typeof AuthenticatedLeasingProcessIndexRoute
   '/properties/': typeof AuthenticatedPropertiesIndexRoute
   '/reports/': typeof AuthenticatedReportsIndexRoute
   '/suppliers/': typeof AuthenticatedSuppliersIndexRoute
+  '/accounting/audit/changes': typeof AuthenticatedAccountingAuditChangesRoute
+  '/accounting/audit/financial': typeof AuthenticatedAccountingAuditFinancialRoute
+  '/accounting/audit/logs': typeof AuthenticatedAccountingAuditLogsRoute
+  '/accounting/audit/reports': typeof AuthenticatedAccountingAuditReportsRoute
+  '/accounting/audit': typeof AuthenticatedAccountingAuditIndexRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -355,7 +395,6 @@ export interface FileRoutesByTo {
   '/404': typeof errors404Route
   '/500': typeof errors500Route
   '/503': typeof errors503Route
-  '/accounting': typeof AuthenticatedAccountingRouteWithChildren
   '/ai-insights': typeof AuthenticatedAiInsightsRoute
   '/compliance': typeof AuthenticatedComplianceRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
@@ -370,7 +409,6 @@ export interface FileRoutesByTo {
   '/tenants': typeof AuthenticatedTenantsRoute
   '/workbench': typeof AuthenticatedWorkbenchRoute
   '/': typeof AuthenticatedIndexRoute
-  '/accounting/audit': typeof AuthenticatedAccountingAuditRoute
   '/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
   '/leasing-process/applications': typeof AuthenticatedLeasingProcessApplicationsRoute
   '/leasing-process/listing': typeof AuthenticatedLeasingProcessListingRoute
@@ -382,10 +420,16 @@ export interface FileRoutesByTo {
   '/suppliers/assignments': typeof AuthenticatedSuppliersAssignmentsRoute
   '/suppliers/quotes': typeof AuthenticatedSuppliersQuotesRoute
   '/suppliers/reviews': typeof AuthenticatedSuppliersReviewsRoute
+  '/accounting': typeof AuthenticatedAccountingIndexRoute
   '/leasing-process': typeof AuthenticatedLeasingProcessIndexRoute
   '/properties': typeof AuthenticatedPropertiesIndexRoute
   '/reports': typeof AuthenticatedReportsIndexRoute
   '/suppliers': typeof AuthenticatedSuppliersIndexRoute
+  '/accounting/audit/changes': typeof AuthenticatedAccountingAuditChangesRoute
+  '/accounting/audit/financial': typeof AuthenticatedAccountingAuditFinancialRoute
+  '/accounting/audit/logs': typeof AuthenticatedAccountingAuditLogsRoute
+  '/accounting/audit/reports': typeof AuthenticatedAccountingAuditReportsRoute
+  '/accounting/audit': typeof AuthenticatedAccountingAuditIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -418,7 +462,6 @@ export interface FileRoutesById {
   '/_authenticated/tenants': typeof AuthenticatedTenantsRoute
   '/_authenticated/workbench': typeof AuthenticatedWorkbenchRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
-  '/_authenticated/accounting/audit': typeof AuthenticatedAccountingAuditRoute
   '/_authenticated/leasing-process/agreements': typeof AuthenticatedLeasingProcessAgreementsRoute
   '/_authenticated/leasing-process/applications': typeof AuthenticatedLeasingProcessApplicationsRoute
   '/_authenticated/leasing-process/listing': typeof AuthenticatedLeasingProcessListingRoute
@@ -430,10 +473,16 @@ export interface FileRoutesById {
   '/_authenticated/suppliers/assignments': typeof AuthenticatedSuppliersAssignmentsRoute
   '/_authenticated/suppliers/quotes': typeof AuthenticatedSuppliersQuotesRoute
   '/_authenticated/suppliers/reviews': typeof AuthenticatedSuppliersReviewsRoute
+  '/_authenticated/accounting/': typeof AuthenticatedAccountingIndexRoute
   '/_authenticated/leasing-process/': typeof AuthenticatedLeasingProcessIndexRoute
   '/_authenticated/properties/': typeof AuthenticatedPropertiesIndexRoute
   '/_authenticated/reports/': typeof AuthenticatedReportsIndexRoute
   '/_authenticated/suppliers/': typeof AuthenticatedSuppliersIndexRoute
+  '/_authenticated/accounting/audit/changes': typeof AuthenticatedAccountingAuditChangesRoute
+  '/_authenticated/accounting/audit/financial': typeof AuthenticatedAccountingAuditFinancialRoute
+  '/_authenticated/accounting/audit/logs': typeof AuthenticatedAccountingAuditLogsRoute
+  '/_authenticated/accounting/audit/reports': typeof AuthenticatedAccountingAuditReportsRoute
+  '/_authenticated/accounting/audit/': typeof AuthenticatedAccountingAuditIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -466,7 +515,6 @@ export interface FileRouteTypes {
     | '/tenants'
     | '/workbench'
     | '/'
-    | '/accounting/audit'
     | '/leasing-process/agreements'
     | '/leasing-process/applications'
     | '/leasing-process/listing'
@@ -478,10 +526,16 @@ export interface FileRouteTypes {
     | '/suppliers/assignments'
     | '/suppliers/quotes'
     | '/suppliers/reviews'
+    | '/accounting/'
     | '/leasing-process/'
     | '/properties/'
     | '/reports/'
     | '/suppliers/'
+    | '/accounting/audit/changes'
+    | '/accounting/audit/financial'
+    | '/accounting/audit/logs'
+    | '/accounting/audit/reports'
+    | '/accounting/audit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -493,7 +547,6 @@ export interface FileRouteTypes {
     | '/404'
     | '/500'
     | '/503'
-    | '/accounting'
     | '/ai-insights'
     | '/compliance'
     | '/dashboard'
@@ -508,7 +561,6 @@ export interface FileRouteTypes {
     | '/tenants'
     | '/workbench'
     | '/'
-    | '/accounting/audit'
     | '/leasing-process/agreements'
     | '/leasing-process/applications'
     | '/leasing-process/listing'
@@ -520,10 +572,16 @@ export interface FileRouteTypes {
     | '/suppliers/assignments'
     | '/suppliers/quotes'
     | '/suppliers/reviews'
+    | '/accounting'
     | '/leasing-process'
     | '/properties'
     | '/reports'
     | '/suppliers'
+    | '/accounting/audit/changes'
+    | '/accounting/audit/financial'
+    | '/accounting/audit/logs'
+    | '/accounting/audit/reports'
+    | '/accounting/audit'
   id:
     | '__root__'
     | '/_authenticated'
@@ -555,7 +613,6 @@ export interface FileRouteTypes {
     | '/_authenticated/tenants'
     | '/_authenticated/workbench'
     | '/_authenticated/'
-    | '/_authenticated/accounting/audit'
     | '/_authenticated/leasing-process/agreements'
     | '/_authenticated/leasing-process/applications'
     | '/_authenticated/leasing-process/listing'
@@ -567,10 +624,16 @@ export interface FileRouteTypes {
     | '/_authenticated/suppliers/assignments'
     | '/_authenticated/suppliers/quotes'
     | '/_authenticated/suppliers/reviews'
+    | '/_authenticated/accounting/'
     | '/_authenticated/leasing-process/'
     | '/_authenticated/properties/'
     | '/_authenticated/reports/'
     | '/_authenticated/suppliers/'
+    | '/_authenticated/accounting/audit/changes'
+    | '/_authenticated/accounting/audit/financial'
+    | '/_authenticated/accounting/audit/logs'
+    | '/_authenticated/accounting/audit/reports'
+    | '/_authenticated/accounting/audit/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -819,6 +882,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedLeasingProcessIndexRouteImport
       parentRoute: typeof AuthenticatedLeasingProcessRoute
     }
+    '/_authenticated/accounting/': {
+      id: '/_authenticated/accounting/'
+      path: '/'
+      fullPath: '/accounting/'
+      preLoaderRoute: typeof AuthenticatedAccountingIndexRouteImport
+      parentRoute: typeof AuthenticatedAccountingRoute
+    }
     '/_authenticated/suppliers/reviews': {
       id: '/_authenticated/suppliers/reviews'
       path: '/reviews'
@@ -896,23 +966,66 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedLeasingProcessAgreementsRouteImport
       parentRoute: typeof AuthenticatedLeasingProcessRoute
     }
-    '/_authenticated/accounting/audit': {
-      id: '/_authenticated/accounting/audit'
+    '/_authenticated/accounting/audit/': {
+      id: '/_authenticated/accounting/audit/'
       path: '/audit'
       fullPath: '/accounting/audit'
-      preLoaderRoute: typeof AuthenticatedAccountingAuditRouteImport
+      preLoaderRoute: typeof AuthenticatedAccountingAuditIndexRouteImport
+      parentRoute: typeof AuthenticatedAccountingRoute
+    }
+    '/_authenticated/accounting/audit/reports': {
+      id: '/_authenticated/accounting/audit/reports'
+      path: '/audit/reports'
+      fullPath: '/accounting/audit/reports'
+      preLoaderRoute: typeof AuthenticatedAccountingAuditReportsRouteImport
+      parentRoute: typeof AuthenticatedAccountingRoute
+    }
+    '/_authenticated/accounting/audit/logs': {
+      id: '/_authenticated/accounting/audit/logs'
+      path: '/audit/logs'
+      fullPath: '/accounting/audit/logs'
+      preLoaderRoute: typeof AuthenticatedAccountingAuditLogsRouteImport
+      parentRoute: typeof AuthenticatedAccountingRoute
+    }
+    '/_authenticated/accounting/audit/financial': {
+      id: '/_authenticated/accounting/audit/financial'
+      path: '/audit/financial'
+      fullPath: '/accounting/audit/financial'
+      preLoaderRoute: typeof AuthenticatedAccountingAuditFinancialRouteImport
+      parentRoute: typeof AuthenticatedAccountingRoute
+    }
+    '/_authenticated/accounting/audit/changes': {
+      id: '/_authenticated/accounting/audit/changes'
+      path: '/audit/changes'
+      fullPath: '/accounting/audit/changes'
+      preLoaderRoute: typeof AuthenticatedAccountingAuditChangesRouteImport
       parentRoute: typeof AuthenticatedAccountingRoute
     }
   }
 }
 
 interface AuthenticatedAccountingRouteChildren {
-  AuthenticatedAccountingAuditRoute: typeof AuthenticatedAccountingAuditRoute
+  AuthenticatedAccountingIndexRoute: typeof AuthenticatedAccountingIndexRoute
+  AuthenticatedAccountingAuditChangesRoute: typeof AuthenticatedAccountingAuditChangesRoute
+  AuthenticatedAccountingAuditFinancialRoute: typeof AuthenticatedAccountingAuditFinancialRoute
+  AuthenticatedAccountingAuditLogsRoute: typeof AuthenticatedAccountingAuditLogsRoute
+  AuthenticatedAccountingAuditReportsRoute: typeof AuthenticatedAccountingAuditReportsRoute
+  AuthenticatedAccountingAuditIndexRoute: typeof AuthenticatedAccountingAuditIndexRoute
 }
 
 const AuthenticatedAccountingRouteChildren: AuthenticatedAccountingRouteChildren =
   {
-    AuthenticatedAccountingAuditRoute: AuthenticatedAccountingAuditRoute,
+    AuthenticatedAccountingIndexRoute: AuthenticatedAccountingIndexRoute,
+    AuthenticatedAccountingAuditChangesRoute:
+      AuthenticatedAccountingAuditChangesRoute,
+    AuthenticatedAccountingAuditFinancialRoute:
+      AuthenticatedAccountingAuditFinancialRoute,
+    AuthenticatedAccountingAuditLogsRoute:
+      AuthenticatedAccountingAuditLogsRoute,
+    AuthenticatedAccountingAuditReportsRoute:
+      AuthenticatedAccountingAuditReportsRoute,
+    AuthenticatedAccountingAuditIndexRoute:
+      AuthenticatedAccountingAuditIndexRoute,
   }
 
 const AuthenticatedAccountingRouteWithChildren =
